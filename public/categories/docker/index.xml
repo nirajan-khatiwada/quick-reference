@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Docker on Quick Reference</title>
+    <link>https://reference.nirajankhatiwada.com.np/categories/docker/</link>
+    <description>Recent content in Docker on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>https://reference.nirajankhatiwada.com.np/images/shar.jpg</url>
+      <link>https://reference.nirajankhatiwada.com.np/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.136.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://reference.nirajankhatiwada.com.np/categories/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker Basic: Commands and Concepts</title>
+      <link>https://reference.nirajankhatiwada.com.np/posts/pages/docker_basics/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/docker_basics/</guid>
+      <description>A comprehensive guide covering essential Docker commands, from creating containers to managing volumes.</description>
+    </item>
+    <item>
+      <title>Docker Compose Documentation</title>
+      <link>https://reference.nirajankhatiwada.com.np/posts/pages/docker_compose/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/docker_compose/</guid>
+      <description>A comprehensive guide on Docker Compose for managing multi-container Docker applications.</description>
+    </item>
+    <item>
+      <title>Docker CPU and Memory Limits</title>
+      <link>https://reference.nirajankhatiwada.com.np/posts/pages/docker_cpu_memory_limits_guide/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/docker_cpu_memory_limits_guide/</guid>
+      <description>A guide to setting CPU and memory limits for Docker containers using CLI and Docker Compose.</description>
+    </item>
+    <item>
+      <title>Docker Networking and Port Access</title>
+      <link>https://reference.nirajankhatiwada.com.np/posts/pages/docker_networking_guide/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/docker_networking_guide/</guid>
+      <description>A guide on Docker networking and how to configure port access for containers.</description>
+    </item>
+  </channel>
+</rss>
