@@ -1,16 +1,21 @@
 
 ---
-title: "Git Commands and Configuration Guide"
+title: "Git Commands and Configuration Guide" #this is tile and title for social share
 date: 2024-10-18
-description: "A comprehensive guide for configuring Git, managing repositories, and handling Git workflows."
+description: "A comprehensive guide for configuring Git, managing repositories, and handling Git workflows." #description for social share
+ShowToc: true
+#tocopen: true
 categories: ["Git"]
-tags: ["Git", "Version Control", "Development"]
+tags: ["Git", "Version Control", "Development"] #this is keyword
+summary: "A brief tutorial on github recipe" #this come in post
+images: ["/images/gitcheetsheet.png"]  #for social share
 ---
 
-## IF ANY CONCEPT IS LAGGING THEN:
-[Watch this helpful video](https://www.youtube.com/watch?v=Ez8F0nW6S-w)
+<!-- 
+#![Git Cheetsheet  This is lt text](/images/gitcheetsheet.png)
+-->
 
----
+
 
 ## 1. Configure Git
 
@@ -52,7 +57,7 @@ Add specific files or all changes and commit them:
 
 ```bash
 git add <filename>                             # Add a specific file to the staging area
-git add .                                    # Add all changes (modified and untracked files)
+git add .                                      # Add all changes (modified and untracked files)
 git commit -m "Your commit message"            # Commit the changes with a message
 ```
 
@@ -122,7 +127,7 @@ git pull [alias] [branch]                     # Pull changes from a specific ali
 
 ```bash
 git reset <filename>                          # Unstage a file from the staging area
-git reset                                    # Unstage all files that have been added
+git reset                                     # Unstage all files that have been added
 ```
 
 ### If You Have Committed Changes:
@@ -145,4 +150,14 @@ When contributing to open-source projects, you can fork a repository, which crea
 git clone <forked_repo_url>                   # Clone your forked repository
 ```
 
+---
 Make changes, commit them, and push to your fork. Finally, create a pull request on GitHub to merge your changes into the original repository.
+
+
+---
+
+## IF ANY CONCEPT IS LAGGING THEN:
+[Watch this helpful video](https://www.youtube.com/watch?v=Ez8F0nW6S-w)
+
+---
+
