@@ -1,0 +1,59 @@
+baseURL = "https://blog.nirajankhatiwada.com.np/"
+languageCode = "en-us"
+title = "Quick Reference"
+theme = "PaperMod"
+author = "Nirajan Khatiwada"
+description = "A cheatsheet blog for developers, offering quick references on various programming topics."
+pagination.pagerSize = 10
+enableRobotsTXT = true
+
+# Google Analytics (replace with your actual ID)
+#googleAnalytics = "UA-XXXXXXXXX"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+
+[params.homeInfoParams]
+  Title = "Welcome, Developer 👨‍💻"
+  Content = """
+  Welcome to my developer-focused blog! Whether you're just starting out or are an experienced coder, this space is designed to help you find quick references, cheat sheets, and practical tips for various programming languages and tools. 
+  Here, you'll find guides that break down complex concepts into easy-to-understand examples, saving you time and boosting your productivity. My goal is to share valuable resources that streamline your coding journey, whether you're working on personal projects, preparing for interviews, or learning new technologies.
+  
+  Dive in, explore different topics, and feel free to use this blog as your go-to reference. Happy coding!
+  """
+
+[params]
+  # SEO Enhancements
+  enableSEO = true
+
+  # Dark Mode
+  defaultTheme = "auto" # Change to "dark" or "light" if you prefer
+  disableThemeToggle = false
+
+  # Readability
+  ShowReadingTime = true
+  ShowShareButtons = true
+  ShowPostNavLinks = true
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+
+[params.assets]
+  favicon = "/images/icon.png"
+
+[[menu.main]]
+  name = "Category"
+  url = "/categories/"
+  weight = 1
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags/"
+  weight = 2
+
+
+
