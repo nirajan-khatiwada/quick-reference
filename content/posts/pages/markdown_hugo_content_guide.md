@@ -70,17 +70,6 @@ This is the first paragraph.
 
 This is the second paragraph.
 
-If you want a line break without starting a new paragraph, add two spaces at the end of the line or use the HTML `<br>` tag.
-
-Example:
-```markdown
-This is a line break with two spaces.  
-This is the next line.
-```
-
-Output:
-This is a line break with two spaces.  
-This is the next line.
 
 ## 5. Horizontal Rules
 You can create horizontal lines (dividers) using three or more dashes (`---`), asterisks (`***`), or underscores (`___`).
@@ -133,19 +122,23 @@ For inline code, use backticks. For block code, use triple backticks.
 Example:
 ```markdown
 Inline code: `print("Hello World")`
-
-Code block:
-```
-\`\`\`
-def hello():
-    print("Hello, Hugo!")
-\`\`\`
-```
+``` 
 
 Output:
 Inline code: `print("Hello World")`
 
-Code block:
+
+
+Example:
+
+```python
+Block Code:
+def hello():
+    print("Hello, Hugo!")
+```
+
+
+
 ```python
 def hello():
     print("Hello, Hugo!")
@@ -196,12 +189,11 @@ Output:
 Hugo supports syntax highlighting for various programming languages.
 
 Example:
-```markdown
-```python
+python
 def greet():
-    print("Hello, Hugo!")
-\`\`\`
-```
+\n
+print("Hello, Hugo!")
+
 
 Output:
 ```python
@@ -209,7 +201,45 @@ def greet():
     print("Hello, Hugo!")
 ```
 
-## 13. Consistency
+
+## 12. Task Lists
+Create task lists by using square brackets `[]`. An `x` in the brackets `[x]` marks a task as completed.
+
+Example:
+```markdown
+- [ ] Task 1
+    - [ ] Sub-task 1
+    - [x] Sub-task 2 (Completed)
+- [x] Task 2 (Completed)
+```
+
+Output:
+- [ ] Task 1
+    - [ ] Sub-task 1
+    - [x] Sub-task 2 (Completed)
+- [x] Task 2 (Completed)
+
+## 13. Escaping Special Characters
+To use special characters like `#`, escape them using a backslash `\`.
+
+Example:
+```markdown
+\# This is not a header
+```
+
+Output:
+\# This is not a header
+
+## 14. Backtick
+To display backtick use four space before it as
+```markdown
+    ```
+```
+
+
+
+
+## 15. Consistency
 It's important to maintain consistent formatting throughout your Markdown files to ensure a clean and readable structure.
 
 By following these steps, you can effectively create well-formatted content for your Hugo site using Markdown.
