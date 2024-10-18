@@ -2,29 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Quick Reference</title>
-    <link>https://reference.nirajankhatiwada.com.np/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Quick Reference</description>
     <image>
       <title>Quick Reference</title>
-      <url>https://reference.nirajankhatiwada.com.np/images/shar.jpg</url>
-      <link>https://reference.nirajankhatiwada.com.np/images/shar.jpg</link>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
     </image>
     <generator>Hugo -- 0.136.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://reference.nirajankhatiwada.com.np/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git Commands and Configuration Guide</title>
-      <link>https://reference.nirajankhatiwada.com.np/posts/pages/git-cheetsheet/</link>
+      <link>http://localhost:1313/posts/pages/git-cheetsheet/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/git-cheetsheet/</guid>
+      <guid>http://localhost:1313/posts/pages/git-cheetsheet/</guid>
       <description>A comprehensive guide for configuring Git, managing repositories, and handling Git workflows.</description>
     </item>
     <item>
-      <title>Linux Commands and Directories Guide</title>
-      <link>https://reference.nirajankhatiwada.com.np/posts/pages/linux_cheatsheet/</link>
+      <title>How to Create Content for Hugo</title>
+      <link>http://localhost:1313/posts/pages/markdown_hugo_content_guide/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/linux_cheatsheet/</guid>
+      <guid>http://localhost:1313/posts/pages/markdown_hugo_content_guide/</guid>
+      <description>A simple guide on how to create content for Hugo using Markdown.</description>
+    </item>
+    <item>
+      <title>Linux Commands and Directories Guide</title>
+      <link>http://localhost:1313/posts/pages/linux_cheatsheet/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/linux_cheatsheet/</guid>
       <description>A comprehensive guide to commonly used Linux commands and important directories.</description>
     </item>
   </channel>

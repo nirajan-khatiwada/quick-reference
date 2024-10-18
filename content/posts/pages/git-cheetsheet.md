@@ -7,7 +7,7 @@ ShowToc: true
 #tocopen: true
 categories: ["Git"]
 tags: ["Git", "Version Control", "Development"] #this is keyword
-summary: "A brief tutorial on github recipe" #this come in post
+summary: "A brief tutorial on github recipe and git command" #this come in post
 images: ["/images/gitcheetsheet.png"]  #for social share
 ---
 

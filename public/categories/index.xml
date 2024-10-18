@@ -2,29 +2,36 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Quick Reference</title>
-    <link>https://reference.nirajankhatiwada.com.np/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Quick Reference</description>
     <image>
       <title>Quick Reference</title>
-      <url>https://reference.nirajankhatiwada.com.np/images/shar.jpg</url>
-      <link>https://reference.nirajankhatiwada.com.np/images/shar.jpg</link>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
     </image>
     <generator>Hugo -- 0.136.1</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://reference.nirajankhatiwada.com.np/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git</title>
-      <link>https://reference.nirajankhatiwada.com.np/categories/git/</link>
+      <link>http://localhost:1313/categories/git/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://reference.nirajankhatiwada.com.np/categories/git/</guid>
+      <guid>http://localhost:1313/categories/git/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hugo</title>
+      <link>http://localhost:1313/categories/hugo/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/hugo/</guid>
       <description></description>
     </item>
     <item>
       <title>Linux</title>
-      <link>https://reference.nirajankhatiwada.com.np/categories/linux/</link>
+      <link>http://localhost:1313/categories/linux/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>https://reference.nirajankhatiwada.com.np/categories/linux/</guid>
+      <guid>http://localhost:1313/categories/linux/</guid>
       <description></description>
     </item>
   </channel>
