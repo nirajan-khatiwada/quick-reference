@@ -76,7 +76,7 @@ buildExpired = false
 
   # Edit Post Link
   [params.editPost]
-    URL = "https://github.com/nirajan-khatiwada/quick-reference/content"
+    URL = "https://github.com/nirajan-khatiwada/quick-reference/tree/main/content"
     Text = "Suggest Changes"  # Edit text
     appendFilePath = true  # Append file path to Edit link
 
