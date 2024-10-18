@@ -20,5 +20,12 @@
       <guid>https://reference.nirajankhatiwada.com.np/posts/pages/git-cheetsheet/</guid>
       <description>A comprehensive guide for configuring Git, managing repositories, and handling Git workflows.</description>
     </item>
+    <item>
+      <title>Linux Commands and Directories Guide</title>
+      <link>https://reference.nirajankhatiwada.com.np/posts/pages/linux_cheatsheet/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>https://reference.nirajankhatiwada.com.np/posts/pages/linux_cheatsheet/</guid>
+      <description>A comprehensive guide to commonly used Linux commands and important directories.</description>
+    </item>
   </channel>
 </rss>
