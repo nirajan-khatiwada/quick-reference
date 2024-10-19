@@ -10,11 +10,27 @@ buildDrafts = false
 buildFuture = false
 buildExpired = false
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
 [minify]
   disableXML = true
   minifyOutput = true
 
+[params.fuseOpts]
+  iscasesensitive = false
+  includeScore = false
+  includeMatches = false
+  minMatchCharLength = 2
+  shouldSort = true
+  findAllMatches = false
+  distance = 100
+  threshold = 0.4
+  location = 0
+  keys = ["title", "summary", "content"]
+
 [params]
+  search = true
   env = "production"  # Enables SEO features like Google Analytics, OpenGraph, etc.
   title = "Quick Reference"
   description = "Quick Reference is a developer-focused cheatsheet blog offering concise, actionable tips and guides on programming languages, web development, tools, and best practices. Explore fast and reliable references for developers of all skill levels."
@@ -100,10 +116,15 @@ buildExpired = false
   identifier = "categories"
   name = "Categories"
   url = "/categories/"
-  weight = 10
+  weight = 1
 
 [[menu.main]]
   identifier = "tags"
   name = "Tags"
   url = "/tags/"
-  weight = 20
+  weight = 2
+
+[[menu.main]]
+  name = "Search"
+  url = "/search"
+  weight = 10
