@@ -30,7 +30,6 @@ buildExpired = false
   keys = ["title", "summary", "content"]
 
 [params]
-  disableSitemapTaxonomy = true
   search = true
   env = "production"  # Enables SEO features like Google Analytics, OpenGraph, etc.
   title = "Quick Reference"
@@ -59,7 +58,7 @@ buildExpired = false
   tocopen = false
 
   # SEO Enhancements
-  enableSEO = true
+  enablFeSEO = true
   twitterCard = true
   opengraph = true
 
