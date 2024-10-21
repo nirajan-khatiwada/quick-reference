@@ -3,8 +3,7 @@ title: "Learning Journey"
 date: 2024-10-21
 description: "A summary of what I have learned and what I plan to learn next."
 ShowToc: true
-categories: ["Learning"]
-tags: ["Docker", "Linux", "Git", "Python", "Django", "JavaScript", "React", "Virtualenv"]
+categories: ["ReadingList"]
 summary: "A detailed overview of my learning journey and future plans."
 ---
 
