@@ -5,6 +5,7 @@ description: "A summary of what I have learned and what I plan to learn next."
 ShowToc: true
 categories: ["ReadingList"]
 summary: "A detailed overview of my learning journey and future plans."
+images: ["/images/learn.jpg"]  # For social share
 ---
 
 # Learning Journey
