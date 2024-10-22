@@ -13,6 +13,8 @@ images: ["/images/learn.jpg"]  # For social share
 ## Topics I Have Learned So Far
 - Docker
 - Linux
+- Celery
+- Django Channels
 - Git
 - Python
 - Django
