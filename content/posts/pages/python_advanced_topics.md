@@ -151,3 +151,16 @@ Imported module1
 
 
 
+## 2. Python Generators
+Generators in Python are a powerful tool for creating iterators. They allow you to generate a sequence of values on-the-fly, without storing them in memory. This can be useful when working with large datasets or infinite sequences. In this section, we will explore how to create and use generators in Python.
+
+### 2.1. Creating a Generator
+To create a generator in Python, you can use a function with the `yield` keyword. When a function contains the `yield` keyword, it becomes a generator function. The `yield` keyword suspends the function's execution and returns a value to the caller.
+
+Example:
+```python
+def my_generator():
+    yield 1
+    yield 2
+    yield 3
+
