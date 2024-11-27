@@ -14,9 +14,23 @@
     <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Python Fundamentals: Understanding request (Part 8)</title>
+      <link>http://localhost:1313/posts/pages/python_request/</link>
+      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python_request/</guid>
+      <description>Learn about request package in python.</description>
+    </item>
+    <item>
+      <title>Python Fundamentals: Packages, Generators, and Decorators (Part 7)</title>
+      <link>http://localhost:1313/posts/pages/python_advanced_topics/</link>
+      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python_advanced_topics/</guid>
+      <description>Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
       <link>http://localhost:1313/posts/pages/python_error_handeling/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python_error_handeling/</guid>
       <description>Learn about error handling in Python with this comprehensive guide, part of our series on Python programming.</description>
     </item>
