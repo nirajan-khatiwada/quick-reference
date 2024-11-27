@@ -186,15 +186,9 @@ Output:
 - [x] Task 2 (Completed)
 
 ## 12. Syntax Highlighting
-Hugo supports syntax highlighting for various programming languages.
+Hugo supports syntax highlighting for various programming languages. You can specify the language after the triple backticks(```).
 
-Example:
-python
-def greet():
-\n
-print("Hello, Hugo!")
-
-
+Example: 
 Output:
 ```python
 def greet():

@@ -1,6 +1,6 @@
 ---
 title: "Learning Journey"
-date: 2024-10-21
+date: 2024-10-14
 description: "A summary of what I have learned and what I plan to learn next."
 ShowToc: true
 categories: ["ReadingList"]

@@ -9,6 +9,7 @@ enableRobotsTXT = true
 buildDrafts = false
 buildFuture = false
 buildExpired = false
+ignoreLogs = ['warning-goldmark-raw-html']
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]

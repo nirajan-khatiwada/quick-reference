@@ -4,7 +4,7 @@ title: "Docker CPU and Memory Limits"
 date: 2024-10-18
 description: "A guide to setting CPU and memory limits for Docker containers using CLI and Docker Compose."
 ShowToc: true
-categories: ["Docker", "Limits"]
+categories: ["Docker", ]
 tags: ["Docker", "CPU", "Memory", "Limits", "Guide"]
 summary: "Control the CPU and memory usage of Docker containers with CLI and Docker Compose configurations."
 images: ["/images/resource.png"]  # For social share
