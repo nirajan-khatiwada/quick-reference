@@ -1,7 +1,7 @@
 
 ---
 title: "Python Fundamentals: Packages, Generators, and Decorators (Part 7)"
-date: 2024-12-02
+date: 2024-11-19
 description: "Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide."
 showToc: true
 categories: ["Python"]
@@ -152,7 +152,7 @@ Imported module1
 
 
 ## 2. Python Generators
-Generators in Python are a powerful tool for creating iterators. They allow you to generate a sequence of values on-the-fly, without storing them in memory. This can be useful when working with large datasets or infinite sequences. In this section, we will explore how to create and use generators in Python.
+Using generator we can instantly return all the values using the `yield` keyword without storing them in memory. This is useful when working with large datasets or infinite sequences.
 
 ### 2.1. Creating a Generator
 To create a generator in Python, you can use a function with the `yield` keyword. When a function contains the `yield` keyword, it becomes a generator function. The `yield` keyword suspends the function's execution and returns a value to the caller.
@@ -163,4 +163,123 @@ def my_generator():
     yield 1
     yield 2
     yield 3
+# Using the generator
+gen = my_generator()
+print(next(gen))  # Output: 1
+print(next(gen))  # Output: 2
+print(next(gen))  # Output: 3
+```
+
+Example:
+```python
+#using generator in loop
+def generate(n):
+    for i in range(n):
+        yield i
+
+for i in generate(10):
+    print(i)
+```
+
+### 3. Python Decorators
+Decorators are a powerful feature in Python that allows you to modify or extend the behavior of functions or methods. Decorators are functions that take another function as an argument and return a new function that extends the behavior of the original function.
+
+### 3.1. Creating a Decorator
+To create a decorator in Python, you can define a function that takes another function as an argument and returns a new function that extends the behavior of the original function.
+
+Syntax:
+```python
+def my_decorator(func):
+    def wrapper():
+        # Code to execute before calling the decorated function
+        func()
+        # Code to execute after
+    return wrapper
+```
+
+Example:
+```python
+def my_decorator(func):
+    def wrapper():
+        print("Before function call")
+        func()
+        print("After function call")
+    return wrapper
+
+@my_decorator
+def say_hello():
+    print("Hello!")
+
+say_hello() #call to my_decorator(say_hello)() just because we use @my_decorator
+```
+
+Output:
+```
+Before function call
+Hello!
+After function call
+```
+
+Example For decorator :
+```python 
+def Add_Wrapper(func):
+    def wrapper(a,b,c):
+        print("Status code is",c)
+        return func(a,b)
+    return wrapper
+
+@Add_Wrapper
+def add(a,b):
+    return a+b
+
+print(add(2,3,200))
+```
+
+Output:
+```
+Status code is 200
+5
+```
+
+
+### 3.2. Decorator with Arguments
+You can also create decorators that accept arguments by defining a decorator function that takes arguments and returns a decorator function.
+
+Syntax:
+```python
+def my_decorator_with_args(arg1, arg2):
+    def decorator(func):
+        def wrapper():
+            # Code to execute before calling the decorated function
+            func()
+            # Code to execute after
+        return wrapper
+    return decorator
+```
+
+Example:
+```python
+def my_decorator_with_args(arg1, arg2):
+    def decorator(func):
+        def wrapper():
+            print(f"Decorator arguments: {arg1}, {arg2}")
+            func()
+        return wrapper
+    return decorator    
+
+@my_decorator_with_args("arg1", "arg2")
+def say_hello():
+    print("Hello!")
+
+say_hello()
+```
+
+Output:
+```
+Decorator arguments: arg1, arg2
+Hello!
+```
+
+
+
 
