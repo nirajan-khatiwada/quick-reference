@@ -70,7 +70,7 @@ Error: Division by zero
 
 
 ### 4.2. Finally Block
-The `finally` block is used to execute code that should always run, regardless of whether an exception occurs or not. The `finally` block is typically used to release resources or clean up operations that need to be performed after the `try` block, regardless of the outcome.
+The `finally` block is used to execute code that should always run, regardless of whether an exception occurs or not. The `finally` block is typically used to release resources or clean up operations that need to be performed after the `try` block, regardless of the outcome Any how the finally block will run. if yout return from the try block then also the finally block will run.
 
 syntax:
 ```python
