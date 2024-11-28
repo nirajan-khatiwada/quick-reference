@@ -11,34 +11,41 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>File Handeling</title>
-      <link>http://localhost:1313/tags/file-handeling/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/file-handeling/</guid>
+      <title>Package</title>
+      <link>http://localhost:1313/tags/package/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/package/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
       <link>http://localhost:1313/tags/programming/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial</title>
       <link>http://localhost:1313/tags/tutorial/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/tutorial/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File Handeling</title>
+      <link>http://localhost:1313/tags/file-handeling/</link>
+      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/file-handeling/</guid>
       <description></description>
     </item>
     <item>

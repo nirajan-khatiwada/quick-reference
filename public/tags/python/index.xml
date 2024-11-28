@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Fundamentals: Some Important Package to Know (Part 10)</title>
+      <link>http://localhost:1313/posts/pages/python_extrapackage/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python_extrapackage/</guid>
+      <description>Know The About Some Important package to Use.</description>
+    </item>
     <item>
       <title>Python Fundamentals: Understanding File Handeling (Part 9)</title>
       <link>http://localhost:1313/posts/pages/python_filehandeling/</link>
