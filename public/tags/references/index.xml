@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>References on Quick Reference</title>
+    <link>http://localhost:1313/tags/references/</link>
+    <description>Recent content in References on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.139.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/references/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Shared References in Python: How Changes Propagate Across Variables</title>
+      <link>http://localhost:1313/posts/pages/python/python_shared_references/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_shared_references/</guid>
+      <description>Understanding how shared references work in Python and how changes propagate across variables.</description>
+    </item>
+  </channel>
+</rss>

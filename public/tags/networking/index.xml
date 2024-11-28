@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/networking/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Networking and Port Access</title>
-      <link>http://localhost:1313/posts/pages/docker_networking_guide/</link>
+      <link>http://localhost:1313/posts/pages/docker/docker_networking_guide/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/docker_networking_guide/</guid>
+      <guid>http://localhost:1313/posts/pages/docker/docker_networking_guide/</guid>
       <description>A guide on Docker networking and how to configure port access for containers.</description>
     </item>
   </channel>

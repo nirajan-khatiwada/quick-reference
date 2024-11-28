@@ -32,7 +32,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_extrapackage/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_extrapackage/</loc>
     <lastmod>2024-11-27T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -57,12 +57,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_filehandeling/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_filehandeling/</loc>
     <lastmod>2024-11-26T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_request/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_request/</loc>
     <lastmod>2024-11-25T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -87,7 +87,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_advanced_topics/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_advanced_topics/</loc>
     <lastmod>2024-11-19T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -102,12 +102,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_error_handeling/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_error_handeling/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_function/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_function/</loc>
     <lastmod>2024-11-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -117,7 +117,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_advanced_operations/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_advanced_operations/</loc>
     <lastmod>2024-11-17T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -127,7 +127,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_control_structure/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_control_structure/</loc>
     <lastmod>2024-11-16T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -137,7 +137,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_datatype_operations/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_datatype_operations/</loc>
     <lastmod>2024-11-15T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -147,12 +147,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/python_basics/</loc>
+    <loc>http://localhost:1313/posts/pages/python/python_basics/</loc>
     <lastmod>2024-11-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/vim_basics_guide/</loc>
+    <loc>http://localhost:1313/posts/pages/linux/vim_basics_guide/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -192,22 +192,22 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/docker_basics/</loc>
+    <loc>http://localhost:1313/posts/pages/docker/docker_basics/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/docker_compose/</loc>
+    <loc>http://localhost:1313/posts/pages/docker/docker_compose/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/docker_cpu_memory_limits_guide/</loc>
+    <loc>http://localhost:1313/posts/pages/docker/docker_cpu_memory_limits_guide/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/docker_networking_guide/</loc>
+    <loc>http://localhost:1313/posts/pages/docker/docker_networking_guide/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -222,7 +222,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/git-cheetsheet/</loc>
+    <loc>http://localhost:1313/posts/pages/git/git-cheetsheet/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -232,7 +232,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/markdown_hugo_content_guide/</loc>
+    <loc>http://localhost:1313/posts/pages/hugo/markdown_hugo_content_guide/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -262,7 +262,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/linux_cheatsheet/</loc>
+    <loc>http://localhost:1313/posts/pages/linux/linux_cheatsheet/</loc>
     <lastmod>2024-10-18T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -302,13 +302,23 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>http://localhost:1313/posts/pages/my_reading/</loc>
+    <loc>http://localhost:1313/posts/pages/readinglist/my_reading/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/categories/readinglist/</loc>
     <lastmod>2024-10-14T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/tags/references/</loc>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/pages/python/python_shared_references/</loc>
+    <lastmod>2023-10-05T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

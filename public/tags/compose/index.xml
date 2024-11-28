@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/compose/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker Compose Documentation</title>
-      <link>http://localhost:1313/posts/pages/docker_compose/</link>
+      <link>http://localhost:1313/posts/pages/docker/docker_compose/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/docker_compose/</guid>
+      <guid>http://localhost:1313/posts/pages/docker/docker_compose/</guid>
       <description>A comprehensive guide on Docker Compose for managing multi-container Docker applications.</description>
     </item>
   </channel>

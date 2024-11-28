@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/command-line/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux Commands and Directories Guide</title>
-      <link>http://localhost:1313/posts/pages/linux_cheatsheet/</link>
+      <link>http://localhost:1313/posts/pages/linux/linux_cheatsheet/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/linux_cheatsheet/</guid>
+      <guid>http://localhost:1313/posts/pages/linux/linux_cheatsheet/</guid>
       <description>A comprehensive guide to commonly used Linux commands and important directories.</description>
     </item>
   </channel>

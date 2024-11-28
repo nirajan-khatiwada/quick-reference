@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Create Content for Hugo</title>
-      <link>http://localhost:1313/posts/pages/markdown_hugo_content_guide/</link>
+      <link>http://localhost:1313/posts/pages/hugo/markdown_hugo_content_guide/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/markdown_hugo_content_guide/</guid>
+      <guid>http://localhost:1313/posts/pages/hugo/markdown_hugo_content_guide/</guid>
       <description>A simple guide on how to create content for Hugo using Markdown.</description>
     </item>
   </channel>

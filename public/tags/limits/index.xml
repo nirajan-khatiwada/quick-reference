@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/limits/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Docker CPU and Memory Limits</title>
-      <link>http://localhost:1313/posts/pages/docker_cpu_memory_limits_guide/</link>
+      <link>http://localhost:1313/posts/pages/docker/docker_cpu_memory_limits_guide/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/docker_cpu_memory_limits_guide/</guid>
+      <guid>http://localhost:1313/posts/pages/docker/docker_cpu_memory_limits_guide/</guid>
       <description>A guide to setting CPU and memory limits for Docker containers using CLI and Docker Compose.</description>
     </item>
   </channel>

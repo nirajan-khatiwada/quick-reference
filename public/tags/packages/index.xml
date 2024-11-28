@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/packages/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Fundamentals: Packages, Generators, and Decorators (Part 7)</title>
-      <link>http://localhost:1313/posts/pages/python_advanced_topics/</link>
+      <link>http://localhost:1313/posts/pages/python/python_advanced_topics/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python_advanced_topics/</guid>
+      <guid>http://localhost:1313/posts/pages/python/python_advanced_topics/</guid>
       <description>Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide.</description>
     </item>
   </channel>

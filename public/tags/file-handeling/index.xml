@@ -15,9 +15,9 @@
     <atom:link href="http://localhost:1313/tags/file-handeling/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Fundamentals: Understanding File Handeling (Part 9)</title>
-      <link>http://localhost:1313/posts/pages/python_filehandeling/</link>
+      <link>http://localhost:1313/posts/pages/python/python_filehandeling/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python_filehandeling/</guid>
+      <guid>http://localhost:1313/posts/pages/python/python_filehandeling/</guid>
       <description>Know The Basics of Python Filehandeling with this comprehensive guide, part of our series on Python programming.</description>
     </item>
   </channel>

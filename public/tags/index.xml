@@ -237,5 +237,12 @@
       <guid>http://localhost:1313/tags/vim/</guid>
       <description></description>
     </item>
+    <item>
+      <title>References</title>
+      <link>http://localhost:1313/tags/references/</link>
+      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/references/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>
