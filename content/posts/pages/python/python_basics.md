@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: A Beginner's Guide (Part 1)"
-date: 2024-11-14
+date: 2024-11-20
 description: "Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals."
 showToc: true
 categories: ["Python"]

@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Understanding request (Part 8)"
-date: 2024-11-25
+date: 2024-11-14
 description: "Learn about request package in python."
 showToc: true
 categories: ["Python"]

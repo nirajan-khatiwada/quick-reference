@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Understanding Data Types (Part 2)"
-date: 2024-11-15
+date: 2024-11-19
 description: "Dive into the various data types in Python with this detailed guide, part of our comprehensive series on Python programming."
 showToc: true
 categories: ["Python"]

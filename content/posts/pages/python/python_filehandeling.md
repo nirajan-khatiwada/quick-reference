@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Understanding File Handeling (Part 9)"
-date: 2024-11-26
+date: 2024-11-13
 description: "Know The Basics of Python Filehandeling with this comprehensive guide, part of our series on Python programming."
 showToc: true
 categories: ["Python"]

@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Understanding Functions (Part 5)"
-date: 2024-11-18
+date: 2024-11-17
 description: "Dive into Python functions with this comprehensive guide, part of our series on Python programming."
 showToc: true
 categories: ["Python"]

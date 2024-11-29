@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Understanding Error Handling (Part 6)"
-date: 2024-11-18
+date: 2024-11-16
 description: "Learn about error handling in Python with this comprehensive guide, part of our series on Python programming."
 showToc: true
 categories: ["Python"]

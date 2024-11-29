@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Mastering Control Structures (Part 3)"
-date: 2024-11-16
+date: 2024-11-18
 description: "Explore the essential control structures in Python, including loops and conditionals, in this comprehensive guide, part of our Python programming series."
 showToc: true
 categories: ["Python"]

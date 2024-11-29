@@ -1,6 +1,6 @@
 ---
 title: "Python Fundamentals: Some Important Package to Know (Part 10)"
-date: 2024-11-27
+date: 2024-11-12
 description: "Know The About Some Important package to Use."
 showToc: true
 categories: ["Python"]

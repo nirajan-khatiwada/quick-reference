@@ -1,7 +1,6 @@
-
 ---
 title: "Python Fundamentals: Packages, Generators, and Decorators (Part 7)"
-date: 2024-11-19
+date: 2024-11-15
 description: "Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide."
 showToc: true
 categories: ["Python"]

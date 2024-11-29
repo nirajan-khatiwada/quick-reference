@@ -1,4 +1,3 @@
-
 ---
 title: "Python Fundamentals: Exploring Advanced Operations (Part 4)"
 date: 2024-11-17
