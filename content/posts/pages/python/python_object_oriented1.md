@@ -3,7 +3,7 @@ title: "Python Fundamentals: Exploring OOP (Part 12)"
 date: 2024-11-10
 description: "This is the first part of series Object Oriented Programming in Python"
 showToc: true
-categories: ["OOP"]
+categories: ["Python"]
 tags: ["Python", "Programming", "OOP", "Tutorial"]
 summary: "This is the first part of series of Object Oriented Programming in Python"
 images: ["/images/python.png"]

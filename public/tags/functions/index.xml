@@ -11,12 +11,12 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 18 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/functions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Python Fundamentals: Understanding Functions (Part 5)</title>
       <link>http://localhost:1313/posts/pages/python/python_function/</link>
-      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_function/</guid>
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>

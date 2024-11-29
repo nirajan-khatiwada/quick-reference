@@ -11,90 +11,48 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>OOP</title>
-      <link>http://localhost:1313/tags/oop/</link>
-      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/oop/</guid>
+      <title>Basics</title>
+      <link>http://localhost:1313/tags/basics/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/basics/</guid>
       <description></description>
     </item>
     <item>
       <title>Programming</title>
       <link>http://localhost:1313/tags/programming/</link>
-      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/programming/</guid>
       <description></description>
     </item>
     <item>
       <title>Python</title>
       <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
       <title>Tutorial</title>
       <link>http://localhost:1313/tags/tutorial/</link>
-      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/tutorial/</guid>
       <description></description>
     </item>
     <item>
-      <title>Package</title>
-      <link>http://localhost:1313/tags/package/</link>
-      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/package/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>File Handeling</title>
-      <link>http://localhost:1313/tags/file-handeling/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/file-handeling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Request</title>
-      <link>http://localhost:1313/tags/request/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/request/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Decorators</title>
-      <link>http://localhost:1313/tags/decorators/</link>
+      <title>Data Types</title>
+      <link>http://localhost:1313/tags/data-types/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/decorators/</guid>
+      <guid>http://localhost:1313/tags/data-types/</guid>
       <description></description>
     </item>
     <item>
-      <title>Generators</title>
-      <link>http://localhost:1313/tags/generators/</link>
-      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/generators/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Packages</title>
-      <link>http://localhost:1313/tags/packages/</link>
-      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/packages/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Error Handling</title>
-      <link>http://localhost:1313/tags/error-handling/</link>
+      <title>Control Structures</title>
+      <link>http://localhost:1313/tags/control-structures/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/error-handling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Functions</title>
-      <link>http://localhost:1313/tags/functions/</link>
-      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/functions/</guid>
+      <guid>http://localhost:1313/tags/control-structures/</guid>
       <description></description>
     </item>
     <item>
@@ -105,24 +63,73 @@
       <description></description>
     </item>
     <item>
-      <title>Control Structures</title>
-      <link>http://localhost:1313/tags/control-structures/</link>
+      <title>Functions</title>
+      <link>http://localhost:1313/tags/functions/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/functions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Error Handling</title>
+      <link>http://localhost:1313/tags/error-handling/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/control-structures/</guid>
+      <guid>http://localhost:1313/tags/error-handling/</guid>
       <description></description>
     </item>
     <item>
-      <title>Data Types</title>
-      <link>http://localhost:1313/tags/data-types/</link>
+      <title>Decorators</title>
+      <link>http://localhost:1313/tags/decorators/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/data-types/</guid>
+      <guid>http://localhost:1313/tags/decorators/</guid>
       <description></description>
     </item>
     <item>
-      <title>Basics</title>
-      <link>http://localhost:1313/tags/basics/</link>
+      <title>Generators</title>
+      <link>http://localhost:1313/tags/generators/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/generators/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Packages</title>
+      <link>http://localhost:1313/tags/packages/</link>
+      <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/packages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Request</title>
+      <link>http://localhost:1313/tags/request/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/basics/</guid>
+      <guid>http://localhost:1313/tags/request/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File Handeling</title>
+      <link>http://localhost:1313/tags/file-handeling/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/file-handeling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Package</title>
+      <link>http://localhost:1313/tags/package/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/package/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>References</title>
+      <link>http://localhost:1313/tags/references/</link>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/references/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OOP</title>
+      <link>http://localhost:1313/tags/oop/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/oop/</guid>
       <description></description>
     </item>
     <item>
@@ -242,13 +249,6 @@
       <link>http://localhost:1313/tags/vim/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/vim/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>References</title>
-      <link>http://localhost:1313/tags/references/</link>
-      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/references/</guid>
       <description></description>
     </item>
   </channel>

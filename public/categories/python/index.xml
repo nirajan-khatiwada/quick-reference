@@ -11,49 +11,28 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Python Fundamentals: Some Important Package to Know (Part 10)</title>
-      <link>http://localhost:1313/posts/pages/python/python_extrapackage/</link>
-      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_extrapackage/</guid>
-      <description>Know The About Some Important package to Use.</description>
+      <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
+      <link>http://localhost:1313/posts/pages/python/python_basics/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_basics/</guid>
+      <description>Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals.</description>
     </item>
     <item>
-      <title>Python Fundamentals: Understanding File Handeling (Part 9)</title>
-      <link>http://localhost:1313/posts/pages/python/python_filehandeling/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_filehandeling/</guid>
-      <description>Know The Basics of Python Filehandeling with this comprehensive guide, part of our series on Python programming.</description>
-    </item>
-    <item>
-      <title>Python Fundamentals: Understanding request (Part 8)</title>
-      <link>http://localhost:1313/posts/pages/python/python_request/</link>
-      <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_request/</guid>
-      <description>Learn about request package in python.</description>
-    </item>
-    <item>
-      <title>Python Fundamentals: Packages, Generators, and Decorators (Part 7)</title>
-      <link>http://localhost:1313/posts/pages/python/python_advanced_topics/</link>
+      <title>Python Fundamentals: Understanding Data Types (Part 2)</title>
+      <link>http://localhost:1313/posts/pages/python/python_datatype_operations/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_advanced_topics/</guid>
-      <description>Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide.</description>
+      <guid>http://localhost:1313/posts/pages/python/python_datatype_operations/</guid>
+      <description>Dive into the various data types in Python with this detailed guide, part of our comprehensive series on Python programming.</description>
     </item>
     <item>
-      <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
-      <link>http://localhost:1313/posts/pages/python/python_error_handeling/</link>
+      <title>Python Fundamentals: Mastering Control Structures (Part 3)</title>
+      <link>http://localhost:1313/posts/pages/python/python_control_structure/</link>
       <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_error_handeling/</guid>
-      <description>Learn about error handling in Python with this comprehensive guide, part of our series on Python programming.</description>
-    </item>
-    <item>
-      <title>Python Fundamentals: Understanding Functions (Part 5)</title>
-      <link>http://localhost:1313/posts/pages/python/python_function/</link>
-      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_function/</guid>
-      <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
+      <guid>http://localhost:1313/posts/pages/python/python_control_structure/</guid>
+      <description>Explore the essential control structures in Python, including loops and conditionals, in this comprehensive guide, part of our Python programming series.</description>
     </item>
     <item>
       <title>Python Fundamentals: Exploring Advanced Operations (Part 4)</title>
@@ -63,32 +42,60 @@
       <description>Dive into advanced Python operations such as ranges, enumerations, zip functions, and more in this comprehensive guide, part of our Python programming series.</description>
     </item>
     <item>
-      <title>Python Fundamentals: Mastering Control Structures (Part 3)</title>
-      <link>http://localhost:1313/posts/pages/python/python_control_structure/</link>
+      <title>Python Fundamentals: Understanding Functions (Part 5)</title>
+      <link>http://localhost:1313/posts/pages/python/python_function/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_function/</guid>
+      <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
+    </item>
+    <item>
+      <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
+      <link>http://localhost:1313/posts/pages/python/python_error_handeling/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_control_structure/</guid>
-      <description>Explore the essential control structures in Python, including loops and conditionals, in this comprehensive guide, part of our Python programming series.</description>
+      <guid>http://localhost:1313/posts/pages/python/python_error_handeling/</guid>
+      <description>Learn about error handling in Python with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
-      <title>Python Fundamentals: Understanding Data Types (Part 2)</title>
-      <link>http://localhost:1313/posts/pages/python/python_datatype_operations/</link>
+      <title>Python Fundamentals: Packages, Generators, and Decorators (Part 7)</title>
+      <link>http://localhost:1313/posts/pages/python/python_advanced_topics/</link>
       <pubDate>Fri, 15 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_datatype_operations/</guid>
-      <description>Dive into the various data types in Python with this detailed guide, part of our comprehensive series on Python programming.</description>
+      <guid>http://localhost:1313/posts/pages/python/python_advanced_topics/</guid>
+      <description>Explore advanced Python topics including packages, generators, and decorators in this comprehensive guide.</description>
     </item>
     <item>
-      <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
-      <link>http://localhost:1313/posts/pages/python/python_basics/</link>
+      <title>Python Fundamentals: Understanding request (Part 8)</title>
+      <link>http://localhost:1313/posts/pages/python/python_request/</link>
       <pubDate>Thu, 14 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/python/python_basics/</guid>
-      <description>Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals.</description>
+      <guid>http://localhost:1313/posts/pages/python/python_request/</guid>
+      <description>Learn about request package in python.</description>
+    </item>
+    <item>
+      <title>Python Fundamentals: Understanding File Handeling (Part 9)</title>
+      <link>http://localhost:1313/posts/pages/python/python_filehandeling/</link>
+      <pubDate>Wed, 13 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_filehandeling/</guid>
+      <description>Know The Basics of Python Filehandeling with this comprehensive guide, part of our series on Python programming.</description>
+    </item>
+    <item>
+      <title>Python Fundamentals: Some Important Package to Know (Part 10)</title>
+      <link>http://localhost:1313/posts/pages/python/python_extrapackage/</link>
+      <pubDate>Tue, 12 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_extrapackage/</guid>
+      <description>Know The About Some Important package to Use.</description>
     </item>
     <item>
       <title>Python Fundamentals : Shared References in Python (part 11)</title>
       <link>http://localhost:1313/posts/pages/python/python_shared_references/</link>
-      <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 11 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_shared_references/</guid>
       <description>Understanding how shared references work in Python and how changes propagate across variables.</description>
+    </item>
+    <item>
+      <title>Python Fundamentals: Exploring OOP (Part 12)</title>
+      <link>http://localhost:1313/posts/pages/python/python_object_oriented1/</link>
+      <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_object_oriented1/</guid>
+      <description>This is the first part of series Object Oriented Programming in Python</description>
     </item>
   </channel>
 </rss>
