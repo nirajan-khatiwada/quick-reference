@@ -1013,3 +1013,66 @@ inner1.display(outer1)
 
 # Age: 30
 ```
+
+
+# 16. Nested class in Python
+A class can be defined inside another class. The class inside the class is known as nested class. The nested class can access the attributes and methods of the outer class.
+
+Syntax:
+```python
+class OuterClass:
+    class InnerClass:
+        #code block
+```
+
+Creating an object of the nested class:
+Syntax:
+```python
+outer_object = OuterClass()
+inner_object = outer_object.InnerClass()
+```
+
+Example:
+```python
+class OuterClass:
+    def __init__(self):
+        self.name = "Alice"
+        self.age = 30
+
+    class InnerClass:
+        def display(self, outer):
+            print(f"Name: {outer.name}")
+            print(f"Age: {outer.age}")
+
+
+outer1 = OuterClass()
+inner1 = outer1.InnerClass()
+inner1.display(outer1)
+
+# Output:
+
+# Name: Alice
+# Age: 30
+```
+
+creating an object of the nested class inside the outer class:
+```python
+class OuterClass:
+    def __init__(self):
+        self.name = "Alice"
+        self.age = 30
+        self.inner = self.InnerClass()
+
+    class InnerClass:
+        def display(self, outer):
+            print(f"Name: {outer.name}")
+            print(f"Age: {outer.age}")
+
+outer1 = OuterClass()
+outer1.inner.display(outer1)
+
+# Output:
+# Name: Alice
+# Age: 30
+```
+
