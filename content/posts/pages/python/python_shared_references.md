@@ -1,6 +1,6 @@
 
 ---
-title: "Shared References in Python: How Changes Propagate Across Variables"
+title: "Python Fundamentals : Shared References in Python (part 11)"
 date: 2023-10-05  # Replace with the current date
 description: "Understanding how shared references work in Python and how changes propagate across variables."
 showToc: true

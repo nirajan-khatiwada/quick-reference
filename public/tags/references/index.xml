@@ -14,7 +14,7 @@
     <lastBuildDate>Thu, 05 Oct 2023 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/references/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Shared References in Python: How Changes Propagate Across Variables</title>
+      <title>Python Fundamentals : Shared References in Python (part 11)</title>
       <link>http://localhost:1313/posts/pages/python/python_shared_references/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_shared_references/</guid>

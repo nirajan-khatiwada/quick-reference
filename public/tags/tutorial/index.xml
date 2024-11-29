@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/tutorial/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Python Fundamentals: Exploring OOP (Part 12)</title>
+      <link>http://localhost:1313/posts/pages/python/python_object_oriented1/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/python/python_object_oriented1/</guid>
+      <description>This is the first part of series Object Oriented Programming in Python</description>
+    </item>
     <item>
       <title>Python Fundamentals: Some Important Package to Know (Part 10)</title>
       <link>http://localhost:1313/posts/pages/python/python_extrapackage/</link>
@@ -84,7 +91,7 @@
       <description>Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals.</description>
     </item>
     <item>
-      <title>Shared References in Python: How Changes Propagate Across Variables</title>
+      <title>Python Fundamentals : Shared References in Python (part 11)</title>
       <link>http://localhost:1313/posts/pages/python/python_shared_references/</link>
       <pubDate>Thu, 05 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_shared_references/</guid>
