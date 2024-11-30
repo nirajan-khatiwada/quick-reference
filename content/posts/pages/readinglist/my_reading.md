@@ -28,8 +28,6 @@ images: ["/images/learn.jpg"]  # For social share
 ---
 
 ## What I Plan to Learn Next
-
-- Async Deep Dive in Python
 - WebSocket Deep Dive in Django
 - Celery Deep Dive
 - Redis for Cache
@@ -43,15 +41,6 @@ images: ["/images/learn.jpg"]  # For social share
 - Django Docs+Advance Like class based views
 ---
 
-## Python Books to Explore
-
-1. **Developer's Library: Python Distilled** by David Beazley (2021)
-2. **Fluent Python** by Luciano Ramalho (2022) - O'Reilly Media
-3. **Python Parallel Programming Cookbook** by Giancarlo Zaccone (2019)
-4. **Python Object-Oriented Programming**
-5. **Python Concurrency with Asyncio**
-
----
 
 ## Additional Topics for Future Learning
 - Real-time WebSocket usage in Django.
