@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.139.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Async io : Asyncio Basics (Day 2)</title>
+      <link>http://localhost:1313/posts/pages/asyncio/asyncio2/</link>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/asyncio/asyncio2/</guid>
+      <description>how to write programs using this single-threaded concurrency model with asyncio</description>
+    </item>
+    <item>
+      <title>Async io : Async io Intro (Day 1)</title>
+      <link>http://localhost:1313/posts/pages/asyncio/asyncio1/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/asyncio/asyncio1/</guid>
+      <description>An introduction to asynchronous programming in Python using asyncio.</description>
+    </item>
     <item>
       <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
       <link>http://localhost:1313/posts/pages/python/python_basics/</link>
