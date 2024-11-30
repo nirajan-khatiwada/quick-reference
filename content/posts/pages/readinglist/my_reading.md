@@ -10,22 +10,36 @@ images: ["/images/learn.jpg"]  # For social share
 
 # Learning Journey
 
+
+
 ## Topics I Have Learned So Far
-- Docker
-- Linux
-- Celery
-- Django Channels
-- Git
-- Python
-- Django
-- JavaScript
-- React Basics
-- HTML
-- CSS
-- Tailwind Css
+- [ ] Docker
+- [ ] Linux
+- [ ] Celery
+- [ ] Django Channels
+- [ ] Git
+- [x] Python
+- [ ] Django
+- [ ] JavaScript
+- [ ] React Basics
+- [x] HTML
+- [ ] CSS
+- [ ] Tailwind Css
 ---
 
-## What I Plan to Learn Next
+## What I Plan to Learn In third Semester
+- [ ] Django Rest Framework (DRF)
+- [ ] Django ORM Deep Dive
+- [ ] React Advanced
+- [ ] Git Advanced
+- [ ] Docker Advanced
+- [ ] WebSOcket Deep Dive in Django
+- [ ] Celery Deep Dive
+
+---
+
+
+## Plan to learn in future
 - WebSocket Deep Dive in Django
 - Celery Deep Dive
 - Redis for Cache
@@ -37,7 +51,6 @@ images: ["/images/learn.jpg"]  # For social share
 - React Advanced
 - Git Advanced
 - Django Docs+Advance Like class based views
----
 
 
 ## Additional Topics for Future Learning
