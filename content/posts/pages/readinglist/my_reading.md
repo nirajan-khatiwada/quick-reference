@@ -20,11 +20,9 @@ images: ["/images/learn.jpg"]  # For social share
 - Django
 - JavaScript
 - React Basics
-- Virtualenv
 - HTML
 - CSS
 - Tailwind Css
-- C and C++ Basics
 ---
 
 ## What I Plan to Learn Next
