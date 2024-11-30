@@ -146,6 +146,8 @@ import asyncio
  asyncio.run(main())
  ```
 
+ > Note: Coroutine will only run when we use `await` keyword. If we call the coroutine directly it will return a coroutine object.
+
  In above code  we pause execution twice. We first await the call to add_one(1). Once
  we have the result, the main function will be “unpaused,” and we will assign the return
  value from add_one(1) to the variable one_plus_one, which in this case will be two.
@@ -379,4 +381,134 @@ This is illustrated in figure
  of these tasks, we would still take roughly 3 seconds, giving us a 10-fold
  speedup. This is the power of concurrency in asyncio.
 
+
+
  
+
+## `asyncio.gather` function
+Gather function is a quick way to run multiple tasks concurrently and wait for all of them to complete. It takes in an iterable of awaitables and returns a single awaitable that will yield results in the order they were created. This is useful when we want to run multiple tasks concurrently and wait for all of them to finish before proceeding. 
+
+``` python
+import asyncio
+from util.delay_functions import delay
+
+async def main():
+    # Create three tasks that take 3 seconds to complete and handel using asyncio.gather
+    results = await asyncio.gather(
+        delay(3),
+        delay(3),
+        delay(3)
+    )
+
+    print(results)
+
+asyncio.run(main())
+```
+
+> Note : For understanding You can use this logic . There is a task queue and event loop. When we 
+only await coroutine there is only one task in the task queue and event loop .
+>> coroutine need to await for running the task i.e keep in the task queue and eventloop if we directly run coroutine it will just give us coroutine object.
+
+> When we use asyncio.createtask() there are as much task in the task queue as the number of tasks created and event loop will run all the tasks concurrently also when we await new coroutine it will be added to the task queue and event loop will run it concurrently.
+>>It return a task object instantly and run all the task concurrently i.e keep in the task queue and event loop without awaiting but does not wait for the task to finish it need to be awaited to get the proper result.
+
+> When we use asyncio.gather() it will run all the tasks concurrently and wait for all of them to finish before proceeding.
+>> It need to be awaited to keep all the task in the task queue and event loop and wait for all of them to finish before proceeding.After finishing all the task it will return the result in the order they were created and jump to the next line of code of the main coroutine.
+
+
+
+
+# 3. Synchronization Premitives
+
+- Locks
+- Semaphores
+
+## 3.1 Locks
+
+Locks are a synchronization primitive that allows us to limit access to a shared resource to only one coroutine at a time. This is useful when we have a resource that can only be accessed by one coroutine at a time, like a file or a database connection. Locks are created using the asyncio.Lock class and can be acquired using the acquire method and released using the release method.
+
+#basic example of lock
+``` python
+import asyncio
+
+async def locking(lock):
+    print('Waiting for the lock')
+    async with lock:
+        print('Acquired the lock')
+        await asyncio.sleep(2)
+    print('Released the lock')
+
+async def main():
+    lock = asyncio.Lock()
+    await asyncio.gather(
+        locking(lock),
+        locking(lock),
+        locking(lock)
+    )
+
+asyncio.run(main())
+```
+
+Output:
+```
+Waiting for the lock
+Acquired the lock
+Waiting for the lock
+Waiting for the lock
+Released the lock
+Acquired the lock
+Released the lock
+Acquired the lock
+Released the lock
+```
+
+In this example, we create a lock using asyncio.Lock and pass it to the locking coroutine. We then use the async with statement to acquire the lock and release it when we are done. When we run the program, we can see that only one coroutine can acquire the lock at a time, and the other coroutines have to wait until the lock is released.
+
+
+## 3.2 Semaphores
+
+Semaphores are a synchronization primitive that allows us to limit access to a shared resource to a fixed number of coroutines at a time. This is useful when we have a resource that can be accessed by a limited number of coroutines, like a connection pool or a web API. Semaphores are created using the asyncio.Semaphore class and can be acquired using the acquire method and released using the release method.
+
+#basic example of semaphore
+``` python
+import asyncio
+
+async def semaphoring(semaphore):
+    async with semaphore:
+        print('Acquired the semaphore')
+        await asyncio.sleep(2)
+    print('Released the semaphore')
+
+async def main():
+    semaphore = asyncio.Semaphore(2)
+    await asyncio.gather(
+        semaphoring(semaphore),
+        semaphoring(semaphore),
+        semaphoring(semaphore),
+        semaphoring(semaphore)
+    )
+
+asyncio.run(main())
+```
+
+Output:
+```
+Acquired the semaphore
+Acquired the semaphore
+Acquired the semaphore
+Released the semaphore
+Released the semaphore
+Released the semaphore
+Acquired the semaphore
+Released the semaphore
+```
+
+In this example, we create a semaphore with a limit of 2 using asyncio.Semaphore and pass it to the semaphoring coroutine. We then use the async with statement to acquire the semaphore and release it when we are done. When we run the program, we can see that only two coroutines can acquire the semaphore at a time, and the other coroutines have to wait until the semaphore is released.
+
+
+## Some popular asyncio libraries
+- aiohttp: An HTTP client and server library for asyncio.
+- fastapi: A modern web framework for building APIs with Python 3.6+ based on standard Python type hints.
+- aiofiles: A file operations library for asyncio.
+
+
