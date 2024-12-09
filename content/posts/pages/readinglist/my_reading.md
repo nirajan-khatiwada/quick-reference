@@ -18,13 +18,14 @@ images: ["/images/learn.jpg"]  # For social share
 - [ ] Celery
 - [ ] Django Channels
 - [ ] Git
+- [ ] Celery
 - [x] Python
 - [ ] Django
 - [ ] JavaScript
 - [ ] React Basics
 - [x] HTML
-- [ ] CSS
-- [ ] Tailwind Css
+- [x] CSS
+- [x] Tailwind Css
 ---
 
 ## What I Plan to Learn In third Semester
