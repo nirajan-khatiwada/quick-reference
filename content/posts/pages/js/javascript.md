@@ -6,6 +6,7 @@ author: "Nirajan Khatiwada"
 categories: ["Javascript"]
 tags: ["JavaScript", "DOM", "ES6", "Programming Guide"]
 toc: true
+summary: "A comprehensive guide covering JavaScript fundamentals"
 weight: 1
 draft: false
 ---
