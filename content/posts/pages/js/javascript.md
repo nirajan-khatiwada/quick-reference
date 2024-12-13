@@ -1,15 +1,16 @@
+
 ---
-title: "JavaScript Complete Guide"
-date: 2024-01-20
-description: "A comprehensive guide covering JavaScript fundamentals, including variables, data types, functions, DOM manipulation, and advanced concepts."
-author: "Nirajan Khatiwada"
-categories: ["Javascript"]
-tags: ["JavaScript", "DOM", "ES6", "Programming Guide"]
-toc: true
-summary: "A comprehensive guide covering JavaScript fundamentals"
-weight: 1
-draft: false
+title: "JavaScript Reference Guide" #this is title and title for social share
+date: 2024-10-18
+description: "A comprehensive guide covering JavaScript fundamentals, DOM manipulation, error handling, and asynchronous programming." #description for social share
+ShowToc: true
+#tocopen: true
+categories: ["JavaScript"]
+tags: ["JavaScript", "Web Development", "Programming", "DOM", "ES6"] #this is keyword
+summary: "A complete reference guide for JavaScript including data types, functions, DOM manipulation, and modern ES6+ features" #this come in post
+images: ["/images/javascript.png"] #for social share
 ---
+
 # JavaScript Reference Guide
 
 ## 1. Console.log() Method
