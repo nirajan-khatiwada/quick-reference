@@ -688,20 +688,7 @@ An IIFE is a function that runs immediately after its definition, creating a loc
   } else {
       console.log("None");
   }
-  ```
-- **switch Statement:** Evaluates an expression and executes code blocks based on matching case values.
-  ```javascript
-  switch (a) {
-      case 1:
-          console.log(1);
-          break;
-      case 2:
-          console.log(2);
-          break;
-      default:
-          console.log(3);
-  }
-  ```
+
 
 ### Truthy and Falsy Values:
 - **Falsy Values:** Values that evaluate to false in a boolean context.
