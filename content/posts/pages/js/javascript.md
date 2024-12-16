@@ -483,18 +483,7 @@ console.log(5 % 3); // 2
   console.log(finalData); // Output: [1, 4, 1, 2, 3, 4]
   ```
 
-### 15. Flat
-- **Description:** Creates a new array with all sub-array elements concatenated into it recursively up to the specified depth.
-- **Syntax:** `array.flat(depth)`
-- **Returns:** A new array with the specified depth of nesting flattened.
-- **Example:**
-  ```javascript
-  let nestedArray = [1, [2, 3], [4, [5, 6]]];
-  console.log(nestedArray.flat()); // Output: [1, 2, 3, 4, [5, 6]]
-  console.log(nestedArray.flat(2)); // Output: [1, 2, 3, 4, 5, 6]
-  ```
-
-### 16. Array Destructuring
+### 15. Array Destructuring
 - **Description:** Allows unpacking values from arrays into distinct variables in a concise and readable way.
 - **Basic Syntax:** `const [var1, var2, var3] = array;`
 - **Example:**
@@ -506,17 +495,7 @@ console.log(5 % 3); // 2
   console.log(third);  // Output: 3
   ```
 
-### 17. Finding Index of a Substring
-- **Description:** Finds the first occurrence of a specified substring in a string.
-- **Syntax:** `string.indexOf(substring)`
-- **Returns:** The index of the first occurrence of the substring (or -1 if not found).
-- **Example:**
-  ```javascript
-  let a = '  My name is nirajan ';
-  console.log(a.indexOf('n')); // Output: 10
-  ```
-
-### 18. in Operator
+### 16. in Operator
 - **Description:** Checks if a property exists in an object.
 - **Syntax:** `property in object`
 - **Returns:** true if the property exists, otherwise false.
