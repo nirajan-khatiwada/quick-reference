@@ -495,16 +495,6 @@ console.log(5 % 3); // 2
   console.log(third);  // Output: 3
   ```
 
-### 16. in Operator
-- **Description:** Checks if a property exists in an object.
-- **Syntax:** `property in object`
-- **Returns:** true if the property exists, otherwise false.
-- **Example:**
-  ```javascript
-  let obj = { name: 'Niraj', age: 20 };
-  console.log('name' in obj); // Output: true
-  console.log('gender' in obj); // Output: false
-  ```
 
 ## 10. Object in Js
 ### i. Defining an Object
