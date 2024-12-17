@@ -1369,25 +1369,4 @@ try {
 // "Error: Division by zero is not allowed"
 ```
 
-## 6. Promises
 
-Promises are used for handling asynchronous operations.
-
-```javascript
-const myPromise = new Promise((resolve, reject) => {
-    // Async operation
-    const success = true;
-    if (success) {
-        resolve('Operation successful');
-    } else {
-        reject('Operation failed');
-    }
-});
-
-myPromise
-    .then(result => console.log(result))
-    .catch(error => console.log(error));
-
-// Output:
-// "Operation successful"
-```
