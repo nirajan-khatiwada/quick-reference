@@ -887,21 +887,50 @@ do {
 - **Named Export:** Multiple per module, use curly braces during import.
 
 ## 16. Error Handling
-### Try-Catch
-The try...catch statement is used for error handling in JavaScript. It allows you to catch exceptions and handle them gracefully without breaking the execution of the program.
+
+Try-catch blocks are used to handle errors gracefully.
+
 ```javascript
 try {
-    // Code that may throw an error
-    let result = riskyOperation();
+    // Code that might throw an error
+    let result = nonExistentFunction();
 } catch (error) {
     // Code to handle the error
-    console.error('An error occurred:', error);
+    console.log('An error occurred:', error.message);
+} finally {
+    // Code that always executes
+    console.log('This always executes');
 }
+
+// Output:
+// "An error occurred: nonExistentFunction is not defined"
+// "This always executes"
 ```
 
-### Throwing Errors in JavaScript:
-- **Purpose:** Use the throw statement to create custom error messages and stop code execution.
-- **Syntax:** `throw new Error('Error message');`
+### 16.1. Custom Error Throwing
+
+You can throw custom errors using the throw statement.
+
+```javascript
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error('Division by zero is not allowed');
+    }
+    return a / b;
+}
+
+try {
+    console.log(divide(4, 2));
+    console.log(divide(4, 0));
+} catch (error) {
+    console.log('Error:', error.message);
+}
+
+// Output:
+// 2
+// "Error: Division by zero is not allowed"
+```
+
 
 ## 17. Timers
 ### setTimeout
@@ -933,56 +962,45 @@ Cancels a timeout previously established by setTimeout.
 clearTimeout(timeoutId);
 ```
 
-## 18. Promises
-Promises represent the eventual completion (or failure) of an asynchronous operation and its resulting value. They are used to handle asynchronous operations in JavaScript.
-### i. Creating a Promise
+## 18. Local Storage
+Local storage is a way to store data in the browser that persists even after the browser is closed.
+
+### Storing Data
 ```javascript
-const myPromise = new Promise((resolve, reject) => {
-    if (/* some condition */) {
-        resolve('Success!');
-    } else {
-        reject('Failure!');
-    }
-});
+localStorage.setItem('name', 'Nirajan');
 ```
 
-### ii. Using Promises
+### Retrieving Data
 ```javascript
-myPromise.then(result => {
-    console.log(result); // Success!
-}).catch(error => {
-    console.error(error); // Failure!
-});
+const name = localStorage.getItem('name');
+console.log(name); // Output: Nirajan
 ```
 
-## 19. Async/Await
-Async/Await is syntactic sugar over Promises, making asynchronous code easier to write and read.
-**Note:** use Async function if it has await inside it and also we can await promises only
-async and await are used in JavaScript to handle asynchronous operations more easily:
-- **async:** Declares a function that returns a Promise.
-- **await:** Pauses the execution of an async function until the Promise resolves and returns the result.
 
-**Example:**
-```javascript
-async function fetchData() {
-  let data = await someAsyncOperation(); // Waits for the promise to resolve
-  console.log(data);
-}
-```
-This makes asynchronous code easier to read and write compared to using Promises directly.
+## 19. JSON
+JSON (JavaScript Object Notation) is a lightweight data interchange format that is easy for humans to read and write and easy for machines to parse and generate.
 
-### Using Async/Await
+### Converting Objects to JSON
 ```javascript
-async function fetchData() {
-    try {
-        let response = await fetch('https://api.example.com/data');
-        let data = await response.json();
-        console.log(data);
-    } catch (error) {
-        console.error('Error fetching data:', error);
-    }
-}
+const person = {
+    name: 'Nirajan',
+    age: 20
+};
+
+const json = JSON.stringify(person);
+console.log(json); // Output: {"name":"Nirajan","age":20}
 ```
+
+### Converting JSON to Objects
+```javascript
+const json = '{"name":"Nirajan","age":20}';
+const person = JSON.parse(json);
+console.log(person.name); // Output: Nirajan
+```
+
+
+
+
 
 ## 20. Fetch API
 Fetch is used to make HTTP requests and returns a promise that resolves to the response of the request.
@@ -993,380 +1011,4 @@ fetch('https://api.example.com/data')
     .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
 ```
-
-## JavaScript Reference Behavior: Objects and Arrays
-### Introduction
-In JavaScript, both objects and arrays are considered reference types. This means that when you assign an object or an array to another variable, you’re not creating a new copy of that object or array. Instead, the new variable holds a reference to the original object or array in memory. Understanding this concept is crucial because it directly affects how data is manipulated and shared within your code.
-
-### Object Reference Behavior
-#### 1. Overview
-When you work with objects in JavaScript, it's essential to recognize that assigning an object to a new variable does not create a new object. Instead, it creates a reference to the original object. This means that any changes made through the new reference will affect the original object.
-
-#### 2. Example
-```javascript
-const person = { 
-name: "Alice", 
-address: { 
-city: "Wonderland" 
-} 
-}; 
-const newPerson = person.address;  // newPerson now references the same 
-object as person.address 
-newPerson.city = "New Wonderland";  // modifying newPerson affects the 
-original object 
-console.log(person); 
-// Output: { name: 'Alice', address: { city: 'New Wonderland' } } 
-```
-
-#### 3. Explanation
-- **Object Reference:** When you create `const newPerson = person.address;`, you're not making a copy of the address object. Instead, newPerson references the same address object that person.address references. Thus, when you update `newPerson.city = "New Wonderland";`, it directly modifies the person.address object because both newPerson and person.address are pointing to the same location in memory.
-- **Output:** The console logs the person object, which now reflects the change: `{ name: 'Alice', address: { city: 'New Wonderland' } }`.
-
-### Array Reference Behavior
-#### 1. Overview
-Arrays in JavaScript behave similarly to objects in terms of reference handling. When you assign an array to another variable, you create a reference to the original array. As a result, any modifications through this reference will affect the original array.
-
-#### 2. Example
-```javascript
-const numbers = [1, 2, 3]; 
-const moreNumbers = numbers;  // moreNumbers now references the same array as 
-numbers 
-moreNumbers[0] = 99;  // modifying moreNumbers affects the original array 
-console.log(numbers);  // Output: [99, 2, 3] 
-```
-
-#### 3. Explanation
-- **Array Reference:** When you create `const moreNumbers = numbers;`, you're not creating a new array. Instead, moreNumbers becomes a reference to the same array that numbers references. Any changes to moreNumbers, such as `moreNumbers[0] = 99`, directly modify the numbers array because both variables point to the same array in memory.
-- **Output:** The console logs the numbers array, which now reflects the change: `[99, 2, 3]`.
-
-### Key Takeaways
-1. **Reference Types:** Both objects and arrays are reference types in JavaScript, meaning that variables assigned to them hold references to the same data in memory.
-2. **Shared Modifications:** Changes made to an object or array through one reference will affect all other references to that same object or array.
-3. **Memory Efficiency:** This reference behavior allows for memory-efficient data management but requires careful handling to avoid unintended side effects.
-
-## JavaScript References with filter() and find()
-In JavaScript, the way references work with methods like filter() and find() is different, leading to distinct behaviors. Understanding these differences is crucial for working effectively with arrays and avoiding unintended side effects.
-
-### filter(): Creating a New Array
-#### 1. Overview
-The filter() method in JavaScript creates a new array that contains only the elements that satisfy the provided condition. This means that a new array is returned, and it does not affect the original array. However, if the elements in the array are objects, the references to these objects are retained, meaning any modifications to the objects in the new array will also affect the original array.
-
-#### 2. Example
-```javascript
-const originalArray = [ 
-{ id: 1, name: "Alice" }, 
-{ id: 2, name: "Bob" }, 
-{ id: 3, name: "Charlie" } 
-]; 
-const filteredArray = originalArray.filter(item => item.id !== 2); 
-// Modify an object in the filtered array 
-filteredArray[0].name = "Alicia"; 
-console.log(originalArray); 
-// Output: [{ id: 1, name: 'Alicia' }, { id: 2, name: 'Bob' }, { id: 3, name: 
-'Charlie' }] 
-console.log(filteredArray); 
-// Output: [{ id: 1, name: 'Alicia' }, { id: 3, name: 'Charlie' }] 
-```
-
-#### 3. Explanation
-- **New Array Creation:** The filter() method creates a new array (filteredArray) that includes all elements from originalArray except the one with id 2. However, the objects within the new array are still references to the original objects in originalArray.
-- **Shared References:** When you modify the name property of the first object in filteredArray (`filteredArray[0].name = "Alicia";`), it also changes in originalArray because both arrays reference the same object in memory.
-- **Output:** The original array shows that the name of the first object has been changed to "Alicia", indicating that the object references are shared.
-
-### find(): Returning a Single Element Reference
-#### 1. Overview
-The find() method returns the first element in the array that satisfies the provided condition. This element is not a copy but a reference to the original element in the array. As a result, any modification to this element directly affects the original array.
-
-#### 2. Example
-```javascript
-const originalArray = [ 
-{ id: 1, name: "Alice" }, 
-{ id: 2, name: "Bob" }, 
-{ id: 3, name: "Charlie" } 
-]; 
-const foundItem = originalArray.find(item => item.id === 2); 
-// Modify the found item 
-foundItem.name = "Robert"; 
-console.log(originalArray); 
-// Output: [{ id: 1, name: 'Alice' }, { id: 2, name: 'Robert' }, { id: 3, 
-name: 'Charlie' }] 
-console.log(foundItem); 
-// Output: { id: 2, name: 'Robert' } 
-```
-
-#### 3. Explanation
-- **Element Reference:** The find() method returns a reference to the first element that meets the condition (item.id === 2). In this case, foundItem references the same object in memory as the element in originalArray with id: 2.
-- **Direct Modification:** When you modify the name property of foundItem (`foundItem.name = "Robert";`), it directly alters the corresponding object in originalArray because they are the same object in memory.
-- **Output:** The original array now shows that the name of the object with id: 2 has been changed to "Robert", demonstrating that the reference was modified.
-
-### Key Differences Between filter() and find()
-1. **New Array vs. Single Element:**
-  - **filter():** Returns a new array containing references to elements that meet the condition.
-  - **find():** Returns a reference to the first element that meets the condition.
-2. **Impact on Original Array:**
-  - **filter():** The original array remains unchanged, but the objects within the new array are still references to the original objects.
-  - **find():** The original array can be directly modified through the returned element.
-3. **Use Cases:**
-  - **Use filter() when you need a subset of the original array without altering it directly.**
-  - **Use find() when you need to retrieve and possibly modify a specific element from the array.**
-
-### Conclusion
-Understanding how references work with methods like filter() and find() is crucial in JavaScript. While filter() returns a new array that retains references to the original objects, find() returns a direct reference to a single element. Being aware of these behaviors helps prevent unintended modifications to your data.
-
-# DOM (Document Object Model)
-
-## Theory
-The DOM is a programming interface for HTML and XML documents. It represents the document as a tree structure where each node is an object representing a part of the document. This allows programming languages to interact with the document structure, style, and content.
-
-## 1. DOM Selection Methods
-
-### a) document.getElementById()
-Selects an element by its ID attribute.
-
-```html
-<!-- HTML -->
-<div id="myDiv">Hello</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('myDiv');
-console.log(element.innerText);
-
-// Output:
-// "Hello"
-```
-
-### b) document.getElementsByClassName()
-Returns a collection of elements with the specified class name.
-
-```html
-<!-- HTML -->
-<div class="myClass">Item 1</div>
-<div class="myClass">Item 2</div>
-```
-
-```javascript
-// JavaScript
-const elements = document.getElementsByClassName('myClass');
-for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i].innerText);
-}
-
-// Output:
-// "Item 1"
-// "Item 2"
-```
-
-### c) document.getElementsByTagName()
-Returns a collection of elements with the specified tag name.
-
-```html
-<!-- HTML -->
-<p>Paragraph 1</p>
-<p>Paragraph 2</p>
-```
-
-```javascript
-// JavaScript
-const paragraphs = document.getElementsByTagName('p');
-for (let i = 0; i < paragraphs.length; i++) {
-    console.log(paragraphs[i].innerText);
-
-// Output:
-// "Paragraph 1"
-// "Paragraph 2"
-```
-
-### d) document.querySelector()
-Returns the first element that matches the CSS selector.
-
-```html
-<!-- HTML -->
-<div class="myClass">First Element</div>
-<div class="myClass">Second Element</div>
-```
-
-```javascript
-// JavaScript
-const firstElement = document.querySelector('.myClass');
-console.log(firstElement.innerText);
-
-// Output:
-// "First Element"
-```
-
-### e) document.querySelectorAll()
-Returns all elements that match the CSS selector.
-
-```html
-<!-- HTML -->
-<div class="myClass">First Element</div>
-<div class="myClass">Second Element</div>
-```
-
-```javascript
-// JavaScript
-const allElements = document.querySelectorAll('.myClass');
-allElements.forEach(el => console.log(el.innerText));
-
-// Output:
-// "First Element"
-// "Second Element"
-```
-
-## 2. DOM Properties
-
-### a) innerText
-Gets or sets the text content of an element.
-
-```html
-<!-- HTML -->
-<div id="textElement">Original Text</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('textElement');
-element.innerText = 'Hello World';
-console.log(element.innerText);
-
-// Output:
-// "Hello World"
-```
-
-### b) innerHTML
-Gets or sets the HTML content of an element.
-
-```html
-<!-- HTML -->
-<div id="htmlElement">Original Content</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('htmlElement');
-element.innerHTML = '<span>Hello World</span>';
-console.log(element.innerHTML);
-
-// Output:
-// "<span>Hello World</span>"
-```
-
-### c) textContent
-Gets or sets the text content of a node and its descendants.
-
-```html
-<!-- HTML -->
-<div id="contentElement">Original Content</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('contentElement');
-element.textContent = 'Hello World';
-console.log(element.textContent);
-
-// Output:
-// "Hello World"
-```
-
-### d) style
-Gets or sets inline styles of an element.
-
-```html
-<!-- HTML -->
-<div id="styledElement">Style Me</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('styledElement');
-element.style.backgroundColor = 'red';
-element.style.fontSize = '16px';
-
-// Result: Element with red background and font size of 16px
-```
-
-## 3. Events in JavaScript
-
-Events are actions that occur in a web page that can be detected by JavaScript.
-
-### Click Event Example
-```html
-<!-- HTML -->
-<button id="clickButton">Click Me</button>
-```
-
-```javascript
-// JavaScript
-const button = document.getElementById('clickButton');
-button.addEventListener('click', function(e) {
-    console.log('Clicked!');
-});
-
-// Output when clicked:
-// "Clicked!"
-```
-
-### Mouse Over Event Example
-```html
-<!-- HTML -->
-<div id="hoverElement">Hover Over Me</div>
-```
-
-```javascript
-// JavaScript
-const element = document.getElementById('hoverElement');
-element.addEventListener('mouseover', function(e) {
-    console.log('Mouse over!');
-});
-
-// Output when hovered:
-// "Mouse over!"
-```
-
-## 4. Error Handling
-
-Try-catch blocks are used to handle errors gracefully.
-
-```javascript
-try {
-    // Code that might throw an error
-    let result = nonExistentFunction();
-} catch (error) {
-    console.log('An error occurred:', error.message);
-} finally {
-    console.log('This always executes');
-}
-
-// Output:
-// "An error occurred: nonExistentFunction is not defined"
-// "This always executes"
-```
-
-## 5. Custom Error Throwing
-
-You can throw custom errors using the throw statement.
-
-```javascript
-function divide(a, b) {
-    if (b === 0) {
-        throw new Error('Division by zero is not allowed');
-    }
-    return a / b;
-}
-
-try {
-    console.log(divide(4, 2));
-    console.log(divide(4, 0));
-} catch (error) {
-    console.log('Error:', error.message);
-}
-
-// Output:
-// 2
-// "Error: Division by zero is not allowed"
-```
-
 
