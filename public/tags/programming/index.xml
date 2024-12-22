@@ -9,7 +9,7 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.139.2</generator>
+    <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/programming/index.xml" rel="self" type="application/rss+xml" />
@@ -110,6 +110,34 @@
       <pubDate>Sun, 10 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_object_oriented1/</guid>
       <description>This is the first part of series Object Oriented Programming in Python</description>
+    </item>
+    <item>
+      <title>Javascript : Dom and Events</title>
+      <link>http://localhost:1313/posts/pages/js/domevents/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/js/domevents/</guid>
+      <description>A comprehensive guide covering DOM manipulation And Events</description>
+    </item>
+    <item>
+      <title>Asynchronous Programming in JavaScript</title>
+      <link>http://localhost:1313/posts/pages/js/asyncronous/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/js/asyncronous/</guid>
+      <description>A comprehensive guide covering asynchronous programming in JavaScript, including promises and async/await.</description>
+    </item>
+    <item>
+      <title>JavaScript Reference Behavior: Objects and Arrays</title>
+      <link>http://localhost:1313/posts/pages/js/referencebehavious/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/js/referencebehavious/</guid>
+      <description>Understanding reference types in JavaScript, focusing on objects and arrays, and their behavior with methods like filter() and find().</description>
+    </item>
+    <item>
+      <title>JavaScript Reference Guide</title>
+      <link>http://localhost:1313/posts/pages/js/javascript/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/js/javascript/</guid>
+      <description>A comprehensive guide covering JavaScript fundamentals, DOM manipulation, error handling, and asynchronous programming.</description>
     </item>
   </channel>
 </rss>

@@ -9,7 +9,7 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.139.2</generator>
+    <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -140,6 +140,48 @@
       <description></description>
     </item>
     <item>
+      <title>DOM</title>
+      <link>http://localhost:1313/tags/dom/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dom/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ES6</title>
+      <link>http://localhost:1313/tags/es6/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/es6/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JavaScript</title>
+      <link>http://localhost:1313/tags/javascript/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sat, 19 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Async/Await</title>
+      <link>http://localhost:1313/tags/async/await/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/async/await/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Asynchronous</title>
+      <link>http://localhost:1313/tags/asynchronous/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/asynchronous/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cheat Sheet</title>
       <link>http://localhost:1313/tags/cheat-sheet/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
@@ -235,6 +277,20 @@
       <link>http://localhost:1313/tags/networking/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Promises</title>
+      <link>http://localhost:1313/tags/promises/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/promises/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Reference Types</title>
+      <link>http://localhost:1313/tags/reference-types/</link>
+      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/reference-types/</guid>
       <description></description>
     </item>
     <item>
