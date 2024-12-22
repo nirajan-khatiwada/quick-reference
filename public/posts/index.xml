@@ -63,6 +63,13 @@
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
+      <title>React Quick Reference Guide</title>
+      <link>http://localhost:1313/posts/pages/react/react/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react/</guid>
+      <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
       <link>http://localhost:1313/posts/pages/python/python_error_handeling/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
@@ -204,22 +211,32 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react/</link>
+      <link>http://localhost:1313/posts/pages/react/react1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react/</guid>
-      <description>&lt;h2 id=&#34;react&#34;&gt;React&lt;/h2&gt;
-&lt;p&gt;To create a React app we use Vite and its command is:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm create vite@latest
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;component&#34;&gt;Component&lt;/h3&gt;
-&lt;p&gt;In React Application one page is broken down into multiple components as components allow:&lt;/p&gt;
+      <guid>http://localhost:1313/posts/pages/react/react1/</guid>
+      <description>&lt;h2 id=&#34;17-hooks-in-react&#34;&gt;17. Hooks in React&lt;/h2&gt;
+&lt;p&gt;Anythong that start with prefix &lt;code&gt;use&lt;/code&gt; is considered as a hook in react&lt;/p&gt;
+&lt;h3 id=&#34;171-rules-of-hooks&#34;&gt;17.1. Rules of Hooks&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Reusability&lt;/strong&gt;: For example, we can create one component for cards and use it to create multiple cards with different data.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Related code lives together&lt;/strong&gt;: Related items (JS code) are stored together.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Separation of logic&lt;/strong&gt;: Different components handle different data and logic.&lt;/li&gt;
+&lt;li&gt;Only Call Hook inside a component function&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h3 id=&#34;diagram&#34;&gt;Diagram&lt;/h3&gt;
-&lt;p&gt;&lt;img loading=&#34;lazy&#34; src=&#34;images%5creact%5ccomponents.png&#34; alt=&#34;Component Diagram&#34;  /&gt;
-&lt;/p&gt;</description>
+&lt;p&gt;correct:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;     &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setVal&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Incorrect:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setVal&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Only Call Hooks at the Top Level
+Hook must not be called inside code statement (e.g., inside an if statement, loop, or nested function).
+correct:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;val&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setVal&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;incorrect:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

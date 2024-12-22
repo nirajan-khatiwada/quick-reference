@@ -63,6 +63,13 @@
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
+      <title>React Quick Reference Guide</title>
+      <link>http://localhost:1313/posts/pages/react/react/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react/</guid>
+      <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
       <link>http://localhost:1313/posts/pages/python/python_error_handeling/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>
