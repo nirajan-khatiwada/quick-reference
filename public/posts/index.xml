@@ -216,5 +216,14 @@
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
     </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>&lt;h2 id=&#34;22-fragments-in-react&#34;&gt;22. Fragments in React&lt;/h2&gt;
+&lt;p&gt;Fragments are a way to group multiple elements in React without adding extra nodes to the DOM. Fragments are useful when you want to return multiple elements from a component, but you don&amp;rsquo;t want to add an extra div or span element to the DOM.&lt;/p&gt;
+&lt;p&gt;Fragments are represented by the &lt;code&gt;&amp;lt;Fragment&amp;gt;&lt;/code&gt; tag or the shorthand syntax &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;. You can use fragments to return multiple elements from a component without adding extra nodes to the DOM.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

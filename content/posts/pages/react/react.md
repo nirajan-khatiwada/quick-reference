@@ -444,7 +444,7 @@ import './Header.css'
 - Props are used to pass data from parent component to child component.
 - It is used to reuse the same component with different data.
 - Props are passed as attributes to the component.
-- Prop accept any type of value like string, number, array, object, function,bool etc.
+- Prop accept any type of value like string, number, array, object, function,compenent,jsx bool etc.
 
 ### 10.1 Passing Props from Parent to Child Component
 - Parent Component

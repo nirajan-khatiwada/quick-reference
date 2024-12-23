@@ -166,3 +166,124 @@ function App(){
 export default App;
 ```
 In the above example, we have a functional component `App` that uses the `useState` hook to manage the state of the `count` variable. The initial value of `count` is set to `0` using `useState(0)`. The `setCount` function is used to update the value of `count` when the button is clicked. The `count` value is displayed in the UI, and clicking the button increments the count value by `1`.
+
+## 20.Conditional Rendering in React
+Conditional rendering is a technique used to render different components or elements based on certain conditions. In React, conditional rendering can be achieved using ternary operators, and logical operators like `&&` .
+
+### 20.1. Ternary Operator
+The ternary operator is a concise way to write conditional statements in JavaScript. It consists of a condition followed by a question mark `?`, an expression to execute if the condition is true, a colon `:`, and an expression to execute if the condition is false.
+
+Example:
+```jsx
+function App() {
+  const isLoggedIn = true;
+  return (
+    <div>
+      {isLoggedIn ? <p>Welcome, User!</p> : <p>Please log in</p>}
+    </div>
+  );
+}
+```
+
+Also We can write jsx code in variable and use it in return statement
+```jsx
+function App() {
+  const isLoggedIn = true;
+  const welcomeMessage=<p>Welcome, User!</p>;
+  const loginMessage=<p>Please log in</p>;
+  return (
+    <div>
+      {isLoggedIn ? welcomeMessage : loginMessage}
+    </div>
+  );
+}
+```
+
+### 20.2. Logical && Operator
+The logical `&&` operator is another way to conditionally render elements in React. The `&&` operator works by evaluating the expression on the left side of the `&&` operator. If the expression is true, the expression on the right side of the `&&` operator is executed. If the expression is false, the right side is not executed.
+
+Example:
+```jsx
+function App() {
+  const isLoggedIn = true;
+  return (
+    <div>
+      {isLoggedIn && <p>Welcome, User!</p>}
+      {isLoggedIn && <button>Logout</button>}
+      {!isLoggedIn && <p>Please log in</p>}
+    </div>
+  );
+}
+```
+
+Also We can write jsx code in variable and use it in return statement
+
+```jsx
+function App() {
+  const isLoggedIn = true;
+  const welcomeMessage=<p>Welcome, User!</p>;
+  const logoutButton=<button>Logout</button>;
+  const loginMessage=<p>Please log in</p>;
+  return (
+    <div>
+      {isLoggedIn && welcomeMessage}
+      {isLoggedIn && logoutButton}
+      {!isLoggedIn && loginMessage}
+    </div>
+  );
+}
+```
+
+## 21.Outputting list data dynamically
+In react we use map function to output list data dynamically as using map.
+
+### 21.1. Have a list of data
+You typically store the list in an array, which might come from a state, props, or external data source like an API
+```jsx
+const data = [
+  { id: 1, name: "John" },
+  { id: 2, name: "Doe" },
+  { id: 3, name: "Jane" },
+];
+```
+
+### 21.2 Using map function to output list data
+```jsx
+const listItems = data.map((item) => <li key={item.id}>{item.name}</li>);  
+```
+Key is used to uniquely identify each element in the list. It helps React identify which items have changed, are added, or are removed.It can be number or string.
+
+### 21.3. Rendering the list
+Use {} to embed the transformed list inside your component’s JSX.
+```jsx 
+<ul>{listItems}</ul>;
+```
+
+### 21.4. Putting it all together
+```jsx
+function App() {
+  const data = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Doe" },
+    { id: 3, name: "Jane" },
+  ];
+
+  const listItems = data.map((item) => <li key={item.id}>{item.name}</li>);
+
+  return <ul>{listItems}</ul>;
+}
+```
+
+### 21.5 Another form
+```jsx
+function App() {
+  const data = [
+    { id: 1, name: "John" },
+    { id: 2, name: "Doe" },
+    { id: 3, name: "Jane" },
+  ];
+  return <ul>{data.map((item) => <li key={item.id}>{item.name}</li>);
+}</ul>;
+}
+```
+
