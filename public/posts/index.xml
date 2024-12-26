@@ -63,6 +63,13 @@
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
+      <title>React Advanced Concepts: State Management and Component Patterns</title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
+    </item>
+    <item>
       <title>React Hooks: A Comprehensive Guide</title>
       <link>http://localhost:1313/posts/pages/react/react1/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
@@ -218,12 +225,14 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <link>http://localhost:1313/posts/pages/react/react4/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
-      <description>&lt;h2 id=&#34;22-fragments-in-react&#34;&gt;22. Fragments in React&lt;/h2&gt;
-&lt;p&gt;Fragments are a way to group multiple elements in React without adding extra nodes to the DOM. Fragments are useful when you want to return multiple elements from a component, but you don&amp;rsquo;t want to add an extra div or span element to the DOM.&lt;/p&gt;
-&lt;p&gt;Fragments are represented by the &lt;code&gt;&amp;lt;Fragment&amp;gt;&lt;/code&gt; tag or the shorthand syntax &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;. You can use fragments to return multiple elements from a component without adding extra nodes to the DOM.&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
+      <description>&lt;h2 id=&#34;lifting-state-up-in-react&#34;&gt;Lifting State Up in React&lt;/h2&gt;
+&lt;p&gt;&amp;ldquo;Lifting state up&amp;rdquo; is a common pattern in React used when two or more components need to share data or state. Instead of managing the state in one of the components and creating a dependency between them, the state is &amp;ldquo;lifted up&amp;rdquo; to the closest common ancestor of the components that need the state.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;key-concept&#34;&gt;Key Concept&lt;/h3&gt;
+&lt;p&gt;When multiple components need to interact with the same state:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

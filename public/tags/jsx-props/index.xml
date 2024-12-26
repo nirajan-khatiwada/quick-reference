@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>JSX Props on Quick Reference</title>
+    <link>http://localhost:1313/tags/jsx-props/</link>
+    <description>Recent content in JSX Props on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/jsx-props/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React Advanced Concepts: Fragments and JSX Props</title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>Learn about React Fragments for cleaner DOM structure and how to effectively pass JSX as props between components</description>
+    </item>
+  </channel>
+</rss>
