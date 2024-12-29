@@ -1,3 +1,14 @@
+---
+title: "Sharing State Between React Components: Lifting State Up"
+date: 2024-11-17
+description: "A guide on how to share state between React components by lifting state up."
+showToc: true
+categories: ["React"]
+tags: ["React", "JavaScript", "State Management", "Tutorial"]
+summary: "Learn how to share state between React components by lifting state up to a common ancestor."
+images: ["/images/react/react.jpg"]
+---
+
 ## 30. Sharing State Between React Components: Lifting State Up
 
 In React, components are the building blocks of a user interface. Each component can have its own state, but there are situations where multiple components need to share the same state. In such cases, the concept of "lifting state up" is used to manage the shared state in a common ancestor component."Lifting state up" is a common pattern in React used when two or more components need to share data or state. Instead of managing the state in one of the components and creating a dependency between them, the state is "lifted up" to the closest common ancestor of the components that need the state.
@@ -275,3 +286,61 @@ const person={
 console.log(person); // {data:'John'}
 ```
 
+
+## 32.Using SAme State Variable to store multiple values
+=> We can use the same state variable to store multiple values by using an object.
+
+```jsx
+const [userInput,setUserInput]=useState({
+    enteredTitle:'',
+    enteredAmount:'',
+    enteredDate:''
+});
+
+const titleChangeHandler=(event)=>{
+    setUserInput({
+        ...userInput,
+        enteredTitle:event.target.value
+    });
+};
+
+const amountChangeHandler=(event)=>{
+    setUserInput({
+        ...userInput,
+        enteredAmount:event.target.value
+    });
+};
+
+const dateChangeHandler=(event)=>{
+    setUserInput({
+        ...userInput,
+        enteredDate:event.target.value
+    });
+};
+
+return (
+
+    <div>
+    Title:<input type="text" value={userInput.enteredTitle} onChange={titleChangeHandler}/>
+    Amount:<input type="number" value={userInput.enteredAmount} onChange={amountChangeHandler}/>
+    Date:<input type="date" value={userInput.enteredDate} onChange={dateChangeHandler}/>
+
+    The entered title is {userInput.enteredTitle}
+    The entered amount is {userInput.enteredAmount}
+    The entered date is {userInput.enteredDate}
+
+    </div>
+);
+```
+=> In the above code, we are using the same state variable `userInput` to store multiple values. We are using an object to store the values. We are using the spread operator to copy the existing values of the object and then updating the required value.
+
+
+## 33.Handeling page reloads when a form is submitted
+- When a form is submitted, the page reloads by default. This is not what we want in a single page application. We want to stay on the same page and update the content of the page. We can do this by using the `preventDefault()` method on the event object.
+- The `preventDefault()` method prevents the default behavior of the event object. In this case, it prevents the page from reloading when the form is submitted.
+``` jsx
+const submitHandler=(event)=>{
+    event.preventDefault();
+    // code to handle form submission
+};
+```

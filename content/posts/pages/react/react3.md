@@ -6,7 +6,7 @@ showToc: true
 categories: ["React"]
 tags: ["React", "JavaScript", "Web Development", "State Management", "Components", "Fragments"]
 summary: "A comprehensive guide covering React's advanced concepts including Fragments, JSX Props, Component Isolation, and proper state management patterns"
-images: ["/images/react/advanced.png"]
+images: ["/images/react/react.jpg"]
 ---
 ## 22. Fragments in React
 Fragments are a way to group multiple elements in React without adding extra nodes to the DOM. Fragments are useful when you want to return multiple elements from a component, but you don't want to add an extra div or span element to the DOM.
