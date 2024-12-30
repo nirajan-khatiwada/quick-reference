@@ -1,6 +1,6 @@
 ---
-title: "React Advanced Concepts: State Management and Component Patterns"
-date: 2024-11-17
+title: "React : Day 3"
+date: 2024-11-19
 description: "Deep dive into React's advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns"
 showToc: true
 categories: ["React"]

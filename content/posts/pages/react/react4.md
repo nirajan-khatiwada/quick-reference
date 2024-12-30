@@ -1,6 +1,6 @@
 ---
-title: "Sharing State Between React Components: Lifting State Up"
-date: 2024-11-17
+title: "React : Day 4"
+date: 2024-11-20
 description: "A guide on how to share state between React components by lifting state up."
 showToc: true
 categories: ["React"]

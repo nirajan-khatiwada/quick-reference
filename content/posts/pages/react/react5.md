@@ -1,6 +1,6 @@
 ---
-title: "Styling in CSS"
-date: 2024-11-17
+title: "React : Day 5"
+date: 2024-11-21
 description: "A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules."
 showToc: true
 categories: ["React"]

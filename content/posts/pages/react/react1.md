@@ -1,6 +1,6 @@
 ---
-title: "React Hooks: A Comprehensive Guide"
-date: 2024-11-17
+title: "React : Day 2"
+date: 2024-11-18
 description: "An in-depth guide to understanding and using hooks in React, including rules and examples."
 showToc: true
 categories: ["React"]

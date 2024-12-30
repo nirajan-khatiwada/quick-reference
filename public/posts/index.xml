@@ -49,6 +49,13 @@
       <description>Explore the essential control structures in Python, including loops and conditionals, in this comprehensive guide, part of our Python programming series.</description>
     </item>
     <item>
+      <title>Debugging in React</title>
+      <link>http://localhost:1313/posts/pages/react/react6/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react6/</guid>
+      <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Exploring Advanced Operations (Part 4)</title>
       <link>http://localhost:1313/posts/pages/python/python_advanced_operations/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
@@ -82,6 +89,20 @@
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react/</guid>
       <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
+    </item>
+    <item>
+      <title>Sharing State Between React Components: Lifting State Up</title>
+      <link>http://localhost:1313/posts/pages/react/react4/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
+      <description>A guide on how to share state between React components by lifting state up.</description>
+    </item>
+    <item>
+      <title>Styling in CSS</title>
+      <link>http://localhost:1313/posts/pages/react/react5/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react5/</guid>
+      <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
     </item>
     <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
@@ -225,14 +246,10 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react4/</link>
+      <link>http://localhost:1313/posts/pages/react/react7/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
-      <description>&lt;h2 id=&#34;lifting-state-up-in-react&#34;&gt;Lifting State Up in React&lt;/h2&gt;
-&lt;p&gt;&amp;ldquo;Lifting state up&amp;rdquo; is a common pattern in React used when two or more components need to share data or state. Instead of managing the state in one of the components and creating a dependency between them, the state is &amp;ldquo;lifted up&amp;rdquo; to the closest common ancestor of the components that need the state.&lt;/p&gt;
-&lt;hr&gt;
-&lt;h3 id=&#34;key-concept&#34;&gt;Key Concept&lt;/h3&gt;
-&lt;p&gt;When multiple components need to interact with the same state:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
+      <description></description>
     </item>
   </channel>
 </rss>

@@ -70,6 +70,13 @@
       <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
     </item>
     <item>
+      <title>Sharing State Between React Components: Lifting State Up</title>
+      <link>http://localhost:1313/posts/pages/react/react4/</link>
+      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
+      <description>A guide on how to share state between React components by lifting state up.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
       <link>http://localhost:1313/posts/pages/python/python_error_handeling/</link>
       <pubDate>Sat, 16 Nov 2024 00:00:00 +0000</pubDate>

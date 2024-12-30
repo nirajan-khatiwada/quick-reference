@@ -1,5 +1,5 @@
 ---
-title: "React Quick Reference Guide"
+title: "React : Day 1"
 date: 2024-11-17
 description: "A comprehensive guide for creating and managing React projects, components, and folder structures."
 showToc: true
