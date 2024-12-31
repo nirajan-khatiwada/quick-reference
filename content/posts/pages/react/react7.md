@@ -1,3 +1,14 @@
+---
+title: "React : Day 7"
+date: 2024-03-21
+description: "A comprehensive guide on advanced React hooks including useRef, forwarding refs, useImperativeHandle and Portals in React applications."
+showToc: true
+categories: ["React"]
+tags: ["React", "Hooks", "useRef", "Portals", "Web Development"]
+summary: "Learn about useRef hook, ref forwarding, useImperativeHandle and Portals in React for DOM manipulation and component interactions."
+images: ["/images/react/react.jpg"]
+---
+
 # 36. useRef Hook in React
 useRef is a hook that is specially designed to work with DOM elements. It allows you to create a reference to a DOM element and access it directly in your components so you can modify it or read its properties as needed.
 

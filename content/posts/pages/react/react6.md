@@ -1,5 +1,5 @@
 ---
-title: "React : 6"
+title: "React : Day 6"
 date: 2024-11-21
 description: "A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools."
 showToc: true
