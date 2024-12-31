@@ -11,49 +11,49 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Debugging in React</title>
+      <title>React : Day 5</title>
+      <link>http://localhost:1313/posts/pages/react/react5/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react5/</guid>
+      <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
+    </item>
+    <item>
+      <title>React : Day 6</title>
       <link>http://localhost:1313/posts/pages/react/react6/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react6/</guid>
       <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
     </item>
     <item>
-      <title>React Advanced Concepts: State Management and Component Patterns</title>
-      <link>http://localhost:1313/posts/pages/react/react3/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
-      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
-    </item>
-    <item>
-      <title>React Hooks: A Comprehensive Guide</title>
-      <link>http://localhost:1313/posts/pages/react/react1/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react1/</guid>
-      <description>An in-depth guide to understanding and using hooks in React, including rules and examples.</description>
-    </item>
-    <item>
-      <title>React Quick Reference Guide</title>
-      <link>http://localhost:1313/posts/pages/react/react/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react/</guid>
-      <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
-    </item>
-    <item>
-      <title>Sharing State Between React Components: Lifting State Up</title>
+      <title>React : Day 4</title>
       <link>http://localhost:1313/posts/pages/react/react4/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react4/</guid>
       <description>A guide on how to share state between React components by lifting state up.</description>
     </item>
     <item>
-      <title>Styling in CSS</title>
-      <link>http://localhost:1313/posts/pages/react/react5/</link>
+      <title>React : Day 3</title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
+    </item>
+    <item>
+      <title>React : Day 2</title>
+      <link>http://localhost:1313/posts/pages/react/react1/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react1/</guid>
+      <description>An in-depth guide to understanding and using hooks in React, including rules and examples.</description>
+    </item>
+    <item>
+      <title>React : Day 1</title>
+      <link>http://localhost:1313/posts/pages/react/react/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react5/</guid>
-      <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
+      <guid>http://localhost:1313/posts/pages/react/react/</guid>
+      <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
     </item>
     <item>
       <title>Javascript : Dom and Events</title>

@@ -21,11 +21,32 @@
       <description>how to write programs using this single-threaded concurrency model with asyncio</description>
     </item>
     <item>
+      <title>React : Day 7</title>
+      <link>http://localhost:1313/posts/pages/react/react7/</link>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
+      <description>A comprehensive guide on advanced React hooks including useRef, forwarding refs, useImperativeHandle and Portals in React applications.</description>
+    </item>
+    <item>
       <title>Async io : Async io Intro (Day 1)</title>
       <link>http://localhost:1313/posts/pages/asyncio/asyncio1/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/asyncio/asyncio1/</guid>
       <description>An introduction to asynchronous programming in Python using asyncio.</description>
+    </item>
+    <item>
+      <title>React : Day 5</title>
+      <link>http://localhost:1313/posts/pages/react/react5/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react5/</guid>
+      <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
+    </item>
+    <item>
+      <title>React : Day 6</title>
+      <link>http://localhost:1313/posts/pages/react/react6/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react6/</guid>
+      <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
     </item>
     <item>
       <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
@@ -35,11 +56,25 @@
       <description>Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals.</description>
     </item>
     <item>
+      <title>React : Day 4</title>
+      <link>http://localhost:1313/posts/pages/react/react4/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
+      <description>A guide on how to share state between React components by lifting state up.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Data Types (Part 2)</title>
       <link>http://localhost:1313/posts/pages/python/python_datatype_operations/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/python/python_datatype_operations/</guid>
       <description>Dive into the various data types in Python with this detailed guide, part of our comprehensive series on Python programming.</description>
+    </item>
+    <item>
+      <title>React : Day 3</title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
     </item>
     <item>
       <title>Python Fundamentals: Mastering Control Structures (Part 3)</title>
@@ -49,11 +84,11 @@
       <description>Explore the essential control structures in Python, including loops and conditionals, in this comprehensive guide, part of our Python programming series.</description>
     </item>
     <item>
-      <title>Debugging in React</title>
-      <link>http://localhost:1313/posts/pages/react/react6/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react6/</guid>
-      <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
+      <title>React : Day 2</title>
+      <link>http://localhost:1313/posts/pages/react/react1/</link>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react1/</guid>
+      <description>An in-depth guide to understanding and using hooks in React, including rules and examples.</description>
     </item>
     <item>
       <title>Python Fundamentals: Exploring Advanced Operations (Part 4)</title>
@@ -70,39 +105,11 @@
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
-      <title>React Advanced Concepts: State Management and Component Patterns</title>
-      <link>http://localhost:1313/posts/pages/react/react3/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
-      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
-    </item>
-    <item>
-      <title>React Hooks: A Comprehensive Guide</title>
-      <link>http://localhost:1313/posts/pages/react/react1/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react1/</guid>
-      <description>An in-depth guide to understanding and using hooks in React, including rules and examples.</description>
-    </item>
-    <item>
-      <title>React Quick Reference Guide</title>
+      <title>React : Day 1</title>
       <link>http://localhost:1313/posts/pages/react/react/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react/</guid>
       <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
-    </item>
-    <item>
-      <title>Sharing State Between React Components: Lifting State Up</title>
-      <link>http://localhost:1313/posts/pages/react/react4/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
-      <description>A guide on how to share state between React components by lifting state up.</description>
-    </item>
-    <item>
-      <title>Styling in CSS</title>
-      <link>http://localhost:1313/posts/pages/react/react5/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react5/</guid>
-      <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
     </item>
     <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>
@@ -246,10 +253,14 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react7/</link>
+      <link>http://localhost:1313/posts/pages/react/react8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
-      <description></description>
+      <guid>http://localhost:1313/posts/pages/react/react8/</guid>
+      <description>&lt;h2 id=&#34;38prop-drilling&#34;&gt;38.Prop drilling&lt;/h2&gt;
+&lt;p&gt;Problem drilling is a term used to describe the process of passing data from one component to another component through props. This can be a problem when you have a deeply nested component tree, as you have to pass the data through each component in the tree, even if the intermediate components don&amp;rsquo;t need the data.&lt;/p&gt;
+&lt;p&gt;For example:
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/react/prop-drilling.png&#34; alt=&#34;Prop Drilling&#34;  /&gt;
+&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

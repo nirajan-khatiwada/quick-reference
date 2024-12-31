@@ -11,12 +11,12 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 21 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Styling in CSS</title>
+      <title>React : Day 5</title>
       <link>http://localhost:1313/posts/pages/react/react5/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react5/</guid>
       <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
     </item>

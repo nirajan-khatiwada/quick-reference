@@ -11,12 +11,19 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/hooks/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>React Hooks: A Comprehensive Guide</title>
+      <title>React : Day 7</title>
+      <link>http://localhost:1313/posts/pages/react/react7/</link>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
+      <description>A comprehensive guide on advanced React hooks including useRef, forwarding refs, useImperativeHandle and Portals in React applications.</description>
+    </item>
+    <item>
+      <title>React : Day 2</title>
       <link>http://localhost:1313/posts/pages/react/react1/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 18 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react1/</guid>
       <description>An in-depth guide to understanding and using hooks in React, including rules and examples.</description>
     </item>

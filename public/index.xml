@@ -21,6 +21,13 @@
       <description>how to write programs using this single-threaded concurrency model with asyncio</description>
     </item>
     <item>
+      <title>React : Day 7</title>
+      <link>http://localhost:1313/posts/pages/react/react7/</link>
+      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
+      <description>A comprehensive guide on advanced React hooks including useRef, forwarding refs, useImperativeHandle and Portals in React applications.</description>
+    </item>
+    <item>
       <title>Async io : Async io Intro (Day 1)</title>
       <link>http://localhost:1313/posts/pages/asyncio/asyncio1/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
@@ -28,18 +35,18 @@
       <description>An introduction to asynchronous programming in Python using asyncio.</description>
     </item>
     <item>
-      <title>React : 6</title>
-      <link>http://localhost:1313/posts/pages/react/react6/</link>
-      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react6/</guid>
-      <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
-    </item>
-    <item>
       <title>React : Day 5</title>
       <link>http://localhost:1313/posts/pages/react/react5/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react5/</guid>
       <description>A comprehensive guide on how to style React components using inline styles, external styles, dynamic styles, and CSS modules.</description>
+    </item>
+    <item>
+      <title>React : Day 6</title>
+      <link>http://localhost:1313/posts/pages/react/react6/</link>
+      <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react6/</guid>
+      <description>A comprehensive guide on how to debug React applications using various methods including console.log, Strict Mode, and React Developer Tools.</description>
     </item>
     <item>
       <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
@@ -246,13 +253,16 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react7/</link>
+      <link>http://localhost:1313/posts/pages/react/react8/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react7/</guid>
-      <description>&lt;h1 id=&#34;useref-hook-in-react&#34;&gt;useRef Hook in React&lt;/h1&gt;
-&lt;p&gt;useRef is a hook that is specially designed to work with DOM elements. It allows you to create a reference to a DOM element and access it directly in your components so you can modify it or read its properties as needed.&lt;/p&gt;
-&lt;p&gt;Another important distinction is that useRef holds the same reference across re-renders of the component Similarly, useState also retains its value between renders. However, updating a state value with useState will always trigger a re-render, whereas updating the value of a useRef does not.
-Its explained in the below example in ## 2. Advanvced Usage&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/pages/react/react8/</guid>
+      <description>&lt;h1 id=&#34;38-understanding-the-concept-of-prop-drilling&#34;&gt;38. Understanding the Concept of Prop Drilling&lt;/h1&gt;
+&lt;p&gt;Prop drilling refers to the process of passing data from a parent component to a deeply nested child component through all the intermediate components, even if those intermediate components don’t need the data themselves. Let’s break this down with an example.&lt;/p&gt;
+&lt;h2 id=&#34;component-tree&#34;&gt;Component Tree&lt;/h2&gt;
+&lt;p&gt;Imagine the following component hierarchy:
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/react/propdrill1.png&#34; alt=&#34;Prop Drilling&#34;  /&gt;
+&lt;/p&gt;
+&lt;p&gt;Now, suppose we want to transfer some data from the &lt;strong&gt;Product&lt;/strong&gt; component to the &lt;strong&gt;Cart&lt;/strong&gt; component. Since &lt;strong&gt;Product&lt;/strong&gt; and &lt;strong&gt;Cart&lt;/strong&gt; are in separate branches of the component tree, they don’t have a direct connection.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

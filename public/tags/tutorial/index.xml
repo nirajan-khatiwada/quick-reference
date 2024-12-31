@@ -35,6 +35,13 @@
       <description>Learn the essential building blocks of Python programming language with this comprehensive guide covering basic concepts and fundamentals.</description>
     </item>
     <item>
+      <title>React : Day 4</title>
+      <link>http://localhost:1313/posts/pages/react/react4/</link>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
+      <description>A guide on how to share state between React components by lifting state up.</description>
+    </item>
+    <item>
       <title>Python Fundamentals: Understanding Data Types (Part 2)</title>
       <link>http://localhost:1313/posts/pages/python/python_datatype_operations/</link>
       <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
@@ -63,18 +70,11 @@
       <description>Dive into Python functions with this comprehensive guide, part of our series on Python programming.</description>
     </item>
     <item>
-      <title>React Quick Reference Guide</title>
+      <title>React : Day 1</title>
       <link>http://localhost:1313/posts/pages/react/react/</link>
       <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react/</guid>
       <description>A comprehensive guide for creating and managing React projects, components, and folder structures.</description>
-    </item>
-    <item>
-      <title>Sharing State Between React Components: Lifting State Up</title>
-      <link>http://localhost:1313/posts/pages/react/react4/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react4/</guid>
-      <description>A guide on how to share state between React components by lifting state up.</description>
     </item>
     <item>
       <title>Python Fundamentals: Understanding Error Handling (Part 6)</title>

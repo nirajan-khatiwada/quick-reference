@@ -11,21 +11,21 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/state-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>React Advanced Concepts: State Management and Component Patterns</title>
-      <link>http://localhost:1313/posts/pages/react/react3/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
-      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
-    </item>
-    <item>
-      <title>Sharing State Between React Components: Lifting State Up</title>
+      <title>React : Day 4</title>
       <link>http://localhost:1313/posts/pages/react/react4/</link>
-      <pubDate>Sun, 17 Nov 2024 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react4/</guid>
       <description>A guide on how to share state between React components by lifting state up.</description>
+    </item>
+    <item>
+      <title>React : Day 3</title>
+      <link>http://localhost:1313/posts/pages/react/react3/</link>
+      <pubDate>Tue, 19 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react3/</guid>
+      <description>Deep dive into React&amp;#39;s advanced concepts including Fragments, JSX Props, Component Isolation, and State Management patterns</description>
     </item>
   </channel>
 </rss>
