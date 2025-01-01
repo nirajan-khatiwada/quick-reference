@@ -1,3 +1,14 @@
+---
+title: "React : 8"
+date: 2024-11-23
+description: "A comprehensive guide on understanding prop drilling and using the Context API in React applications."
+showToc: true
+categories: ["React"]
+tags: ["React", "Context API", "Prop Drilling", "Web Development"]
+summary: "Learn about prop drilling and how to use the Context API in React to manage and share state effectively."
+images: ["/images/react/react.jpg"]
+---
+
 # 38. Understanding the Concept of Prop Drilling
 
 Prop drilling refers to the process of passing data from a parent component to a deeply nested child component through all the intermediate components, even if those intermediate components don’t need the data themselves. Let’s break this down with an example.
