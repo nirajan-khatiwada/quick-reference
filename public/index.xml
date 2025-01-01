@@ -11,8 +11,22 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 24 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React : 9</title>
+      <link>http://localhost:1313/posts/pages/react/react9/</link>
+      <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react9/</guid>
+      <description>A comprehensive guide on using the useEffect hook in React applications.</description>
+    </item>
+    <item>
+      <title>React : 8</title>
+      <link>http://localhost:1313/posts/pages/react/react8/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react8/</guid>
+      <description>A comprehensive guide on understanding prop drilling and using the Context API in React applications.</description>
+    </item>
     <item>
       <title>Async io : Asyncio Basics (Day 2)</title>
       <link>http://localhost:1313/posts/pages/asyncio/asyncio2/</link>
@@ -250,19 +264,6 @@
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/pages/react/react8/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react8/</guid>
-      <description>&lt;h1 id=&#34;38-understanding-the-concept-of-prop-drilling&#34;&gt;38. Understanding the Concept of Prop Drilling&lt;/h1&gt;
-&lt;p&gt;Prop drilling refers to the process of passing data from a parent component to a deeply nested child component through all the intermediate components, even if those intermediate components don’t need the data themselves. Let’s break this down with an example.&lt;/p&gt;
-&lt;h2 id=&#34;component-tree&#34;&gt;Component Tree&lt;/h2&gt;
-&lt;p&gt;Imagine the following component hierarchy:
-&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/react/propdrill1.png&#34; alt=&#34;Prop Drilling&#34;  /&gt;
-&lt;/p&gt;
-&lt;p&gt;Now, suppose we want to transfer some data from the &lt;strong&gt;Product&lt;/strong&gt; component to the &lt;strong&gt;Cart&lt;/strong&gt; component. Since &lt;strong&gt;Product&lt;/strong&gt; and &lt;strong&gt;Cart&lt;/strong&gt; are in separate branches of the component tree, they don’t have a direct connection.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 22 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Context API</title>
+      <link>http://localhost:1313/tags/context-api/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/context-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Prop Drilling</title>
+      <link>http://localhost:1313/tags/prop-drilling/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/prop-drilling/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Asyncio</title>
       <link>http://localhost:1313/tags/asyncio/</link>
@@ -49,13 +77,6 @@
       <description></description>
     </item>
     <item>
-      <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
-      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/react/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Tutorial</title>
       <link>http://localhost:1313/tags/tutorial/</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
@@ -67,13 +88,6 @@
       <link>http://localhost:1313/tags/useref/</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/useref/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Development</title>
-      <link>http://localhost:1313/tags/web-development/</link>
-      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>

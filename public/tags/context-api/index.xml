@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Context API on Quick Reference</title>
+    <link>http://localhost:1313/tags/context-api/</link>
+    <description>Recent content in Context API on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 23 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/context-api/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React : 8</title>
+      <link>http://localhost:1313/posts/pages/react/react8/</link>
+      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react8/</guid>
+      <description>A comprehensive guide on understanding prop drilling and using the Context API in React applications.</description>
+    </item>
+  </channel>
+</rss>
