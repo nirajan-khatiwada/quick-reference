@@ -1,5 +1,13 @@
-<!-- Usecallback
-useMemo -->
+---
+title: "React : 10" 
+date: 2024-11-25
+description: "A comprehensive guide on optimizing React applications using memo, useCallback and useMemo hooks."
+showToc: true
+categories: ["React"]
+tags: ["React", "Performance", "memo", "useCallback", "useMemo", "Web Development"]
+summary: "Learn how to optimize React applications using memo for component memoization, useCallback for function memoization, and useMemo for value memoization."
+images: ["/images/react/react.jpg"]
+---
 # 44. Optimizing Performance
 ## 44.1. memo
 memo is a higher-order function in React that optimizes functional components by preventing unnecessary re-renders. It returns a new component that behaves the same as the original one but only re-renders if its props change or internal state changes not every time the parent component re-renders.
@@ -181,3 +189,66 @@ This ensures that the Child component only re-renders when the count state chang
 
 
 ## 44.3. useMemo
+useMemo is a hook in React that memoizes the result of a function. It is similar to useCallback, but instead of memoizing a function, it memoizes the result of a function.
+
+***Syntax:***
+```jsx
+const cachedValue = useMemo(calculateValue, dependencies)
+```
+calculateValue: The function calculating the value that you want to cache. It should be pure, should take no arguments, and should return a value of any type. React will call your function during the initial render. On next renders, React will return the same value again if the dependencies have not changed since the last render. Otherwise, it will call calculateValue, return its result, and store it so it can be reused later.
+dependencies: An array of values that, when changed, will cause the function to be re-executed.
+
+
+***return*** 
+On the initial render, useMemo returns the result of calling calculateValue with no arguments.During next renders, it will either return an already stored value from the last render (if the dependencies haven’t changed), or call calculateValue again, and return the result that calculateValue has returned.
+
+
+***Before using useMemo:***
+```jsx
+import { useState, memo } from 'react';
+
+const fibonacci = (n) => {
+  if (n <= 1) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+};
+
+const Fib = ()=>{
+  const [count, setCount] = useState(1);
+  const result = fibonacci(100000000000);
+
+  return (
+    <div>
+      <p>{result} and count is {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+    </div>
+  );
+}
+```
+In the above example, the fibonacci function is called on every re-render of the Fib component. This can lead to performance issues, especially when the function is computationally expensive. In this case, the fibonacci function is called with a large number, which can cause the component to freeze or crash.
+
+***After using useMemo:***
+```jsx
+import { useState, useMemo } from 'react';
+
+const fibonacci = (n) => {
+  if (n <= 1) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+};
+
+const Fib = ()=>{
+  const [count, setCount] = useState(1);
+  const result = useMemo(() => fibonacci(100000000000), []);
+
+  return (
+    <div>
+      <p>{result} and count is {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+    </div>
+  );
+}
+```
+By using useMemo, the result of the fibonacci function is memoized and will only be re-calculated when the dependencies specified in the dependency array change. In this case, the fibonacci function is only called once during the initial render of the Fib component, and the result is stored and reused on subsequent renders. This optimizes performance by preventing unnecessary re-calculation of the fibonacci function on every re-render of the component.
