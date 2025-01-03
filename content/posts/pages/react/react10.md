@@ -317,3 +317,7 @@ const Child = ({ value }) => {
 };
 ```
 IN the above example,When a key changes between renders, React will create a new instance of the component. By using the key prop with the value prop, we ensure that a new instance of the Child component is created whenever the value prop changes. This allows the stateValue to be initialized with the new value prop on every render, without the need for useEffect.
+
+
+> Note:The `useState()` hook us run only one time during the initial render of the component. If the state variable is initialized with a prop value, it will not be updated when the prop value changes. To handle this scenario, we can use the `useEffect()` hook to update the state variable when the prop value changes. Alternatively, we can use the `key` prop to create a new instance of the component whenever the prop value changes, allowing the state variable to be initialized with the new prop value on every render.
+> Similar goes for useReducer() and useRef() hooks as well.
