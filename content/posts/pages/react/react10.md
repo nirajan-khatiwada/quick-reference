@@ -252,3 +252,68 @@ const Fib = ()=>{
 }
 ```
 By using useMemo, the result of the fibonacci function is memoized and will only be re-calculated when the dependencies specified in the dependency array change. In this case, the fibonacci function is only called once during the initial render of the Fib component, and the result is stored and reused on subsequent renders. This optimizes performance by preventing unnecessary re-calculation of the fibonacci function on every re-render of the component.
+
+
+
+
+# 45.Key
+conside a scenarion where your base component state variable need to be initialized with the value of the props passed to the component.
+since the state variable is initialized with the props value, the state variable will not be updated when the props value changes as it is initialized only.
+to handle we can either use useEffect or we can use key prop.
+
+***Using useEffect:***
+```jsx
+import { useEffect, useState } from 'react';
+const Parent = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setValue(value + 1)}>Increment</button>
+      <Child value={value} />
+    </div>
+  );
+};
+const Child = ({ value }) => {
+  const [stateValue, setStateValue] = useState(value);
+  useEffect(() => {
+    setStateValue(value);
+  }, [value]);
+
+  return (
+    <div>
+      <p>State Value: {stateValue}</p>
+      <p>Props Value: {value}</p>
+    </div>
+  );
+};
+```
+
+stateValue is initialized with the value prop and  `const [stateValue, setStateValue] = useState(value);` runs only once during initial render so  useEffect is used to update the stateValue when the value prop changes.
+
+***Using key prop:***
+```jsx
+import { useState } from 'react';
+const Parent = () => {
+  const [value, setValue] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setValue(value + 1)}>Increment</button>
+      <Child key={value} value={value} />
+    </div>
+  );
+};
+
+const Child = ({ value }) => {
+  const [stateValue, setStateValue] = useState(value);
+
+  return (
+    <div>
+      <p>State Value: {stateValue}</p>
+      <p>Props Value: {value}</p>
+    </div>
+  );
+};
+```
+IN the above example,When a key changes between renders, React will create a new instance of the component. By using the key prop with the value prop, we ensure that a new instance of the Child component is created whenever the value prop changes. This allows the stateValue to be initialized with the new value prop on every render, without the need for useEffect.
