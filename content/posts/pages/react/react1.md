@@ -287,3 +287,5 @@ function App() {
 }
 ```
 
+> When will Rerender Occur?
+- When state varaible or props value  changes

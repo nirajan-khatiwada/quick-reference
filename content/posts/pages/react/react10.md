@@ -1,0 +1,183 @@
+<!-- Usecallback
+useMemo -->
+# 44. Optimizing Performance
+## 44.1. memo
+memo is a higher-order function in React that optimizes functional components by preventing unnecessary re-renders. It returns a new component that behaves the same as the original one but only re-renders if its props change or internal state changes not every time the parent component re-renders.
+
+
+Why Use memo?
+When a parent component re-renders, all its child components also re-render by default—even if their props remain unchanged. This behavior can lead to performance bottlenecks. Using memo, we can avoid these unnecessary re-renders for child components.
+
+
+Example:
+```jsx
+import { memo } from 'react';
+
+const MyComponent = memo((props) => {
+  return (
+    <div>
+      <h1>{props.title}</h1>
+    </div>
+  );
+});
+export default MyComponent;
+```
+In the above example, the `MyComponent` functional component is wrapped with the `memo` function. This ensures that the component will only re-render if its props have changed or if its satate has been change not every time the parent component re-renders.
+
+
+Use Case:
+- Before using memo:
+In this example, the Custom component re-renders unnecessarily whenever the parent component re-renders, even if its props haven't changed or internal state hasn't changed.
+Custom.js
+```jsx
+import { useState } from 'react';
+
+const Custom = ({ title }) => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+};
+
+export default Custom;
+```
+
+App.js
+```jsx
+import { useState } from 'react';
+import Custom from './Custom';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <Custom title="Counter" />
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Parent Count</button>
+    </div>
+  );
+}
+
+export default App;
+```
+Problem: The Custom component re-renders whenever the count state in the App component changes, even though the title prop remains the same. This can cause unnecessary rendering and reduce performance.i.e child component re-renders even if the props are not changed when the parent component re-renders.
+
+
+- After using memo:
+Using memo, we can optimize the Custom component to only re-render when its props change.
+Custom.jsx
+```jsx
+import { useState, memo } from 'react';
+
+const Custom = memo(({ title }) => {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h1>{title}</h1>
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+});
+
+export default Custom;
+```
+
+App.js
+```jsx
+import { useState } from 'react';
+import Custom from './Custom';
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <Custom title="Counter" />
+      <p>{count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Parent Count</button>
+    </div>
+  );
+}
+
+export default App;
+```
+After using memo the Custom component will only re-render when its props change or state change i.e when the title prop changes or the count state of the Custom component changes . It will not re-render when the count state of the App component changes, which optimizes performance in this scenario as that change does not affect the Custom component.
+
+## 44.2. useCallback
+In every rerender of a component, the functions defined inside the component are recreated. This can lead to performance issues, especially when passing functions as props to child components. useCallback is a hook in React that memoizes functions to prevent unnecessary re-creations.
+
+***Syntax:***
+```jsx
+useCallback(fn, dependencies) 
+```
+- `fn`: The function value that you want to cache. It can take any arguments and return any values. React will return (not call!) your function back to you during the initial render. On next renders, React will give you the same function again if the dependencies have not changed since the last render. Otherwise, it will give you the function that you have passed during the current render, and store it in case it can be reused later. React will not call your function. The function is returned to you so you can decide when and whether to call it.
+- `dependencies`: An array of values that, when changed, will cause the function to be re-created. If the dependencies array is empty, the function will only be created once, and will not be re-created on subsequent renders.
+
+> Whats the use of dependencies array in useCallback?
+just because dependency array the function is recreated with the new values of the dependencies.
+
+***Before using useCallback:***
+```jsx
+import { useState,memo } from 'react';
+
+const Child = memo(({ handleClick }) => {
+  return (
+    <button onClick={handleClick}>Click Me</button>
+  );
+});
+
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <div>
+      <p>{count}</p>
+      <Child handleClick={handleClick} />
+    </div>
+  );
+};
+```
+In the above example, the handleClick function is re-created on every re-render of the Parent component. As a result, the reference to the handleClick function passed as a prop to the Child component changes on every re-render of the Parent component. This causes the Child component to re-render unnecessarily, even though the handleClick function remains logically the same
+After using useCallback:
+
+```jsx
+import { useState, useCallback, memo } from 'react';
+
+const Child = memo(({ handleClick }) => {
+  return (
+    <button onClick={handleClick}>Click Me</button>
+  );
+});
+
+const Parent = () => {
+  const [count, setCount] = useState(0);
+
+  const handleClick = useCallback(() => {
+    setCount(count + 1);
+  }, [count]);
+
+  return (
+    <div>
+      <p>{count}</p>
+      <Child handleClick={handleClick} />
+    </div>
+  );
+};
+```
+By using useCallback, the handleClick function is memoized and will only be re-created when the count state changes. The reference to the handleClick function remains the same across re-renders of the Parent component unless the dependencies specified in the dependency array (in this case, [count]) change.
+This ensures that the Child component only re-renders when the count state changes, and not when the handleClick function reference changes, thus improving performance.
+
+
+## 44.3. useMemo
