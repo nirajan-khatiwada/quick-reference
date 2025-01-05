@@ -376,3 +376,7 @@ function App() {
 }
 ```
 
+
+
+> use list if you want to show the list of items and use object if you want to show the details of the item to identify which one is clicked or update you can pass the index or id of the item to the function.
+> Or you can hardcode the value to update the object or list.
