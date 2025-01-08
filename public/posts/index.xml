@@ -284,19 +284,10 @@
       <link>http://localhost:1313/posts/pages/react/react12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react12/</guid>
-      <description>&lt;h2 id=&#34;50state-management-with-redux&#34;&gt;50.State Management with Redux&lt;/h2&gt;
+      <description>&lt;h1 id=&#34;50state-management-with-redux&#34;&gt;50.State Management with Redux&lt;/h1&gt;
 &lt;p&gt;Redux is a library for managing application state.&lt;/p&gt;
-&lt;h3 id=&#34;501-how-redux-works&#34;&gt;50.1 How Redux Works&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;There is only one store in Entire Application in Redux.&lt;/li&gt;
-&lt;li&gt;Component subscribes to the store.&lt;/li&gt;
-&lt;li&gt;So whenever the store changes,store will notify the component and then component data they need from the store ie will re-render the component.&lt;/li&gt;
-&lt;li&gt;There is a reducer function to update the store.&lt;/li&gt;
-&lt;li&gt;To update the store using component, we need to dispatch an action.&lt;/li&gt;
-&lt;li&gt;Redux forwaeds the action to the reducer function.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;![&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/react/redux1&#34; alt=&#34;Component Diagram&#34;  /&gt;
-]&lt;/p&gt;</description>
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;</description>
     </item>
   </channel>
 </rss>
