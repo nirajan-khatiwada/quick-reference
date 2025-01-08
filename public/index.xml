@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 25 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React : 11</title>
+      <link>http://localhost:1313/posts/pages/react/react11/</link>
+      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react11/</guid>
+      <description>A comprehensive guide on making server requests in React, creating custom hooks, and handling forms.</description>
+    </item>
     <item>
       <title>React : 10</title>
       <link>http://localhost:1313/posts/pages/react/react10/</link>
@@ -274,32 +281,72 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/react/react11/</link>
+      <link>http://localhost:1313/posts/pages/react/react12/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react11/</guid>
-      <description>&lt;h2 id=&#34;46sending-request-to-the-server&#34;&gt;46.Sending request to the server&lt;/h2&gt;
-&lt;p&gt;In react we can send request to the server using fetch api.&lt;/p&gt;
-&lt;p&gt;Example:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-jsx&#34; data-lang=&#34;jsx&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;React&lt;/span&gt;, { &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt; } &lt;span style=&#34;color:#a6e22e&#34;&gt;from&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;App&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; () =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; [&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;, &lt;span style=&#34;color:#a6e22e&#34;&gt;setData&lt;/span&gt;] &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;useState&lt;/span&gt;([]);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fetchData&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;async&lt;/span&gt; () =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;fetch&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;https://jsonplaceholder.typicode.com/posts&amp;#39;&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;await&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;response&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;json&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;setData&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;button&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;onClick&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;fetchData&lt;/span&gt;}&amp;gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Fetch&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Data&lt;/span&gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;button&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;ul&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                {&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;map&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;) =&amp;gt; (
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;li&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;key&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;id&lt;/span&gt;}&amp;gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;item&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;title&lt;/span&gt;}&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;li&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                ))}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;            &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;ul&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;div&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    )
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <guid>http://localhost:1313/posts/pages/react/react12/</guid>
+      <description>&lt;h1 id=&#34;50state-management-with-redux&#34;&gt;50.State Management with Redux&lt;/h1&gt;
+&lt;p&gt;Redux is a library for managing application state.&lt;/p&gt;
+&lt;h2 id=&#34;501-core-concepts&#34;&gt;50.1. Core Concepts&lt;/h2&gt;
+&lt;h3 id=&#34;1-single-store&#34;&gt;1. Single Store&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Redux maintains a &lt;strong&gt;single centralized store&lt;/strong&gt; for the entire application.&lt;/li&gt;
+&lt;li&gt;This store holds the complete state of the application, ensuring that state management is consistent and predictable.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;2-components-subscribe-to-the-store&#34;&gt;2. Components Subscribe to the Store&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Components can subscribe to the store.&lt;/li&gt;
+&lt;li&gt;When the store updates, it notifies the subscribed components.&lt;/li&gt;
+&lt;li&gt;Subscribed components then retrieve the necessary updated state and &lt;strong&gt;re-render&lt;/strong&gt; to reflect the new data.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;3-reducer-function&#34;&gt;3. Reducer Function&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A &lt;strong&gt;reducer function&lt;/strong&gt; is responsible for updating the store.&lt;/li&gt;
+&lt;li&gt;Reducers are pure functions that take two inputs:
+&lt;ol&gt;
+&lt;li&gt;The current state&lt;/li&gt;
+&lt;li&gt;An action&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;Based on the action, the reducer returns a &lt;strong&gt;new state&lt;/strong&gt; without mutating the original state.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;4-actions-and-dispatch&#34;&gt;4. Actions and Dispatch&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To update the store, a component must &lt;strong&gt;dispatch an action&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;An &lt;strong&gt;action&lt;/strong&gt; is a plain JavaScript object that describes the change required. It usually has:
+&lt;ul&gt;
+&lt;li&gt;A &lt;code&gt;type&lt;/code&gt; property (to specify the action type)&lt;/li&gt;
+&lt;li&gt;Additional data (payload) required for the update.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;5-how-actions-work&#34;&gt;5. How Actions Work&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;When a component dispatches an action:
+&lt;ol&gt;
+&lt;li&gt;Redux forwards the action to the &lt;strong&gt;reducer function&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The reducer processes the action and determines how the state should be updated.&lt;/li&gt;
+&lt;li&gt;The store is updated with the new state.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;6-flow-of-redux&#34;&gt;6. Flow of Redux&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;A component &lt;strong&gt;dispatches an action&lt;/strong&gt; to describe what needs to change.&lt;/li&gt;
+&lt;li&gt;The action is &lt;strong&gt;forwarded to the reducer function&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The &lt;strong&gt;reducer updates the state&lt;/strong&gt; in the store based on the action type and payload.&lt;/li&gt;
+&lt;li&gt;The updated state triggers &lt;strong&gt;re-renders&lt;/strong&gt; of components that subscribe to the store, ensuring they display the latest data.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;summary-diagram&#34;&gt;Summary Diagram&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A component dispatches an &lt;strong&gt;action&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The action is forwarded to the &lt;strong&gt;reducer&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;The reducer updates the &lt;strong&gt;centralized store&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Subscribed components are notified and re-render accordingly.
+&lt;img loading=&#34;lazy&#34; src=&#34;http://localhost:1313/images/react/redux1.png&#34; alt=&#34;Component Diagram&#34;  /&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;502-installing-redux&#34;&gt;50.2. Installing redux&lt;/h2&gt;
+&lt;p&gt;To install Redux in your React project, use the following command:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

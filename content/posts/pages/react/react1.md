@@ -51,7 +51,7 @@ function App() {
 
 ## 18. useState Hook
 useState is a React hook that allows you to manage component-specific state. It provides a way to declare state variables in functional components and ensure that changes to these variables cause the component or child component to re-render while the parent component remains unaffected from where the component whose set state is triggered.
-
+> use useState hoo if you want to reflect the changes in the UI.
 for example:
 ```jsx
 function App() {
