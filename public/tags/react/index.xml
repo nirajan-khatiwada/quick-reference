@@ -14,35 +14,35 @@
     <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>React : 12</title>
+      <title>React : Day 12</title>
       <link>http://localhost:1313/posts/pages/react/react12/</link>
       <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react12/</guid>
       <description>A comprehensive guide on state management with React-Redux and @reduxjs/toolkit.</description>
     </item>
     <item>
-      <title>React : 11</title>
+      <title>React : Day 11</title>
       <link>http://localhost:1313/posts/pages/react/react11/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react11/</guid>
       <description>A comprehensive guide on making server requests in React, creating custom hooks, and handling forms.</description>
     </item>
     <item>
-      <title>React : 10</title>
+      <title>React : Day 10</title>
       <link>http://localhost:1313/posts/pages/react/react10/</link>
       <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react10/</guid>
       <description>A comprehensive guide on optimizing React applications using memo, useCallback and useMemo hooks.</description>
     </item>
     <item>
-      <title>React : 9</title>
+      <title>React : Day 9</title>
       <link>http://localhost:1313/posts/pages/react/react9/</link>
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react9/</guid>
       <description>A comprehensive guide on using the useEffect hook in React applications.</description>
     </item>
     <item>
-      <title>React : 8</title>
+      <title>React : Day 8</title>
       <link>http://localhost:1313/posts/pages/react/react8/</link>
       <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react8/</guid>
