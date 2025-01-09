@@ -1,5 +1,5 @@
 ---
-title: "React : 10" 
+title: "React : Day 10" 
 date: 2024-11-25
 description: "A comprehensive guide on optimizing React applications using memo, useCallback and useMemo hooks."
 showToc: true

@@ -11,8 +11,36 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>@Reduxjs/Toolkit</title>
+      <link>http://localhost:1313/tags/@reduxjs/toolkit/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/@reduxjs/toolkit/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Redux</title>
+      <link>http://localhost:1313/tags/redux/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/redux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>State Management</title>
+      <link>http://localhost:1313/tags/state-management/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/state-management/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Custom Hooks</title>
       <link>http://localhost:1313/tags/custom-hooks/</link>
@@ -32,13 +60,6 @@
       <link>http://localhost:1313/tags/forms/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/forms/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/react/</guid>
       <description></description>
     </item>
     <item>
@@ -179,13 +200,6 @@
       <link>http://localhost:1313/tags/basics/</link>
       <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/basics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>State Management</title>
-      <link>http://localhost:1313/tags/state-management/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/state-management/</guid>
       <description></description>
     </item>
     <item>

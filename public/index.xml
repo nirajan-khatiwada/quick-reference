@@ -11,31 +11,38 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 26 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>React : 11</title>
+      <title>React : Day 12</title>
+      <link>http://localhost:1313/posts/pages/react/react12/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react12/</guid>
+      <description>A comprehensive guide on state management with React-Redux and @reduxjs/toolkit.</description>
+    </item>
+    <item>
+      <title>React : Day 11</title>
       <link>http://localhost:1313/posts/pages/react/react11/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react11/</guid>
       <description>A comprehensive guide on making server requests in React, creating custom hooks, and handling forms.</description>
     </item>
     <item>
-      <title>React : 10</title>
+      <title>React : Day 10</title>
       <link>http://localhost:1313/posts/pages/react/react10/</link>
       <pubDate>Mon, 25 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react10/</guid>
       <description>A comprehensive guide on optimizing React applications using memo, useCallback and useMemo hooks.</description>
     </item>
     <item>
-      <title>React : 9</title>
+      <title>React : Day 9</title>
       <link>http://localhost:1313/posts/pages/react/react9/</link>
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react9/</guid>
       <description>A comprehensive guide on using the useEffect hook in React applications.</description>
     </item>
     <item>
-      <title>React : 8</title>
+      <title>React : Day 8</title>
       <link>http://localhost:1313/posts/pages/react/react8/</link>
       <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react8/</guid>
@@ -278,30 +285,6 @@
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/pages/react/react12.backup/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react12.backup/</guid>
-      <description>&lt;h1 id=&#34;50state-management-with-redux&#34;&gt;50.State Management with Redux&lt;/h1&gt;
-&lt;p&gt;Redux is a library for managing application state.&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
-&lt;!-- raw HTML omitted --&gt;</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/pages/react/react12/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react12/</guid>
-      <description>&lt;h1 id=&#34;50-statemanagement-using-react-redux&#34;&gt;50. StateManagement using react-redux&lt;/h1&gt;
-&lt;h2 id=&#34;1-introduction&#34;&gt;1. Introduction&lt;/h2&gt;
-&lt;p&gt;Reduct is the popular library for state management in react . To manage the state in react we can use the react-redux and @reduxjs/toolkit. In this article we will see how to use the react-redux and @reduxjs/toolkit to manage the state in react.&lt;/p&gt;
-&lt;h2 id=&#34;2-installation&#34;&gt;2. Installation&lt;/h2&gt;
-&lt;p&gt;To install the react-redux and @reduxjs/toolkit we can use the following command.&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;npm install react-redux @reduxjs/toolkit
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3-create-a-store-folder&#34;&gt;3. Create a store Folder&lt;/h2&gt;
-&lt;p&gt;Folder structure&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

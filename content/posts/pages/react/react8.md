@@ -1,5 +1,5 @@
 ---
-title: "React : 8"
+title: "React : Day 8"
 date: 2024-11-23
 description: "A comprehensive guide on understanding prop drilling and using the Context API in React applications."
 showToc: true

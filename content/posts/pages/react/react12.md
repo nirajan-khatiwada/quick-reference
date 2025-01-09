@@ -1,5 +1,5 @@
 ---
-title: "React : 12"
+title: "React : Day 12"
 date: 2024-11-27
 description: "A comprehensive guide on state management with React-Redux and @reduxjs/toolkit."
 showToc: true

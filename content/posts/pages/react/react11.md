@@ -1,5 +1,5 @@
 ---
-title: "React : 11"
+title: "React : Day 11"
 date: 2024-11-26
 description: "A comprehensive guide on making server requests in React, creating custom hooks, and handling forms."
 showToc: true

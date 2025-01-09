@@ -1,5 +1,5 @@
 ---
-title: "React : 9"
+title: "React : Day 9"
 date: 2024-11-24
 description: "A comprehensive guide on using the useEffect hook in React applications."
 showToc: true
