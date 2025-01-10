@@ -62,6 +62,7 @@ const sliceName = createSlice({
 ```
 > action is optional. If the action does not require any parameter then we can skip the action.
 > To get data from the action we must use action.payload otherwise it will not work.
+> reducer function must be synncronous,pure function and must not have any side effect.
 
 Example of counterSlice.js
 ```jsx

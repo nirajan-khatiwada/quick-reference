@@ -286,5 +286,21 @@
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
     </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/pages/react/react13/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react13/</guid>
+      <description>&lt;h1 id=&#34;51-handling-asynchronous-data-in-redux&#34;&gt;51. Handling Asynchronous Data in redux&lt;/h1&gt;
+&lt;p&gt;Since the reducer function should be a pure function, it should not have any side effects. This means that we cannot make any API calls or perform any asynchronous operations inside the reducer function. To handle this,
+we can use&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Putting the asynchronous logic inside the component using &lt;code&gt;useEffect&lt;/code&gt; hook.
+Here we dispatch when the component mounts and fetch the data from the API.&lt;/li&gt;
+&lt;li&gt;Inside the action creator&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;511-using-useeffect-hook&#34;&gt;51.1 Using &lt;code&gt;useEffect&lt;/code&gt; hook&lt;/h1&gt;
+&lt;p&gt;In here we use useEffect to fetch the data from the API from component and dispatch the action to the reducer.Such that reducer updates the state.&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>
