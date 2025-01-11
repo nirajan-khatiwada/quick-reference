@@ -1,3 +1,13 @@
+---
+title: "React : Day 13"
+date: 2024-11-27
+description: "A comprehensive guide on handling asynchronous data in Redux and using React Dev Tools."
+showToc: true
+categories: ["React"]
+tags: ["React", "Redux", "Asynchronous", "React Dev Tools", "State Management"]
+summary: "Learn how to handle asynchronous data in Redux using useEffect and action creator thunks, and explore React Dev Tools for debugging."
+images: ["/images/react/react.jpg"]
+---
 # 51. Handling Asynchronous Data in redux
 Since the reducer function should be a pure function, it should not have any side effects. This means that we cannot make any API calls or perform any asynchronous operations inside the reducer function. To handle this,
 we can use
