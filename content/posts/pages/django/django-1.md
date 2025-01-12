@@ -6,7 +6,7 @@ showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "Web Development", "Backend", "Static Files"]
 summary: "Master core Django concepts including project structure, app creation, URL routing, views, static files management and more. A foundational guide for Django REST Framework."
-images: ["/images/django/django.jpg"]
+images: ["/images/django.jpg"]
 ---
 
 In this Series we will cover all the concept of django that we need to learn drf(Django Rest Framework)

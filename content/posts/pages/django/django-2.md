@@ -6,7 +6,7 @@ showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "Database", "ORM", "Models", "Backend"]
 summary: "Deep dive into Django Models covering field types, model options, database configuration, migrations, and model methods. Essential knowledge for database operations in Django."
-images: ["/images/django/django.jpg"]
+images: ["/images/django.jpg"]
 ---
 
 # 19.Introduction to Django Models
