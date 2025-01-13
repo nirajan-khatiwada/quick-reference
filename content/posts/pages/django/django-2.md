@@ -34,7 +34,7 @@ DATABASES = {
 }
 ```
 ## 19.2 Fields
-The most important part of a model – and the only required part of a model – is the list of database fields it defines. Fields are specified by class attributes. Be careful not to choose field names that conflict with the models API like clean, save, or delete.
+Fields are specified by class attributes. Be careful not to choose field names that conflict with the models API like clean, save, or delete.
 
 Filed Types:
 Please go to [Django Documentation](https://docs.djangoproject.com/en/5.1/ref/models/fields/#field-types) to see the list of all field types.
