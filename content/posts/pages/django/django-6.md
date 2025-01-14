@@ -1,5 +1,5 @@
 ---
-title: "Django: Day 6 - Project Settings Guide"
+title: "Django: Day 6"
 date: 2024-03-19
 description: "Comprehensive overview of Django settings and configuration including database setup, security settings, middleware, templates, and core project configuration options."
 showToc: true
