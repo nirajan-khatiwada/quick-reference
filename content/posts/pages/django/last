@@ -1,2 +1,253 @@
 <!-- 
 Request -request.method,request.GET,request.POST,request.user,request.session,request.user.is_authenticated,media files -->
+<!-- 
+# Django Relations
+Basically there are three types of relations in Django:
+
+## Some Important Terms
+- `related_name` :It is used in reverse relation
+- `on_delete` : Used to specify the behavior when the object is deleted.
+
+### on_delete options
+- `models.CASCADE` : When the referenced object is deleted, also delete the objects that have a foreign key to that object.
+- `models.PROTECT` : Prevent deletion of the referenced object by raising a `ProtectedError` exception .
+- `models.SET_NULL` : Set the foreign key to `NULL` when the referenced object is deleted.
+- `models.SET_DEFAULT` : Set the foreign key to its default value when the referenced object is deleted.
+- `models.SET()` : Set the foreign key to the value passed to `SET()` when the referenced object is deleted.
+- `models.DO_NOTHING` : Do nothing when the referenced object is deleted.
+> Note: In most cases, `models.CASCADE` is used.
+
+
+## OneToOne Relation
+In one to one relation, each record of one model is related to only one record of another model.For example, a student can have only one student profile.Means one object cant be related to multiple objects if it is done then it will raise an error.
+
+### Defining OneToOne Relation
+we can define one to one relation using `OneToOneField` field.
+
+```python
+from django.db import models
+class Student(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+class StudentProfile(models.Model):
+    student=models.OneToOneField(Student,on_delete=models.CASCADE,related_name='profile')
+    address=models.TextField()
+    phone=models.CharField(max_length=15)
+```
+
+
+
+> Note : Related name should be unique in the model.It is used when we want to ascess `studentprofile` object from `student` object.
+
+
+### Creating OneToOne Relation
+```python
+student=Student.objects.create(name='John',age=20)
+profile=StudentProfile.objects.create(student=student,address='New York',phone='1234567890')
+```
+> We can assign existing student object to the profile object like this
+
+```python
+student=Student.objects.get(name='John')
+profile=StudentProfile.objects.create(student=student,address='New York',phone='1234567890')
+```
+
+
+### Updating oneToOne Relation
+```python
+student=Student.objects.get(name='John')
+profile=student.profile
+profile.address='California'
+profile.save()
+```
+
+### Find the student profile with student name
+- Way 1 
+```python
+studentprofile=StudentProfile.objects.get(student__name='John')
+```
+> Note: We can access the related object using `__` double underscore.
+
+- Way 2
+```python
+student=Student.objects.get(name='John')
+studentprofile=StudentProfile.objects.get(student=student)
+```
+
+- Way 3(using related name)
+```python
+student=Student.objects.get(name='John')
+studentprofile=student.profile
+```
+
+### Accessing the student object from student profile object
+```python
+studentprofile=StudentProfile.objects.get(address='California')
+student=studentprofile.student
+```
+### related name in action
+We use related name when we want to access the related object from the parent object.for example consider the below example
+```python
+class Author(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+class Book(models.Model):
+    author=models.OneToOneField(Author,on_delete=models.CASCADE,related_name='book')
+    title=models.CharField(max_length=100)
+```
+> Here we can access the book object from the author object using the related name.like this
+
+```python
+author=Author.objects.get(name='John')
+book=author.book
+```
+
+
+## oneToMany Relation
+In one to many relation, each record of one model is related to multiple records of another model.For example, a student can have multiple subjects.
+
+### Defining oneToMany Relation
+we can define one to many relation using `ForeignKey` field.
+
+```python
+from django.db import models
+class Subject(models.Model):
+    name=models.CharField(max_length=100)
+    id=models.IntegerField()
+
+class Student(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+    subjects=models.ForeignKey(Subject,on_delete=models.CASCADE,related_name='student')
+```
+
+### Creating oneToMany Relation
+```python
+subject1=Subject.objects.create(name='Maths',id=90)
+student1=Student.objects.create(name='John',age=20)
+student2=Student.objects.create(name='Doe',age=22)
+studemt3=Student.objects.create(name='Smith',age=21)
+```
+
+### Updating oneToMany Relation
+```python
+student=Student.objects.get(name='John')
+subject=student.subjects
+subject.name='Science'
+subject.save()
+```
+
+### Find the student with subject name
+- Way 1 
+```python
+student=Student.objects.get(subjects__name='Maths')
+```
+
+- Way 2
+```python
+subject=Subject.objects.get(name='Maths')
+students=students.objects.filter(subjects=subject)
+```
+
+- Way 3(using related name)
+```python
+subject=Subject.objects.get(name='Maths')
+students=subject.student.all() #you can use filter() instead of all()
+```
+> Here all the students with the subject name `Maths` will be returned.
+
+### Accessing the subject object from student object
+```python
+student=Student.objects.get(name='John')
+subject=student.subjects
+```
+### related name in action
+We use related name when we want to access the related object from the parent object.for example consider the below example
+```python
+class Author(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+
+class Book(models.Model):
+    author=models.ForeignKey(Author,on_delete=models.CASCADE,related_name='book')
+    title=models.CharField(max_length=100)
+```
+> Here we can access the book object from the author object using the related name.like this
+
+```python
+author=Author.objects.get(name='John')
+books=author.book.all()
+```
+
+
+## ManyToMany Relation
+In many to many relation, each record of one model is related to multiple records of another model and vice versa.For example, a student can have multiple subjects and a subject can have multiple students.
+> Note: This relation doesnt have any on_delete option.
+
+### Defining ManyToMany Relation
+we can define many to many relation using `ManyToManyField` field.
+
+```python
+from django.db import models
+class Subject(models.Model):
+    name=models.CharField(max_length=100)
+    id=models.IntegerField()
+
+class Student(models.Model):
+    name=models.CharField(max_length=100)
+    age=models.IntegerField()
+    subjects=models.ManyToManyField(Subject,related_name='student')
+```
+
+### `add()` and `remove()` method
+- `add()` : It is used to add the related object to the parent object.
+- `remove()` : It is used to remove the related object from the parent object.
+
+
+### Creating ManyToMany Relation
+```python
+subject1=Subject.objects.create(name='Maths',id=90)
+subject2=Subject.objects.create(name='Science',id=91)
+student1=Student.objects.create(name='John',age=20)
+student1.subjects.add(subject1)
+student1.subjects.add(subject2)
+student2=Student.objects.create(name='Doe',age=22)
+student2.subjects.add(subject1)
+```
+> this have like this structure
+```
+John -> Maths,Science
+Doe -> Maths
+Maths -> John,Doe
+Science -> John
+```
+
+### Updating ManyToMany Relation
+```python
+student=Student.objects.get(name='John')
+subjects=student.subjects.all() #get all the subjects of the student john . you can use filter() instead of all()
+subject=subjects[0]
+subject.name='History'
+subject.save()
+```
+
+### Find all the student corresponding to the subject
+- Way 1 
+```python
+subject=Subject.objects.get(name='Maths')
+students=subject.student.all()
+```
+
+### Accessing the subject object from student object
+```python
+student=Student.objects.get(name='John')
+subjects=student.subjects.all()
+``` -->
+
+
+
+
+
+
