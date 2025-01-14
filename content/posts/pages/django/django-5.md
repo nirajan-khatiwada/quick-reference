@@ -290,3 +290,11 @@ students = subject.students.all() # You can use filter() instead of all().
 student = Student.objects.get(name='John')
 subjects = student.subjects.all() # You can use filter() instead of all().
 ```
+### remove() ManyToMany Relation
+
+```python
+student = Student.objects.get(name='John')
+subject = Subject.objects.get(name='Maths')
+student.subjects.remove(subject)
+```
+> **Note**: The `remove()` method removes the relation between the student and the subject but does not delete the subject object.
