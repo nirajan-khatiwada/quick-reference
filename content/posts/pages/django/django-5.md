@@ -84,7 +84,7 @@ profile.save()
 studentprofile = StudentProfile.objects.get(student__name='John')
 ```
 
-- **Way 2** (without `related_name`):
+- **Way 2** 
 
 ```python
 student = Student.objects.get(name='John')

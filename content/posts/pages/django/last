@@ -1,5 +1,52 @@
 <!-- 
 Request -request.method,request.GET,request.POST,request.user,request.session,request.user.is_authenticated,media files -->
+- `request.user`: The user object associated with the request.
+```python
+def my_view(request):
+    if request.user.is_authenticated:
+        return HttpResponse('You are logged in')
+    else:
+        return HttpResponse('You are not logged in')
+```
+
+- `request.user.is_authenticated`: A boolean value indicating whether the user is authenticated or not.
+```python
+def my_view(request):
+    if request.user.is_authenticated:
+        return HttpResponse('You are logged in')
+    else:
+        return HttpResponse('You are not logged in')
+```
+
+- `request.user.is_superuser`: A boolean value indicating whether the user is a superuser or not.
+```python
+def my_view(request):
+    if request.user.is_superuser:
+        return HttpResponse('You are a superuser')
+    else:
+        return HttpResponse('You are not a superuser')
+```
+
+- `request.user.is_staff`: A boolean value indicating whether the user is a staff member or not.
+```python
+def my_view(request):
+    if request.user.is_staff:
+        return HttpResponse('You are a staff member')
+    else:
+        return HttpResponse('You are not a staff member')
+```
+
+- `request.user.username`: The username of the user.
+```python
+def my_view(request):
+    username = request.user.username
+    return HttpResponse(f'Hello, {username}')
+```
+
+
+
+
+
 <!-- 
 # Django Relations
 Basically there are three types of relations in Django:
