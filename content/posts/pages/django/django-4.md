@@ -1,6 +1,6 @@
 ---
 title: "Django: Day 4"
-date: 2024-03-17
+date: 2025-01-05
 description: "Explore Django's admin interface, including creating superusers, registering models, and customizing the admin interface. Learn how to enhance the admin experience with customizations."
 showToc: true
 categories: ["Django"]

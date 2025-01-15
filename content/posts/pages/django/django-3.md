@@ -1,6 +1,6 @@
 ---
-title:"Django: Day 3"
-date: 2024-03-16
+title: "Django: Day 3"
+date: 2025-01-04
 description: "Learn Django Models and database concepts including model creation, fields, migrations, and database configuration. Essential guide for working with Django's ORM system."
 showToc: true
 categories: ["Django"]

@@ -1,6 +1,6 @@
 ---
 title: "Django: Day 5"
-date: 2024-03-18
+date: 2025-01-06
 description: "Understand Django model relationships including OneToOne, OneToMany, and ManyToMany. Learn how to define, create, update, and query these relationships."
 showToc: true
 categories: ["Django"]
