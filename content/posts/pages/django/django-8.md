@@ -1,5 +1,5 @@
 ---
-title: "Session Management in Django: Practical Examples"
+title: "Django : Day 8"
 date: 2025-01-09
 description: "Learn how to manage user sessions in Django, including adding, retrieving, modifying, and deleting session data."
 showToc: true
