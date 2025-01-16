@@ -24,9 +24,9 @@ This command will create a `build` folder in the root directory of the project.
 We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pages` etc.
 
 ### Left Over Topics
-> **Authentication**
-> **Tanstack Query**
-> **React Hook Form**
+- **Authentication**
+- **Tanstack Query**
+- **React Hook Form**
 
 
 
