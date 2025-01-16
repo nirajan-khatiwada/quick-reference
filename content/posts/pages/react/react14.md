@@ -342,3 +342,22 @@ const router=createBrowserRouter([
 ```
 
 
+## 52.11 useSearchParams Hook
+The `useSearchParams` hook is used to access the search parameters in the URL. It returns an array of two elements where the first element is the search parameters object and the second element is the function to update the search parameters.
+```jsx
+import {useSearchParams} from 'react-router-dom';
+
+function Home(){
+    const [searchParams,setSearchParams]=useSearchParams();
+    return (
+        <div>
+            <h1>Home</h1>
+            <h2>I am {searchParams.get('name')??'undefined'}</h2>
+            <button onClick={()=>setSearchParams({name:'active'})}>Set Name</button>
+            <button onClick={()=>setSearchParams({})}>Clear Name</button>
+            
+        </div>
+    )
+}
+```
+It is like the `useState` hook but it is used to update the search parameters in the URL ad this also re-renders the component when the search parameters are updated.`searchParams.get` will always return a string.
