@@ -143,6 +143,20 @@ This command helps monitor system performance.
 
 ---
 
+### `pkill`
+Terminate a process by its name.
+**Usage**: `pkill [process name]`
+**Example**: `pkill firefox` stops all Firefox processes.
+              `pkill node` stops all Node.js processes.
+---
+
+### `nohup`
+Run a command immune to hangups (HUP) and continue running even after the terminal is closed.
+**Usage**: `nohup [command] &`
+**Example**: `nohup python script.py &` runs the Python script in the background.
+
+---
+
 ### `apt-get update`
 Update the package lists for upgrades and new package installations.  
 **Usage**: `apt-get update`  
