@@ -6,7 +6,7 @@ showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "Session Management", "Backend", "Web Development"]
 summary: "A comprehensive guide on managing user sessions in Django, covering key operations like adding, retrieving, modifying, and deleting session data."
-images: ["/images/django/session_management.jpg"]
+images: ["/images/django/django.jpg"]
 ---
 
 

@@ -6,7 +6,7 @@ showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "Form Data", "File Uploads", "Backend", "Web Development"]
 summary: "A comprehensive guide on handling form data and file uploads in Django, covering request methods, media file setup, and file field usage."
-images: ["/images/django/file_uploads.jpg"]
+images: ["/images/django/django.jpg"]
 ---
 
 # Request object for Form Data

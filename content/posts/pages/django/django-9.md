@@ -6,7 +6,7 @@ showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "Email", "Middleware", "Token", "User Management", "Backend", "Web Development"]
 summary: "A comprehensive guide on sending emails, using middleware, generating tokens, and managing users in Django."
-images: ["/images/django/email_middleware_tokens_users.jpg"]
+images: ["/images/django/django.jpg"]
 ---
 
 # Sending Email Using Django
