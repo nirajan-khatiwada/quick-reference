@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Static Files on Quick Reference</title>
+    <link>http://localhost:1313/tags/static-files/</link>
+    <description>Recent content in Static Files on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/static-files/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django: Day 1</title>
+      <link>http://localhost:1313/posts/pages/django/django-1/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-1/</guid>
+      <description>A comprehensive guide to Django fundamentals covering project setup, apps, routing, views, and static file handling - essential concepts for learning Django REST Framework.</description>
+    </item>
+  </channel>
+</rss>

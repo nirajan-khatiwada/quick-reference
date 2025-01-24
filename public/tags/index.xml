@@ -11,8 +11,204 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Backend</title>
+      <link>http://localhost:1313/tags/backend/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/backend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Django</title>
+      <link>http://localhost:1313/tags/django/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/django/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Email</title>
+      <link>http://localhost:1313/tags/email/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/email/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Middleware</title>
+      <link>http://localhost:1313/tags/middleware/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/middleware/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>http://localhost:1313/tags/python/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Token</title>
+      <link>http://localhost:1313/tags/token/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/token/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>User Management</title>
+      <link>http://localhost:1313/tags/user-management/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/user-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Session Management</title>
+      <link>http://localhost:1313/tags/session-management/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/session-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>File Uploads</title>
+      <link>http://localhost:1313/tags/file-uploads/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/file-uploads/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Form Data</title>
+      <link>http://localhost:1313/tags/form-data/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/form-data/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Configuration</title>
+      <link>http://localhost:1313/tags/configuration/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/configuration/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Settings</title>
+      <link>http://localhost:1313/tags/settings/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/settings/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Models</title>
+      <link>http://localhost:1313/tags/models/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/models/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Relationships</title>
+      <link>http://localhost:1313/tags/relationships/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/relationships/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Admin Interface</title>
+      <link>http://localhost:1313/tags/admin-interface/</link>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/admin-interface/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Customization</title>
+      <link>http://localhost:1313/tags/customization/</link>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/customization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>http://localhost:1313/tags/database/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ORM</title>
+      <link>http://localhost:1313/tags/orm/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/orm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Static Files</title>
+      <link>http://localhost:1313/tags/static-files/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/static-files/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Deployment</title>
+      <link>http://localhost:1313/tags/deployment/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/deployment/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GitHub Pages</title>
+      <link>http://localhost:1313/tags/github-pages/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/github-pages/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Netlify</title>
+      <link>http://localhost:1313/tags/netlify/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/netlify/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/tags/react/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Vercel</title>
+      <link>http://localhost:1313/tags/vercel/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/vercel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Frontend</title>
+      <link>http://localhost:1313/tags/frontend/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/frontend/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React Router</title>
+      <link>http://localhost:1313/tags/react-router/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react-router/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Routing</title>
+      <link>http://localhost:1313/tags/routing/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/routing/</guid>
+      <description></description>
+    </item>
     <item>
       <title>@Reduxjs/Toolkit</title>
       <link>http://localhost:1313/tags/@reduxjs/toolkit/</link>
@@ -21,10 +217,17 @@
       <description></description>
     </item>
     <item>
-      <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
+      <title>Asynchronous</title>
+      <link>http://localhost:1313/tags/asynchronous/</link>
       <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/react/</guid>
+      <guid>http://localhost:1313/tags/asynchronous/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>React Dev Tools</title>
+      <link>http://localhost:1313/tags/react-dev-tools/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/react-dev-tools/</guid>
       <description></description>
     </item>
     <item>
@@ -60,13 +263,6 @@
       <link>http://localhost:1313/tags/forms/</link>
       <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/forms/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Development</title>
-      <link>http://localhost:1313/tags/web-development/</link>
-      <pubDate>Tue, 26 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
@@ -144,13 +340,6 @@
       <link>http://localhost:1313/tags/programming/</link>
       <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/programming/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
-      <pubDate>Fri, 22 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
       <description></description>
     </item>
     <item>
@@ -326,13 +515,6 @@
       <link>http://localhost:1313/tags/async/await/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/async/await/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Asynchronous</title>
-      <link>http://localhost:1313/tags/asynchronous/</link>
-      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/asynchronous/</guid>
       <description></description>
     </item>
     <item>

@@ -11,14 +11,112 @@
     </image>
     <generator>Hugo -- 0.140.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django : Day 10</title>
+      <link>http://localhost:1313/posts/pages/django/django-10/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-10/</guid>
+      <description>Learn this if you want to continue with Django Templates based website</description>
+    </item>
+    <item>
+      <title>drf</title>
+      <link>http://localhost:1313/posts/pages/drf/drf-1/</link>
+      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf-1/</guid>
+      <description>drf</description>
+    </item>
+    <item>
+      <title>Django : Day 9</title>
+      <link>http://localhost:1313/posts/pages/django/django-9/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-9/</guid>
+      <description>Learn how to send emails, use middleware, generate tokens, and manage users in Django.</description>
+    </item>
+    <item>
+      <title>Django : Day 8</title>
+      <link>http://localhost:1313/posts/pages/django/django-8/</link>
+      <pubDate>Thu, 09 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-8/</guid>
+      <description>Learn how to manage user sessions in Django, including adding, retrieving, modifying, and deleting session data.</description>
+    </item>
+    <item>
+      <title>Django : Day 7</title>
+      <link>http://localhost:1313/posts/pages/django/django-7/</link>
+      <pubDate>Wed, 08 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-7/</guid>
+      <description>Learn how to handle form data and file uploads in Django, including setting up media files, serving media files, and using FileField and ImageField.</description>
+    </item>
+    <item>
+      <title>Django: Day 6</title>
+      <link>http://localhost:1313/posts/pages/django/django-6/</link>
+      <pubDate>Tue, 07 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-6/</guid>
+      <description>Comprehensive overview of Django settings and configuration including database setup, security settings, middleware, templates, and core project configuration options.</description>
+    </item>
+    <item>
+      <title>Django: Day 5</title>
+      <link>http://localhost:1313/posts/pages/django/django-5/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-5/</guid>
+      <description>Understand Django model relationships including OneToOne, OneToMany, and ManyToMany. Learn how to define, create, update, and query these relationships.</description>
+    </item>
+    <item>
+      <title>Django: Day 4</title>
+      <link>http://localhost:1313/posts/pages/django/django-4/</link>
+      <pubDate>Sun, 05 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-4/</guid>
+      <description>Explore Django&amp;#39;s admin interface, including creating superusers, registering models, and customizing the admin interface. Learn how to enhance the admin experience with customizations.</description>
+    </item>
+    <item>
+      <title>Django: Day 3</title>
+      <link>http://localhost:1313/posts/pages/django/django-3/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-3/</guid>
+      <description>Learn Django Models and database concepts including model creation, fields, migrations, and database configuration. Essential guide for working with Django&amp;#39;s ORM system.</description>
+    </item>
+    <item>
+      <title>Django: Day 2</title>
+      <link>http://localhost:1313/posts/pages/django/django-2/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-2/</guid>
+      <description>Learn Django Models and database concepts including model creation, fields, migrations, and database configuration. Essential guide for working with Django&amp;#39;s ORM system.</description>
+    </item>
+    <item>
+      <title>Django: Day 1</title>
+      <link>http://localhost:1313/posts/pages/django/django-1/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-1/</guid>
+      <description>A comprehensive guide to Django fundamentals covering project setup, apps, routing, views, and static file handling - essential concepts for learning Django REST Framework.</description>
+    </item>
+    <item>
+      <title>Deploying React App</title>
+      <link>http://localhost:1313/posts/pages/react/react15/</link>
+      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react15/</guid>
+      <description>Learn how to build and deploy a React app to various static file servers like Netlify, Vercel, and GitHub Pages.</description>
+    </item>
+    <item>
+      <title>React : Day 14</title>
+      <link>http://localhost:1313/posts/pages/react/react14/</link>
+      <pubDate>Thu, 28 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react14/</guid>
+      <description>A comprehensive guide on React Router Dom for handling routing in React applications including route definitions, navigation, layouts, and dynamic routes.</description>
+    </item>
     <item>
       <title>React : Day 12</title>
       <link>http://localhost:1313/posts/pages/react/react12/</link>
       <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/react/react12/</guid>
       <description>A comprehensive guide on state management with React-Redux and @reduxjs/toolkit.</description>
+    </item>
+    <item>
+      <title>React : Day 13</title>
+      <link>http://localhost:1313/posts/pages/react/react13/</link>
+      <pubDate>Wed, 27 Nov 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react13/</guid>
+      <description>A comprehensive guide on handling asynchronous data in Redux and using React Dev Tools.</description>
     </item>
     <item>
       <title>React : Day 11</title>
@@ -285,22 +383,6 @@
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/pages/react/react13/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/react/react13/</guid>
-      <description>&lt;h1 id=&#34;51-handling-asynchronous-data-in-redux&#34;&gt;51. Handling Asynchronous Data in redux&lt;/h1&gt;
-&lt;p&gt;Since the reducer function should be a pure function, it should not have any side effects. This means that we cannot make any API calls or perform any asynchronous operations inside the reducer function. To handle this,
-we can use&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Putting the asynchronous logic inside the component using &lt;code&gt;useEffect&lt;/code&gt; hook.
-Here we dispatch when the component mounts and fetch the data from the API.&lt;/li&gt;
-&lt;li&gt;Inside the action creator&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&#34;511-using-useeffect-hook&#34;&gt;51.1 Using &lt;code&gt;useEffect&lt;/code&gt; hook&lt;/h1&gt;
-&lt;p&gt;In here we use useEffect to fetch the data from the API and dispatch the action to the reducer.Such that reducer updates the state.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

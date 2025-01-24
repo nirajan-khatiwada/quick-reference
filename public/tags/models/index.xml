@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Models on Quick Reference</title>
+    <link>http://localhost:1313/tags/models/</link>
+    <description>Recent content in Models on Quick Reference</description>
+    <image>
+      <title>Quick Reference</title>
+      <url>http://localhost:1313/images/shar.jpg</url>
+      <link>http://localhost:1313/images/shar.jpg</link>
+    </image>
+    <generator>Hugo -- 0.140.0</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 06 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/models/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Django: Day 5</title>
+      <link>http://localhost:1313/posts/pages/django/django-5/</link>
+      <pubDate>Mon, 06 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-5/</guid>
+      <description>Understand Django model relationships including OneToOne, OneToMany, and ManyToMany. Learn how to define, create, update, and query these relationships.</description>
+    </item>
+    <item>
+      <title>Django: Day 3</title>
+      <link>http://localhost:1313/posts/pages/django/django-3/</link>
+      <pubDate>Sat, 04 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-3/</guid>
+      <description>Learn Django Models and database concepts including model creation, fields, migrations, and database configuration. Essential guide for working with Django&amp;#39;s ORM system.</description>
+    </item>
+    <item>
+      <title>Django: Day 2</title>
+      <link>http://localhost:1313/posts/pages/django/django-2/</link>
+      <pubDate>Thu, 02 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/django/django-2/</guid>
+      <description>Learn Django Models and database concepts including model creation, fields, migrations, and database configuration. Essential guide for working with Django&amp;#39;s ORM system.</description>
+    </item>
+  </channel>
+</rss>
