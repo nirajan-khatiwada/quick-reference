@@ -34,7 +34,7 @@ for example:
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
         model = Book
         fields = ['title', 'author']
@@ -44,7 +44,7 @@ class CommentSerializer(serializers.ModelSerializer):
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.Serializer):
+class BookSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
 ```
@@ -76,9 +76,9 @@ Model Serializer:
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
+        model = Book
         fields = ['title', 'author']
 ```
 
@@ -87,18 +87,18 @@ Normal Serializer:
 ```python
 from rest_framework import serializers
 from .models import Author, Book
-class CommentSerializer(serializers.Serializer):
+class BookSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
     def create(self, validated_data):
-        auther=valiadted_data.pop('author')
-        author_instance=Author.objects.get(id=author)
+        author = validated_data.pop('author')
+        author_instance = Author.objects.get(id=author)
         return Book.objects.create(author=author_instance, **validated_data)
     def update(self, instance, validated_data):
-        auther=valiadted_data.pop('author')
-        author_instance=Author.objects.get(id=author)
-        instance.author=author_instance
-        instance.title=validated_data.get('title', instance.title)
+        author = validated_data.pop('author')
+        author_instance = Author.objects.get(id=author)
+        instance.author = author_instance
+        instance.title = validated_data.get('title', instance.title)
         instance.save()
         return instance
 ```
@@ -109,22 +109,22 @@ Using it in API view to update and save the instance and get the instance:
 from rest_framework import APIView
 from rest_framework.response import Response
 from .models import Author, Book
-from .serializers import AuthorSerializer
+from .serializers import BookSerializer
 
-class CommentView(APIView):
+class BookView(APIView):
     def post(self, request):
-        serializer = CommentSerializer(data=request.data)
+        serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
     def get(self, request):
-        author = Author.objects.get(id=1)
-        serializer = CommentSerializer(author)
+        book = Book.objects.get(id=1)
+        serializer = BookSerializer(book)
         return Response(serializer.data)
     def patch(self,request,id):
-        author = Author.objects.get(id=id)
-        serializer = CommentSerializer(author, data=request.data, partial=True)
+        book = Book.objects.get(id=id)
+        serializer = BookSerializer(book, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -146,9 +146,9 @@ Model Serializer:
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
+        model = Book
         fields = ['title', 'author']
 ```
 
@@ -156,18 +156,18 @@ Normal Serializer:
 ```python
 from rest_framework import serializers
 from .models import Author, Book
-class CommentSerializer(serializers.Serializer):
+class BookSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
     def create(self, validated_data):
-        auther=valiadted_data.pop('author')
-        author_instance=Author.objects.get(id=author)
+        author = validated_data.pop('author')
+        author_instance = Author.objects.get(id=author)
         return Book.objects.create(author=author_instance, **validated_data)
     def update(self, instance, validated_data):
-        auther=valiadted_data.pop('author')
-        author_instance=Author.objects.get(id=author)
-        instance.author=author_instance
-        instance.title=validated_data.get('title', instance.title)
+        author = validated_data.pop('author')
+        author_instance = Author.objects.get(id=author)
+        instance.author = author_instance
+        instance.title = validated_data.get('title', instance.title)
         instance.save()
         return instance
 ```
@@ -178,22 +178,22 @@ Using it in API view to update and save the instance and get the instance:
 from rest_framework import APIView
 from rest_framework.response import Response
 from .models import Author, Book
-from .serializers import AuthorSerializer
+from .serializers import BookSerializer
 
-class CommentView(APIView):
+class BookView(APIView):
     def post(self, request):
-        serializer = CommentSerializer(data=request.data)
+        serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
     def get(self, request):
-        author = Author.objects.get(id=1)
-        serializer = CommentSerializer(author)
+        book = Book.objects.get(id=1)
+        serializer = BookSerializer(book)
         return Response(serializer.data)
     def patch(self,request,id):
-        author = Author.objects.get(id=id)
-        serializer = CommentSerializer(author, data=request.data, partial=True)
+        book = Book.objects.get(id=id)
+        serializer = BookSerializer(book, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -215,9 +215,9 @@ Model Serializer:
 ```python
 from rest_framework import serializers
 from .models import Author, Book
-class CommentSerializer(serializers.ModelSerializer):
+class BookSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Author
+        model = Book
         fields = ['title', 'author']
 ```
 
@@ -225,22 +225,22 @@ Normal Serializer:
 ```python
 from rest_framework import serializers
 from .models import Author, Book
-class CommentSerializer(serializers.Serializer):
+class BookSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
     author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all(), many=True)
     def create(self, validated_data):
         authors = validated_data.pop('author')
-        book = Book.objects.get(**validated_data)
-        auther_instance = Author.objects.filter(id__in=authors)
-        book.author.add(*auther_instance)
+        book = Book.objects.create(**validated_data)
+        author_instances = Author.objects.filter(id__in=authors)
+        book.author.add(*author_instances)
         return book
     def update(self, instance, validated_data):
         authors = validated_data.pop('author')
         book = instance
         book.title = validated_data.get('title', book.title)
         book.save()
-        auther_instance = Author.objects.filter(id__in=authors)
-        book.author.set(auther_instance)
+        author_instances = Author.objects.filter(id__in=authors)
+        book.author.set(author_instances)
         return book
 ```
 
@@ -250,21 +250,21 @@ Using it in API view to update and save the instance and get the instance:
 from rest_framework import APIView
 from rest_framework.response import Response
 from .models import Author, Book
-from .serializers import AuthorSerializer
-class CommentView(APIView):
+from .serializers import BookSerializer
+class BookView(APIView):
     def post(self, request):
-        serializer = CommentSerializer(data=request.data)
+        serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
     def get(self, request):
-        author = Author.objects.get(id=1)
-        serializer = CommentSerializer(author)
+        book = Book.objects.get(id=1)
+        serializer = BookSerializer(book)
         return Response(serializer.data)
     def patch(self,request,id):
-        author = Author.objects.get(id=id)
-        serializer = CommentSerializer(author, data=request.data, partial=True)
+        book = Book.objects.get(id=id)
+        serializer = BookSerializer(book, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -295,12 +295,12 @@ Model Serializer:
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.ModelSerializer):
+class AuthorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Author
         fields = ['id','name']
 class BookSerializer(serializers.ModelSerializer):
-    author = CommentSerializer(many=True)
+    author = AuthorSerializer(many=True)
     class Meta:
         model = Book
         fields = ['title', 'author']
@@ -311,9 +311,29 @@ Normal Serializer:
 from rest_framework import serializers
 from .models import Author, Book
 
-class CommentSerializer(serializers.Serializer):
+class AuthorSerializer(serializers.Serializer):
+    id = serializers.IntegerField()
+    name = serializers.CharField(max_length=100)
+
+class BookSerializer(serializers.Serializer):
     title = serializers.CharField(max_length=100)
-    author = serializers.PrimaryKeyRelatedField(queryset=Author.objects.all())
+    author = AuthorSerializer(many=True)
+    def create(self, validated_data):
+        authors = validated_data.pop('author')
+        book = Book.objects.create(**validated_data)
+        for author in authors:
+            author_instance = Author.objects.get(id=author['id'])
+            book.author.add(author_instance)
+        return book
+    def update(self, instance, validated_data):
+        authors = validated_data.pop('author')
+        book = instance
+        book.title = validated_data.get('title', book.title)
+        book.save()
+        for author in authors:
+            author_instance = Author.objects.get(id=author['id'])
+            book.author.add(author_instance)
+        return book
 ```
 
 Would serialize to a nested representation like this:
@@ -408,22 +428,22 @@ Using it in API view to update and save the instance and get the instance:
 from rest_framework import APIView
 from rest_framework.response import Response
 from .models import Author, Book
-from .serializers import AuthorSerializer
+from .serializers import BookSerializer
 
-class CommentView(APIView):
+class BookView(APIView):
     def post(self, request):
-        serializer = CommentSerializer(data=request.data)
+        serializer = BookSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
         return Response(serializer.errors)
     def get(self, request):
-        author = Author.objects.get(id=1)
-        serializer = CommentSerializer(author)
+        book = Book.objects.get(id=1)
+        serializer = BookSerializer(book)
         return Response(serializer.data)
     def patch(self,request,id):
-        author = Author.objects.get(id=id)
-        serializer = CommentSerializer(author, data=request.data, partial=True)
+        book = Book.objects.get(id=id)
+        serializer = BookSerializer(book, data=request.data, partial=True)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)
@@ -476,7 +496,7 @@ from rest_framework import APIView
 from rest_framework.response import Response
 from .models import Author, Book
 from .serializers import AuthorSerializer
-class CommentView(APIView):
+class AuthorView(APIView):
     def get(self, request):
         author = Author.objects.get(id=1)
         serializer = AuthorSerializer(author)
@@ -717,7 +737,7 @@ SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
 This will set the access token lifetime to 5 minutes and the refresh token lifetime to 1 day.
 
 
-    
+
 
 
 
