@@ -36,3 +36,47 @@ We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pag
 - Hover.dev
 - Radix ui
 - React toastify
+
+
+### Some Behaviour of useState
+Note the state of the component is lost when the component is unmounted. So, if you want to persist the state value even after the component is unmounted, you can move it to the parent component that is not unmounted and pass it as a prop to the child component.
+
+### Make a menu 
+
+```jsx
+import React, { useState } from 'react';
+
+const data = [
+    {
+        menu: 'Home',
+        value: 'I love home page',
+    },
+    {
+        menu: 'About',
+        value: 'I love about page',
+    },
+    {
+        menu: 'Contact',
+        value: 'I love contact page',
+    },
+];
+
+const Menu = () => {
+    const [menu, setMenu] = useState(0);
+
+    return (
+        <div>
+            <ul>
+                {data.map((item, index) => (
+                    <li key={index} onClick={() => setMenu(index)}>
+                        {item.menu}
+                    </li>
+                ))}
+            </ul>
+            <div>{data[menu].value}</div>
+        </div>
+    );
+};
+
+export default Menu;
+```
