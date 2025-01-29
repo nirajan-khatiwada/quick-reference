@@ -80,3 +80,102 @@ const Menu = () => {
 
 export default Menu;
 ```
+
+
+###  Stale Value of `stateVariable` in `useEffect`, `useMemo`, and `useCallback`
+
+```jsx
+import React, { useState, useEffect } from 'react';
+const StaleValue = () => {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log(count);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []); 
+
+    const HandleInteral = () => {
+        setCount((prevCount) => prevCount + 1);
+    }
+    
+    return <div onClick={HandleInteral}>Click me</div>;
+};
+```
+
+What is the output of the above code if i click the `div` element?
+The output will be always `0`  because the `count` value is not updated in the `useEffect` hook as the `count` value is not passed in the dependency array of the `useEffect` hook. So, the initial value of the `count` is used in the `useEffect` hook every time.
+
+
+
+### Solution to the above problem
+```jsx
+import React, { useState, useEffect } from 'react';
+const StaleValue = () => {
+    const [count, setCount] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log(count);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, [count]); 
+
+    const HandleInteral = () => {
+        setCount((prevCount) => prevCount + 1);
+    }
+    
+    return <div onClick={HandleInteral}>Click me</div>;
+};
+
+```
+Here, the output will reflect the updated value of `count` because `count` is passed in the dependency array of the `useEffect` hook. This ensures that the `useEffect` hook re-runs whenever `count` changes with the updated value of `count` , preventing stale values from being used.
+
+
+
+### Stale Value in `useMemo` and `useCallback`
+
+Similarly, the `useMemo` and `useCallback` hooks can also suffer from stale values if the state variable is not included in their dependency arrays.
+
+
+### Non-Stale Variables in `useEffect`, `useMemo`, and `useCallback`
+
+Generally, the `useEffect`, `useMemo`, and `useCallback` hooks will rerun whenever the reference of an element in the dependency array changes. However, in the case of the `useRef` hook, the reference remains the same across re-renders, even if the value of `ref.current` changes. On the other hand, a state variable's reference and value both change when updated.
+
+This means that `ref` has no significance in the dependency array of `useEffect`, `useMemo`, and `useCallback` hooks.
+
+When dealing with stale values in `useRef` it  will always have the updated value in `useEffect`, `useMemo`, and `useCallback` hooks, even if they are not included in the dependency array.
+
+For example, consider `useRef`:
+
+```jsx
+import React, { useEffect, useRef } from 'react';
+
+const StaleValue = () => {
+    const countRef = useRef(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            console.log(countRef.current);
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
+
+    const handleInterval = () => {
+        countRef.current += 1;
+    };
+
+    return <div onClick={handleInterval}>Click me</div>;
+};
+```
+In the above code, the output will always be the updated value of countRef.current, even though countRef.current is not included in the dependency array of the useEffect hook.
+
+
+> Note: Normal function never contain the stale value of a function. It always contain the updated value of the function.
+
+
+
+### Which Which component will rerender when we dispatch an action in Redux?
+When we dispatch an action in Redux, the component that is using `useSelector` will rerender. This is because the component is subscribed to the store and will update whenever the store changes.
+
+### Which Which component will rerender when context api value changes?
+When the value of a context API changes, the component that is using `useContext` will rerender. This is because the component is subscribed to the context and will update whenever the context value changes.
