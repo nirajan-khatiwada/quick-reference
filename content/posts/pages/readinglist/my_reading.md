@@ -33,7 +33,7 @@ images: ["/images/learn.jpg"]  # For social share
 - [ ] React Advanced
 - [ ] Git Advanced
 - [ ] Linux Advance
-- [ ] Sql Database 
+- [ ] Sql Database or No Sql Database
 - [ ] Docker Advanced
 - [ ] WebSOcket Deep Dive in Django
 
