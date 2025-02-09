@@ -28,6 +28,7 @@ images: ["/images/learn.jpg"]  # For social share
 ---
 
 ## What I Plan to Learn Next
+- [ ] Tanstack Query
 - [ ] Axios Crud
 - [ ] Django Rest Framework (DRF) Deep Dive
 - [ ] Django ORM Deep Dive
