@@ -9,23 +9,44 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.140.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DRF : Day 4</title>
+      <link>http://localhost:1313/posts/pages/drf/drf4/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf4/</guid>
+      <description>Learn how to manage permissions and throttling in Django REST framework, including custom permissions and rate limiting.</description>
+    </item>
+    <item>
+      <title>DRF : Day 3</title>
+      <link>http://localhost:1313/posts/pages/drf/drf3/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf3/</guid>
+      <description>Learn how to implement JWT authentication in Django REST framework, including installation, configuration, and usage.</description>
+    </item>
+    <item>
+      <title>DRF : Day 2</title>
+      <link>http://localhost:1313/posts/pages/drf/drf2/</link>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf2/</guid>
+      <description>A detailed guide on various serializer fields in Django Rest Framework, including their usage and validation options.</description>
+    </item>
+    <item>
+      <title>DRF - DAY 1</title>
+      <link>http://localhost:1313/posts/pages/drf/drf-1/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf-1/</guid>
+      <description>An in-depth guide to Django Rest Framework, covering installation, views, serializers, and more.</description>
+    </item>
     <item>
       <title>Django : Day 10</title>
       <link>http://localhost:1313/posts/pages/django/django-10/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/django/django-10/</guid>
       <description>Learn this if you want to continue with Django Templates based website</description>
-    </item>
-    <item>
-      <title>drf</title>
-      <link>http://localhost:1313/posts/pages/drf/drf-1/</link>
-      <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/drf/drf-1/</guid>
-      <description>drf</description>
     </item>
     <item>
       <title>Django : Day 9</title>

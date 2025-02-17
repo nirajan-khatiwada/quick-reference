@@ -27,15 +27,13 @@ We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pag
 - **Authentication**
 - **Tanstack Query**
 - **React Hook Form**
+- **CRUD asyncthunk Redux**
 
+### React Toastify
+Go to the [React Toastify](https://fkhadra.github.io/react-toastify/introduction/) website to learn more
 
-
-### Some UI Libraries
-- Aceternity UI
-- Shadcn UI
-- Hover.dev
-- Radix ui
-- React toastify
+### React loading skeleton
+Go to the [React loading skeleton](https://www.npmjs.com/package/react-loading-skeleton) website to learn more
 
 
 ### Some Behaviour of useState

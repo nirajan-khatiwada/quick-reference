@@ -29,15 +29,14 @@ images: ["/images/learn.jpg"]  # For social share
 
 ## What I Plan to Learn Next
 - [ ] Tanstack Query
-- [ ] Axios Crud
 - [ ] Django Rest Framework (DRF) Deep Dive
 - [ ] Django ORM Deep Dive
 - [ ] React Advanced
 - [ ] Git Advanced
-- [ ] Linux Advance
-- [ ] Sql Database or No Sql Database
+- [ ] Linux Advanced
+- [ ] SQL Database or NoSQL Database
 - [ ] Docker Advanced
-- [ ] WebSOcket Deep Dive in Django
+- [ ] WebSocket Deep Dive in Django
 
 ---
 

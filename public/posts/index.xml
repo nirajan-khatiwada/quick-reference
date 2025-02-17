@@ -9,10 +9,38 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.140.0</generator>
+    <generator>Hugo -- 0.143.1</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 11 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DRF : Day 4</title>
+      <link>http://localhost:1313/posts/pages/drf/drf4/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf4/</guid>
+      <description>Learn how to manage permissions and throttling in Django REST framework, including custom permissions and rate limiting.</description>
+    </item>
+    <item>
+      <title>DRF : Day 3</title>
+      <link>http://localhost:1313/posts/pages/drf/drf3/</link>
+      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf3/</guid>
+      <description>Learn how to implement JWT authentication in Django REST framework, including installation, configuration, and usage.</description>
+    </item>
+    <item>
+      <title>DRF : Day 2</title>
+      <link>http://localhost:1313/posts/pages/drf/drf2/</link>
+      <pubDate>Mon, 13 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf2/</guid>
+      <description>A detailed guide on various serializer fields in Django Rest Framework, including their usage and validation options.</description>
+    </item>
+    <item>
+      <title>DRF - DAY 1</title>
+      <link>http://localhost:1313/posts/pages/drf/drf-1/</link>
+      <pubDate>Sun, 12 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/drf-1/</guid>
+      <description>An in-depth guide to Django Rest Framework, covering installation, views, serializers, and more.</description>
+    </item>
     <item>
       <title>Django : Day 10</title>
       <link>http://localhost:1313/posts/pages/django/django-10/</link>
@@ -376,30 +404,6 @@
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/readinglist/my_reading/</guid>
       <description>A summary of what I have learned and what I plan to learn next.</description>
-    </item>
-    <item>
-      <title></title>
-      <link>http://localhost:1313/posts/pages/drf/drf-1/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/drf/drf-1/</guid>
-      <description>&lt;h1 id=&#34;1-installation&#34;&gt;1. Installation&lt;/h1&gt;
-&lt;h3 id=&#34;step-1-install-django-rest-framework&#34;&gt;Step 1: Install Django Rest Framework&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install djangorestframework
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-2-add-rest_framework-to-your-installed_apps-setting&#34;&gt;Step 2: Add &amp;lsquo;rest_framework&amp;rsquo; to your INSTALLED_APPS setting.&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;INSTALLED_APPS &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#f92672&#34;&gt;...&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;rest_framework&amp;#39;&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;]
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h1 id=&#34;2views&#34;&gt;2.Views&lt;/h1&gt;
-&lt;p&gt;We can Define class based views in django rest framework by inheriting from APIView class.&lt;/p&gt;
-&lt;h3 id=&#34;step-1-import-apiview&#34;&gt;step 1: Import APIView&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; rest_framework.views &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; APIView
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; rest_framework.response &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; Response
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;step-2-define-a-class-based-view&#34;&gt;step 2: Define a class based view&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;HelloApiView&lt;/span&gt;(APIView):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;def&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;get&lt;/span&gt;(self, request):
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#75715e&#34;&gt;#code&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;here we can define post, put, patch, delete methods also.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
