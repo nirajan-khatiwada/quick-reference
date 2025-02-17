@@ -3,7 +3,7 @@ title: "React : CRUD Operations with Axios"
 date: 2025-02-17
 description: "A comprehensive guide for implementing CRUD operations using Axios in React applications"
 showToc: true
-categories: ["React", "API"]
+categories: ["axios"]
 tags: ["React", "Axios", "HTTP", "CRUD", "API", "Tutorial"]
 summary: "A detailed guide explaining how to perform CRUD operations using Axios in React, comparing it with Fetch API, and implementing proper API request structures."
 ---
