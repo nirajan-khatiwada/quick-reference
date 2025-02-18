@@ -632,3 +632,64 @@ def special_view(request):
 
 
 # This will be enough to learn DRF. I hope you enjoyed this series. If you have any questions or suggestions, feel free to ask. Thank you for reading. Happy coding!🚀🚀🚀
+
+
+
+## Model Manager and Custom Model Manager
+By default, Django adds a Manager with the name objects to every Django model class. However, if you want to use objects as a field name, or if you want to use a name other than objects for the Manager, you can rename it on a per-model basis. To rename the Manager for a given class, define a class attribute of type models.Manager() on that model.
+
+```python
+from django.db import models
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    people = models.Manager()
+```
+
+Using this example model, Person.objects will generate an AttributeError exception, but Person.people.all() will provide a list of all Person objects.
+
+
+## Custom Model Manager
+You can use custom managers to add extra manager methods to your models. This is useful for adding custom query methods. For example, to add a method that only give user who are not deleted, you can create a custom manager like this:
+
+```python
+from django.db import models
+class PersonManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(deleted=False)
+    
+
+class Person(models.Model):
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    deleted = models.BooleanField(default=False)
+    objects = models.Manager()
+    people = PersonManager()
+```
+
+> Here Person.objects.all() will return all the objects that is deleted as well as not deleted but Person.people.all() will return only the objects which are not deleted.
+
+
+## Signals in Django
+Signals are used to allow decoupled applications to get notified when certain actions occur elsewhere in the application. In Django, signals are used to allow certain senders to notify a set of receivers when some action has taken place.
+
+### Defining a Signal
+
+```python
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
+
+@receiver(pre_save, sender=MyModel)
+def my_handler(sender, **kwargs):
+    # code
+```
+
+### Available Signals
+- pre_save: This signal is sent just before a model's save() method is called.
+- post_save: This signal is sent just after a model's save() method is called.
+- pre_delete: This signal is sent just before a model's delete() method is called.
+- post_save : This signal is sent just after a model's delete() method is called.
+- pre_init: This signal is sent when a model's __init__() method is called.
+- post_init: This signal is sent when a model's __init__() method is called.
+
+
