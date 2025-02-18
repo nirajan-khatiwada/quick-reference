@@ -14,6 +14,7 @@ If you want to go back to learn DJANGO.Then add the following Topics
 - **Django Forms**
 - **Django Model Manager**
 - **Django Signals**
+- **Context Processor**
 Some Orm concept to know
 - **select_related()**
 - **prefetch_related()**
