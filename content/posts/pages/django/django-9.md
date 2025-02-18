@@ -631,10 +631,6 @@ def special_view(request):
 ```
 
 
-# This will be enough to learn DRF. I hope you enjoyed this series. If you have any questions or suggestions, feel free to ask. Thank you for reading. Happy coding!🚀🚀🚀
-
-
-
 ## Model Manager and Custom Model Manager
 By default, Django adds a Manager with the name objects to every Django model class. However, if you want to use objects as a field name, or if you want to use a name other than objects for the Manager, you can rename it on a per-model basis. To rename the Manager for a given class, define a class attribute of type models.Manager() on that model.
 
@@ -691,5 +687,11 @@ def my_handler(sender, **kwargs):
 - post_save : This signal is sent just after a model's delete() method is called.
 - pre_init: This signal is sent when a model's __init__() method is called.
 - post_init: This signal is sent when a model's __init__() method is called.
+
+
+
+
+
+# This will be enough to learn DRF. I hope you enjoyed this series. If you have any questions or suggestions, feel free to ask. Thank you for reading. Happy coding!🚀🚀🚀
 
 
