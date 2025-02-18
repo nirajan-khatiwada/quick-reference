@@ -1,3 +1,4 @@
 {
-    "python.analysis.generateWithTypeAnnotation": true
+    "python.analysis.generateWithTypeAnnotation": true,
+    "markdown.validate.enabled": true
 }

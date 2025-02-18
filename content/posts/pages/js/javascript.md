@@ -1012,3 +1012,52 @@ fetch('https://api.example.com/data')
     .catch(error => console.error('Error:', error));
 ```
 
+
+## 21.Optional Chaining
+e optional chaining (?.) operator allows safe access to nested properties. If any part of the chain is null or undefined, the expression short-circuits and returns undefined instead of throwing an error.
+
+### Without Optional Chaining
+```javascript
+const person = {
+    name: 'Nirajan',
+    address: {
+        city: 'Kathmandu'
+    }
+};
+console.log(person.address.street.data); // Error: Cannot read property 'street' of undefined
+```
+
+### With Optional Chaining
+```javascript
+const person = {
+    name: 'Nirajan',
+    address: {
+        city: 'Kathmandu'
+    }
+};
+console.log(person.address.street?.data); // Output: undefined
+```
+
+## 22.Object Shorthand Property Notation in JavaScript
+In JavaScript, object shorthand property notation allows you to create an object without explicitly specifying the key-value pairs.
+
+### Without Shorthand Notation
+```javascript
+const name = 'Nirajan';
+const age = 20;
+
+const person = {
+    name: name,
+    age: age
+};
+console.log(person); // Output: { name: 'Nirajan', age: 20 }
+```
+
+### With Shorthand Notation
+```javascript
+const name = 'Nirajan';
+const age = 20;
+const person = { name, age };
+console.log(person); // Output: { name: 'Nirajan', age: 20 }
+```
+
