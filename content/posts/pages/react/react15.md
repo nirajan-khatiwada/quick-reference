@@ -28,6 +28,8 @@ We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pag
 - **Tanstack Query**
 - **React Hook Form**
 - **CRUD asyncthunk Redux**
+- **Axios intercept**
+
 
 ### React Toastify
 Go to the [React Toastify](https://fkhadra.github.io/react-toastify/introduction/) website to learn more
