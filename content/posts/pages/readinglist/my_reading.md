@@ -37,26 +37,15 @@ images: ["/images/learn.jpg"]  # For social share
 - [ ] SQL Database or NoSQL Database
 - [ ] Docker Advanced
 - [ ] WebSocket Deep Dive in Django
-
 ---
 
 
-## Plan to learn in future
-- WebSocket Deep Dive in Django
-- Celery Deep Dive
-- Redis for Cache
-- Kafka Basics + Advanced
-- Docker Advanced + Kubernetes
-- Message Brokers
-- Django Rest Framework (DRF)
-- Django ORM Deep Dive
-- React Advanced
-- Git Advanced
-- Django Docs+Advance Like class based views
-
-
-## Additional Topics for Future Learning
-- Real-time WebSocket usage in Django.
-- Kafka streaming for handling large data volumes.
-- Implementing Kubernetes for containerized applications.
-
+## Read In Sequence
+- Django Database Select Releated and prefetch related,Annotations
+- React Authentication
+- Axios Intercept
+- CRUD async thunk redux
+- Tanstack query
+- asyncio
+- Django Channels Deep Dive
+- Django Celery 
