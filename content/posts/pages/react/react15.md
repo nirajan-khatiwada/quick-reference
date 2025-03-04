@@ -26,7 +26,6 @@ We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pag
 ### Left Over Topics
 - **Authentication**
 - **Tanstack Query**
-- **React Hook Form**
 - **CRUD asyncthunk Redux**
 - **Axios intercept**
 
