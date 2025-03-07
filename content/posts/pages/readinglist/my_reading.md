@@ -44,7 +44,6 @@ images: ["/images/learn.jpg"]  # For social share
 - Django Database Select Releated and prefetch related,Annotations
 - React Authentication
 - Axios Intercept
-- CRUD async thunk redux
 - Tanstack query
 - asyncio
 - Django Channels Deep Dive
