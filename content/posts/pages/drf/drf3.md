@@ -717,6 +717,44 @@ urlpatterns = [
 ]
 ```
 
+
+## Backlisting the token
+First  add the blacklist app to your installed apps:
+```python
+INSTALLED_APPS = [
+    ...
+    'rest_framework_simplejwt.token_blacklist',
+]
+```
+Then run python manage.py migrate to create the necessary database tables.
+
+Then to backlist token you can use .blacklist() method of the token object.
+```python
+from rest_framework_simplejwt.views import APIView
+from rest_framework.response import Response
+from rest_framework_simplejwt.tokens import RefreshToken
+class LogoutView(APIView):
+    def post(self, request):
+        try:
+            refresh_token = request.data.get['refresh']
+            token = RefreshToken(refresh_token)
+            token.blacklist()
+            return Response({'message': 'Token blacklisted'})
+        except Exception as e:
+            return Response({'error': str(e)})
+```
+
+else you can use the `TokenBlacklistView` view to blacklist the token.
+
+```python
+from rest_framework_simplejwt.views import TokenBlacklistView
+urlpatterns = [
+    path('api/token/blacklist/', TokenBlacklistView.as_view(), name='token_blacklist'),
+    # Add any other urlpatterns here if needed
+]
+```
+This is specifically for blacklisting the token. when the same token won't be used again.and used to logout the user.
+
 ## How to send token in request for authentication and authorization
 suppose the route `/api/shop` is protected by authentication and authorization then we have to send the token in the request header.
 ```python
