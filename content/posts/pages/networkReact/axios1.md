@@ -85,6 +85,8 @@ const App = () => {
                 setError(error);
                 setLoading(false);
                 //error.message
+                //error.response
+                //error.response.status
             }
         }
     })
