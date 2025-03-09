@@ -6,6 +6,7 @@ ShowToc: true
 categories: ["VS Code"]
 tags: ["Debugger", "VS Code", "Guide"]
 summary: "Learn how to use the debugger in Visual Studio Code to inspect variables, track program flow, and identify issues with precision."
+images: ["/images/debuf.png"]
 ---
 ## Introduction
 Instead of relying on print statements to examine variable values during code execution, VS Code's built-in debugger offers a more powerful and efficient approach to troubleshooting. The debugger allows you to inspect variables, track program flow, and identify issues with precision.
