@@ -315,3 +315,5 @@ const App = () => {
 ```
 
 This will cause an infinite loop because the `loadData` function is called every time the component re-renders, which causes the component to re-render again, and so on. The `useEffect` hook with an empty dependency array ensures that the function is only called once after the initial render. -->
+
+>> Note: useEffect(()=>{},[]) runs on every mount not on every render
