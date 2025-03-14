@@ -528,7 +528,7 @@ const YourComponent =()=>{
     // }
 
 
-    // Invalidating the cache after mutation is successful to refetch data from server
+    // Invalidating the cache after mutation is successful to forcefully refetch data from server even if there is data in cache
 
     // onSuccess: (data,id) => {
     // if server doesnt returns updated data 
