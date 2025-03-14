@@ -1,0 +1,15 @@
+# Hugo files
+/public/
+/resources/_gen/
+/hugo_stats.json
+
+# Node.js dependencies
+/node_modules/
+
+# Optional OS files
+.DS_Store
+Thumbs.db
+
+# Optional IDE files
+.vscode/
+.idea/

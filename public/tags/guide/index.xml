@@ -9,10 +9,17 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 18 Oct 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 09 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Complete Guide to Debugger in VS Code</title>
+      <link>http://localhost:1313/posts/pages/debugger/debug/</link>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/debugger/debug/</guid>
+      <description>A comprehensive guide on how to use the debugger in Visual Studio Code for efficient troubleshooting.</description>
+    </item>
     <item>
       <title>Basics of Vim</title>
       <link>http://localhost:1313/posts/pages/linux/vim_basics_guide/</link>

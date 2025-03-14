@@ -9,10 +9,38 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/react/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A complete guide to Tanstack query</title>
+      <link>http://localhost:1313/posts/pages/networkreact/tanstack/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/networkreact/tanstack/</guid>
+      <description>A comprehensive guide to using Tanstack query for data fetching in React applications.</description>
+    </item>
+    <item>
+      <title>Using React Hook Form</title>
+      <link>http://localhost:1313/posts/pages/react/react16/</link>
+      <pubDate>Wed, 19 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/react/react16/</guid>
+      <description>Learn how to use React Hook Form to manage form state and validation in your React applications.</description>
+    </item>
+    <item>
+      <title>React : Axios Interceptors for Request &amp; Response Handling</title>
+      <link>http://localhost:1313/posts/pages/networkreact/axios2/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/networkreact/axios2/</guid>
+      <description>A comprehensive guide for implementing Axios interceptors in React applications to handle requests and responses effectively.</description>
+    </item>
+    <item>
+      <title>React : CRUD Operations with Axios</title>
+      <link>http://localhost:1313/posts/pages/networkreact/axios1/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/networkreact/axios1/</guid>
+      <description>A comprehensive guide for implementing CRUD operations using Axios in React applications</description>
+    </item>
     <item>
       <title>Deploying React App</title>
       <link>http://localhost:1313/posts/pages/react/react15/</link>

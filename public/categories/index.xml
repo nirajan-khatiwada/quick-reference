@@ -9,10 +9,38 @@
       <url>http://localhost:1313/images/shar.jpg</url>
       <link>http://localhost:1313/images/shar.jpg</link>
     </image>
-    <generator>Hugo -- 0.143.1</generator>
+    <generator>Hugo -- 0.139.4</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 15 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 14 Mar 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>React</title>
+      <link>http://localhost:1313/categories/react/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tanstack</title>
+      <link>http://localhost:1313/categories/tanstack/</link>
+      <pubDate>Fri, 14 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/tanstack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VS Code</title>
+      <link>http://localhost:1313/categories/vs-code/</link>
+      <pubDate>Sun, 09 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/vs-code/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Axios</title>
+      <link>http://localhost:1313/categories/axios/</link>
+      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/axios/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Django Rest Framework</title>
       <link>http://localhost:1313/categories/django-rest-framework/</link>
@@ -25,13 +53,6 @@
       <link>http://localhost:1313/categories/django/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/django/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>React</title>
-      <link>http://localhost:1313/categories/react/</link>
-      <pubDate>Fri, 29 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/react/</guid>
       <description></description>
     </item>
     <item>
@@ -95,6 +116,13 @@
       <link>http://localhost:1313/categories/readinglist/</link>
       <pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/readinglist/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Css</title>
+      <link>http://localhost:1313/categories/css/</link>
+      <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/css/</guid>
       <description></description>
     </item>
   </channel>
