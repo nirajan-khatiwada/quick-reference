@@ -1076,3 +1076,30 @@ outer1.inner.display(outer1)
 # Age: 30
 ```
 
+
+
+
+# 17. (Not Supported in Python For c,c++)
+
+## 17.1 Types of Inheritance in C++
+Inheritance is a mechanism in which one class acquires the properties and behavior of another class. There are different types of inheritance in C++:
+- public inheritance
+- protected inheritance
+- private inheritance
+
+- Public Inheritance: In public inheritance, the public members of the base class become public members of the derived class, and the protected members of the base class become protected members of the derived class.
+
+- Protected Inheritance: In protected inheritance, the public members of the base class become protected members of the derived class, and the protected members of the base class become protected members of the derived class while the private members of the base class is not inherited.
+
+- Private Inheritance: In private inheritance, the public members of the base class become private members of the derived class, and the protected members of the base class become private members of the derived class while the private members of the base class is not inherited.
+
+Table of Inheritance in C++:
+| Inheritance Type | Public Members | Protected Members | Private Members |
+|------------------|----------------|-------------------|-----------------|
+| Public Inheritance | Public          | Protected         | Not Inherited    |
+| Protected Inheritance | Protected       | Protected         | Not Inherited    |
+|Private Inheritance | Private         | Private           | Not Inherited    |
+
+
+
+
