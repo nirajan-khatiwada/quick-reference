@@ -23,12 +23,6 @@ This command will create a `build` folder in the root directory of the project.
 ### Deploy the App
 We can deploy this to any static file server like `Netlify`,`Vercel`,`Github Pages` etc.
 
-### Left Over Topics
-- **Authentication**
-- **Tanstack Query**
-- **Axios intercept**
-
-
 ### React Toastify
 Go to the [React Toastify](https://fkhadra.github.io/react-toastify/introduction/) website to learn more
 
