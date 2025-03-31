@@ -41,7 +41,12 @@ images: ["/images/learn.jpg"]  # For social share
 
 
 ## Read In Sequence
-- Django Database Select Releated and prefetch related,Annotations
+- select_related()
+- prefetch_related()
+- Annotations
+- Hyperlink Model Serializer
+- Hyperlink Identity field
+- Hyperlink related field
 - React Authentication
 - Axios Intercept
 - Tanstack query
