@@ -13,6 +13,3 @@ If you want to go back to learn DJANGO.Then add the following Topics
 - **Templates**
 - **Django Forms**
 - **Context Processor**
-- **select_related()**
-- **prefetch_related()**
-- **Annotations**
