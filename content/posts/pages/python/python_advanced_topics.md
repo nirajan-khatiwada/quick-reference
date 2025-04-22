@@ -281,4 +281,69 @@ Hello!
 
 
 
+##4. Loading .env file
+To load we use popular package `python-decouple`.
+
+### Install it using pip:
+```bash
+pip install python-decouple
+```
+### `config` function:
+Config function is used to load environment variables from a `.env` file.
+```python
+from decouple import config
+config('SECRET_KEY')  # Load the SECRET_KEY from .env file
+```
+
+#### `cast` parameter:
+Since the data store in the `.env` file is always string, we can use the `cast` parameter to convert it to the desired type.
+```python
+from decouple import config
+config('DEPTH', cast=int)  # Load the DEPTH variable as an integer
+config('DEBUG', cast=bool)  # Load the DEBUG variable as a boolean
+config('ALLOWED_HOSTS', cast=lambda x: [i.strip() for i in x.split(',')])  # Load the ALLOWED_HOSTS variable as a list
+```
+
+#### `default` parameter:
+The `default` parameter is used to provide a default value if the environment variable is not found in the `.env` file.
+```python
+from decouple import config
+config('SECRET_KEY', default='default_secret_key')  # Load the SECRET_KEY with a default value
+```
+
+### Example of using `config` function:
+
+### Create a `.env` file in the root of your project:
+```env
+SECRET_KEY=your_secret_key
+DEBUG=True
+ALLOWED_HOSTS=localhost,
+DEPTH=1
+```
+
+### Create a `main.py` file in using .env file need to load:
+```python
+from decouple import config
+# Load environment variables from .env file
+SECRET_KEY=config('SECRET_KEY', default='')
+DEBUG=config('DEBUG', cast=bool, default=False)
+ALLOWED_HOSTS=config('ALLOWED_HOSTS', cast=lambda x: [i.strip() for i in x.split(',')], default=['localhost'])
+DEPTH=config('DEPTH', cast=int, default=1)
+```
+
+### Use the loaded environment variables in your code:
+```python
+print(f"Secret Key: {SECRET_KEY}")
+print(f"Debug Mode: {DEBUG}")
+print(f"Allowed Hosts: {ALLOWED_HOSTS}")
+print(f"Depth: {DEPTH}")
+```
+
+
+
+
+
+
+
+
 
