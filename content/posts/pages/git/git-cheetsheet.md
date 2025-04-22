@@ -151,6 +151,19 @@ git clone <forked_repo_url>                   # Clone your forked repository
 ```
 
 ---
+
+## 11. .gitignore
+gitignore is a file that tells Git which files or directories to ignore in a project. This is useful for excluding files that are not necessary for version control, such as build files, temporary files, or sensitive information.
+for example, if you want to ignore all `.log` files and the `node_modules` directory, your `.gitignore` file would look like this:
+
+```plaintext
+*.log
+node_modules/
+```
+
+
+
+
 Make changes, commit them, and push to your fork. Finally, create a pull request on GitHub to merge your changes into the original repository.
 
 
