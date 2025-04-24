@@ -144,10 +144,12 @@ This command helps monitor system performance.
 ---
 
 ### `pkill`
-Terminate a process by its name.
-**Usage**: `pkill [process name]`
-**Example**: `pkill firefox` stops all Firefox processes.
-              `pkill node` stops all Node.js processes.
+Terminate processes by name.
+
+**Usage**: `pkill [process name]`  
+**Example**:  
+- `pkill firefox` — stops all Firefox processes.  
+- `pkill node` — stops all Node.js processes.
 ---
 
 ### `nohup`
