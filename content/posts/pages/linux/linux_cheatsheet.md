@@ -165,13 +165,44 @@ Update the package lists for upgrades and new package installations.
 This command fetches the latest package information.
 
 ---
+### `grep`
+Search for a specific pattern in files.
+**Usage**: `grep [pattern] [file]`  
+**Example**: `grep "error" logfile.txt` searches for the word "error" in "logfile.txt".
 
+---
+
+### `|`
+Pipe the output of one command to another.i.e send the output of one command as input to another.
+**Usage**: `command1 | command2`
+**Example**: `ls -l | grep "txt"` lists all files and filters for those containing "txt".
+---
+
+### `>`
+Redirect the output of a command to a file, overwriting the file if it exists.
+**Usage**: `command > [filename]`  
+**Example**: `ls > filelist.txt` saves the output of `ls` to "filelist.txt".
+***Example**: `cat file.txt > grep "error" > error.txt` saves the output of `grep` to "error.txt".
+---
+### `find`
+Search for files and directories in a specified location.
+**Usage**: `find [path] -name [filename]`
+**Example**: `find /home/username -name "*.txt"` searches for all `.txt` files in the user's home directory.
+---
 ### `apt install path_of_.deb_file`
 Install a `.deb` file package.  
 **Usage**: `apt install ./filename.deb`  
 **Example**: `apt install ./main.deb` installs the specified Debian package.
 
 ---
+### `CURL`
+To check website status or download files from the internet.
+**Usage**: `curl [URL]`
+**Example**: `curl https://example.com` fetches the content of the specified URL.
+
+
+---
+
 
 ### `apt-get upgrade`
 Upgrade all installed packages to their latest versions.  
@@ -215,68 +246,7 @@ Extract files from a zip archive.
 
 ---
 
-### `apt install apache2`
-Install the Apache web server.  
-**Usage**: `apt install apache2`  
-This command sets up Apache on your system.
 
----
-
-### `service apache2 start`
-Start the Apache web server.  
-**Usage**: `service apache2 start`  
-Use this to begin serving web content.
-
----
-
-### `service apache2 restart`
-Restart the Apache web server.  
-**Usage**: `service apache2 restart`  
-This is useful for applying configuration changes.
-
----
-
-### `service apache2 stop`
-Stop the Apache web server.  
-**Usage**: `service apache2 stop`  
-Use this command to halt the server.
-
----
-
-### `apt install redis`
-Install the Redis database server.  
-**Usage**: `apt install redis`  
-This sets up Redis for use.
-
----
-
-### `service redis start`
-Start the Redis server.  
-**Usage**: `service redis start`  
-This command activates the Redis service.
-
----
-
-### `service redis restart`
-Restart the Redis server.  
-**Usage**: `service redis restart`  
-Use this to refresh the Redis service.
-
----
-
-### `service redis stop`
-Stop the Redis server.  
-**Usage**: `service redis stop`  
-This halts the Redis service.
-
----
-
-### `apt install mysql-server`
-Install the MySQL server.  
-**Usage**: `apt install mysql-server`  
-This command installs the MySQL database management system.
-
----
 
 ### `chmod`
 Change file or directory permissions.  
