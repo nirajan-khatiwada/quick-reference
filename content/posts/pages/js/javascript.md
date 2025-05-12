@@ -1061,3 +1061,41 @@ const person = { name, age };
 console.log(person); // Output: { name: 'Nirajan', age: 20 }
 ```
 
+
+
+## 23.Use of ||
+The logical OR operator (||) is used to evaluate two expressions and returns the first truthy value it encounters. If both expressions are falsy, it returns the last value.
+```javascript
+const a = 0;
+const b = 5;
+const c = a || b;
+console.log(c); // Output: 5
+```
+In this example, since `a` is falsy (0), the value of `b` (5) is returned.
+
+## 24. Use of &&
+The logical AND operator (&&) is used to evaluate two expressions and returns the first falsy value it encounters. If both expressions are truthy, it returns the last value.
+```javascript
+const a = 5;
+const b = 10;
+const c = a && b;
+console.log(c); // Output: 10
+```
+
+## 25. Optional Chaining
+Optional chaining (?.) is a feature in JavaScript that allows you to safely access deeply nested properties of an object without having to check if each reference in the chain is null or undefined.
+```javascript
+const person = {
+    name: 'Nirajan',
+    address: {
+        city: 'Kathmandu'
+    }
+};
+
+console.log(person.contact); // Output: 'undefined'
+console.log(person.contact.phone); // Output: Error: Cannot read property 'phone' of undefined
+console.log(person.contact?.phone); // Output: undefined
+```
+
+What happens here using optional chaining.
+If `person.contact` is null or undefined, the expression short-circuits and returns undefined instead of throwing an error. This allows you to safely access properties without worrying about runtime errors.

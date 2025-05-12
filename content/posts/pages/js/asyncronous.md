@@ -215,3 +215,24 @@ async function main() {
 ```
 
 Here, the first promise is resolved, then the second is resolved, and so on.
+
+
+## Directly accepting or rejecting and returning a value
+
+```javascript
+async function main(){
+  const promise = await Promise.resolve("Hello");
+}
+main();
+```
+This code will print "Hello" because the promise is resolved with the value "Hello".
+
+## Rejecting a promise
+
+```javascript
+async function main(){
+  const promise = await Promise.reject("Error");
+}
+main();
+```
+This code will throw an error because the promise is rejected with the value "Error".
