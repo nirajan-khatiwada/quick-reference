@@ -333,3 +333,28 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 ```
 > Note: This is not suitable for production use! 
+
+# 19.Using `csrf_exempt` decorator
+The `csrf_exempt` decorator is used to exempt a view from CSRF verification. This is useful when you want to allow requests from external sources or when you are using a third-party service that does not support CSRF tokens.
+```python
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
+@csrf_exempt
+def my_view(request):
+    return HttpResponse('This view is exempt from CSRF verification')
+```
+> Note: Use this decorator with caution as it can expose your application to CSRF attacks. It is recommended to use this decorator only for views that are not sensitive or do not require CSRF protection.
+
+# 20.`method_decorator` decorator
+The `method_decorator` decorator is used to apply a decorator to a class-based view method. This is useful when you want to apply a decorator to a specific method of a class-based view.
+```python
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
+class MyView(View):
+    @method_decorator(csrf_exempt)
+    def get(self, request):
+        return HttpResponse('This view is exempt from CSRF verification')
+        
+```
