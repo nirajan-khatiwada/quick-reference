@@ -334,6 +334,64 @@ max = Person.objects.all().aggregate(Max('field_name'))
 
 
 
+### 24.6 Count
+The `count()` method is used to count the number of objects in the queryset.
+```python
+from myapp.models import Person
+count = Person.objects.all().aggregate(Count('field_name'))
+```
+
+### 24.7 Combining Aggregation
+We can combine the aggregation methods to perform multiple operations on the queryset.
+```python
+from myapp.models import Person
+from django.db.models import Count, Sum, Avg, Min, Max
+result = Person.objects.all().aggregate(
+    Count('field_name'),
+    Sum('field_name'),
+    Avg('field_name'),
+    Min('field_name'),
+    Max('field_name')
+)
+```
+
+### 24.8 Specifying the field
+We can specify the name of the output field in the aggregation method.
+```python
+from myapp.models import Person
+from django.db.models import Count, Sum, Avg, Min, Max
+result = Person.objects.all().aggregate(
+    field_name_count=Count('field_name'),
+    field_name_sum=Sum('field_name'),
+    field_name_avg=Avg('field_name'),
+    field_name_min=Min('field_name'),
+    field_name_max=Max('field_name')
+)
+```
+> By default the name of the output field is `field_name__count`, `field_name__sum`, `field_name__avg`, `field_name__min`, `field_name__max`.
+> But we can specify the name of the output field by using 
+```python
+result = Person.objects.all().aggregate(
+    name1=Count('field_name'),
+    name2=Max('field_name')
+)
+```
+>This will return the output field as `name1` and `name2` instead of `field_name__count` and `field_name__max`.
+
+
+### 24.9 Using Filter in Aggregation
+We can use the `filter()` method in the aggregation method to filter the data before performing the aggregation.
+```python
+from myapp.models import Person
+from django.db.models import Count, Sum, Avg, Min, Max
+result = Person.objects.filter(age=25).aggregate(
+    Count('field_name'),
+    Sum('field_name'),
+    Avg('field_name'),
+    Min('field_name'),
+    Max('field_name')
+)
+```
 
 
 
