@@ -28,7 +28,8 @@ images: ["/images/learn.jpg"]  # For social share
 ---
 
 ## What I Plan to Learn Next
-- [ ] Tanstack Query
+- [ ] select_related()
+- [ ]prefetch_related()
 - [ ] Django Rest Framework (DRF) Deep Dive
 - [ ] Django ORM Deep Dive
 - [ ] React Advanced
@@ -41,9 +42,6 @@ images: ["/images/learn.jpg"]  # For social share
 
 
 ## Read In Sequence
-- select_related()
-- prefetch_related()
-- Annotations
 - Hyperlink Model Serializer
 - Hyperlink Identity field
 - Hyperlink related field
