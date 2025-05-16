@@ -11,12 +11,19 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 28 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Channels</title>
+      <link>http://localhost:1313/categories/channels/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/channels/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Django Rest Framework</title>
       <link>http://localhost:1313/categories/django-rest-framework/</link>
-      <pubDate>Fri, 28 Mar 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/categories/django-rest-framework/</guid>
       <description></description>
     </item>

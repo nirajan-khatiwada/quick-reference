@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 10 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A Complete Guide to Channels in Django</title>
+      <link>http://localhost:1313/posts/pages/channels/channels1/</link>
+      <pubDate>Fri, 16 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/channels/channels1/</guid>
+      <description>A comprehensive guide on how to use Channels in Django for real-time applications, including WebSockets, consumers, and routing.</description>
+    </item>
     <item>
       <title>DRF DAY 6</title>
       <link>http://localhost:1313/posts/pages/drf/drf6/</link>
