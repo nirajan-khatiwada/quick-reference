@@ -43,8 +43,5 @@ images: ["/images/learn.jpg"]  # For social share
 
 ## Read In Sequence
 - React Authentication
-- Axios Intercept
-- Tanstack query
 - asyncio
-- Django Channels Deep Dive
 - Django Celery 
