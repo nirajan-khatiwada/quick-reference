@@ -13,3 +13,5 @@ Thumbs.db
 # Optional IDE files
 .vscode/
 .idea/
+
+public/
