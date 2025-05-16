@@ -42,9 +42,6 @@ images: ["/images/learn.jpg"]  # For social share
 
 
 ## Read In Sequence
-- Hyperlink Model Serializer
-- Hyperlink Identity field
-- Hyperlink related field
 - React Authentication
 - Axios Intercept
 - Tanstack query
