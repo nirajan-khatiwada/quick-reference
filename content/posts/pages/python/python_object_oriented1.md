@@ -711,7 +711,7 @@ Inheritance is a mechanism in which one class acquires the properties and behavi
 
 The pictorial representation of single inheritance is:
 
-```
+```bash
     A
     |
     B
@@ -764,7 +764,7 @@ student1.display()
 
 The pictorial representation of multiple inheritance is:
 
-```
+```bash
     A    B
      \  /
       C
@@ -822,7 +822,7 @@ student1.display()
 
 The pictorial representation of multilevel inheritance is:
 
-```
+```bash
     A
     |
     B
@@ -883,7 +883,7 @@ student1.display()
 
 The pictorial representation of hierarchical inheritance is:
 
-```
+```bash
     A
    / \
   B   C
