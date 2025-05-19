@@ -1082,3 +1082,6 @@ In this tutorial, we've covered the fundamental concepts of Object-Oriented Prog
 
 By understanding these concepts, you'll be able to design more efficient, maintainable, and powerful Python applications.
 
+
+## Revision
+You can read pdf version of kec publication oop book of BSC.CSIT second semester
