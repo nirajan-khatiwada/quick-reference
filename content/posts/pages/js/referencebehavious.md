@@ -29,7 +29,7 @@ const newPerson = person.address;  // newPerson now references the same object a
 newPerson.city = "New Wonderland";  // modifying newPerson affects the original object 
 console.log(person); 
 // Output: { name: 'Alice', address: { city: 'New Wonderland' } } 
-
+```
 ## JavaScript Reference Behavior: Objects and Arrays
 ### Introduction
 In JavaScript, both objects and arrays are considered reference types. This means that when you assign an object or an array to another variable, you’re not creating a new copy of that object or array. Instead, the new variable holds a reference to the original object or array in memory. Understanding this concept is crucial because it directly affects how data is manipulated and shared within your code.
