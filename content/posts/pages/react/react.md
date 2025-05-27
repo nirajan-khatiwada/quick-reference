@@ -29,7 +29,7 @@ In a React application, one page is broken down into multiple components. Compon
 ![Component Diagram](/images/react/components.png)
 
 ## 3. Folder Structure
-```
+```bash
 my-app/
   ├─ node_modules/
   ├─ public/
