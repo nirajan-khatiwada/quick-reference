@@ -98,6 +98,7 @@ function FunctionName() {
 1. Tags that don't have ending tags, such as `<br>` and `<hr>`, should be written as `<br/>` and `<hr/>`.
 2. `class` is replaced by `className`. For example, `<body class="data">` is written as `<body className="data">`.
 3. During a return in React, we cannot return multiple elements directly. Instead, we need to wrap them inside a single parent element like `<div>`, `<></>`.
+4. `for` is replaced by `htmlFor`. For example `<label htmlFor="inputId">Name:</label>`
 
 ***For Example*** :
 - Wrong Way:
