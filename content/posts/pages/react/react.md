@@ -159,7 +159,7 @@ Note: For proper management, create a components folder, create one file for eac
 
 
 Example structure:
-```
+```bash
 src/
   ├─ Assets/
   ├─ App.jsx
@@ -232,7 +232,7 @@ export default App;
 ```
 
 structure:
-```
+```bash
 src/
   ├─ Assets/
   ├─ App.jsx
@@ -388,7 +388,7 @@ export default RandomElement;
 <br><br>
 Task: Load an image in a Header component with the image name `logo.png` and description `logo`.
 structure:
-```
+```bash
 src/
   ├─ Assets/
       └─ logo.png
@@ -430,6 +430,7 @@ function App() {
 
 ### 9.1 Managing CSS in React
 - Create css file in same directory as of your component
+```bash
 src/
   ├─ App.jsx
   └─ components/
