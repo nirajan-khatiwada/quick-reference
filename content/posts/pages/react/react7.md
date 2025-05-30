@@ -204,16 +204,13 @@ const myRef= useRef();
 ```jsx
 <MyChildComponent ref={myRef} />
 ```
-## 4.Import forward ref in child component
-```jsx
-import React, { forwardRef } from 'react';
-```
 
-## 5. Using forwardRef to Forward the Ref
+## 4. Using ref in the Child Component
 ```jsx
-const MyChildComponent = forwardRef((props, ref) => {
+const MyChildComponent = ({ref})=>{
   return <input ref={ref} />;
-});
+};
+
 ```
 
 ## 6. Accessing the Ref in the Parent Component
@@ -227,11 +224,11 @@ to take input from user and focus on the input field of the child component from
 ```jsx
 import React, { useRef } from 'react';
 
-const InputComponent = forwardRef(({title}, ref) => {
+const InputComponent =({title,ref}) => {
   return<> <h1>{title}</h1>
   <input ref={ref}/> 
   </>
-});
+};
 
 function ParentComponent() {
   const inputRef = useRef();
