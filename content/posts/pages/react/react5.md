@@ -141,7 +141,7 @@ Problem1
 => Imagine that you have two components with the same class name. The styles of one component can affect the styles of another component.which is not good for the application to solve this problem we can use CSS modules.
 
 Structure of the project
-```
+```bash
 src
 |_components
     |_MyComponent
