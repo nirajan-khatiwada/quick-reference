@@ -263,8 +263,8 @@ function App() {
 
 ### 2. Use useImperativeHandle in the Child Component with forwardRef to expose methods
 ```jsx
-import { useImperativeHandle, forwardRef } from 'react';
-const ChildComponent = forwardRef((props, ref) => {
+import { useImperativeHandle } from 'react';
+const ChildComponent = ({ ref}) => {
   useImperativeHandle(ref, () => ({
     focus: () => {
       // Focus on the input element
@@ -275,7 +275,7 @@ const ChildComponent = forwardRef((props, ref) => {
     inputValue:'vaule'
   }),[dependencies]);
   return <input />;
-});
+};
 ```
 In the ChildComponent, we use the `useImperativeHandle` hook to expose the focus and reset methods to the parent component. The `ref` object is passed as the first argument, and the second argument is a `function` that returns an object containing the methods to be exposed.
 `dependencies` is an optional array of values that, when changed, will trigger the re-evaluation of the function that returns the methods. If the dependencies array is not provided, the function will be called on every render and empty array will call only once in entire lifecycle.
@@ -332,8 +332,8 @@ export default App;
 ```
 
 ```jsx
-import { useImperativeHandle, forwardRef,useRef } from 'react';
-const ChildComponent = forwardRef((props, ref) => {
+import { useImperativeHandle,useRef } from 'react';
+const ChildComponent = ({ref}) => {
   const inputRef = useRef();
   useImperativeHandle(ref, () => ({
     focus: () => {
@@ -346,7 +346,7 @@ const ChildComponent = forwardRef((props, ref) => {
     
   }),[]);
   return <input ref={inputRef} />;
-});
+};
 export default ChildComponent;
 ```
 
