@@ -64,7 +64,7 @@ import CartContext from './store/CartContext';
 function App() {
   return (
     <CartContext.Provider value={data}>
-      <Header />
+      <Product />
       <Shop />
     </CartContext.Provider>
   );
@@ -99,7 +99,7 @@ function Cart() {
 Task: Design a simple application that has a component called App. App has two child components: Header and Shop. Header has one child, CartModel, and Shop has one child, Product. Pass the data from the Product component to the CartModel component using the Context API.
 
 Structure of the project
-```
+```bash
 src
 |_components
     |_App
@@ -302,7 +302,7 @@ To change the state, you need to call the dispatch function with an object that 
 Task: Design a simple counter application that has a component called Counter. The Counter component has two buttons: Increment and Decrement. Use the useReducer hook to manage the state of the counter.
 
 Structure of the project
-```
+```bash
 src
 |_components
     |_Counter
