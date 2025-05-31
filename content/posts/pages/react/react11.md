@@ -40,7 +40,7 @@ const App = () => {
 Custom hooks are JavaScript functions that utilize hooks to enable the reuse of stateful logic across different components.
 
 ### 47.1 Folder Structure
-```
+```bash
 src
 |__hooks
 |  |__useFetch.js
