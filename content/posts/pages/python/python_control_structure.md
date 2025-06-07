@@ -26,7 +26,7 @@ if x > 5:
 ```
 
 Output:
-```
+```bash
 x is greater than 5
 ```
 
@@ -43,7 +43,7 @@ elif x == 5:
 ```
 
 Output:
-```
+```bash
 x is equal to 5
 ```
 
@@ -62,7 +62,7 @@ else:
 ```
 
 Output:
-```
+```bash
 x is less than 5
 ```
 
@@ -123,7 +123,7 @@ for char in "Python":
 ```
 
 Output:
-```
+```bash
 p
 y
 t
@@ -142,7 +142,7 @@ for num in numbers:
 ```
 
 Output:
-``` 
+```bash
 1
 2
 3
@@ -159,7 +159,7 @@ for fruit in fruits:
 ```
 
 Output:
-```
+```bash
 apple
 banana
 cherry
@@ -172,7 +172,7 @@ cherry
 >>    print(f"X: {x}, Y: {y}")
 >> ```
 >> Output:
->> ```
+>> ```bash
 >> X: 1, Y: 2
 >> X: 3, Y: 4
 >> X: 5, Y: 6
@@ -187,7 +187,7 @@ for color in colors:
 ```
 
 Output:
-```
+```bash
 red
 green
 blue
@@ -203,7 +203,7 @@ for key, value in person.items():
 ```
 
 Output:
-```
+```bash
 name: Alice
 age: 30
 city: New York
@@ -224,7 +224,7 @@ for num in [1, 2, 3, 4, 5]:
 ```
 
 Output:
-```
+```bash
 1
 2
 ```
@@ -241,7 +241,7 @@ for num in [1, 2, 3, 4, 5]:
 ```
 
 Output:
-```
+```bash
 1
 2
 4
