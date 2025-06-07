@@ -98,7 +98,7 @@ We use the `__name__` variable to check if a script is being run as the main pro
 For Example:
 
 Structure:
-```
+```bash
 Main Directory/
 ├── main.py
 └── package/
