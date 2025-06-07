@@ -19,7 +19,7 @@ Python packages are a way of organizing and structuring your code into reusable 
 To create a Python package, you need to organize your code into a directory structure with a special file called `__init__.py`. This file tells Python that the directory is a package and allows you to import modules from the package.
 
 Example directory structure:
-```
+```bash
 my_package/
 │
 ├── __init__.py
@@ -57,7 +57,7 @@ my_function()
 You can create subpackages within a package to further organize your code. Subpackages are simply packages within packages, allowing you to create a hierarchical structure for your codebase.
 
 Example directory structure:
-```
+```bash
 my_package/
 │
 ├── __init__.py
@@ -124,7 +124,7 @@ print("Imported module1")
 ```
 
 Output:
-```
+```bash
 Imported module1
 ```
 
@@ -143,7 +143,7 @@ print("Imported module1")
 ```
 
 Output:
-```
+```bash
 Hello from module1
 Imported module1
 ```
@@ -213,7 +213,7 @@ say_hello() #call to my_decorator(say_hello)() just because we use @my_decorator
 ```
 
 Output:
-```
+```bash
 Before function call
 Hello!
 After function call
@@ -235,7 +235,7 @@ print(add(2,3,200))
 ```
 
 Output:
-```
+```bash
 Status code is 200
 5
 ```
@@ -274,7 +274,7 @@ say_hello()
 ```
 
 Output:
-```
+```bash
 Decorator arguments: arg1, arg2
 Hello!
 ```
