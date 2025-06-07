@@ -166,7 +166,7 @@ print(sorted_d)
 ```
 
 Output:
-```
+```bash
 [('banana', 5), ('apple', 10), ('cherry', 15)]
 ```
 
