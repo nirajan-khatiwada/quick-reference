@@ -443,7 +443,7 @@ Inheritance is a mechanism in which one class acquires the properties and behavi
 In single inheritance, a class inherits from only one parent class.
 
 The pictorial representation of single inheritance is:
-```
+```bash
     A
     |
     B
@@ -495,7 +495,7 @@ student1.display()
 In multiple inheritance, a class inherits from more than one parent class.
 
 The pictorial representation of multiple inheritance is:
-```
+```bash
     A    B
      \  /
       C
@@ -551,7 +551,7 @@ student1.display()
 In multilevel inheritance, a class inherits from a parent class, and another class inherits from the child class.
 
 The pictorial representation of multilevel inheritance is:
-```
+```bash
     A
     |
     B
@@ -609,7 +609,7 @@ student1.display()
 In hierarchical inheritance, more than one class inherits from a single parent class.
 
 The pictorial representation of hierarchical inheritance is:
-```
+```bash
     A
    / \
   B   C
@@ -692,7 +692,7 @@ d.display()
 ```
 
 Output:
-```
+```bash
 (<class '__main__.D'>, <class '__main__.A'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>)
 nirajan
 ```
