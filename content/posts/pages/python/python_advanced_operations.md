@@ -83,7 +83,7 @@ for index, char in enumerate(a):
 ```
 
 Output:
-```
+```bash
 0 n
 1 i
 2 r
