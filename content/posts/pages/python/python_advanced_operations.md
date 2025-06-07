@@ -26,7 +26,7 @@ for i in range(10):
 ```
 
 Output:
-```
+```bash
 0
 1
 2
@@ -47,7 +47,7 @@ for i in range(0, 10,2):
 ```
 
 Output:
-```
+```bash
 0
 2
 4
@@ -68,7 +68,7 @@ for index, fruit in enumerate(fruits):
 ```
 
 Output:
-```
+```bash
 0 apple
 1 banana
 2 cherry
@@ -107,7 +107,7 @@ for name, age in zip(names, ages):
 ```
 
 Output:
-```
+```bash
 Alice 25
 Bob 30
 Charlie 35
@@ -122,7 +122,7 @@ print(list(zip(a,b,c)))
 ```
 
 Output:
-```
+```bash
 [(1, 4, 7), (2, 5, 8), (3, 6, 9)]
 ```
 
@@ -139,7 +139,7 @@ print(sorted_numbers)
 ```
 
 Output:
-```
+```bash
 [1, 1, 2, 3, 3, 4, 5, 5, 5, 6, 9]
 ```
 
@@ -152,7 +152,7 @@ print(sorted_fruits)
 ```
 
 Output:
-```
+```bash
 ['date', 'apple', 'banana', 'cherry']
 ```
 
@@ -180,7 +180,7 @@ print(sorted_t)
 ```
 
 Output:
-```
+```bash
 [(3, 1), (1, 2), (5, 6)]
 ```
 
@@ -203,7 +203,7 @@ print(math.sqrt(x))
 ```
 
 Output:
-```
+```bash
 4.0
 ```
 
@@ -218,7 +218,7 @@ print(now)
 ```
 
 Output:
-```
+```bash
 2024-11-17 10:30:00
 ```
 
@@ -235,7 +235,7 @@ print(pi)
 ```
 
 Output:
-```
+```bash
 3.141592653589793
 ```
 
@@ -249,7 +249,7 @@ print(today)
 ```
 
 Output:
-```
+```bash
 2024-11-17
 ```
 
@@ -280,7 +280,7 @@ print(now)
 ```
 
 Output:
-```
+```bash
 2024-11-17 10:30:00
 ```
 
@@ -298,7 +298,7 @@ print(sqrt(x))
 ```
 
 Output:
-```
+```bash
 6.0
 ```
 
@@ -322,7 +322,7 @@ print(random_number)
 ```
 
 Output:
-```
+```bash
 5
 ```
 
@@ -339,7 +339,7 @@ print(numbers)
 ```
 
 Output:
-```
+```bash
 [3, 1, 5, 2, 4]
 ```
 
