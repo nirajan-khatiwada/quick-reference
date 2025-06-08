@@ -152,13 +152,11 @@ class Student(models.Model):
 
 ```python
 subject1 = Subject.objects.create(name='Maths')
-subject2 = Subject.objects.create(name='Science')
 student1 = Student.objects.create(name='John', age=20)
 student2 = Student.objects.create(name='Doe', age=22)
-student3 = Student.objects.create(name='Smith', age=21)
 
-student1.subjects.add(subject1, subject2)
-student2.subjects.add(subject1)
+student1.subjects=subject1
+student2.subject=subject1
 ```
 
 ### Updating OneToMany Relation
