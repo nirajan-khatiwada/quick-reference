@@ -173,7 +173,7 @@ subject.save()
 - **Way 1**:
 
 ```python
-student = Student.objects.get(subjects__name='Maths')
+student = Student.objects.filter(subjects__name='Maths')
 ```
 
 - **Way 2**:
@@ -258,7 +258,7 @@ student2.subjects.add(subject1)
 
 > Structure:
 
-```
+```bash
 John -> Maths, Science
 Doe -> Maths
 Maths -> John, Doe
