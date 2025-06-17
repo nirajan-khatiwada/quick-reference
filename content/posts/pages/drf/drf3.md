@@ -775,9 +775,92 @@ SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
 This will set the access token lifetime to 5 minutes and the refresh token lifetime to 1 day.
 
 
+## Sending the important data using jwt in drf
+
+Normally for obtaining a token in Django Rest Framework, you would use the `TokenObtainPairView` from the `rest_framework_simplejwt` package. Below is an example of how to set up the URL configuration for obtaining a JWT token.
+```python
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+url_patterns = [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+]
+```
+
+This will allow you to obtain a JWT token by sending a POST request to `/api/token/` with the user's credentials (username and password).
+```json
+{
+    "username": "your_username",
+    "password": "your_password"
+}
+```
+
+```json
+{
+    "refresh": "your_refresh_token",
+    "access": "your_access_token"
+}
+```
+
+when you decode the JWT token, you get the following data:
+```json
+{
+    "user_id": 1,
+    "username": "your_username",
+    "exp": 1700000000,
+    "iat": 1700000000
+}
+```
 
 
+If you want to send additional data in the JWT token, do like this:
+```python
+#import refresh tokem
+from rest_framework_simplejwt.token import RefreshToken
+from rest_framework.views import APIView
 
+class TokenView(APIView):
+    def post(self, request):
+        username = request.data.get('username')
+        password = request.data.get('password')  
+        #Note you can use serializers to validate the request data
+        user = authenticate(username=username, password=password)
+        if user is not None:
+            refresh = RefreshToken.for_user(user)
+            # Add custom claims
+            refresh['role'] = user.username.role
+            return Response({
+                'refresh': str(refresh),
+                'access': str(refresh.access_token),
+            })
+        return Response({'error': 'Invalid credentials'}, status=400)
+```
+
+This will add the `user_id` and `username` to the JWT token, which can be accessed when decoding the token.
+````json
+{
+    "username": "your_username",
+    "password": "your_password"
+}
+```
+
+will return:
+```json
+{
+    "refresh": "your_refresh_token",
+    "access": "your_access_token"
+}
+```
+
+And when you decode the JWT token, you will get:
+```json
+{
+    "user_id": 1,
+    "username": "your_username",
+    "exp": 1700000000,
+    "iat": 1700000000,
+    "role": "your_user_role"
+}
+```
 
 
 
