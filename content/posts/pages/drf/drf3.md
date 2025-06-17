@@ -836,7 +836,7 @@ class TokenView(APIView):
 ```
 
 This will add the `user_id` and `username` to the JWT token, which can be accessed when decoding the token.
-````json
+```json
 {
     "username": "your_username",
     "password": "your_password"
