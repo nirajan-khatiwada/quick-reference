@@ -171,3 +171,19 @@ When we dispatch an action in Redux, the component that is using `useSelector` w
 
 ### Which Which component will rerender when context api value changes?
 When the value of a context API changes, the component that is using `useContext` will rerender. This is because the component is subscribed to the context and will update whenever the context value changes.
+
+### ENV FILE IN REACT AND VITE
+In React and Vite, environment variables are typically stored in a `.env` file at the root of your project. These variables can be accessed in your application code, allowing you to configure settings without hardcoding them.
+### Example `.env` File
+```plaintext
+VITE_API_URL=https://api.example.com
+```
+> Note: In Vite, environment variables must start with `VITE_` to be exposed to your application code.
+
+### Accessing Environment Variables
+In your React or Vite application, you can access these variables using `import.meta.env`:
+
+```javascript
+const apiUrl = import.meta.env.VITE_API_URL;
+console.log(apiUrl); // Outputs: https://api.example.com
+```
