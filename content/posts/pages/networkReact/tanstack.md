@@ -72,7 +72,10 @@ const info = useQuery({
     - `isError`:  The query encountered an error
     - `isSuccess` : A boolean indicating if the query has succeeded
     - `isFetching`: In any state, if the query is fetching at any time (including background refetching) isFetching will be true.
+    - `refetch`: A function that can be called to refetch the data from the server
 
+
+> Note: `refetch` is a function that can be called to refetch the data from the server. It is useful when you want to manually refetch the data, for example, when the user clicks a button to refresh the data.
 
 > Note : For understanding purpose we can tell that queryKey is like dependency array in useEffect and queryFn is like function in useEffect just because queryFn is called whenever queryKey changes and first time when component mounts.
 > ```jsx
