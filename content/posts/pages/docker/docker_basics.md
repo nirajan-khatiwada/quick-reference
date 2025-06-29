@@ -116,10 +116,10 @@ COPY source /path/in/container
 # Set environment variables
 ENV key=value
 
-# Expose a port for the container
+# Expose a port for the container. This is only for documentation purposes; it does not actually publish the port.We need to use -p option in docker run command to publish the port or use host networking.
 EXPOSE 8080
 
-# Define the command to run when the container starts
+# Define the command to run when the container starts.There can be only one CMD instruction in a Dockerfile. 
 CMD ["executable"]
 
 # Optionally, run commands automatically when the container starts
