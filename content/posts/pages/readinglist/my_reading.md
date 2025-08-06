@@ -32,16 +32,10 @@ images: ["/images/learn.jpg"]  # For social share
 - [ ]prefetch_related()
 - [ ] Django Rest Framework (DRF) Deep Dive
 - [ ] Django ORM Deep Dive
-- [ ] React Advanced
+- [] Asyncio
 - [ ] Git Advanced
-- [ ] Linux Advanced
-- [ ] SQL Database or NoSQL Database
-- [ ] Docker Advanced
-- [ ] WebSocket Deep Dive in Django
+- [ ] SQL Database 
 ---
 
 
-## Read In Sequence
-- React Authentication
-- asyncio
-- Django Celery 
+
