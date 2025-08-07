@@ -283,7 +283,7 @@ else it wont
     queryFn: fetchData,
     staleTime: 1000 * 60 * 5, // 5 minutes
     })
-```
+```bash
 
 This means for 5 minutes, the data is considered fresh and will not be refetched. After 5 minutes, the data is considered stale and will be refetched from server when the component mounts or when the window is refocused or when the network is reconnected.
 
@@ -301,7 +301,7 @@ const data=useQuery({
   refetchInterval: 1000 * 60 * 5, // 5 minutes
   refetchIntervalInBackground: true, // true or false
 })
-```
+```bash
 
 > Note: Polling is useful for scenarios where data changes frequently and you want to ensure that your application always displays the most recent data. However, it can also lead to increased network traffic and server load, so use it judiciously.
 
@@ -329,7 +329,7 @@ const YourComponent = () => {
     </div>
   );
 };
-```
+```bash
 For each individual data, the query key should be unique. In this case, we are using the post id to make the query key unique. This ensures that each post is fetched individually and cached separately.
 
 > when the 1st post is fetched, the query key is ["posts", 1] and when the 2nd post is fetched, the query key is ["posts", 2] and so on. This ensures that each post is fetched individually and cached separately. where it is cached as ["posts", 1] and ["posts", 2] and so on
@@ -354,7 +354,7 @@ export const fetchData = async (page) => {
     throw error;
   }
 };
-```
+```bash
 
 aftertanstack.jsx
 ```javascript
@@ -385,7 +385,7 @@ const YourComponent = () => {
   );
 };
 export default YourComponent;
-```
+```bash
 What is happening
 What is happening
 -  setPage(page + 1) Updates the State
@@ -418,7 +418,7 @@ const { mutate, isLoading, isError, isSuccess ,data,error,} = useMutation({
     // Handle error
   },
 });
-```
+```bash
 
 - `onSuccess`: This callback is called when the mutation is successful. You can use this to update the UI or perform any other actions after the mutation is complete.
 - `onError`: This callback is called when the mutation fails. You can use this to handle errors and update the UI accordingly.
@@ -446,7 +446,7 @@ const { mutate, isLoading, isError, isSuccess ,data,error,} = useMutation({
 const handleDelete = (id) => {
   mutate(id);
 };
-```
+```bash
 - `apiData`: The data returned from the server after the mutation is successful. You can use this data to update the UI or perform any other actions.
 - `id`: The id of the post to be deleted. This id is passed to the mutation function when the handleDelete function is called.
 
@@ -506,6 +506,6 @@ const handleUpdate = (id) => {
 const App=()=>{
   return <button onClick={() => handleUpdate(1)}>Update Post</button>;
 }
-```
+```bash
 - `setQueryData`: This function is used to update the local cache with the new data after the mutation is successful. You can use this to reflect the changes in the UI immediately without refetching the data from the server.
 - `invalidateQueries`: This function is used to invalidate the cache for a specific query key after the mutation is successful. This forces React Query to refetch the data from the server the next time the query is executed.

@@ -704,7 +704,7 @@ The request on `/api/token/refresh/` will return a response like this:
 {
     "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNjI5MzYwNjY4LCJlbWFpbCI6IiJ9.7Z"
 }
-```
+```bash
 
 ## Verifying Tokens
 
@@ -715,7 +715,7 @@ from rest_framework_simplejwt.views import TokenVerifyView
 urlpatterns = [
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 ]
-```
+```bash
 
 
 ## Backlisting the token
@@ -725,7 +725,7 @@ INSTALLED_APPS = [
     ...
     'rest_framework_simplejwt.token_blacklist',
 ]
-```
+```bash
 Then run python manage.py migrate to create the necessary database tables.
 
 Then to backlist token you can use .blacklist() method of the token object.
@@ -742,7 +742,7 @@ class LogoutView(APIView):
             return Response({'message': 'Token blacklisted'})
         except Exception as e:
             return Response({'error': str(e)})
-```
+```bash
 
 else you can use the `TokenBlacklistView` view to blacklist the token.
 
@@ -752,7 +752,7 @@ urlpatterns = [
     path('api/token/blacklist/', TokenBlacklistView.as_view(), name='token_blacklist'),
     # Add any other urlpatterns here if needed
 ]
-```
+```bash
 This is specifically for blacklisting the token. when the same token won't be used again.and used to logout the user.
 
 ## How to send token in request for authentication and authorization
@@ -764,14 +764,14 @@ json
     "name": "book",
     "price": 100
 }
-```
+```bash
 
 ## Some Expiration settings
 ```python
 SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
-```
+```bash
 This will set the access token lifetime to 5 minutes and the refresh token lifetime to 1 day.
 
 
@@ -784,7 +784,7 @@ from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
 url_patterns = [
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
 ]
-```
+```bash
 
 This will allow you to obtain a JWT token by sending a POST request to `/api/token/` with the user's credentials (username and password).
 ```json
@@ -792,14 +792,14 @@ This will allow you to obtain a JWT token by sending a POST request to `/api/tok
     "username": "your_username",
     "password": "your_password"
 }
-```
+```bash
 
 ```json
 {
     "refresh": "your_refresh_token",
     "access": "your_access_token"
 }
-```
+```bash
 
 when you decode the JWT token, you get the following data:
 ```json
@@ -809,7 +809,7 @@ when you decode the JWT token, you get the following data:
     "exp": 1700000000,
     "iat": 1700000000
 }
-```
+```bash
 
 
 If you want to send additional data in the JWT token, do like this:
@@ -833,7 +833,7 @@ class TokenView(APIView):
                 'access': str(refresh.access_token),
             })
         return Response({'error': 'Invalid credentials'}, status=400)
-```
+```bash
 
 This will add the `user_id` and `username` to the JWT token, which can be accessed when decoding the token.
 ```json
@@ -841,7 +841,7 @@ This will add the `user_id` and `username` to the JWT token, which can be access
     "username": "your_username",
     "password": "your_password"
 }
-```
+```bash
 
 will return:
 ```json
@@ -849,7 +849,7 @@ will return:
     "refresh": "your_refresh_token",
     "access": "your_access_token"
 }
-```
+```bash
 
 And when you decode the JWT token, you will get:
 ```json
@@ -860,7 +860,7 @@ And when you decode the JWT token, you will get:
     "iat": 1700000000,
     "role": "your_user_role"
 }
-```
+```bash
 
 
 

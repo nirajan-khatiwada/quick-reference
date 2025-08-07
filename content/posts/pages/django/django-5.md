@@ -468,7 +468,7 @@ bob.subjects.add(math, science, history)
 
 ### Relationship Structure
 After the above operations, the relationships look like this:
-```
+```bash
 John → Mathematics, Science
 Jane → Mathematics, History
 Bob → Mathematics, Science, History

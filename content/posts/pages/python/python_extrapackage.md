@@ -86,7 +86,7 @@ dt = datetime.datetime(2022, 11, 27, 10, 30, 0)
 print(dt)
 ```
 Output:
-```
+```bash
 2022-11-27 10:30:00
 ```
 
@@ -101,7 +101,7 @@ now = datetime.datetime.now()
 print(now)
 ```
 Output:
-```
+```bash
 2022-11-27 10:30:00
 ```
 

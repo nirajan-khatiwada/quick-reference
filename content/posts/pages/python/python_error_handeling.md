@@ -60,7 +60,7 @@ except Exception as e:
 ```
 
 Output:
-```
+```bash
 Error: Division by zero
 ```
 
@@ -93,7 +93,7 @@ finally:
 ```
 
 Output:
-```
+```bash
 Error: Division by zero
 Cleanup code
 ```
@@ -116,7 +116,7 @@ if x < 0:
 ```
 
 Output:
-```
+```bash
 ValueError: Value cannot be negative
 ```
 
@@ -144,7 +144,7 @@ except ValueError as e:
 ```
 
 Output:
-```
+```bash
 Error: Division by zero
 ```
 

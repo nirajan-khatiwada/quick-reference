@@ -67,7 +67,7 @@ print(type(coroutine))
 
  When we run this code, we’ll see output like the following
 
-```
+```bash
  Method result is 3 and the type is <class 'int'>
  Coroutine result is <coroutine object coroutine_add_one at 0x1071d6040> and 
 the type is <class 'coroutine'>
@@ -100,7 +100,7 @@ print(res)
 ```
 
 When we run this code, we’ll see output like the following:
-```
+```bash
 3
 ```
 
@@ -202,7 +202,7 @@ ate a reusable coroutine that sleeps for us and prints out some useful informati
     await asyncio.sleep(delaysecond)
     print(f'finished sleeping for {delay_seconds} second(s)')
     return delay_seconds
-```
+```bash
 
 
  delay will take in an integer of the duration in seconds that we’d like the function to
@@ -243,7 +243,7 @@ async def hello_world_message():
     print(message)
  asyncio.run(main())
 
-```
+```bash
 
 When we run this, 1 second passes before the results of both function calls are
  printed. What we really want is the value of add_one(1) to be printed immediately
@@ -302,7 +302,7 @@ async def main():
 
 # Run the main coroutine
 asyncio.run(main())
-```
+```bash
 
 ---
 
@@ -450,7 +450,7 @@ asyncio.run(main())
 ```
 
 Output:
-```
+```bash
 Waiting for the lock
 Acquired the lock
 Waiting for the lock
@@ -492,7 +492,7 @@ asyncio.run(main())
 ```
 
 Output:
-```
+```bash
 Acquired the semaphore
 Acquired the semaphore
 Acquired the semaphore

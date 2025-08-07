@@ -81,7 +81,7 @@ display_args(1, 2, 3, 4, 5)
 ```
 
 Output:
-```
+```bash
 (1, 2, 3, 4, 5)
 ```
 
@@ -107,7 +107,7 @@ print(result)
 ```
 
 Output:
-```
+```bash
 8
 10
 ```
@@ -131,7 +131,7 @@ display_kwargs(name="Alice", age=30, city="New York")
 ```
 
 Output:
-```
+```bash
 {'name': 'Alice', 'age': 30, 'city': 'New York'}
 ```
 
@@ -147,7 +147,7 @@ display_args_kwargs(1, 2, 3, name="Alice", age=30)
 ```
 
 Output:
-```
+```bash
 (1, 2, 3)
 {'name': 'Alice', 'age': 30}
 ```
@@ -166,7 +166,7 @@ display_args_kwargs(*args, **kwargs)
 ```
 
 Output:
-```
+```bash
 (1, 2, 3)
 {'name': 'Alice', 'age': 30}
 ```
@@ -187,7 +187,7 @@ print(result)
 ```
 
 Output:
-```
+```bash
 8
 ```
 
@@ -209,7 +209,7 @@ print(list(squared))
 ```
 
 Output:
-```
+```bash
 [1, 4, 9, 16, 25]
 ```
 
@@ -230,7 +230,7 @@ print(list(even))
 ```
 
 Output:
-```
+```bash
 [2, 4]
 ``` 
 
@@ -273,7 +273,7 @@ print(message)
 ```
 
 Output:
-```
+```bash
 Hello, World!
 Hello, Python!
 ```
@@ -296,7 +296,7 @@ print(message)
 ```
 
 Output:
-```
+```bash
 Hello, Python!
 Hello, World!
 ```

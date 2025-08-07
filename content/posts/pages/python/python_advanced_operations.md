@@ -267,7 +267,7 @@ print(m.sqrt(x))
 ```
 
 Output:
-```
+```bash
 5.0
 ```
 

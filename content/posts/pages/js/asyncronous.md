@@ -28,7 +28,7 @@ console.log('End');
 
 When you run this code, the output will be:
 
-```
+```bash
 Start
 End
 This message is delayed by 2 seconds
