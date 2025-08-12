@@ -11,13 +11,48 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 18 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Authentication</title>
+      <link>http://localhost:1313/tags/authentication/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/authentication/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Axios</title>
+      <link>http://localhost:1313/tags/axios/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/axios/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Context API</title>
+      <link>http://localhost:1313/tags/context-api/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/context-api/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JWT</title>
+      <link>http://localhost:1313/tags/jwt/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/jwt/</guid>
+      <description></description>
+    </item>
     <item>
       <title>React</title>
       <link>http://localhost:1313/tags/react/</link>
-      <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/react/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Web Development</title>
+      <link>http://localhost:1313/tags/web-development/</link>
+      <pubDate>Fri, 20 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
@@ -39,13 +74,6 @@
       <link>http://localhost:1313/tags/useid/</link>
       <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/useid/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Web Development</title>
-      <link>http://localhost:1313/tags/web-development/</link>
-      <pubDate>Sun, 18 May 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/web-development/</guid>
       <description></description>
     </item>
     <item>
@@ -161,13 +189,6 @@
       <description></description>
     </item>
     <item>
-      <title>Axios</title>
-      <link>http://localhost:1313/tags/axios/</link>
-      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/axios/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>CRUD</title>
       <link>http://localhost:1313/tags/crud/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
@@ -200,20 +221,6 @@
       <link>http://localhost:1313/tags/throttling/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/throttling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Authentication</title>
-      <link>http://localhost:1313/tags/authentication/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/authentication/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>JWT</title>
-      <link>http://localhost:1313/tags/jwt/</link>
-      <pubDate>Tue, 14 Jan 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/jwt/</guid>
       <description></description>
     </item>
     <item>
@@ -473,13 +480,6 @@
       <link>http://localhost:1313/tags/useeffect/</link>
       <pubDate>Sun, 24 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/useeffect/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Context API</title>
-      <link>http://localhost:1313/tags/context-api/</link>
-      <pubDate>Sat, 23 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/context-api/</guid>
       <description></description>
     </item>
     <item>

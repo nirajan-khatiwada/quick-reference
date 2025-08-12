@@ -103,3 +103,22 @@ const MyComponent = () => {
 };
 export default MyComponent;
 ```
+
+
+
+## ENV Variables in React 19
+To use ENV variables in VITE first you need to prefix the variable with `VITE_`. This is a security feature to ensure that only explicitly defined variables are exposed to the client-side code.
+
+example:
+```bash
+VITE_API_URL=https://api.example.com
+```
+
+You can access these variables in your React components using `import.meta.env`.
+
+For example, if you have an environment variable named `VITE_API_URL`, you can access it like this:
+```jsx
+const apiUrl = import.meta.env.VITE_API_URL;
+console.log(apiUrl);
+```
+
