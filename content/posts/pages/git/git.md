@@ -123,7 +123,7 @@ git remote -v
 ```
 
 **Output:**
-```
+```bash
 origin https://github.com/username/repo.git (fetch)
 origin https://github.com/username/repo.git (push)
 ```
@@ -241,6 +241,7 @@ git clone <url>               # Clone a remote repository
 ## 16. Git Branch
 
 When collaborating with others, different team members often work on different features or fixes simultaneously. To keep work organized and prevent conflicts, Git uses **branches** to isolate changes. Each branch acts like a separate workspace where developers can work independently without affecting the main codebase until their changes are ready to be merged.
+![Git Branching](/images/git.png)
 
 **Example:**
 - The main branch is called `main`
@@ -251,6 +252,8 @@ Both Alice and Bob can work on their respective branches without impacting the `
 
 > **Note:** Branches are like separate workspaces within the same repository, allowing you to develop features or fixes independently.
 
+
+
 ### 16.1 Show All Branches
 
 To list all local branches in your repository:
@@ -260,7 +263,7 @@ git branch
 ```
 
 **Example output:**
-```
+```bash
   main
 * master
 ```
@@ -435,13 +438,13 @@ git reset --hard <commit-hash>
 It will remove all changes made after the specified commit and reset the working directory to that state.
 
 **Example:**
-```
+```bash
 A -> B -> C -> D (HEAD)
 ```
 
 If you run `git reset --hard B`, it will reset the working directory to the state of commit B, and the history will look like this:
 
-```
+```bash
 A -> B (HEAD)
 ```
 
@@ -454,13 +457,13 @@ All logs after B will be removed, and the working directory will be reset to the
 Git revert is another way to go back in history, but it creates a new commit that undoes the changes made in a specific commit instead of removing the commit from history.
 
 **Example:**
-```
+```bash
 A -> B -> C -> D (HEAD)
 ```
 
 If you run `git revert D`, it will create a new commit that undoes the changes made in commit D, and the history will look like this:
 
-```
+```bash
 A -> B -> C -> D -> E (HEAD)
 ```
 
@@ -502,6 +505,8 @@ So `git reset --hard <commit A hash>` is equivalent to `git revert <commit D has
 ### Why use git revert instead of git reset?
 
 If we do `git reset --hard <commit A hash>` it will remove all the commits after commit A and reset the working directory to the state of commit A, which means we will lose all the changes made in those commits. But if we use `git revert <commit D hash>` `git revert <commit C hash>` `git revert <commit B hash>` it will create new commits that undo the changes made in those commits without removing them from history, which means we can still see those commits in the history and can refer to them later if needed.
+
+> Note: Use git revert if your change is already pushed to the remote repository and use git reset if your changes is not pushed to the remote repository yet. 
 
 ## 20. Git Amend
 
