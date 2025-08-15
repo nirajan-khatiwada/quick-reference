@@ -434,25 +434,10 @@
       <description>A guide on Docker networking and how to configure port access for containers.</description>
     </item>
     <item>
-      <title>Git Cheat Sheet</title>
+      <title>Git Commands and Configuration Guide</title>
       <link>http://localhost:1313/posts/pages/git/git/</link>
       <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/git/git/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Git is a version control system that allows you to track changes in files and collaborate with others. This cheat sheet provides a quick reference for common Git commands.&lt;/p&gt;
-&lt;h2 id=&#34;commands-overview&#34;&gt;Commands Overview&lt;/h2&gt;
-&lt;h3 id=&#34;1-initializing-a-repository&#34;&gt;1. Initializing a Repository&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git init                      &lt;span style=&#34;color:#75715e&#34;&gt;# Initialize a new Git repository in the current directory&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Why use it: To start tracking changes in a new project.&lt;/p&gt;
-&lt;h3 id=&#34;2-git-status&#34;&gt;2. Git Status&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git status                                     &lt;span style=&#34;color:#75715e&#34;&gt;# Show the current status of the repository&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Git status breakdown:&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Git Commands and Configuration Guide</title>
-      <link>http://localhost:1313/posts/pages/git/git-cheetsheet/</link>
-      <pubDate>Fri, 18 Oct 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/git/git-cheetsheet/</guid>
       <description>A comprehensive guide for configuring Git, managing repositories, and handling Git workflows.</description>
     </item>
     <item>
@@ -496,6 +481,94 @@
       <pubDate>Sun, 01 Oct 2023 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/css/css/</guid>
       <description>Css:Note from starting to end</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/pages/drf/backup/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/backup/</guid>
+      <description>&lt;h2 id=&#34;generic-views&#34;&gt;Generic Views&lt;/h2&gt;
+&lt;p&gt;Generic views are a set of pre-built views provided by Django Rest Framework that handle common patterns in web development, such as listing objects, creating new objects, updating existing objects, and deleting objects. They help reduce boilerplate code and provide a consistent interface for these operations.&lt;/p&gt;
+&lt;h2 id=&#34;attribute-of-generic-views&#34;&gt;Attribute of Generic Views&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;queryset&lt;/code&gt;: The queryset that the view will operate on.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;serializer_class&lt;/code&gt;: The serializer class that will be used to serialize and deserialize the data.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;lookup_field&lt;/code&gt;: The field used to look up the object in the database.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;base-methoid-of-generic-views-most-used&#34;&gt;Base methoid of Generic Views (Most Used)&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;get_queryset()&lt;/code&gt;: Returns the queryset that the view will operate on.Defaults to returning the queryset specified by the queryset attribute
+This method should always be used rather than accessing self.queryset directly, as self.queryset gets evaluated only once, and those results are cached for all subsequent requests.
+May be overridden to provide dynamic behavior, such as returning a queryset, that is specific to the user making the request.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;For example:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/posts/pages/drf/day7/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/day7/</guid>
+      <description>&lt;h1 id=&#34;django-rest-framework-generic-views---complete-guide&#34;&gt;Django REST Framework Generic Views - Complete Guide&lt;/h1&gt;
+&lt;h2 id=&#34;-quick-reference&#34;&gt;📚 Quick Reference&lt;/h2&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th&gt;View Type&lt;/th&gt;
+          &lt;th&gt;HTTP Methods&lt;/th&gt;
+          &lt;th&gt;Purpose&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;ListAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET&lt;/td&gt;
+          &lt;td&gt;List collection of objects&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;CreateAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;POST&lt;/td&gt;
+          &lt;td&gt;Create new object&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;RetrieveAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET&lt;/td&gt;
+          &lt;td&gt;Get single object by ID&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;UpdateAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;PUT/PATCH&lt;/td&gt;
+          &lt;td&gt;Update existing object&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;DestroyAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;DELETE&lt;/td&gt;
+          &lt;td&gt;Delete object&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;ListCreateAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET, POST&lt;/td&gt;
+          &lt;td&gt;List + Create&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;RetrieveUpdateAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET, PUT, PATCH&lt;/td&gt;
+          &lt;td&gt;Get + Update&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;RetrieveDestroyAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET, DELETE&lt;/td&gt;
+          &lt;td&gt;Get + Delete&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td&gt;&lt;code&gt;RetrieveUpdateDestroyAPIView&lt;/code&gt;&lt;/td&gt;
+          &lt;td&gt;GET, PUT, PATCH, DELETE&lt;/td&gt;
+          &lt;td&gt;Full CRUD&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-what-are-generic-views&#34;&gt;🎯 What Are Generic Views?&lt;/h2&gt;
+&lt;p&gt;Generic views are &lt;strong&gt;pre-built view classes&lt;/strong&gt; in Django REST Framework that handle common patterns in web development and eliminate boilerplate code. They provide a consistent interface for:&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

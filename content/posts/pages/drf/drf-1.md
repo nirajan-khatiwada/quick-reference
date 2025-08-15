@@ -56,6 +56,12 @@ urlpatterns = [
 # 4. Response
 To return a response from a view we can use Response object from `rest_framework.response module`
 
+syntax:
+```python
+from rest_framework.response import Response
+Response(data, status=None, headers=None)
+```
+
 ### Example
 ```python
 from rest_framework.response import Response
@@ -64,6 +70,8 @@ class HelloApiView(APIView):
     def get(self, request):
         return Response({'message': 'Hello From Rest Framework!'})
 ```
+
+
 
 
 # 5.request
@@ -92,7 +100,6 @@ class DemoApiView(APIView):
 ```
 
 
-> Note: All th concept of django are applied in DRF also.
 
 # Different HTTP Methods
 - GET: Retrieve data from the server.
@@ -101,6 +108,15 @@ class DemoApiView(APIView):
 - PUT: Update data on the server.
 - PATCH: Update data partially on the server.
 
+
+
+# Some important requests methods
+- request.method: Returns the HTTP method used for the request (e.g., GET, POST
+, PUT, DELETE).
+- request.user: Returns the user associated with the request, if authentication is used.
+- request.user.is_authenticated: Returns True if the user is authenticated, otherwise False.
+- request.auth: Returns the authentication information for the request, if applicable.
+> Note: All th concept of django are applied in DRF also.
 
 
 

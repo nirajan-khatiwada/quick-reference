@@ -1,0 +1,16 @@
+{{- /* Footer custom content area start */ -}}
+{{- /*     Insert any custom code web-analytics, resources, etc. here */ -}}
+{{- /* Footer custom content area end */ -}}
+
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  // Optional: detect dark/light mode from PaperMod's preference
+  const theme = localStorage.getItem("pref-theme") === "dark" ? 'dark' : 'default';
+  
+  mermaid.initialize({ 
+    startOnLoad: true, 
+    theme: theme,
+    securityLevel: 'loose'
+  });
+</script>

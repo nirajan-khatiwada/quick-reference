@@ -361,3 +361,28 @@ function Home(){
 }
 ```
 It is like the `useState` hook but it is used to update the search parameters in the URL ad this also re-renders the component when the search parameters are updated.`searchParams.get` will always return a string.
+
+
+### 52.12 useLocation Hook
+The `useLocation` hook is used to access the current location object which contains information about the current URL, such as the pathname, search parameters, and hash.
+```jsx
+import {useLocation} from 'react-router-dom';
+function Home(){
+    const location=useLocation();
+    return (
+        <div>
+            <h1>Home</h1>
+            <h2>Current Path: {location.pathname}</h2>
+            <h2>Search Params: {location.search}</h2>
+            <h2>Hash: {location.hash}</h2>
+        </div>
+    )
+}
+```
+
+Assuming the current URL is `http://localhost:3000/home/author?name=John#section1`, the output will be:
+```bash
+Current Path: /home/author
+Search Params: ?name=John
+Hash: #section1
+```
