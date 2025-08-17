@@ -1,0 +1,376 @@
+---
+title: DDL Commands Reference Guide
+description: Comprehensive guide on DDL commands in SQL, including database creation, table structure definition,
+categories: [dbms]
+---
+
+# DDL Commands Reference Guide
+
+## What is DDL?
+
+**DDL (Data Definition Language)** commands are SQL statements used to define and modify the structure of database objects like databases, tables, and their properties.
+
+---
+
+## 1. Database Operations
+
+### Create Database
+```sql
+CREATE DATABASE database_name;
+```
+
+### Show All Databases
+```sql
+SHOW DATABASES;
+```
+
+### Drop Database
+```sql
+DROP DATABASE database_name;
+```
+
+### Use Database
+```sql
+USE database_name;
+```
+
+### Examples:
+```sql
+-- Create a new database
+CREATE DATABASE school_management;
+
+-- Show all databases
+SHOW DATABASES;
+
+-- Select database to work with
+USE school_management;
+
+-- Delete database (careful!)
+DROP DATABASE old_database;
+```
+
+---
+
+## 2. Basic Data Types
+
+### Common Data Types:
+
+| Data Type | Description | Example |
+|-----------|-------------|---------|
+| **INT** | Integer numbers | `age INT` |
+| **CHAR(n)** | Fixed-length string | `gender CHAR(1)` |
+| **VARCHAR(n)** | Variable-length string | `name VARCHAR(100)` |
+| **FLOAT** | Floating-point numbers | `price FLOAT` |
+| **DOUBLE** | Double-precision numbers | `salary DOUBLE` |
+| **DATE** | Date values | `birth_date DATE` |
+
+> **Note:** For more data types, refer to book pages 114-115
+
+---
+
+## 3. Table Operations
+
+### Show All Tables
+```sql
+SHOW TABLES;
+```
+
+### Describe Table Structure
+```sql
+DESC table_name;
+
+```
+
+### Create Table
+```sql
+CREATE TABLE table_name (
+    column1 data_type,
+    column2 data_type,
+    column3 data_type
+);
+```
+
+### Examples:
+```sql
+-- Create a basic table
+CREATE TABLE students (
+    student_id INT,
+    name VARCHAR(100),
+    age INT,
+    grade CHAR(2)
+);
+
+-- Show all tables
+SHOW TABLES;
+
+-- View table structure
+DESC students;
+```
+
+---
+
+## 4. Alter Table Operations
+
+### Add New Column
+```sql
+ALTER TABLE table_name ADD column_name data_type;
+```
+
+### Drop Column
+```sql
+ALTER TABLE table_name DROP COLUMN column_name;
+```
+
+### Modify Column Data Type
+```sql
+ALTER TABLE table_name MODIFY column_name new_data_type;
+```
+
+### Change Column Name and Data Type
+```sql
+ALTER TABLE table_name CHANGE old_column_name new_column_name new_data_type;
+```
+
+### Drop Table
+```sql
+DROP TABLE table_name;
+```
+
+### Examples:
+```sql
+-- Add new column
+ALTER TABLE students ADD email VARCHAR(100);
+
+-- Drop a column
+ALTER TABLE students DROP COLUMN age;
+
+-- Modify column data type
+ALTER TABLE students MODIFY name VARCHAR(150);
+
+-- Change column name and type
+ALTER TABLE students CHANGE grade class_grade VARCHAR(10);
+
+-- Delete entire table
+DROP TABLE old_students;
+```
+
+---
+
+## 5. Domain Constraints
+
+### 5.1 DEFAULT Constraint
+
+Sets a default value for a column when no value is specified.
+
+```sql
+CREATE TABLE table_name (
+    column1 data_type DEFAULT 'default_value',
+    column2 data_type DEFAULT default_number
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE employees (
+    name CHAR(100) DEFAULT 'nirajan',
+    id INT(100) DEFAULT 1,
+    department VARCHAR(50) DEFAULT 'General'
+);
+```
+
+### 5.2 NOT NULL Constraint
+
+Ensures a column cannot have empty values.
+
+```sql
+CREATE TABLE table_name (
+    column_name data_type NOT NULL
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE customers (
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
+```
+
+### 5.3 UNIQUE Constraint
+
+Ensures all values in a column are different.
+
+```sql
+CREATE TABLE table_name (
+    column_name data_type UNIQUE
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE users (
+    username VARCHAR(100) UNIQUE,
+    email VARCHAR(100) UNIQUE
+);
+```
+
+### 5.4 PRIMARY KEY Constraint
+
+Uniquely identifies each record in a table.
+
+#### Method 1: Direct Declaration
+```sql
+CREATE TABLE table_name (
+    column_name data_type PRIMARY KEY,
+    other_column data_type
+);
+```
+
+#### Method 2: Separate Declaration
+```sql
+CREATE TABLE table_name (
+    column1 data_type,
+    column2 data_type,
+    PRIMARY KEY(column1)
+);
+```
+
+**Examples:**
+```sql
+-- Method 1
+CREATE TABLE products (
+    product_id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+-- Method 2
+CREATE TABLE orders (
+    order_id INT,
+    customer_id INT,
+    PRIMARY KEY(order_id)
+);
+```
+
+### 5.5 CHECK Constraint
+
+Validates data based on a condition.
+
+```sql
+CREATE TABLE table_name (
+    column_name data_type,
+    CHECK (condition)
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE students (
+    student_id INT,
+    age INTEGER,
+    CHECK (age >= 18 AND age <= 100)
+);
+```
+
+### 5.6 Combining Multiple Constraints
+
+```sql
+CREATE TABLE table_name (
+    column1 data_type constraint1 constraint2 CHECK(condition),
+    PRIMARY KEY(column1)
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE employees (
+    emp_id INT,
+    name VARCHAR(100) NOT NULL UNIQUE,
+    age INT CHECK (age < 65),
+    PRIMARY KEY(emp_id)
+);
+```
+
+---
+
+## 6. Composite Primary Key
+
+When multiple columns together form the primary key.
+
+```sql
+CREATE TABLE table_name (
+    column1 data_type,
+    column2 data_type,
+    column3 data_type,
+    column4 data_type,
+    PRIMARY KEY(column1, column2)
+);
+```
+
+**Example:**
+```sql
+CREATE TABLE class_enrollment (
+    student_id INT,
+    class_id INT,
+    section CHAR(1),
+    roll_no INT,
+    PRIMARY KEY(student_id, roll_no)
+);
+-- student_id AND roll_no together form the composite primary key
+```
+
+### Searching with Composite Primary Key:
+```sql
+-- Must use both columns in WHERE clause
+SELECT * FROM class_enrollment 
+WHERE student_id = 101 AND roll_no = 25;
+```
+
+---
+
+## 7. Foreign Key Constraint
+
+Links two tables together and maintains referential integrity.
+
+```sql
+CREATE TABLE table_name (
+    column1 data_type PRIMARY KEY,
+    column2 data_type,
+    FOREIGN KEY (column2) REFERENCES parent_table(parent_column)
+);
+```
+
+**Example:**
+```sql
+-- Parent table (must exist first)
+CREATE TABLE students (
+    student_id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+-- Child table with foreign key
+CREATE TABLE enrollments (
+    teacher_id INT PRIMARY KEY,
+    student_id INT,
+    FOREIGN KEY (student_id) REFERENCES students(student_id)
+);
+```
+
+### How Foreign Key Validation Works:
+
+**Before inserting or updating** a record in the child table:
+1. **If the foreign key value exists** in the parent table → Operation is **allowed**
+2. **If the foreign key value does not exist** in the parent table → MySQL gives an **error** (foreign key constraint violation)
+
+**Example Validation:**
+```sql
+-- This will work if student_id 101 exists in students table
+INSERT INTO enrollments VALUES (1, 101);
+
+-- This will fail if student_id 999 doesn't exist in students table  
+INSERT INTO enrollments VALUES (2, 999); -- ERROR!
+```
+
+---
+
+
+

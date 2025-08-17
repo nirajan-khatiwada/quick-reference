@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 16 Aug 2025 12:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Relational Algebra - Complete Reference</title>
+      <link>http://localhost:1313/posts/pages/dbms/relation_algebra/</link>
+      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/relation_algebra/</guid>
+      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations</description>
+    </item>
     <item>
       <title>A Complete Guide to Auth in React with Axios, JWT and Context API</title>
       <link>http://localhost:1313/posts/pages/react/auth/</link>
@@ -82,6 +89,13 @@
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/networkreact/axios1/</guid>
       <description>A comprehensive guide for implementing CRUD operations using Axios in React applications</description>
+    </item>
+    <item>
+      <title>DRF - DAY 7: Generic Views</title>
+      <link>http://localhost:1313/posts/pages/drf/day7/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/day7/</guid>
+      <description>Complete guide to Django REST Framework Generic Views, mixins, and concrete view classes.</description>
     </item>
     <item>
       <title>DRF : Day 4</title>
@@ -484,91 +498,38 @@
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/drf/backup/</link>
+      <link>http://localhost:1313/posts/pages/dbms/normalization/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/drf/backup/</guid>
-      <description>&lt;h2 id=&#34;generic-views&#34;&gt;Generic Views&lt;/h2&gt;
-&lt;p&gt;Generic views are a set of pre-built views provided by Django Rest Framework that handle common patterns in web development, such as listing objects, creating new objects, updating existing objects, and deleting objects. They help reduce boilerplate code and provide a consistent interface for these operations.&lt;/p&gt;
-&lt;h2 id=&#34;attribute-of-generic-views&#34;&gt;Attribute of Generic Views&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;queryset&lt;/code&gt;: The queryset that the view will operate on.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;serializer_class&lt;/code&gt;: The serializer class that will be used to serialize and deserialize the data.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;lookup_field&lt;/code&gt;: The field used to look up the object in the database.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;base-methoid-of-generic-views-most-used&#34;&gt;Base methoid of Generic Views (Most Used)&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;get_queryset()&lt;/code&gt;: Returns the queryset that the view will operate on.Defaults to returning the queryset specified by the queryset attribute
-This method should always be used rather than accessing self.queryset directly, as self.queryset gets evaluated only once, and those results are cached for all subsequent requests.
-May be overridden to provide dynamic behavior, such as returning a queryset, that is specific to the user making the request.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For example:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/pages/dbms/normalization/</guid>
+      <description></description>
     </item>
     <item>
       <title></title>
-      <link>http://localhost:1313/posts/pages/drf/day7/</link>
+      <link>http://localhost:1313/posts/pages/dbms/represention_relation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/drf/day7/</guid>
-      <description>&lt;h1 id=&#34;django-rest-framework-generic-views---complete-guide&#34;&gt;Django REST Framework Generic Views - Complete Guide&lt;/h1&gt;
-&lt;h2 id=&#34;-quick-reference&#34;&gt;📚 Quick Reference&lt;/h2&gt;
-&lt;table&gt;
-  &lt;thead&gt;
-      &lt;tr&gt;
-          &lt;th&gt;View Type&lt;/th&gt;
-          &lt;th&gt;HTTP Methods&lt;/th&gt;
-          &lt;th&gt;Purpose&lt;/th&gt;
-      &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;ListAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET&lt;/td&gt;
-          &lt;td&gt;List collection of objects&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;CreateAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;POST&lt;/td&gt;
-          &lt;td&gt;Create new object&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;RetrieveAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET&lt;/td&gt;
-          &lt;td&gt;Get single object by ID&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;UpdateAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;PUT/PATCH&lt;/td&gt;
-          &lt;td&gt;Update existing object&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;DestroyAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;DELETE&lt;/td&gt;
-          &lt;td&gt;Delete object&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;ListCreateAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET, POST&lt;/td&gt;
-          &lt;td&gt;List + Create&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;RetrieveUpdateAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET, PUT, PATCH&lt;/td&gt;
-          &lt;td&gt;Get + Update&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;RetrieveDestroyAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET, DELETE&lt;/td&gt;
-          &lt;td&gt;Get + Delete&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-          &lt;td&gt;&lt;code&gt;RetrieveUpdateDestroyAPIView&lt;/code&gt;&lt;/td&gt;
-          &lt;td&gt;GET, PUT, PATCH, DELETE&lt;/td&gt;
-          &lt;td&gt;Full CRUD&lt;/td&gt;
-      &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-&lt;hr&gt;
-&lt;h2 id=&#34;-what-are-generic-views&#34;&gt;🎯 What Are Generic Views?&lt;/h2&gt;
-&lt;p&gt;Generic views are &lt;strong&gt;pre-built view classes&lt;/strong&gt; in Django REST Framework that handle common patterns in web development and eliminate boilerplate code. They provide a consistent interface for:&lt;/p&gt;</description>
+      <guid>http://localhost:1313/posts/pages/dbms/represention_relation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>DDL Commands Reference Guide</title>
+      <link>http://localhost:1313/posts/pages/dbms/ddl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/ddl/</guid>
+      <description>Comprehensive guide on DDL commands in SQL, including database creation, table structure definition,</description>
+    </item>
+    <item>
+      <title>DML (Data Manipulation Language) - Detailed Notes</title>
+      <link>http://localhost:1313/posts/pages/dbms/dml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/dml/</guid>
+      <description>Comprehensive guide on DML commands in SQL, including INSERT, UPDATE, and DELETE operations with examples and practice questions.</description>
+    </item>
+    <item>
+      <title>SQL Basics</title>
+      <link>http://localhost:1313/posts/pages/dbms/dql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/dql/</guid>
+      <description>A quick reference guide to SQL basics including DDL, DML, DQL, and common SQL operations.</description>
     </item>
   </channel>
 </rss>

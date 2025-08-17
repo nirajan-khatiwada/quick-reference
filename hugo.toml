@@ -131,3 +131,6 @@ ignoreLogs = ['warning-goldmark-raw-html']
   name = "Search"
   url = "/search"
   weight = 10
+
+[markup.goldmark.renderer]
+  unsafe = true

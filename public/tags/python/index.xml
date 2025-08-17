@@ -28,6 +28,13 @@
       <description>A detailed guide on Parsers, Renderers, and Pagination in Django Rest Framework.</description>
     </item>
     <item>
+      <title>DRF - DAY 7: Generic Views</title>
+      <link>http://localhost:1313/posts/pages/drf/day7/</link>
+      <pubDate>Sat, 18 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/drf/day7/</guid>
+      <description>Complete guide to Django REST Framework Generic Views, mixins, and concrete view classes.</description>
+    </item>
+    <item>
       <title>DRF : Day 4</title>
       <link>http://localhost:1313/posts/pages/drf/drf4/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
