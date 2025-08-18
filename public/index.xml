@@ -11,14 +11,35 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Aug 2025 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Relational Algebra - Complete Reference</title>
-      <link>http://localhost:1313/posts/pages/dbms/relation_algebra/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/dbms/relation_algebra/</guid>
-      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations</description>
+      <title>RA (Relational Algebra) - Complete Reference</title>
+      <link>http://localhost:1313/posts/pages/dbms/1.ra/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/1.ra/</guid>
+      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations covering unary operations, joins, and set theory operations.</description>
+    </item>
+    <item>
+      <title>DDL (Data Definition Language) - Complete Guide</title>
+      <link>http://localhost:1313/posts/pages/dbms/2.ddl/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/2.ddl/</guid>
+      <description>Comprehensive guide on DDL commands in SQL, including database creation, table structure definition, constraints, and foreign keys.</description>
+    </item>
+    <item>
+      <title>DML (Data Manipulation Language) - Complete Guide</title>
+      <link>http://localhost:1313/posts/pages/dbms/3.dml/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/3.dml/</guid>
+      <description>Comprehensive guide on DML commands in SQL, including INSERT, UPDATE, and DELETE operations with practical examples and best practices.</description>
+    </item>
+    <item>
+      <title>DQL (Data Query Language) - Complete SQL Guide</title>
+      <link>http://localhost:1313/posts/pages/dbms/4.dql/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/4.dql/</guid>
+      <description>A comprehensive guide to SQL DQL commands including SELECT, WHERE, JOIN operations, aggregate functions, and advanced query techniques.</description>
     </item>
     <item>
       <title>A Complete Guide to Auth in React with Axios, JWT and Context API</title>
@@ -509,27 +530,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/pages/dbms/represention_relation/</guid>
       <description></description>
-    </item>
-    <item>
-      <title>DDL Commands Reference Guide</title>
-      <link>http://localhost:1313/posts/pages/dbms/ddl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/dbms/ddl/</guid>
-      <description>Comprehensive guide on DDL commands in SQL, including database creation, table structure definition,</description>
-    </item>
-    <item>
-      <title>DML (Data Manipulation Language) - Detailed Notes</title>
-      <link>http://localhost:1313/posts/pages/dbms/dml/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/dbms/dml/</guid>
-      <description>Comprehensive guide on DML commands in SQL, including INSERT, UPDATE, and DELETE operations with examples and practice questions.</description>
-    </item>
-    <item>
-      <title>SQL Basics</title>
-      <link>http://localhost:1313/posts/pages/dbms/dql/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/dbms/dql/</guid>
-      <description>A quick reference guide to SQL basics including DDL, DML, DQL, and common SQL operations.</description>
     </item>
   </channel>
 </rss>
