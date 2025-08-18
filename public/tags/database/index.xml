@@ -11,14 +11,21 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Aug 2025 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 16:25:17 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/database/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Relational Algebra - Complete Reference</title>
-      <link>http://localhost:1313/posts/pages/dbms/relation_algebra/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/pages/dbms/relation_algebra/</guid>
-      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations</description>
+      <title>RA (Relational Algebra) - Complete Reference</title>
+      <link>http://localhost:1313/posts/pages/dbms/1.ra/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/1.ra/</guid>
+      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations covering unary operations, joins, and set theory operations.</description>
+    </item>
+    <item>
+      <title>DDL (Data Definition Language) - Complete Guide</title>
+      <link>http://localhost:1313/posts/pages/dbms/2.ddl/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/2.ddl/</guid>
+      <description>Comprehensive guide on DDL commands in SQL, including database creation, table structure definition, constraints, and foreign keys.</description>
     </item>
     <item>
       <title>Django: Day 3</title>

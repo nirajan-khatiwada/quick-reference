@@ -11,36 +11,8 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Aug 2025 12:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 16:25:17 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Database</title>
-      <link>http://localhost:1313/tags/database/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/database/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Dbms</title>
-      <link>http://localhost:1313/tags/dbms/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dbms/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Relational-Algebra</title>
-      <link>http://localhost:1313/tags/relational-algebra/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/relational-algebra/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sql</title>
-      <link>http://localhost:1313/tags/sql/</link>
-      <pubDate>Sat, 16 Aug 2025 12:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/sql/</guid>
-      <description></description>
-    </item>
     <item>
       <title>Authentication</title>
       <link>http://localhost:1313/tags/authentication/</link>
@@ -238,6 +210,97 @@
       <description></description>
     </item>
     <item>
+      <title>Aggregation</title>
+      <link>http://localhost:1313/tags/aggregation/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/aggregation/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dbms</title>
+      <link>http://localhost:1313/tags/dbms/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dbms/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dql</title>
+      <link>http://localhost:1313/tags/dql/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Joins</title>
+      <link>http://localhost:1313/tags/joins/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/joins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Select</title>
+      <link>http://localhost:1313/tags/select/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/select/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>http://localhost:1313/tags/sql/</link>
+      <pubDate>Sat, 25 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Delete</title>
+      <link>http://localhost:1313/tags/delete/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/delete/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Dml</title>
+      <link>http://localhost:1313/tags/dml/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/dml/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Insert</title>
+      <link>http://localhost:1313/tags/insert/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/insert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Update</title>
+      <link>http://localhost:1313/tags/update/</link>
+      <pubDate>Mon, 20 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/update/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Database</title>
+      <link>http://localhost:1313/tags/database/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ddl</title>
+      <link>http://localhost:1313/tags/ddl/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/ddl/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mysql</title>
+      <link>http://localhost:1313/tags/mysql/</link>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/mysql/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Permissions</title>
       <link>http://localhost:1313/tags/permissions/</link>
       <pubDate>Wed, 15 Jan 2025 00:00:00 +0000</pubDate>
@@ -284,6 +347,20 @@
       <link>http://localhost:1313/tags/user-management/</link>
       <pubDate>Sat, 11 Jan 2025 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/user-management/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>http://localhost:1313/tags/basics/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Relational-Algebra</title>
+      <link>http://localhost:1313/tags/relational-algebra/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/relational-algebra/</guid>
       <description></description>
     </item>
     <item>
@@ -564,13 +641,6 @@
       <link>http://localhost:1313/tags/styling/</link>
       <pubDate>Thu, 21 Nov 2024 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/styling/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Basics</title>
-      <link>http://localhost:1313/tags/basics/</link>
-      <pubDate>Wed, 20 Nov 2024 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/basics/</guid>
       <description></description>
     </item>
     <item>

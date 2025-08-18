@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 20 Nov 2024 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 16:25:17 +0545</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/basics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RA (Relational Algebra) - Complete Reference</title>
+      <link>http://localhost:1313/posts/pages/dbms/1.ra/</link>
+      <pubDate>Fri, 10 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/pages/dbms/1.ra/</guid>
+      <description>Comprehensive guide to relational algebra operations with conditions, examples, and detailed explanations covering unary operations, joins, and set theory operations.</description>
+    </item>
     <item>
       <title>Python Fundamentals: A Beginner&#39;s Guide (Part 1)</title>
       <link>http://localhost:1313/posts/pages/python/python_basics/</link>
