@@ -124,26 +124,6 @@ INNER JOIN author ON book.author_id = author.id;
 
 👉 **Still 1 query total** even for 1000 books!
 
-### Joining Multiple Tables with __
-
-You can chain lookups across relationships:
-
-```python
-# Multiple level joins
-Book.objects.select_related("author__profile")
-```
-
-**SQL Generated:**
-```sql
-SELECT book.id, book.title,
-       author.id, author.name,
-       profile.id, profile.bio
-FROM book
-INNER JOIN author ON book.author_id = author.id
-INNER JOIN profile ON author.profile_id = profile.id;
-```
-
-👉 You can nest as **deep as needed** with `__`.
 
 ### Multiple select_related Fields
 
@@ -203,38 +183,6 @@ Book.objects.prefetch_related("categories", "tags", "languages")
 ```
 
 👉 **1 base query + 3 prefetch queries = 4 queries total**.
-
-## 33. Complex Example with Multiple Relationships
-
-```python
-from django.db import models
-
-class Topping(models.Model):
-    name = models.CharField(max_length=30)
-
-class Pizza(models.Model):
-    name = models.CharField(max_length=50)
-    toppings = models.ManyToManyField(Topping)
-
-    def __str__(self):
-        return "%s (%s)" % (
-            self.name,
-            ", ".join(topping.name for topping in self.toppings.all()),
-        )
-
-class Restaurant(models.Model):
-    pizzas = models.ManyToManyField(Pizza, related_name="restaurants")
-    best_pizza = models.ForeignKey(
-        Pizza, related_name="championed_by", on_delete=models.CASCADE
-    )
-
-# Combining both techniques
-restaurants = Restaurant.objects.select_related("best_pizza").prefetch_related("best_pizza__toppings")
-```
-
-This efficiently handles:
-- `select_related` for the ForeignKey (`best_pizza`)
-- `prefetch_related` for the nested ManyToMany (`best_pizza__toppings`)
 
 ## 34. What Happens After Query Execution
 
