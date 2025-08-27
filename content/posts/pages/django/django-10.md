@@ -12,4 +12,5 @@ images: ["/images/django/django.jpg"]
 If you want to go back to learn DJANGO.Then add the following Topics
 - **Templates**
 - **Django Forms**
+- **Django Message**
 - **Context Processor**
