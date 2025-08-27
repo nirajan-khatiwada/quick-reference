@@ -33,10 +33,13 @@ class ClassName:
 Example:
 ```python
 class Person:
-    name="Nirajan"  # Class attribute shared by all instances 
-    age=20          # Class attribute shared by all instances
-    classes="Bachelor"  # Class attribute shared by all instances
+    def __init__(self):
+        self.name="Nirajan"  # attribute
+        self.age=20         # attribute
+        self.classes="Bachelor" # attribute
 ```
+
+
 
 ### 1.4 Creating an Object
 To create an object of a class, we use the class name followed by parentheses. This calls the constructor method of the class and returns an object.
@@ -111,9 +114,10 @@ The `self` parameter is a reference to the current instance of the class, and is
 Example:
 ```python
 class Person:
-    name="Nirajan"
-    age=20
-    classes="Bachelor"
+    def __init__(self):
+        self.name="Nirajan"
+        self.age=20
+        self.classes="Bachelor"
 
     def display(self):
         print(f"Name: {self.name}")  # Accessing class attribute with self
@@ -155,9 +159,10 @@ class ClassName:
 Example:
 ```python
 class Person:
-    name="Nirajan"
-    age=20
-    classes="Bachelor"
+    def __init__(self):
+        self.name="Nirajan"
+        self.age=20
+        self.classes="Bachelor"
 
     def display(self):
         print(f"Name: {self.name}")
@@ -877,7 +882,17 @@ print(result)  # Output: 8
 ```
 
 ### 10.2 Class Methods
-Class methods are methods that are bound to the class rather than an instance. They are defined using the `@classmethod` decorator and receive the class as the first parameter (conventionally named `cls`). They are used to access or modify class variables.
+class attribute are the attribute that are shared among all instances of the class.
+syntax:
+```python
+class ClassName:
+    class_variable = value  # Class variable
+
+    def __init__(self, instance_variable):
+        self.instance_variable = instance_variable  # Instance variable
+```
+
+class method is a method that is bound to the class and not the instance of the class. It takes `cls` as the first parameter which refers to the class itself. Class methods are defined using the `@classmethod` decorator and can be called using the class name or an object of the class. They are used to change the state of the class variables that are shared among all instances of the class.
 
 Syntax:
 ```python
@@ -907,6 +922,8 @@ c2 = Company()
 print(c2.company)  # Output: Apple
 ```
 
+class variable `company` is shared among all instances of the class . But if we change without like Company.company =
+
 ## 11. Introspection with `dir()` and `__dict__`
 
 ### 11.1 The `dir()` Method
@@ -920,12 +937,13 @@ dir(object)
 Example:
 ```python
 class Person:
-    name = "Alice"
-    age = 30
+    def __init__(self):
+        self.name = "Alice"
+        self.age = 30
 
 person1 = Person()
 print(dir(person1))
-# Output: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'age', 'name']
+# Output: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'age', 'name']
 ```
 
 Example with list:
@@ -946,14 +964,15 @@ object.__dict__
 Example:
 ```python
 class Person:
-    name = "Alice"
-    age = 30
-
+    def __init__(self):
+        self.name = "Alice"
+        self.age = 30
 person1 = Person()
-print(person1.__dict__)  # Output: {} (empty because no instance attributes set)
+print(person1.__dict__)  #{'name': 'Alice', 'age': 30}
+
 
 person1.name = "Bob"  # Set an instance attribute
-print(person1.__dict__)  # Output: {'name': 'Bob'}
+print(person1.__dict__)  # {'name': 'Bob', 'age': 30}
 ```
 
 ## 12. Nested Classes
@@ -1061,6 +1080,76 @@ Table of Inheritance in C++:
 | Private Inheritance | Private        | Private          | Not Inherited    |
 
 This comparison helps understand the differences in how various languages implement OOP concepts.
+
+### Function overloading in C++
+Function overloading is a feature in C++ that allows multiple functions to have the same name but different parameters (either in type or number). This is not supported in Python, as Python does not support function overloading based on parameter types or counts. Instead, Python uses default arguments and variable-length arguments to achieve similar functionality.
+
+Example of function overloading in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Math {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+};
+int main() {
+    Math math;
+    cout << math.add(5, 3) << endl;          // Calls add(int
+    cout << math.add(5.5, 3.3) << endl;      // Calls add(double, double)
+    cout << math.add(1, 2, 3) << endl;        //calls add(int, int, int)
+    return 0;
+}
+```
+
+### Static method in cpp
+Static variables and static methods in C++ are associated with the class rather than any particular instance of the class. They can be accessed without creating an instance of the class.Static methods are defined using the `static` keyword and can be called using the class name.
+Example of static method in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Math {
+public:
+    static int add(int a, int b) {
+        return a + b;
+    }
+};
+int main() {
+    cout << Math::add(5, 3) << endl;  // Calling static
+    return 0;
+}
+```
+
+Example of static variable in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Counter {
+public:
+    static int count;  // Declaration of static variable
+    Counter() {
+        count++;  // Increment static variable in constructor
+    }
+};
+int Counter::count = 0;  // Definition and initialization of static variable
+int main() {
+    Counter c1;
+    Counter c2;
+    Counter c3;
+    cout << "Number of Counter objects: " << Counter::count << endl;  //
+    return 0;
+}
+```
+Here count variable is shared among all instances of the Counter class and can be accessed using the class name as well as through any instance of the class.Such that change of count variable in one instance will reflect in all other instances.
 
 ## Summary
 

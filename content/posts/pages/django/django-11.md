@@ -1,11 +1,11 @@
 ---
 title: "Django: Day 11"
 date: 2025-01-12
-description: "Advanced Django ORM concepts including query optimization, N+1 problem, annotate, select_related, prefetch_related, and other advanced ORM techniques."
+description: "Advanced Django ORM concepts including query optimization, N+1 problem, select_related, prefetch_related, and other advanced ORM techniques."
 showToc: true
 categories: ["Django"]
 tags: ["Django", "Python", "ORM", "Database", "Query Optimization", "Performance", "Backend"]
-summary: "Master advanced Django ORM concepts including query optimization techniques, solving the N+1 problem, and using annotate for complex database operations."
+summary: "Master advanced Django ORM concepts including query optimization techniques, solving the N+1 problem for complex database operations."
 images: ["/images/django.jpg"]
 ---
 
