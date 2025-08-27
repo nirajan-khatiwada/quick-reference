@@ -70,6 +70,8 @@ name = models.CharField(max_length=100, default='SOME STRING')
 name = models.CharField(max_length=100, primary_key=True)
 ```
 
+> **Note**: If you don't add any field specifying a primary key, Django will automatically add a primary key field with auto-increment whose name is `id`. If you add some field setting that field as primary key, it can be accessed by using `.name` and `.pk` as well.
+
 - `unique`:If True, this field must be unique throughout the table.
 ```python
 name = models.CharField(max_length=100, unique=True)
@@ -133,6 +135,15 @@ class MyModel(models.Model):
         verbose_name_plural='My Models'
 ```
 
+- `ordering`:A list of field names to order the model by. It is used to specify the default ordering for the model.While querying the model, the results will be ordered by the specified fields.
+```python
+class MyModel(models.Model):
+    class Meta:
+        ordering = ['name']  # Order by name field
+```
+
+
+
 
 ## 19.5 Simple Model Example
 ```python
@@ -156,26 +167,139 @@ After creating the model we run
 - Use `python manage.py createsuperuser` to create a superuser for the admin panel.
 
 
-## 19.7 Using methods in models
-To do operation related to the model we can define methods in the model class itself.
+## 19.7 Using Custom Methods in Django Models
+
+You can define **custom methods** in a Django model to add **row-level logic**. This is a valuable technique for keeping **business logic centralized** within the model itself, rather than scattering it across views or templates.
+
+Instead of separating code in the view, we can use these methods directly in the model. This method is available for all objects, i.e., row-wise data, and takes the value of that object to produce the output.
+
+### Example
+
 ```python
 from django.db import models
+
+class MyModel(models.Model):
+    fname = models.CharField(max_length=100)
+    lname = models.CharField(max_length=100)
+    value = models.IntegerField()
+
+    @property
+    def name(self):
+        """Combine first and last names into a single string."""
+        return f"{self.fname} {self.lname}"
+
+    def custom_method(self):
+        """Return a message based on the model's value."""
+        if self.value > 10 and self.fname.startswith('A'):
+            return f"{self.name} has a high value!"
+        else:
+            return f"{self.name} has a low value."
+```
+
+### How it works
+
+1. The `name` property creates a **full name** from `fname` and `lname`.
+2. The `custom_method` uses the model's data to **encapsulate custom logic**.
+3. These methods are **not stored in the database**—they exist only for computation or presentation purposes.
+4. The method works **row-wise for each object**, allowing each instance to calculate its own output based on its values.
+
+### Usage
+
+```python
+# Create a new instance
+MyModel.objects.create(fname='John', lname='Doe', value=15)
+
+# Retrieve the instance
+instance = MyModel.objects.get(fname='John')
+
+# Use the custom method
+instance.custom_method()  # Returns "John Doe has a low value."
+
+# Use the name property
+instance.name  # Returns "John Doe"
+```
+
+> This approach keeps your logic **organized, reusable, and easy to maintain**, especially for complex business rules.
+
+## 19.8 Overriding the Save Method 
+
+Since every model inherits from `django.db.models.Model`, it means it inherits from the Model class.
+
+If you want to do some custom logic before saving the model, you can override the save method of the model.
+
+### Basic Override Example
+
+```python
+from django.db import models
+
+class MyModel(models.Model):
+    name = models.CharField(max_length=100)
+
+    def save(self, *args, **kwargs):
+        # Custom logic before saving
+        print(f"Saving {self.name}")
+        super().save(*args, **kwargs)  # Call the original save method
+```
+
+### Auto-generating Slug Example
+
+```python
+from django.db import models
+
+class MyModel(models.Model):
+    title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = self.title.lower().replace(" ", "-")  # Example slug generation
+        return super().save(*args, **kwargs)  # Call the original save method
+```
+
+### Conditional Save Example
+
+```python 
+from django.db import models
+
+class Blog(models.Model):
+    name = models.CharField(max_length=100)
+    tagline = models.TextField()
+
+    def save(self, **kwargs):
+        if self.name == "Yoko Ono's blog":
+            return  # Yoko shall never have her own blog!
+        else:
+            return super().save(**kwargs)  # Call the "real" save() method.
+```
+
+> You can similarly override the `delete()` and other model methods as needed.
+
+## 19.9 Using Methods in Models (Previous Example)
+
+To do operation related to the model we can define methods in the model class itself.
+
+```python
+from django.db import models
+
 class Person(models.Model):
     name = models.CharField(max_length=100)
     age = models.IntegerField(default=0)
     grade = models.IntegerField(default=0)
 
     def is_adult(self):
-        return self.age>=18
+        return self.age >= 18
+    
     def is_pass(self):
-        return self.grade>=40
+        return self.grade >= 40
+    
     def __str__(self):
         return self.name
-
 ```
-Now we can use this method in the views or templates.
+
+Now we can use these methods in views or templates:
+
 ```python
-person=Person.objects.get(id=1)
+person = Person.objects.get(id=1)
 print(person.is_adult())
 print(person.is_pass())
 ```

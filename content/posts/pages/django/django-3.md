@@ -294,6 +294,12 @@ from myapp.models import Person
 persons = Person.objects.all()[:5]
 ```
 
+similirly to get query set from 5 to 10 we can use
+```python
+from myapp.models import Person
+persons = Person.objects.all()[5:10]
+
+
 ## 24. Aggregation
 Its used to perform some operation on the queryset like counting the number of objects, finding the average, sum, min, max, etc.
 
@@ -366,6 +372,7 @@ result = Person.objects.all().aggregate(
     field_name_avg=Avg('field_name'),
     field_name_min=Min('field_name'),
     field_name_max=Max('field_name')
+    difference=Max('field_name') - Min('field_name')
 )
 ```
 > By default the name of the output field is `field_name__count`, `field_name__sum`, `field_name__avg`, `field_name__min`, `field_name__max`.
@@ -391,6 +398,139 @@ result = Person.objects.filter(age=25).aggregate(
     Min('field_name'),
     Max('field_name')
 )
+```
+
+## 25. F Expressions in Django
+
+When we want to compare one field with another field in the same model, we can use **F expressions**. F expressions allow us to refer to model field values directly in queries, enabling comparisons and calculations without needing to fetch the data into Python memory.
+
+### Basic Usage
+
+```python
+from django.db.models import F
+from myapp.models import Blog
+
+# Fetch blogs with more than 5 comments
+blogs = Blog.objects.filter(comment_count__gt=F('comment_count') + 5)
+```
+
+### Comparing Fields
+
+To display all blogs where the last edited time is the same as the created time:
+
+```python
+from django.db.models import F
+from myapp.models import Blog
+
+# Fetch blogs where last edited time is the same as created time
+blogs = Blog.objects.filter(last_edited_time=F('created_time'))
+```
+
+### Performance Benefits
+
+F expressions are particularly useful because they:
+- **Perform operations at the database level** rather than in Python
+- **Reduce memory usage** by avoiding data transfer between database and Python
+- **Improve performance** for large datasets
+
+### Note on Relationships
+
+While using operations like:
+
+```python
+Book.objects.filter(author__name='John Doe')
+```
+
+Consider the relationship between Author and Book. If there's a one-to-many relationship between author and book, Django will use **JOIN** clause to check the condition.
+
+## 26. Update Method in Django ORM
+
+To update a record in Django ORM, you can use the `update()` method on a queryset. This method allows you to change one or more fields of the records that match the queryset criteria.
+
+### Basic Update Example
+
+```python
+from myapp.models import MyModel
+
+# Update all records where the condition is met
+MyModel.objects.filter(condition=True).update(field_name='new_value')
+```
+
+### Important Note
+
+> **Note**: The `update()` method has access to only **one table at a time**. It cannot be used to update fields across related models in a single query.
+
+### Using F Expressions with Update
+
+You can also use F expressions with the update method:
+
+```python
+from django.db.models import F
+
+# Increment a field value
+MyModel.objects.filter(active=True).update(count=F('count') + 1)
+```
+
+## 27. Projection with values()
+
+Projection allows you to select only specific fields from the database instead of fetching all fields.
+
+### Get All Fields
+
+```python
+# Project all columns
+Blog.objects.filter(name__startswith="Beatles").values()
+# Output: <QuerySet [{'id': 1, 'name': 'Beatles Blog', 'tagline': 'All the latest Beatles news.'}]>
+
+# Project all fields for all objects
+Blog.objects.values()
+# Output: <QuerySet [{'id': 1, 'name': 'Beatles Blog', 'tagline': 'All the latest Beatles news.'}]>
+```
+
+### Get Specific Fields
+
+```python
+# Project only id and name
+Blog.objects.values("id", "name")
+# Output: <QuerySet [{'id': 1, 'name': 'Beatles Blog'}]>
+```
+
+## 28. Distinct
+
+Returns a new QuerySet that uses `SELECT DISTINCT` in its SQL query. This eliminates duplicate rows from the query results.
+
+```python
+# Get distinct author IDs
+Book.objects.values('author_id').distinct()
+```
+
+## 29. Set Operations
+
+### Union
+
+The UNION operator selects only distinct values by default. To allow duplicate values, use the `all=True` argument.
+
+```python
+qs1 = Author.objects.values("name")
+qs2 = Entry.objects.values("headline")
+combined = qs1.union(qs2)
+
+# With duplicates allowed
+combined_with_duplicates = qs1.union(qs2, all=True)
+```
+
+### Intersection
+
+```python
+# Get common elements between querysets
+result = qs1.intersection(qs2, qs3)
+```
+
+### Difference 
+
+```python
+# Get elements in qs1 but not in qs2 or qs3
+result = qs1.difference(qs2, qs3)
 ```
 
 
