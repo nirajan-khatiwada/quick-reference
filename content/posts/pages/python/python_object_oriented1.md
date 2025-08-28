@@ -909,8 +909,10 @@ print(result)  # Output: 8
 ```
 
 ### 10.2 Class Methods
-class attribute are the attribute that are shared among all instances of the class.
-syntax:
+Those attribute that is same for all instances of the class are known as class attribute or class variable. for example, if we have a class `Company` and all employees of the company share the same company name, then `company` can be defined as a class attribute.
+
+
+
 ```python
 class ClassName:
     class_variable = value  # Class variable
@@ -919,38 +921,65 @@ class ClassName:
         self.instance_variable = instance_variable  # Instance variable
 ```
 
-class method is a method that is bound to the class and not the instance of the class. It takes `cls` as the first parameter which refers to the class itself. Class methods are defined using the `@classmethod` decorator and can be called using the class name or an object of the class. They are used to change the state of the class variables that are shared among all instances of the class.
+> Note: For all object the class class_variable will have the same value but instance_variable will have different value for different object.
 
-Syntax:
+
+for example:
 ```python
-class ClassName:
-    @classmethod
-    def method_name(cls, parameters):
-        #code block
-```
+class Company:
+    company_name = "TechCorp"  # Class variable
 
+    def __init__(self, employee_name):
+        self.employee_name = employee_name  # Instance variable
+
+emp1 = Company("Alice")\
+emp2 = Company("Bob")
+print(emp1.company_name)  # Output: TechCorp
+print(emp2.company_name)  # Output: TechCorp
+print(emp1.employee_name)  # Output: Alice
+print(emp2.employee_name)  # Output: Bob
+```
+Here `company_name` is a class variable because it is the same for all employees, while `employee_name` is an instance variable because it is unique to each employee.
+
+
+Since the class variable should be same for all the instance of the class , if we directly change the value of class variable using object then all the instance of the class will not have the same value for the class variable so To change the value of class variable for all the instance of the class we use class method.
+
+
+using class method:
 Example:
 ```python
 class Company:
-    company = "Google"  # Class variable
-    
+    company_name = "TechCorp"  # Class variable
+    def __init__(self, employee_name):
+        self.employee_name = employee_name  # Instance variable
     @classmethod
-    def change_company(cls, new_company):
-        cls.company = new_company  # Modifies the class variable
-
-print(Company.company)  # Output: Google
-Company.change_company("Microsoft")
-print(Company.company)  # Output: Microsoft
-
-c1 = Company()
-print(c1.company)  # Output: Microsoft
-c1.change_company("Apple")
-c2 = Company()
-print(c2.company)  # Output: Apple
+    def change_company_name(cls, new_name):
+        cls.company_name = new_name  # Change class variable for all instances
+emp1 = Company("Alice")
+emp2 = Company("Bob")
+print(emp1.company_name)  # Output: TechCorp
+print(emp2.company_name)  # Output: TechCorp
+Company.change_company_name("InnoTech")  # Change company name for all instances or `emp1.change_company_name("InnoTech")`
+print(emp1.company_name)  # Output: InnoTech
+print(emp2.company_name)  # Output: InnoTech
 ```
 
-class variable `company` is shared among all instances of the class . But if we change without like Company.company =
+without using class method:
+```python
+class Company:
+    company_name = "TechCorp"  # Class variable
+    def __init__(self, employee_name):
+        self.employee_name = employee_name  # Instance variable
+emp1 = Company("Alice")
+emp2 = Company("Bob")
+print(emp1.company_name)  # Output: TechCorp
+print(emp2.company_name)  # Output: TechCorp
+emp1.company_name = "InnoTech"  # Change company name using emp1 object
+print(emp1.company_name)  # Output: InnoTech
+print(emp2.company_name)  # Output: TechCorp (remains unchanged)
 
+
+```
 ## 11. Introspection with `dir()` and `__dict__`
 
 ### 11.1 The `dir()` Method
