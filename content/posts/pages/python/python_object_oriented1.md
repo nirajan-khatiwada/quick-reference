@@ -229,10 +229,14 @@ Public members are accessible from outside the class. They can be accessed using
 Example:
 ```python
 class Person:
-    name = "Alice"  # Public member
+    def __init__(self):
+        self.name = "Alice"  # Public member
+    def display(self):      #public method
+        print(f"Name: {self.name}")
 
 person1 = Person()
 print(person1.name)  # Output: Alice
+person1.display()    # Output: Name: Alice
 ```
 
 ### 4.2 Protected Members
@@ -241,30 +245,24 @@ Protected members are accessible within the class and its subclasses. They are d
 Example:
 ```python
 class Person:
-    _age = 30  # Protected member
-
-class Student(Person):
-    def display(self):
-        print(self._age)  # Accessing protected member
-
-student1 = Student()
-student1.display()  # Output: 30
-```
-
-Example of protected variable and method:
-```python
-class Person:
-    _name = "Alice"  # Protected variable
-
-    def _display(self):  # Protected method
+    def __init__(self):
+        self._name = "Alice"  # Protected member
+    def _display(self):      # Protected method
         print(f"Name: {self._name}")
 
 class Student(Person):
-    def display(self):
-        self._display()  # Accessing protected method
+    def show(self):
+        self._display()  # Accessing protected method from subclass
+        print(f"Accessing protected member: {self._name}")
 
 student1 = Student()
-student1.display()  # Output: Name: Alice
+student1.show()
+# Output:
+# Name: Alice
+# Accessing protected member: Alice
+
+
+# Note: p1=Person() print(p1._name) #this is incorrect as name is protected and only be used inside class and subclass
 ```
 
 ### 4.3 Private Members
@@ -282,14 +280,21 @@ print(person1.__city)  # Error: 'Person' object has no attribute '__city'
 Example of private variable and method:
 ```python
 class Person:
-    __name = "Alice"  # Private variable
+    def __init__(self):
+        self.__name = "Alice"  # Private member
 
     def __display(self):  # Private method
         print(f"Name: {self.__name}")
+    
+    def show(self):
+        self.__display()  # Accessing private method within the class
+        print(f"Accessing private member: {self.__name}") # Accessing private member within the class
 
 person1 = Person()
 print(person1.__name)  # Error: 'Person' object has no attribute '__name'
 person1.__display()  # Error: 'Person' object has no attribute '__display'
+person1.show()  # Correct way to access private members within the class as show() is public
+
 ```
 
 > Table of Access Specifiers in Python:
@@ -852,6 +857,28 @@ point3 = point1 + point2  # Uses the __add__ method
 print(point3)  # Output: (4, 6)
 ```
 
+
+For unary operators like negation (`-`), we can overload the `__neg__` method:
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __neg__(self):
+        # Define what happens when - is used with Point objects
+        return Point(-self.x, -self.y)
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+point1 = Point(1, 2)
+point2 = -point1  # Uses the __neg__ method
+print(point2)  # Output: (-1, -2)
+```
+
+
+> Note: We can only overload existing operators. We cannot create new operators.
+
 ## 10. Static and Class Methods
 
 ### 10.1 Static Methods
@@ -1081,7 +1108,7 @@ Table of Inheritance in C++:
 
 This comparison helps understand the differences in how various languages implement OOP concepts.
 
-### Function overloading in C++
+### 13.2 Function overloading in C++
 Function overloading is a feature in C++ that allows multiple functions to have the same name but different parameters (either in type or number). This is not supported in Python, as Python does not support function overloading based on parameter types or counts. Instead, Python uses default arguments and variable-length arguments to achieve similar functionality.
 
 Example of function overloading in C++:
@@ -1111,7 +1138,7 @@ int main() {
 }
 ```
 
-### Static method in cpp
+### 13.3 Static method in cpp
 Static variables and static methods in C++ are associated with the class rather than any particular instance of the class. They can be accessed without creating an instance of the class.Static methods are defined using the `static` keyword and can be called using the class name.
 Example of static method in C++:
 ```cpp
@@ -1150,6 +1177,66 @@ int main() {
 }
 ```
 Here count variable is shared among all instances of the Counter class and can be accessed using the class name as well as through any instance of the class.Such that change of count variable in one instance will reflect in all other instances.
+
+
+
+### 13.4 Use of `this` pointer in C++
+`this` pointer is an implicit parameter to all non-static member functions. It points to the object for which the member function is called. It is used to access the members of the current object.
+
+Use of this pointer in C++:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Point{
+    private:
+        int x, y;
+    public:
+        Point(int x, int y){
+            this->x = x;  // Using this pointer to refer to the current object's x
+            this->y = y;  // Using this pointer to refer to the current object's 
+            
+            // here the parameter name and the member variable name are same so we use this pointer to differentiate between them
+        }
+
+        void display(){
+            cout << "X: " << x << ", Y: " << y << endl;  // Direct access without this pointer as they are not ambiguous
+        }
+
+        void setX(int x){
+            this->x = x;  // Using this pointer to refer to the current object's x
+        }
+    
+}
+```
+
+### 13.5 Destructors in C++
+A destructor is a special member function that is called when an object goes out of scope or is explicitly deleted. It is used to release resources that were allocated to the object during its lifetime. The
+destructor has the same name as the class but is preceded by a tilde (`~`).
+Example of destructor in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Person {
+public:
+
+    Person() {
+        cout << "Constructor called" << endl;
+    }
+    ~Person() {
+        cout << "Destructor called" << endl;
+    }
+};
+int main() {
+    Person p1;  // Constructor called
+    {
+        Person p2;  // Constructor called
+    }  // Destructor called for p2 as it goes out of scope
+    // Destructor called for p1 as it goes out of scope at the end of main
+}
+```
+
 
 ## Summary
 
