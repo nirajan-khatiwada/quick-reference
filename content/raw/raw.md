@@ -1,74 +1,82 @@
-Inheritance concept in python and cpp
+# Inheritance Concepts in Python and C++
 
-consider example in python and cpp as below
+This document explores inheritance behavior differences between Python and C++ through various examples and cases.
 
-case 1: All public variable and not same public variable in derived class
+## Case 1: All Public Variables with No Same Public Variable in Derived Class
 
-```Python                               
+### Python Implementation
+
+```python
 class A:
     def __init__(self):
-        self.name="nirajan"
+        self.name = "nirajan"
+    
     def display(self):
-        print("name is",self.,"from a")
-    def change_name(self,new_name):
-        self.name=new_name+'added in a'
+        print("name is", self.name, "from a")
+    
+    def change_name(self, new_name):
+        self.name = new_name + ' added in a'
 
 class B(A):
     def __init__(self):
-        self.doc="rame"
+        super().__init__()
+        self.doc = "rame"
+    
     def display_a(self):
         self.display()
-        print("name is",self.name,"from a")
-        print("doc is",self.doc,"from b")
-    def change_name_b(self,new_name):
-        self.name=new_name +'added in b'
+        print("name is", self.name, "from a")
+        print("doc is", self.doc, "from b")
+    
+    def change_name_b(self, new_name):
+        self.name = new_name + ' added in b'
         self.change_name(new_name)
-        self.doc=new_name+'added in b'
+        self.doc = new_name + ' added in b'
 
-b=B()
-b.display_b()
+b = B()
+b.display_a()
 b.change_name_b("newname")
-b.display_b()
-
-
-        
+b.display_a()
 ```
-The equivalent code in cpp is as below
+
+### C++ Implementation
+
 ```cpp
 #include <iostream>
 using namespace std;
-class A{
+
+class A {
     public:
         string name;
-        A(){
-            name="nirajan";
+        A() {
+            name = "nirajan";
         }
-        void display(){
-            cout<<"name is "<<name<<" from a"<<endl;
+        void display() {
+            cout << "name is " << name << " from a" << endl;
         }
-        void change_name(string new_name){
-            name=new_name+" added in a";
+        void change_name(string new_name) {
+            name = new_name + " added in a";
         }
 };
 
-class B: public A{
+class B: public A {
     public:
         string doc;
-        B(){
-            doc="rame";
+        B() {
+            doc = "rame";
         }
-        void display_a(){
+        void display_a() {
             display();
-            cout<<"name is "<<name<<" from a"<<endl;
-            cout<<"doc is "<<doc<<" from b"<<endl;
+            cout << "name is " << name << " from a" << endl;
+            cout << "doc is " << doc << " from b" << endl;
         }
-        void change_name_b(string new_name){
-            name=new_name+" added in b";
+        void change_name_b(string new_name) {
+            name = new_name + " added in b";
             change_name(new_name);
-            doc=new_name+" added in b";
+            doc = new_name + " added in b";
         }
 };
-int main(){
+
+int main() {
     B b;
     b.display_a();
     b.change_name_b("newname");
@@ -77,101 +85,100 @@ int main(){
 }
 ```
 
-What happpen Here?
+### What Happens Here?
 
-Better one:
-When we execute display_a() then first it will check if display_a() function is in class B if found it will execute else it will look for the function in class A . Since display_a() function is in class B so it will execute that function. Now in display_a() function first line of code is display() then it will look for the function in class B if not found it will look for the function in class A and since it is not in class B it will find it in class A and since it is in class A then it will execute the function of class A.
+When we execute `display_a()`, it first checks if the `display_a()` function exists in class B. If found, it executes that function; otherwise, it looks for the function in class A. Since `display_a()` is found in class B, it executes that function.
 
-In python ,
-While executing display function we need name variable. So it will first look for the variable in class B if not found it will look for the variable in class A . 
+Within `display_a()`, the first line calls `display()`. The system looks for this function in class B first. If not found, it searches in class A. Since `display()` is not in class B, it finds and executes the function from class A.
 
-But in cpp,
-While executing display function we need name variable. So it will first look for the variable in the class that function actually belongs to. Here display function belongs to class A so it will use find the variable in class A not in class B as in python.
+**In Python:**
+While executing the display function, when it needs the `name` variable, it first looks for the variable in class B. If not found, it searches in class A.
 
+**In C++:**
+While executing the display function, when it needs the `name` variable, it first looks for the variable in the class that the function actually belongs to. Here, the display function belongs to class A, so it looks for the variable in class A, not in class B as in Python.
 
+After finding the variable, the display function prints the variable value. In this case, both Python and C++ print the same value since the `name` variable is not present in class B. Python looks for the variable in class A and finds it there, while C++ looks in class A by default since the display function belongs to class A.
 
-Now after finding the variable the display function will print the variable value. In this case both python and cpp will print the same value.as variable name is not present in class B so python will look for the variable in class A and find it in class A and print and cpp will by default look for the variable in class A as display function belongs to class A and print the value of variable of class A
+After the `display()` function, the next line of code is `cout << "name is " << name << " from a" << endl;`. Since this is in a function of class B:
 
+**C++ behavior:** Looks for variable `name` in class B first, as it's in a function of class B. If not found, it looks in class A.
 
-After display() function the next line of code is `cout<<"name is "<<name<<" from a"<<endl;` here it is function of class B so ,
+**Python behavior:** Always looks in the derived class first, so it searches for variable `name` in class B first. If not found, it looks in class A.
 
-CPP will look for variable name in class B first as it is in the function of class B if not found it will look for the variable in class A.
+Both then print the value of variable `name` from class A.
 
+The next line `cout << "doc is " << doc << " from b" << endl;` is also in a function of class B, so both C++ and Python find the variable `doc` in class B first and print its value.
 
-Python will look for the derived class always first so it will look for the variable name in class B first if not found it will look for the variable in class A.
+## Case 2: Public Variable with Repetition in Derived Class
 
-then it will print the value of variable name of class A
+### Python Implementation
 
-After that the next line of code is `cout<<"doc is "<<doc<<" from b"<<endl;` here it is function of class B
-
-so CPP will try to find the variable doc in class B first as it is in the function of class B if not found it will look for the variable in class A.Here it will find the variable in class B and print the value of variable doc of class B
-
-and python will look for the derived class always first so it will look for the variable doc in class B first if not found it will look for the variable in class A.Here it will find the variable in class B and print the value of variable doc of class B
-
-
-
-case 2: Public variable with repetition in derived class
-
-```Python
+```python
 class A:
     def __init__(self):
-        self.name="nirajan"
+        self.name = "nirajan"
+    
     def display(self):
-        print("name is",self.name,"from a")
-    def change_name(self,new_name):
-        self.name=new_name+' added in a'
+        print("name is", self.name, "from a")
+    
+    def change_name(self, new_name):
+        self.name = new_name + ' added in a'
+
 class B(A):
     def __init__(self):
-        self.name="rame"
+        self.name = "rame"
+    
     def display_b(self):
         self.display()
-        print("name is",self.name,"from b")
-
-    def change_name_b(self,new_name):
-        self.name=new_name +' added in b'
+        print("name is", self.name, "from b")
+    
+    def change_name_b(self, new_name):
+        self.name = new_name + ' added in b'
         self.change_name(new_name)
 
-b=B()
+b = B()
 b.display_b()
 b.change_name_b("newname")
 b.display_b()
 ```
 
-The equivalent code in cpp is as below
+### C++ Implementation
+
 ```cpp
 #include <iostream>
 using namespace std;
-class A{
+
+class A {
     public:
         string name;
-        A(){
-            name="nirajan";
+        A() {
+            name = "nirajan";
         }
-        void display(){
-            cout<<"name is "<<name<<" from a"<<endl;
+        void display() {
+            cout << "name is " << name << " from a" << endl;
         }
-        void change_name(string new_name){
-            name=new_name+" added in a";
+        void change_name(string new_name) {
+            name = new_name + " added in a";
         }
 };
 
-class B: public A{
+class B: public A {
     public:
         string name;
-        B(){
-            name="rame";
+        B() {
+            name = "rame";
         }
-        void display_a(){
+        void display_a() {
             display();
-            cout<<"name is "<<name<<" from b"<<endl;
+            cout << "name is " << name << " from b" << endl;
         }
-        void change_name_b(string new_name){
-            name=new_name+" added in b";
+        void change_name_b(string new_name) {
+            name = new_name + " added in b";
             change_name(new_name);
         }
 };
 
-int main(){
+int main() {
     B b;
     b.display_a();
     b.change_name_b("newname");
@@ -180,98 +187,98 @@ int main(){
 }
 ```
 
-What happpen Here?
-Here python and c++ behave differently. 
+### What Happens Here?
 
-In python,
-In python init first set value of name to rame . When we call display_b function then the first line of code `self.display()` will call display function . The function will reference the function of class A but the variable name will reference the variable of class B because in python it first look for the variable in the current class if not found it will look for the variable in the base class. So when we call display function it will print name is rame from a. Then the next line of code will print name is rame from b. So the output will be 
+Python and C++ behave differently in this case.
 
-After then `print("name is",self.name,"from a")` will will print name rame from class B.
+**In Python:**
+The `__init__` method first sets the value of `name` to "rame". When we call `display_b()`, the first line `self.display()` calls the display function. The function references the function from class A, but the variable `name` references the variable from class B because Python first looks for the variable in the current class. If not found, it looks in the base class. So when we call the display function, it prints "name is rame from a". The next line prints "name is rame from b".
 
+When changing the name through `change_name_b()`, the first line `self.name = new_name + ' added in b'` changes the value of `name` in class B. The next line `self.change_name(new_name)` calls the `change_name` function of class A. While executing this function, it looks for the variable `name` in class B first. If not found, it looks in class A. Here it finds the variable `name` in class B and changes its value to "newname added in a".
 
-similary while changing name,
-When we call change_name_b then the first line of code `self.name=new_name +' added in b'` will change the value of name in class B to newname added in b. 
+**In C++:**
+When we call `display_a()`, it first checks if the function is available in class B. Since it's found in class B, it executes that function. The first line calls `display()`, which searches for the display function in class B first. If not found, it looks in class A and finds it there, executing the class A function. While executing the function from class A, it uses the variable from class A, not from class B as in Python.
 
-Then the next line of code `self.change_name(new_name)` will call change_name function of class A. Ifirst it search the change_name function is available in class B if not found it will look for the function in class A. Similarly while executing the function change_name it will first look for the variable name in class B if not found it will look for the variable in class A. So here it will find the variable name in class B and change the value of name in class B to newname added in a.
+The next line `cout << "name is " << name << " from b" << endl;` is in a function of class B, so it uses the variable from class B.
 
+When changing the name through `change_name_b()`, the first line `name = new_name + " added in b";` uses the variable from class B because it's in a function of class B. The next line `change_name(new_name);` looks for the function in class B first, then in class A, finding and executing the function from class A. While executing the function from class A, it uses the variable from class A, not from class B as in Python.
 
+## Case 3: Private Variable Only in Base Class with No Same Variable in Derived Class
 
-In cpp,
-In cpp when we call display_a() function then first it check if the function is available in class B since it is fount in class B so it will execute that function . Again the first line of code is `display()` then it again check if display function is available in class B if not found it will look for the function in class A. an dfind it in class A so it will execute the class A function.Bow while executing the function of class then it will use the variable of class A  not of B as of python.
-Similarly the next line of code is `cout<<"name is "<<name<<" from b"<<endl;` here it is function of class B so it will use the variable of class B.
+### Python Implementation
 
-
-Similarly while changing name,
-When we call change_name_b function then first line of code is `name=new_name+" added in b";` here it will use the variable of class B because it is in the function of class B. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
-
-
-
-
-case 3 : Private variable only in base class with no same variable in derived class
-
-```Python
+```python
 class A:
     def __init__(self):
-        self.__name="nirajan"
+        self.__name = "nirajan"
+    
     def display(self):
-        print("name is",self.__name,"from a")
-    def change_name(self,new_name):
-        self.__name=new_name+' added in a'
+        print("name is", self.__name, "from a")
+    
+    def change_name(self, new_name):
+        self.__name = new_name + ' added in a'
 
 class B(A):
     def __init__(self):
-        self.doc="rame"
+        super().__init__()
+        self.doc = "rame"
+    
     def display_b(self):
         self.display()
-        print("doc is",self.doc,"from b")
-        print("name is",self.__name,"from b") # will give error
-    def change_name_b(self,new_name):
-        self.__name=new_name +' added in b' # will give error
+        print("doc is", self.doc, "from b")
+        print("name is", self.__name, "from b")  # will give error
+    
+    def change_name_b(self, new_name):
+        self.__name = new_name + ' added in b'  # will give error
         self.change_name(new_name)
-        self.doc=new_name+' added in b'
+        self.doc = new_name + ' added in b'
 
-b=B()
+b = B()
 b.display_b()
 b.change_name_b("newname")
 b.display_b()
 ```
 
-The equivalent code in cpp is as below
+### C++ Implementation
+
 ```cpp
 #include <iostream>
 using namespace std;
-class A{
+
+class A {
     private:
         string name;
     public:
-        A(){
-            name="nirajan";
+        A() {
+            name = "nirajan";
         }
-        void display(){
-            cout<<"name is "<<name<<" from a"<<endl;
+        void display() {
+            cout << "name is " << name << " from a" << endl;
         }
-        void change_name(string new_name){
-            name=new_name+" added in a";
+        void change_name(string new_name) {
+            name = new_name + " added in a";
         }
 };
-class B: public A{
+
+class B: public A {
     public:
         string doc;
-        B(){
-            doc="rame";
+        B() {
+            doc = "rame";
         }
-        void display_a(){
+        void display_a() {
             display();
-            cout<<"doc is "<<doc<<" from b"<<endl;
-            cout<<"name is "<<name<<" from b"<<endl; // will give error
+            cout << "doc is " << doc << " from b" << endl;
+            cout << "name is " << name << " from b" << endl;  // will give error
         }
-        void change_name_b(string new_name){
-            name=new_name+" added in b"; // will give error
+        void change_name_b(string new_name) {
+            name = new_name + " added in b";  // will give error
             change_name(new_name);
-            doc=new_name+" added in b";
+            doc = new_name + " added in b";
         }
 };
-int main(){
+
+int main() {
     B b;
     b.display_a();
     b.change_name_b("newname");
@@ -280,79 +287,91 @@ int main(){
 }
 ```
 
-What happpen Here?
-Consider we are running  display_a function of class B. Then first line of code is display() which means it will now search for display function in class B if not found it will look for the function in class A and find it in class A and execute it.In display() function ther we display the private variable of class A because we are using the function of class A. But the next line of coe    
- `cout<<"doc is"<<doc<<" from b"<<endl;` will print the variable of class B because it is in the function of class B. But the next line of code is `cout<<"name is "<<name<<" from b"<<endl;`. This will throw error because  it wll search if name is in class B if not found it will look for same variable class A but it is private variable so it is not visible to class B function so it cant see the declaration of name in class A and throw error as a is not declared.
+### What Happens Here?
 
+When running the `display_a()` function of class B, the first line `display()` searches for the display function in class B. If not found, it looks in class A, finds it, and executes it. In the `display()` function, we display the private variable of class A because we're using the function from class A.
 
-Similarly while changing name,
-When we call change_name_b function then first line of code is `name=new_name+" added
-    in b";` here it will search for the variable name in class B if not found it will look for the variable in class A but it is private variable so it is not visible to class B function so it cant see the declaration of name in class A and throw error as a is not declared. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
+The next line `cout << "doc is " << doc << " from b" << endl;` prints the variable from class B because it's in a function of class B.
 
+However, the next line `cout << "name is " << name << " from b" << endl;` throws an error because it searches for `name` in class B first. If not found, it looks for the same variable in class A, but since it's a private variable, it's not visible to class B functions. The system can't see the declaration of `name` in class A and throws an error stating that `name` is not declared.
 
-case 4: Private variable in base class and same private variable in derived class
+Similarly, when changing the name through `change_name_b()`, the first line `name = new_name + " added in b";` searches for the variable `name` in class B. If not found, it looks in class A, but since it's a private variable, it's not visible to class B functions, causing a "not declared" error.
 
-```Python
+The next line `change_name(new_name);` looks for the function in class B first, then in class A, finding and executing the function from class A, which uses the variable from class A.
+
+## Case 4: Private Variable in Base Class and Same Private Variable in Derived Class
+
+### Python Implementation
+
+```python
 class A:
     def __init__(self):
-        self.__name="nirajan"
+        self.__name = "nirajan"
+    
     def display(self):
-        print("name is",self.__name,"from a")
-    def change_name(self,new_name):
-        self.__name=new_name+' added in a'
+        print("name is", self.__name, "from a")
+    
+    def change_name(self, new_name):
+        self.__name = new_name + ' added in a'
 
 class B(A):
     def __init__(self):
-        self.__name="rame"
+        super().__init__()
+        self.__name = "rame"
+    
     def display_b(self):
         self.display()
-        print("name is",self.__name,"from b")
-    def change_name_b(self,new_name):
-        self.__name=new_name +' added in b'
+        print("name is", self.__name, "from b")
+    
+    def change_name_b(self, new_name):
+        self.__name = new_name + ' added in b'
         self.change_name(new_name)
-b=B()
+
+b = B()
 b.display_b()
 b.change_name_b("newname")
 b.display_b()
 ```
 
-The equivalent code in cpp is as below
+### C++ Implementation
+
 ```cpp
 #include <iostream>
-
 using namespace std;
-class A{
+
+class A {
     private:
         string name;
     public:
-        A(){
-            name="nirajan";
+        A() {
+            name = "nirajan";
         }
-        void display(){
-            cout<<"name is "<<name<<" from a"<<endl;
+        void display() {
+            cout << "name is " << name << " from a" << endl;
         }
-        void change_name(string new_name){
-            name=new_name+" added in a";
+        void change_name(string new_name) {
+            name = new_name + " added in a";
         }
 };
-class B: public A{
+
+class B: public A {
     private:
         string name;
     public:
-        B(){
-            name="rame";
+        B() {
+            name = "rame";
         }
-        void display_a(){
+        void display_a() {
             display();
-            cout<<"name is "<<name<<" from b"<<endl;
+            cout << "name is " << name << " from b" << endl;
         }
-        void change_name_b(string new_name){
-            name=new_name+" added in b";
+        void change_name_b(string new_name) {
+            name = new_name + " added in b";
             change_name(new_name);
         }
 };
 
-int main(){
+int main() {
     B b;
     b.display_a();
     b.change_name_b("newname");
@@ -361,19 +380,21 @@ int main(){
 }
 ```
 
-What happpen Here?
+### What Happens Here?
 
-In cpp,
-when we call display_a() function then first it check if the function is available in class B since it is fount in class B so it will execute that function if its private then if function is called outside from the class then it cane be seen but if it is called inside the class then it can be seen but here it is public so we can see it from both inside class and outside. It see if display_a function is available in class B . Yes display_a function is available then in class B it first line of code is `display()` then it again check if display function is available in class B if not found it will look for the function in class A.As it is not in B and only in A so it will execute the function of class A. While executing the function of class A it will use the variable of class A not of B as in python. Similarly the next line of code is ``cout<<"name is "<<name<<" from b"<<endl;` here it is function of class B so it will use the variable of class B. 
+**In C++:**
+When we call `display_a()`, it first checks if the function is available in class B. Since it's found in class B (and is public), it executes that function. The first line `display()` checks if the display function is available in class B. If not found, it looks in class A, finds it, and executes the function from class A. While executing the function from class A, it uses the variable from class A, not from class B as in Python.
 
+The next line `cout << "name is " << name << " from b" << endl;` is in a function of class B, so it uses the variable from class B.
 
-In case of python,
-while executing display function like in case 2 it will first look for class B __name variable is present in class B but it is private so it will not be visible as we are executing the function of class A. So we will now look for the variable in class A and find it in class A and print the value of class A variable. Then the next line of code will print the value of class B variable as it is in the function of class B.
+**In Python:**
+While executing the display function (similar to case 2), it first looks for the `__name` variable in class B. The variable is present in class B but is private, so it's not visible when executing the function from class A. Therefore, it looks for the variable in class A, finds it there, and prints the value of the class A variable. The next line prints the value of the class B variable since it's in a function of class B.
 
-Similarly while changing name,
-When we call change_name_b function then first line of code is `name=new_name+" added in b";` here it will use the variable of class B because it is in the function of class B. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
+When changing the name through `change_name_b()`, the first line `name = new_name + " added in b";` uses the variable from class B because it's in a function of class B. The next line `change_name(new_name);` looks for the function in class B first, then in class A, finding and executing the function from class A. While executing the function from class A, it uses the variable from class A, not from class B as in Python.
 
+## Key Points
 
-
-
-Similar for function if it is private then it can be seen only inside the class not outside
+- Private functions can only be accessed from within the same class, not from outside the class
+- Variable and function resolution follows different patterns in Python versus C++
+- Python tends to look in the derived class first, while C++ considers the scope of the function being executed
+- Private variables are not accessible across class boundaries in both languages
