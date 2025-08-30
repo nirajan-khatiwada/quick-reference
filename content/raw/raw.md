@@ -139,7 +139,7 @@ class B(A):
     def __init__(self):
         self.name = "rame"
     
-    def display_b(self):
+    def display_a(self):
         self.display()
         print("name is", self.name, "from b")
     
@@ -203,9 +203,13 @@ int main() {
 Python and C++ behave differently in this case.
 
 **In Python:**
-The `__init__` method first sets the value of `name` to "rame". When we call `display_b()`, the first line `self.display()` calls the display function. The function references the function from class A, but the variable `name` references the variable from class B because Python first looks for the variable in the current class. If not found, it looks in the base class. So when we call the display function, it prints "name is rame from a". The next line prints "name is rame from b".
+ When we call `display_b()`, it first checks if the function is available in class B. Since it's found in class B, it executes that function. The first line `self.display()` then it again checks for the display function in class B first. If not found, it looks in class A . Since it's not found in class B, it finds and executes the function from class A. While executing the function from class A, Inside the display function, it need variable `name`, so it first looks for the variable in class B. If not found, it looks in class A. Here, it finds the variable `name` in class B and uses that value. So when we call the display function, it prints "name is rame from b". 
 
-When changing the name through `change_name_b()`, the first line `self.name = new_name + ' added in b'` changes the value of `name` in class B. The next line `self.change_name(new_name)` calls the `change_name` function of class A. While executing this function, it looks for the variable `name` in class B first. If not found, it looks in class A. Here it finds the variable `name` in class B and changes its value to "newname added in a".
+ The next line `print("name is", self.name, "from b")` is in a function of class B, so it uses the variable from class B.
+
+
+ 
+
 
 **In C++:**
 When we call `display_a()`, it first checks if the function is available in class B. Since it's found in class B, it executes that function. The first line calls `display()`, which searches for the display function in class B first. If not found, it looks in class A and finds it there, executing the class A function. While executing the function from class A, it uses the variable from class A, not from class B as in Python.
