@@ -1,3 +1,14 @@
+---
+title: "Python & C++ Fundamentals: Inheritance Concepts and Variable Resolution (part 12)"
+date: 2024-11-12 
+description: "Understanding how inheritance works differently in Python and C++ with detailed examples covering public and private variable resolution."
+showToc: true
+categories: ["Inheritance Core", ]
+tags: ["Python", "C++", "Programming", "Inheritance", "OOP", "Tutorial"]
+summary: "An in-depth comparison of inheritance behavior between Python and C++ across different scenarios."
+images: ["/images/pythoncpp.png"]
+---
+
 # Inheritance Concepts in Python and C++
 
 This document explores inheritance behavior differences between Python and C++ through various examples and cases.
