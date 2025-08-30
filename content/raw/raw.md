@@ -1,256 +1,379 @@
----
-title: "Raw concept model for inheritance"
-layout: "raw"
-category: "raw"
-summary: "A universal conceptual model for understanding inheritance in object-oriented programming."
----
+Inheritance concept in python and cpp
+
+consider example in python and cpp as below
+
+case 1: All public variable and not same public variable in derived class
+
+```Python                               
+class A:
+    def __init__(self):
+        self.name="nirajan"
+    def display(self):
+        print("name is",self.,"from a")
+    def change_name(self,new_name):
+        self.name=new_name+'added in a'
+
+class B(A):
+    def __init__(self):
+        self.doc="rame"
+    def display_a(self):
+        self.display()
+        print("name is",self.name,"from a")
+        print("doc is",self.doc,"from b")
+    def change_name_b(self,new_name):
+        self.name=new_name +'added in b'
+        self.change_name(new_name)
+        self.doc=new_name+'added in b'
+
+b=B()
+b.display_b()
+b.change_name_b("newname")
+b.display_b()
 
 
-# Universal Inheritance Conceptual Model
-
-## Core Concept: The "Inheritance Copy" Mental Model
-
-**Inheritance can be understood as a conceptual copying process** where all members (variables and functions) from the base class are logically transferred to the derived class, regardless of their visibility modifiers.
-
-```
-Base Class                         Derived Class
-┌─────────────────────┐          ┌──────────────────────────────────┐
-│ public variables    │ ──────── │ public variables (inherited)     │
-│ private variables   │ ──────── │ private variables (inherited)    │
-│ protected variables │ ──────── │ protected variables (inherited)  │
-│ public functions    │ ──────── │ public functions (inherited)     │
-│ private functions   │ ──────── │ private functions (inherited)    │
-│ protected functions │ ──────── │ protected functions (inherited)  │
-└─────────────────────┘          │ new variables (if any)           │
-                                 │ new functions (if any)           │
-                                 └──────────────────────────────────┘
-```
-
-## Universal Pseudocode Example
-
-```pseudocode
-// Base Class Definition
-CLASS BaseClass:
-    public variable: basePublicVar = 10
-    private variable: basePrivateVar = 20
-    protected variable: baseProtectedVar = 30
-    
-    public function: displayBase()
-        PRINT "Base display function"
-    
-    private function: helperBase()
-        PRINT "Base helper function"
-    
-    protected function: utilityBase()
-        PRINT "Base utility function"
-END CLASS
-
-// Derived Class Definition
-CLASS DerivedClass INHERITS BaseClass:
-    public variable: derivedVar = 40
-    
-    public function: displayDerived()
-        PRINT "Derived display function"
-END CLASS
-```
-
-## What Actually Happens (Conceptual View)
-
-After inheritance, the `DerivedClass` conceptually contains:
-
-```pseudocode
-// Conceptual contents of DerivedClass after inheritance
-CLASS DerivedClass (after inheritance):
-    // Inherited from BaseClass
-    public variable: basePublicVar = 10        [INHERITED]
-    private variable: basePrivateVar = 20      [INHERITED - ACCESS RESTRICTED]
-    protected variable: baseProtectedVar = 30  [INHERITED]
-    
-    public function: displayBase()             [INHERITED]
-        PRINT "Base display function"
-    
-    private function: helperBase()             [INHERITED - ACCESS RESTRICTED]
-        PRINT "Base helper function"
-    
-    protected function: utilityBase()          [INHERITED]
-        PRINT "Base utility function"
-    
-    // New members
-    public variable: derivedVar = 40           [NEW]
-    
-    public function: displayDerived()          [NEW]
-        PRINT "Derived display function"
-END CLASS
-```
-
-## Member Overriding Concept
-
-### Variable Overriding
-When a derived class declares a variable with the same name as the base class:
-
-```pseudocode
-CLASS BaseClass:
-    public variable: value = 100
-    
-    public function: showValue()
-        PRINT value  // Will print the active 'value'
-END CLASS
-
-CLASS DerivedClass INHERITS BaseClass:
-    public variable: value = 200  // OVERRIDES base class 'value'
-    
-    // Inherited showValue() will now use derived 'value'
-END CLASS
-
-// Usage
-object = CREATE DerivedClass()
-object.showValue()  // Prints: 200 (derived value is used)
-```
-
-### Function Overriding
-When a derived class defines a function with the same signature as the base class:
-
-```pseudocode
-CLASS BaseClass:
-    public function: display()
-        PRINT "This is base class display"
-END CLASS
-
-CLASS DerivedClass INHERITS BaseClass:
-    public function: display()  // OVERRIDES base class display()
-        PRINT "This is derived class display"
-END CLASS
-
-// Usage
-object = CREATE DerivedClass()
-object.display()  // Prints: "This is derived class display"
-```
-
-## Accessing Base Class Members
-
-To explicitly use base class members when they are overridden:
-
-```pseudocode
-CLASS DerivedClass INHERITS BaseClass:
-    public function: display()  // Overrides base display()
-        PRINT "Derived display"
         
-    public function: callBothDisplays()
-        display()              // Calls derived version
-        CALL BaseClass.display()  // Explicitly calls base version
-        
-    public function: useBaseVariable()
-        PRINT value            // Uses derived 'value' if overridden
-        PRINT BaseClass.value  // Explicitly uses base 'value'
-END CLASS
+```
+The equivalent code in cpp is as below
+```cpp
+#include <iostream>
+using namespace std;
+class A{
+    public:
+        string name;
+        A(){
+            name="nirajan";
+        }
+        void display(){
+            cout<<"name is "<<name<<" from a"<<endl;
+        }
+        void change_name(string new_name){
+            name=new_name+" added in a";
+        }
+};
+
+class B: public A{
+    public:
+        string doc;
+        B(){
+            doc="rame";
+        }
+        void display_a(){
+            display();
+            cout<<"name is "<<name<<" from a"<<endl;
+            cout<<"doc is "<<doc<<" from b"<<endl;
+        }
+        void change_name_b(string new_name){
+            name=new_name+" added in b";
+            change_name(new_name);
+            doc=new_name+" added in b";
+        }
+};
+int main(){
+    B b;
+    b.display_a();
+    b.change_name_b("newname");
+    b.display_a();
+    return 0;
+}
 ```
 
-## Access Control Universal Rules
+What happpen Here?
 
-### Public Members
-```pseudocode
-object = CREATE DerivedClass()
-object.basePublicVar = 50     // ✓ ALLOWED: Direct access
-object.displayBase()          // ✓ ALLOWED: Direct call
+Better one:
+When we execute display_a() then first it will check if display_a() function is in class B if found it will execute else it will look for the function in class A . Since display_a() function is in class B so it will execute that function. Now in display_a() function first line of code is display() then it will look for the function in class B if not found it will look for the function in class A and since it is not in class B it will find it in class A and since it is in class A then it will execute the function of class A.
+
+In python ,
+While executing display function we need name variable. So it will first look for the variable in class B if not found it will look for the variable in class A . 
+
+But in cpp,
+While executing display function we need name variable. So it will first look for the variable in the class that function actually belongs to. Here display function belongs to class A so it will use find the variable in class A not in class B as in python.
+
+
+
+Now after finding the variable the display function will print the variable value. In this case both python and cpp will print the same value.as variable name is not present in class B so python will look for the variable in class A and find it in class A and print and cpp will by default look for the variable in class A as display function belongs to class A and print the value of variable of class A
+
+
+After display() function the next line of code is `cout<<"name is "<<name<<" from a"<<endl;` here it is function of class B so ,
+
+CPP will look for variable name in class B first as it is in the function of class B if not found it will look for the variable in class A.
+
+
+Python will look for the derived class always first so it will look for the variable name in class B first if not found it will look for the variable in class A.
+
+then it will print the value of variable name of class A
+
+After that the next line of code is `cout<<"doc is "<<doc<<" from b"<<endl;` here it is function of class B
+
+so CPP will try to find the variable doc in class B first as it is in the function of class B if not found it will look for the variable in class A.Here it will find the variable in class B and print the value of variable doc of class B
+
+and python will look for the derived class always first so it will look for the variable doc in class B first if not found it will look for the variable in class A.Here it will find the variable in class B and print the value of variable doc of class B
+
+
+
+case 2: Public variable with repetition in derived class
+
+```Python
+class A:
+    def __init__(self):
+        self.name="nirajan"
+    def display(self):
+        print("name is",self.name,"from a")
+    def change_name(self,new_name):
+        self.name=new_name+' added in a'
+class B(A):
+    def __init__(self):
+        self.name="rame"
+    def display_b(self):
+        self.display()
+        print("name is",self.name,"from b")
+
+    def change_name_b(self,new_name):
+        self.name=new_name +' added in b'
+        self.change_name(new_name)
+
+b=B()
+b.display_b()
+b.change_name_b("newname")
+b.display_b()
 ```
 
-### Protected Members
-```pseudocode
-// Inside DerivedClass methods only
-CLASS DerivedClass INHERITS BaseClass:
-    public function: someMethod()
-        baseProtectedVar = 60     // ✓ ALLOWED: Access within derived class
-        utilityBase()             // ✓ ALLOWED: Call within derived class
-END CLASS
+The equivalent code in cpp is as below
+```cpp
+#include <iostream>
+using namespace std;
+class A{
+    public:
+        string name;
+        A(){
+            name="nirajan";
+        }
+        void display(){
+            cout<<"name is "<<name<<" from a"<<endl;
+        }
+        void change_name(string new_name){
+            name=new_name+" added in a";
+        }
+};
 
-// Outside class
-object = CREATE DerivedClass()
-object.baseProtectedVar = 70     // ❌ NOT ALLOWED: External access denied
+class B: public A{
+    public:
+        string name;
+        B(){
+            name="rame";
+        }
+        void display_a(){
+            display();
+            cout<<"name is "<<name<<" from b"<<endl;
+        }
+        void change_name_b(string new_name){
+            name=new_name+" added in b";
+            change_name(new_name);
+        }
+};
+
+int main(){
+    B b;
+    b.display_a();
+    b.change_name_b("newname");
+    b.display_a();
+    return 0;
+}
 ```
 
-### Private Members
-```pseudocode
-// Inside DerivedClass methods
-CLASS DerivedClass INHERITS BaseClass:
-    public function: someMethod()
-        basePrivateVar = 80       // ❌ NOT ALLOWED: Private access denied
-        helperBase()              // ❌ NOT ALLOWED: Private function access denied
-        
-        // Must use public/protected base methods to access private members
-        setBasePrivateVar(80)     // ✓ ALLOWED: If such method exists in base
-END CLASS
+What happpen Here?
+Here python and c++ behave differently. 
+
+In python,
+In python init first set value of name to rame . When we call display_b function then the first line of code `self.display()` will call display function . The function will reference the function of class A but the variable name will reference the variable of class B because in python it first look for the variable in the current class if not found it will look for the variable in the base class. So when we call display function it will print name is rame from a. Then the next line of code will print name is rame from b. So the output will be 
+
+After then `print("name is",self.name,"from a")` will will print name rame from class B.
+
+
+similary while changing name,
+When we call change_name_b then the first line of code `self.name=new_name +' added in b'` will change the value of name in class B to newname added in b. 
+
+Then the next line of code `self.change_name(new_name)` will call change_name function of class A. Ifirst it search the change_name function is available in class B if not found it will look for the function in class A. Similarly while executing the function change_name it will first look for the variable name in class B if not found it will look for the variable in class A. So here it will find the variable name in class B and change the value of name in class B to newname added in a.
+
+
+
+In cpp,
+In cpp when we call display_a() function then first it check if the function is available in class B since it is fount in class B so it will execute that function . Again the first line of code is `display()` then it again check if display function is available in class B if not found it will look for the function in class A. an dfind it in class A so it will execute the class A function.Bow while executing the function of class then it will use the variable of class A  not of B as of python.
+Similarly the next line of code is `cout<<"name is "<<name<<" from b"<<endl;` here it is function of class B so it will use the variable of class B.
+
+
+Similarly while changing name,
+When we call change_name_b function then first line of code is `name=new_name+" added in b";` here it will use the variable of class B because it is in the function of class B. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
+
+
+
+
+case 3 : Private variable only in base class with no same variable in derived class
+
+```Python
+class A:
+    def __init__(self):
+        self.__name="nirajan"
+    def display(self):
+        print("name is",self.__name,"from a")
+    def change_name(self,new_name):
+        self.__name=new_name+' added in a'
+
+class B(A):
+    def __init__(self):
+        self.doc="rame"
+    def display_b(self):
+        self.display()
+        print("doc is",self.doc,"from b")
+        print("name is",self.__name,"from b") # will give error
+    def change_name_b(self,new_name):
+        self.__name=new_name +' added in b' # will give error
+        self.change_name(new_name)
+        self.doc=new_name+' added in b'
+
+b=B()
+b.display_b()
+b.change_name_b("newname")
+b.display_b()
 ```
 
-## Complete Example
-
-```pseudocode
-CLASS Animal:
-    protected variable: name = "Unknown"
-    private variable: id = 0
-    
-    public function: setName(newName)
-        name = newName
-        
-    public function: getName()
-        RETURN name
-        
-    public function: speak()
-        PRINT name + " makes a sound"
-        
-    private function: generateId()
-        id = RANDOM_NUMBER()
-END CLASS
-
-CLASS Dog INHERITS Animal:
-    private variable: breed = "Unknown"
-    
-    public function: setBreed(newBreed)
-        breed = newBreed
-        
-    public function: speak()  // OVERRIDES Animal.speak()
-        PRINT name + " barks"  // Uses inherited 'name'
-        
-    public function: introduce()
-        PRINT "I am " + getName() + ", a " + breed
-        Animal.speak()  // Explicitly calls base version
-        speak()         // Calls overridden version (this dog's speak)
-END CLASS
-
-// Usage
-myDog = CREATE Dog()
-myDog.setName("Buddy")        // Uses inherited method
-myDog.setBreed("Golden Retriever")
-myDog.introduce()
-// Output:
-// I am Buddy, a Golden Retriever  
-// Buddy makes a sound
-// Buddy barks
+The equivalent code in cpp is as below
+```cpp
+#include <iostream>
+using namespace std;
+class A{
+    private:
+        string name;
+    public:
+        A(){
+            name="nirajan";
+        }
+        void display(){
+            cout<<"name is "<<name<<" from a"<<endl;
+        }
+        void change_name(string new_name){
+            name=new_name+" added in a";
+        }
+};
+class B: public A{
+    public:
+        string doc;
+        B(){
+            doc="rame";
+        }
+        void display_a(){
+            display();
+            cout<<"doc is "<<doc<<" from b"<<endl;
+            cout<<"name is "<<name<<" from b"<<endl; // will give error
+        }
+        void change_name_b(string new_name){
+            name=new_name+" added in b"; // will give error
+            change_name(new_name);
+            doc=new_name+" added in b";
+        }
+};
+int main(){
+    B b;
+    b.display_a();
+    b.change_name_b("newname");
+    b.display_a();
+    return 0;
+}
 ```
 
-## Key Universal Principles
+What happpen Here?
+Consider we are running  display_a function of class B. Then first line of code is display() which means it will now search for display function in class B if not found it will look for the function in class A and find it in class A and execute it.In display() function ther we display the private variable of class A because we are using the function of class A. But the next line of coe    
+ `cout<<"doc is"<<doc<<" from b"<<endl;` will print the variable of class B because it is in the function of class B. But the next line of code is `cout<<"name is "<<name<<" from b"<<endl;`. This will throw error because  it wll search if name is in class B if not found it will look for same variable class A but it is private variable so it is not visible to class B function so it cant see the declaration of name in class A and throw error as a is not declared.
 
-1. **Complete Inheritance**: All members are conceptually copied, regardless of access level
-2. **Override Priority**: Derived class members take precedence over base class members with same name
-3. **Explicit Access**: Base class members can be explicitly accessed even when overridden
-4. **Access Control**: Visibility rules determine what can be accessed, not what exists
-5. **Functional Inheritance**: Both data and behavior are inherited
 
-## Memory and Execution Model
+Similarly while changing name,
+When we call change_name_b function then first line of code is `name=new_name+" added
+    in b";` here it will search for the variable name in class B if not found it will look for the variable in class A but it is private variable so it is not visible to class B function so it cant see the declaration of name in class A and throw error as a is not declared. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
 
-```pseudocode
-// Conceptual memory layout
-DerivedObject in Memory:
-┌─────────────────────────────┐
-│ Base Class Section:         │
-│  - basePublicVar           │ ← Accessible
-│  - basePrivateVar          │ ← Exists but not accessible
-│  - baseProtectedVar        │ ← Accessible in derived class
-│  - Function pointers/refs  │ ← Method implementations
-├─────────────────────────────┤
-│ Derived Class Section:      │
-│  - derivedVar              │ ← Accessible
-│  - Additional function refs │ ← New/overridden methods
-└─────────────────────────────┘
+
+case 4: Private variable in base class and same private variable in derived class
+
+```Python
+class A:
+    def __init__(self):
+        self.__name="nirajan"
+    def display(self):
+        print("name is",self.__name,"from a")
+    def change_name(self,new_name):
+        self.__name=new_name+' added in a'
+
+class B(A):
+    def __init__(self):
+        self.__name="rame"
+    def display_b(self):
+        self.display()
+        print("name is",self.__name,"from b")
+    def change_name_b(self,new_name):
+        self.__name=new_name +' added in b'
+        self.change_name(new_name)
+b=B()
+b.display_b()
+b.change_name_b("newname")
+b.display_b()
 ```
 
-This mental model helps understand inheritance behavior across different programming languages while maintaining focus on universal concepts rather than language-specific implementation details.
+The equivalent code in cpp is as below
+```cpp
+#include <iostream>
+
+using namespace std;
+class A{
+    private:
+        string name;
+    public:
+        A(){
+            name="nirajan";
+        }
+        void display(){
+            cout<<"name is "<<name<<" from a"<<endl;
+        }
+        void change_name(string new_name){
+            name=new_name+" added in a";
+        }
+};
+class B: public A{
+    private:
+        string name;
+    public:
+        B(){
+            name="rame";
+        }
+        void display_a(){
+            display();
+            cout<<"name is "<<name<<" from b"<<endl;
+        }
+        void change_name_b(string new_name){
+            name=new_name+" added in b";
+            change_name(new_name);
+        }
+};
+
+int main(){
+    B b;
+    b.display_a();
+    b.change_name_b("newname");
+    b.display_a();
+    return 0;
+}
+```
+
+What happpen Here?
+
+In cpp,
+when we call display_a() function then first it check if the function is available in class B since it is fount in class B so it will execute that function if its private then if function is called outside from the class then it cane be seen but if it is called inside the class then it can be seen but here it is public so we can see it from both inside class and outside. It see if display_a function is available in class B . Yes display_a function is available then in class B it first line of code is `display()` then it again check if display function is available in class B if not found it will look for the function in class A.As it is not in B and only in A so it will execute the function of class A. While executing the function of class A it will use the variable of class A not of B as in python. Similarly the next line of code is ``cout<<"name is "<<name<<" from b"<<endl;` here it is function of class B so it will use the variable of class B. 
+
+
+In case of python,
+while executing display function like in case 2 it will first look for class B __name variable is present in class B but it is private so it will not be visible as we are executing the function of class A. So we will now look for the variable in class A and find it in class A and print the value of class A variable. Then the next line of code will print the value of class B variable as it is in the function of class B.
+
+Similarly while changing name,
+When we call change_name_b function then first line of code is `name=new_name+" added in b";` here it will use the variable of class B because it is in the function of class B. Then the next line of code is `change_name(new_name);` here it will look for the function in class B if not found it will look for the function in class A and find it in class A so it will execute the function of class A. Now while executing the function of class A it will use the variable of class A not of B as in python.
+
+
+
+
+Similar for function if it is private then it can be seen only inside the class not outside
