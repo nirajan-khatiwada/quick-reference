@@ -1,17 +1,52 @@
----
-title: "Python Fundamentals: Exploring OOP (Part 12)"
-date: 2024-11-10
-description: "This is the first part of series Object Oriented Programming in Python"
-showToc: true
-categories: ["Python"]
-tags: ["Python", "Programming", "OOP", "Tutorial"]
-summary: "This is the first part of series of Object Oriented Programming in Python"
-images: ["/images/python.png"]
+# Python Fundamentals: Exploring OOP (Part 12)
+
+**Date:** 2024-11-10  
+**Description:** This is the first part of series Object Oriented Programming in Python  
+**Categories:** Python  
+**Tags:** Python, Programming, OOP, Tutorial  
+**Summary:** This is the first part of series of Object Oriented Programming in Python
+
 ---
 
-# Object Oriented Programming in Python
+## Object Oriented Programming in Python
 
 Object oriented programming is a programming paradigm that provides a means of structuring programs so that properties and behaviors are bundled into individual objects. This approach makes code more modular, reusable, and easier to maintain, especially for complex systems.
+
+---
+
+## Understanding Python's Object Storage: The `__dict__` Concept
+
+Before diving into classes and objects, it's crucial to understand how Python stores object data internally.
+
+### The `__dict__` Dictionary
+Every Python object has a special attribute called `__dict__` that stores all the object's attributes as key-value pairs in a dictionary. This is fundamental to understanding how Python objects work.
+
+```python
+# Even a simple object has a __dict__
+class SimpleClass:
+    pass
+
+obj = SimpleClass()
+print(obj.__dict__)  # Output: {} (empty dictionary initially)
+
+# When we add attributes, they go into __dict__
+obj.name = "Alice"
+obj.age = 25
+print(obj.__dict__)  # Output: {'name': 'Alice', 'age': 25}
+```
+
+### Key Points About `__dict__`:
+- **Single Storage Location**: Each object instance has exactly ONE `__dict__` that stores all its attributes
+- **Dynamic Creation**: Attributes are created when first assigned
+- **Unified Storage**: All methods (from base class, derived class) modify the same `__dict__`
+- **Dictionary Access**: You can directly access and modify `__dict__` like any dictionary
+
+```python
+obj.__dict__['city'] = 'New York'  # Same as obj.city = 'New York'
+print(obj.city)  # Output: New York
+```
+
+---
 
 ## 1. Classes and Objects: The Foundation
 
@@ -24,13 +59,13 @@ Object is an instance of a class. When class is defined, only the description fo
 ### 1.3 Creating a Class
 We can create a class using the `class` keyword followed by the class name. The class definition can contain class variables, instance variables, methods, and constructors.
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -39,63 +74,63 @@ class Person:
         self.classes="Bachelor" # attribute
 ```
 
-
-
 ### 1.4 Creating an Object
 To create an object of a class, we use the class name followed by parentheses. This calls the constructor method of the class and returns an object.
 
-Syntax:
+**Syntax:**
 ```python
 object_name = ClassName()
 ```
 
-Example:
+**Example:**
 ```python
 person1 = Person()  # Creates an instance of Person class
 ```
 
-### 1.5 Accessing Class Attributes
+### 1.5 Accessing class Attributes
 We can access the attributes of a class using the dot operator (`.`) followed by the attribute name.
 
-Syntax:
+**Syntax:**
 ```python
 object_name.attribute_name
 ```
 
-Example:
+**Example:**
 ```python
 print(person1.name)  # Output: Nirajan
 print(person1.age)  # Output: 20
 print(person1.classes)  # Output: Bachelor
 ```
 
-### 1.6 Modifying Class Attributes
+### 1.6 Modifying class Attributes
 We can modify the attributes of a class using the dot operator (`.`) followed by the attribute name.
 
-Syntax:
+**Syntax:**
 ```python
 object_name.attribute_name = new_value
 ```
 
-Example:
+**Example:**
 ```python
 person1.age = 21  # Modifies the age attribute for person1
 print(person1.age)  # Output: 21
 ```
+
+---
 
 ## 2. Methods: Adding Behavior to Classes
 
 ### 2.1 Creating a Member Function
 We can create a member function (method) inside a class using the `def` keyword followed by the function name. The first parameter of the method should be `self`, which refers to the current instance of the class.
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     def method_name(self, parameters):
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     name="Nirajan"
@@ -109,9 +144,9 @@ class Person:
 ```
 
 ### 2.2 The `self` Parameter
-The `self` parameter is a reference to the current instance of the class, and is used to access variables and methods of the class. It is the first parameter of any method in a class. When you call a method on an object, Python automatically passes the object as the first argument to the method.
+The `self` parameter is a reference to the current instance of the class, and is used to access variables and methods of the class. It is the first parameter of any method in a class. When you call a method on an object, Python automatically passes the object as the first argument to the method.self.variable means it is a instance variable that is accessible throughout the class and particular object methods but name only in method means it is local to that method only.
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -132,12 +167,12 @@ class Person:
 ### 2.3 Calling a Member Function
 We can call a member function of a class using the dot operator (`.`) followed by the function name and parentheses.
 
-Syntax:
+**Syntax:**
 ```python
 object_name.method_name(arguments)
 ```
 
-Example:
+**Example:**
 ```python
 person1.display()  # Calls the display method for person1 object
 ```
@@ -145,7 +180,7 @@ person1.display()  # Calls the display method for person1 object
 ### 2.4 Nested Member Function
 We can call a member function from another member function of the same class using the `self` keyword.
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     def method1(self):
@@ -156,7 +191,7 @@ class ClassName:
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -174,6 +209,8 @@ class Person:
         print("Hello, Welcome to the class")
 ```
 
+---
+
 ## 3. Constructor: Initializing Objects
 
 A constructor is a special type of method (function) which is used to initialize the instance members of the class. It is called when an object of the class is created. This allows you to set up each object with its specific initial state.
@@ -181,14 +218,14 @@ A constructor is a special type of method (function) which is used to initialize
 ### 3.1 Creating a Constructor
 In Python, the constructor method is called `__init__`. It is a special method that is automatically called when an object is created.
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     def __init__(self, parameters):
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age, classes):
@@ -206,18 +243,20 @@ class Person:
 ### 3.2 Creating an Object with Constructor
 When an object is created, the constructor method is automatically called with the arguments passed to the class.
 
-Syntax:
+**Syntax:**
 ```python
 object_name = ClassName(arguments)
 ```
 
-Example:
+**Example:**
 ```python
 # Creating a Person object with name, age, and classes values
 person1 = Person("Nirajan", 20, "Bachelor")
 ```
 
 In this example, the `__init__` method is called with "Nirajan", 20, and "Bachelor" as arguments, which initializes the object's attributes.
+
+---
 
 ## 4. Access Specifiers in Python
 
@@ -226,7 +265,7 @@ Access specifiers control the visibility and accessibility of class members (att
 ### 4.1 Public Members
 Public members are accessible from outside the class. They can be accessed using the dot operator (`.`) from outside the class.
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -242,7 +281,7 @@ person1.display()    # Output: Name: Alice
 ### 4.2 Protected Members
 Protected members are accessible within the class and its subclasses. They are denoted by a single underscore (`_`) before the member name.
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -268,7 +307,7 @@ student1.show()
 ### 4.3 Private Members
 Private members are accessible only within the class. They are denoted by a double underscore (`__`) before the member name.
 
-Example:
+**Example:**
 ```python
 class Person:
     __city = "New York"  # Private member
@@ -277,7 +316,7 @@ person1 = Person()
 print(person1.__city)  # Error: 'Person' object has no attribute '__city'
 ```
 
-Example of private variable and method:
+**Example of private variable and method:**
 ```python
 class Person:
     def __init__(self):
@@ -297,12 +336,15 @@ person1.show()  # Correct way to access private members within the class as show
 
 ```
 
-> Table of Access Specifiers in Python:
-| Access Specifier  | Accessible from class  | Accessible from subclass  | Accessible from outside class |
-|-------------------|------------------------|---------------------------|-------------------------------|
-| Public            | Yes                    | Yes                       | Yes                           |
-| Protected         | Yes                    | Yes                       | No                            |
-| Private           | Yes                    | No                        | No                            |
+> **Table of Access Specifiers in Python:**
+
+| Access Specifier | Accessible from class | Accessible from subclass | Accessible from outside class |
+|------------------|----------------------|--------------------------|-------------------------------|
+| Public           | Yes                  | Yes                      | Yes                           |
+| Protected        | Yes                  | Yes                      | No                            |
+| Private          | Yes                  | No                       | No                            |
+
+---
 
 ## 5. Inheritance in Python
 
@@ -311,13 +353,13 @@ Inheritance is a mechanism in which one class acquires the properties and behavi
 ### 5.1 Creating a Child Class
 To create a child class that inherits from a parent class, we specify the parent class in parentheses after the child class name.
 
-Syntax:
+**Syntax:**
 ```python
 class ChildClassName(ParentClassName):
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Employee:
     def __init__(self,name,age,id):
@@ -346,19 +388,19 @@ developer1 = Developer("Bob", 25, 102)
 developer1.task()
 ```
 
-> Note: Only public and protected members are inherited by the child class. Private members are not inherited by the child class.
+> **Note:** Only public and protected members are inherited by the child class. Private members are not inherited by the child class.
 
 ### 5.2 The `super()` Method in Python
 When a parent class and a child class define a method with the same name, and we create an object of the child class, invoking the method on the child class object will execute the method defined in the child class, not the one in the parent class. To explicitly call the parent class's method, we can use the super() function.
 
 To explicitly invoke the parent class's version of the method, the super() function is used. This is especially useful when the child class's method needs to build upon or extend the functionality of the parent class's method.
 
-Syntax:
+**Syntax:**
 ```python
 super().method_name()
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def display(self):
@@ -377,7 +419,7 @@ student1.display()
 # Student class
 ```
 
-Example with constructor:
+**Example with constructor:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -403,13 +445,13 @@ student1.display()
 # Roll: 101
 ```
 
-> Note: Use super() for single inheritance only. For multiple inheritance, use the class name directly.
+> **Note:** When we use super() it work based on MRO to resolve which class function to use but ClassName.functionName() explicitly tell which class function to use.
 
 ### 5.3 Method Overriding
 
 Method overriding is a feature of object-oriented programming that allows a subclass to provide a specific implementation of a method that is already provided by its parent class. When a method in a subclass has the same name, same parameters or signature, and same return type as a method in its parent class, then the method in the subclass is said to override the method in the parent class.
 
-Example:
+**Example:**
 ```python
 class Person:
     def display(self):
@@ -453,13 +495,13 @@ Inheritance is a mechanism in which one class acquires the properties and behavi
 In single inheritance, a class inherits from only one parent class.
 
 The pictorial representation of single inheritance is:
-```bash
+```
     A
     |
     B
 ```
 
-Syntax:
+**Syntax:**
 ```python
 class ParentClass:
     #code block
@@ -468,7 +510,7 @@ class ChildClass(ParentClass):
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -505,13 +547,13 @@ student1.display()
 In multiple inheritance, a class inherits from more than one parent class.
 
 The pictorial representation of multiple inheritance is:
-```bash
+```
     A    B
      \  /
       C
 ```
 
-Syntax:
+**Syntax:**
 ```python
 class ParentClass1:
     #code block
@@ -523,7 +565,7 @@ class ChildClass(ParentClass1, ParentClass2):
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -561,7 +603,7 @@ student1.display()
 In multilevel inheritance, a class inherits from a parent class, and another class inherits from the child class.
 
 The pictorial representation of multilevel inheritance is:
-```bash
+```
     A
     |
     B
@@ -569,7 +611,7 @@ The pictorial representation of multilevel inheritance is:
     C
 ```
 
-Syntax:
+**Syntax:**
 ```python
 class ParentClass:
     #code block
@@ -581,7 +623,7 @@ class GrandChildClass(ChildClass):
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -619,13 +661,13 @@ student1.display()
 In hierarchical inheritance, more than one class inherits from a single parent class.
 
 The pictorial representation of hierarchical inheritance is:
-```bash
+```
     A
    / \
   B   C
 ```
 
-Syntax:
+**Syntax:**
 ```python
 class ParentClass:
     #code block
@@ -637,7 +679,7 @@ class ChildClass2(ParentClass):
     #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -674,13 +716,15 @@ employee1.display()
 # Emp ID: 201 Name: Bob, Age: 25
 ```
 
-> Note: Hybrid inheritance is a combination of two or more types of inheritance.
+> **Note:** Hybrid inheritance is a combination of two or more types of inheritance.
+
+---
 
 ## 6. Method Resolution Order (MRO)
 
 Method Resolution Order (MRO) is the order in which methods are resolved in the inheritance hierarchy. It defines the order in which the base classes are searched when executing a method. This is particularly important in multiple inheritance scenarios.
 
-Example:
+**Example:**
 ```python
 class C:
     f = "dirajan"
@@ -701,13 +745,15 @@ print(D.__mro__)  # Shows the method resolution order
 d.display()
 ```
 
-Output:
-```bash
+**Output:**
+```
 (<class '__main__.D'>, <class '__main__.A'>, <class '__main__.B'>, <class '__main__.C'>, <class 'object'>)
 nirajan
 ```
 
 It means Python will search for the attribute or method in the order of D->A->B->C->object. If the attribute/method is not found in D, it will search in A, and so on. But if the attribute/method is found in D, it will not search further in A, B, C, or object.
+
+---
 
 ## 7. Properties - Getters and Setters
 
@@ -718,7 +764,7 @@ Getters are methods implemented using the `@property` decorator. They are specia
 - To act as a value (data) instead of a method
 - To access the value of a private attribute without directly accessing it
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     @property
@@ -726,7 +772,7 @@ class ClassName:
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -747,7 +793,7 @@ Setters are methods implemented using the `@method_name.setter` decorator. They 
 - To set the value of a private attribute without directly setting it
 - To perform validation before setting the value of an attribute
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     @method_name.setter
@@ -755,7 +801,7 @@ class ClassName:
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -778,6 +824,8 @@ person1.display = "Alice, 30"  # Using setter to modify attributes
 print(person1.display)  # Output: Name: Alice, Age: 30
 ```
 
+---
+
 ## 8. Special Methods (Magic/Dunder Methods)
 
 Magic methods, also known as dunder methods (double underscore), are special methods that have double underscores at the beginning and end of their names. They are used to define the behavior of objects and are automatically called when certain operations are performed on objects.
@@ -791,9 +839,9 @@ Some of the commonly used magic methods are:
 - `__len__`: Called by the `len()` built-in function to return the length of an object
 - `__call__`: Called when an object is called as a function
 
-> Note: All magic methods can be seen using `dir(object_name)` method, and we can override these methods in our class.
+> **Note:** All magic methods can be seen using `dir(object_name)` method, and we can override these methods in our class.
 
-Example of various magic methods:
+**Example of various magic methods:**
 ```python
 class Person:
     def __init__(self, name, age):
@@ -829,13 +877,15 @@ print(len(person1))  # Output: 5 (uses __len__ to get length of name)
 print(person1())  # Output: Name: Alice, Age: 30 (uses __call__)
 ```
 
+---
+
 ## 9. Operator Overloading
 
 Operator overloading is a feature of object-oriented programming that allows us to define the behavior of operators for user-defined objects. It lets us define how operators like `+`, `-`, `*`, `/`, `==`, `!=`, etc., behave with objects of our class.
 
 To overload an operator, we define the corresponding magic method in the class:
 
-Example:
+**Example:**
 ```python
 class Point:
     def __init__(self, x, y):
@@ -857,7 +907,6 @@ point3 = point1 + point2  # Uses the __add__ method
 print(point3)  # Output: (4, 6)
 ```
 
-
 For unary operators like negation (`-`), we can overload the `__neg__` method:
 ```python
 class Point:
@@ -876,15 +925,16 @@ point2 = -point1  # Uses the __neg__ method
 print(point2)  # Output: (-1, -2)
 ```
 
+> **Note:** We can only overload existing operators. We cannot create new operators.
 
-> Note: We can only overload existing operators. We cannot create new operators.
+---
 
 ## 10. Static and Class Methods
 
 ### 10.1 Static Methods
 Static methods are methods that can be called without creating an object of the class. They are defined using the `@staticmethod` decorator and can be called using the class name.
 
-Syntax:
+**Syntax:**
 ```python
 class ClassName:
     @staticmethod
@@ -892,7 +942,7 @@ class ClassName:
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class Calculator:
     @staticmethod
@@ -908,10 +958,9 @@ result = calculator.add(5, 3)
 print(result)  # Output: 8
 ```
 
-### 10.2 Class Methods
-Those attribute that is same for all instances of the class are known as class attribute or class variable. for example, if we have a class `Company` and all employees of the company share the same company name, then `company` can be defined as a class attribute.
+### 10.2 Class Variable
 
-
+**class variables** are shared across all instances of a class, while **instance variables** are unique to each instance. Class variables are defined within the class but outside any methods, whereas instance variables are typically defined within the constructor method (`__init__`) using the `self` keyword.
 
 ```python
 class ClassName:
@@ -921,76 +970,104 @@ class ClassName:
         self.instance_variable = instance_variable  # Instance variable
 ```
 
-> Note: For all object the class class_variable will have the same value but instance_variable will have different value for different object.
+> **Note:** For all object the class class_variable will have the same value but instance_variable will have different value for different object.
 
+### 10.3 Accessing Class Variables
+We can access class variables using the using an object of the class.
 
-for example:
+**Syntax:**
 ```python
-class Company:
-    company_name = "TechCorp"  # Class variable
-
-    def __init__(self, employee_name):
-        self.employee_name = employee_name  # Instance variable
-
-emp1 = Company("Alice")\
-emp2 = Company("Bob")
-print(emp1.company_name)  # Output: TechCorp
-print(emp2.company_name)  # Output: TechCorp
-print(emp1.employee_name)  # Output: Alice
-print(emp2.employee_name)  # Output: Bob
+object_name.class_variable
 ```
-Here `company_name` is a class variable because it is the same for all employees, while `employee_name` is an instance variable because it is unique to each employee.
 
+### 10.4 Updating Class Variable Method
+To update a class variable method, we use @classmethod decorator. Class methods take `cls` as the first parameter, which refers to the class itself.
 
-Since the class variable should be same for all the instance of the class , if we directly change the value of class variable using object then all the instance of the class will not have the same value for the class variable so To change the value of class variable for all the instance of the class we use class method.
-
-
-using class method:
-Example:
+**Syntax:**
 ```python
-class Company:
-    company_name = "TechCorp"  # Class variable
-    def __init__(self, employee_name):
-        self.employee_name = employee_name  # Instance variable
+class ClassName:
+    class_variable = value  # Class variable
     @classmethod
-    def change_company_name(cls, new_name):
-        cls.company_name = new_name  # Change class variable for all instances
-emp1 = Company("Alice")
-emp2 = Company("Bob")
-print(emp1.company_name)  # Output: TechCorp
-print(emp2.company_name)  # Output: TechCorp
-Company.change_company_name("InnoTech")  # Change company name for all instances or `emp1.change_company_name("InnoTech")`
-print(emp1.company_name)  # Output: InnoTech
-print(emp2.company_name)  # Output: InnoTech
+    def method_name(cls, parameters):
+        #code block
 ```
 
-without using class method:
+**Example:**
 ```python
-class Company:
-    company_name = "TechCorp"  # Class variable
-    def __init__(self, employee_name):
-        self.employee_name = employee_name  # Instance variable
-emp1 = Company("Alice")
-emp2 = Company("Bob")
-print(emp1.company_name)  # Output: TechCorp
-print(emp2.company_name)  # Output: TechCorp
-emp1.company_name = "InnoTech"  # Change company name using emp1 object
-print(emp1.company_name)  # Output: InnoTech
-print(emp2.company_name)  # Output: TechCorp (remains unchanged)
+class Person:
+    population = 0
+    def print_population(self):
+        print(f"Population: {self.population}")
 
-
+    @classmethod
+    def update_population(cls,value):
+        cls.population = value
+person1 = Person()
+person2 = Person()
+person1.print_population()  # Output: Population: 0
+Person.update_population(100)  # Update population using class method
+person2.print_population()  # Output: Population: 100
+person1.print_population()  # Output: Population: 100
 ```
+
+### 10.4 Some Misconception 
+
+What happen if we try to modify population like this:
+```python
+class Person:
+    population = 0
+    def print_population(self):
+        print(f"Population: {self.population}")
+
+    def update_population(self,value):
+        self.population = value  # This creates an instance variable, not modifies class variable
+
+person1 = Person()
+person2 = Person()
+person1.update_population(100)  # This creates an instance variable, not modifies class variable
+person1.print_population()  # Output: Population: 100
+person2.print_population()  # Output: Population: 0
+```
+or
+```python
+class Person
+    population = 0
+    def print_population(self):
+        print(f"Population: {self.population}")
+
+person1 = Person()
+person2 = Person()
+person1.population = 100  # This creates an instance variable, not modifies class variable
+person1.print_population()  # Output: Population: 100
+person2.print_population()  # Output: Population: 0
+```
+To understand this we should first understand priority always remember:
+instance variable > class variable
+
+What happen here is conside 1st example:
+- we write `person1=Person()` this will create a instance of Person and create a class variable population=0 which is shared to all object of Person class.
+- then we write `person2=Person()` this will create another instance of Person and share the same class variable population=0
+- then we write `person1.update_population(100)` when we call this method it will create a instance variable population=100 for person1 object only which we can see using __dict__ method as 
+```python
+print(person1.__dict__)  # Output: {'population': 100}
+print(person2.__dict__)  # Output: {}
+```
+- then we write `person1.print_population()` here it will first check for instance variable population in person1 object and find population=100 so it will print 100
+- then we write `person2.print_population()` here it will first check for instance variable population in person2 object andnot find any instance variable so it will check for class variable population and find population=0 so it will print 0
+
+---
+
 ## 11. Introspection with `dir()` and `__dict__`
 
 ### 11.1 The `dir()` Method
 The `dir()` method returns a list of attributes and methods of any object. It provides a way to introspect objects at runtime.
 
-Syntax:
+**Syntax:**
 ```python
 dir(object)
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -1002,7 +1079,7 @@ print(dir(person1))
 # Output: ['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'age', 'name']
 ```
 
-Example with list:
+**Example with list:**
 ```python
 l = [1, 2, 3]
 print(dir(l))
@@ -1012,12 +1089,12 @@ print(dir(l))
 ### 11.2 The `__dict__` Method
 The `__dict__` attribute contains a dictionary of an object's attributes. It provides another way to examine an object's state.
 
-Syntax:
+**Syntax:**
 ```python
 object.__dict__
 ```
 
-Example:
+**Example:**
 ```python
 class Person:
     def __init__(self):
@@ -1031,20 +1108,22 @@ person1.name = "Bob"  # Set an instance attribute
 print(person1.__dict__)  # {'name': 'Bob', 'age': 30}
 ```
 
+---
+
 ## 12. Nested Classes
 
 A class can be defined inside another class. Such a class is known as a nested class. Nested classes help organize code and encapsulate related functionality.
 
 ### 12.1 Basic Nested Class
 
-Syntax:
+**Syntax:**
 ```python
 class OuterClass:
     class InnerClass:
         #code block
 ```
 
-Example:
+**Example:**
 ```python
 class OuterClass:
     def __init__(self):
@@ -1067,13 +1146,13 @@ inner1.display(outer1)
 
 ### 12.2 Creating an Object of the Nested Class
 
-Syntax:
+**Syntax:**
 ```python
 outer_object = OuterClass()
 inner_object = outer_object.InnerClass()
 ```
 
-Example:
+**Example:**
 ```python
 class OuterClass:
     def __init__(self):
@@ -1116,9 +1195,10 @@ outer1.inner.display(outer1)
 # Age: 30
 ```
 
-
+---
 
 ## 14. How python works internally
+
 # Python Instance Variables and Method Resolution Guide
 
 ## Understanding Instance Variable Storage
