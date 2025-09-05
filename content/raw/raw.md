@@ -7,6 +7,7 @@ categories: ["Inheritance Core", ]
 tags: ["Python", "C++", "Programming", "Inheritance", "OOP", "Tutorial"]
 summary: "An in-depth comparison of inheritance behavior between Python and C++ across different scenarios."
 images: ["/images/pythoncpp.png"]
+draft: true
 ---
 
 # Inheritance Concepts in Python and C++
@@ -148,7 +149,7 @@ class B(A):
         self.change_name(new_name)
 
 b = B()
-b.display_b()
+b.display_a()
 b.change_name_b("newname")
 b.display_b()
 ```
@@ -203,9 +204,10 @@ int main() {
 Python and C++ behave differently in this case.
 
 **In Python:**
- When we call `display_b()`, it first checks if the function is available in class B. Since it's found in class B, it executes that function. The first line `self.display()` then it again checks for the display function in class B first. If not found, it looks in class A . Since it's not found in class B, it finds and executes the function from class A. While executing the function from class A, Inside the display function, it need variable `name`, so it first looks for the variable in class B. If not found, it looks in class A. Here, it finds the variable `name` in class B and uses that value. So when we call the display function, it prints "name is rame from b". 
+In C++ the variable name in class A and B are two separate variables stored in different memory locations, but in Python, there is only one instance variable name per object. When class B's constructor sets self.name = "rame", it overwrites the single instance variable that belongs to the object.ie. B doesnt have different name variable in python instead it uses the same variable from A.
 
- The next line `print("name is", self.name, "from b")` is in a function of class B, so it uses the variable from class B.
+ When we call `display_b()`, it first checks if the function is available in class B. Since it's found in class B, it executes that function. The first line `self.display()` then it again checks for the display function in class B first. If not found, it looks in class A . Since it's not found in class B, it finds and executes the function from class A. While executing the function from class A, Inside the display function, it need variable `name`, so it first looks for the variable in class A. 
+ The next line `print("name is", self.name, "from b")` is in a function of class B, but variable `name` is not found in class B, so it looks in class A and finds it there.since in B no duplicate variable is created as it uses the variable from class A.
 
 
  
@@ -413,3 +415,180 @@ When changing the name through `change_name_b()`, the first line `name = new_nam
 - Variable and function resolution follows different patterns in Python versus C++
 - Python tends to look in the derived class first, while C++ considers the scope of the function being executed
 - Private variables are not accessible across class boundaries in both languages
+
+
+
+## 13. Comparison with Other Languages (Not Supported in Python)
+
+### 13.1 Types of Inheritance in C++
+
+Inheritance is a mechanism in which one class acquires the properties and behavior of another class. While Python has a more straightforward inheritance model, other languages like C++ offer more granular control over inheritance:
+
+- **Public Inheritance**: In public inheritance, the public members of the base class become public members of the derived class, and the protected members of the base class become protected members of the derived class.
+
+- **Protected Inheritance**: In protected inheritance, the public members of the base class become protected members of the derived class, and the protected members of the base class become protected members of the derived class while the private members of the base class is not inherited.
+
+- **Private Inheritance**: In private inheritance, the public members of the base class become private members of the derived class, and the protected members of the base class become private members of the derived class while the private members of the base class is not inherited.
+
+Table of Inheritance in C++:
+| Inheritance Type | Public Members | Protected Members | Private Members |
+|------------------|----------------|-------------------|-----------------|
+| Public Inheritance | Public          | Protected         | Not Inherited    |
+| Protected Inheritance | Protected     | Protected         | Not Inherited    |
+| Private Inheritance | Private        | Private          | Not Inherited    |
+
+This comparison helps understand the differences in how various languages implement OOP concepts.
+
+### 13.2 Function overloading in C++
+Function overloading is a feature in C++ that allows multiple functions to have the same name but different parameters (either in type or number). This is not supported in Python, as Python does not support function overloading based on parameter types or counts. Instead, Python uses default arguments and variable-length arguments to achieve similar functionality.
+
+Example of function overloading in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Math {
+public:
+    int add(int a, int b) {
+        return a + b;
+    }
+    double add(double a, double b) {
+        return a + b;
+    }
+
+    int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+};
+int main() {
+    Math math;
+    cout << math.add(5, 3) << endl;          // Calls add(int
+    cout << math.add(5.5, 3.3) << endl;      // Calls add(double, double)
+    cout << math.add(1, 2, 3) << endl;        //calls add(int, int, int)
+    return 0;
+}
+```
+
+### 13.3 Static method in cpp
+Static variables and static methods in C++ are associated with the class rather than any particular instance of the class. They can be accessed without creating an instance of the class.Static methods are defined using the `static` keyword and can be called using the class name.
+Example of static method in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Math {
+public:
+    static int add(int a, int b) {
+        return a + b;
+    }
+};
+int main() {
+    cout << Math::add(5, 3) << endl;  // Calling static
+    return 0;
+}
+```
+
+Example of static variable in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Counter {
+public:
+    static int count;  // Declaration of static variable
+    Counter() {
+        count++;  // Increment static variable in constructor
+    }
+};
+int Counter::count = 0;  // Definition and initialization of static variable
+int main() {
+    Counter c1;
+    Counter c2;
+    Counter c3;
+    cout << "Number of Counter objects: " << Counter::count << endl;  //
+    return 0;
+}
+```
+Here count variable is shared among all instances of the Counter class and can be accessed using the class name as well as through any instance of the class.Such that change of count variable in one instance will reflect in all other instances.
+
+
+
+### 13.4 Use of `this` pointer in C++
+`this` pointer is an implicit parameter to all non-static member functions. It points to the object for which the member function is called. It is used to access the members of the current object.
+
+Use of this pointer in C++:
+
+```cpp
+#include <iostream>
+using namespace std;
+
+class Point{
+    private:
+        int x, y;
+    public:
+        Point(int x, int y){
+            this->x = x;  // Using this pointer to refer to the current object's x
+            this->y = y;  // Using this pointer to refer to the current object's 
+            
+            // here the parameter name and the member variable name are same so we use this pointer to differentiate between them
+        }
+
+        void display(){
+            cout << "X: " << x << ", Y: " << y << endl;  // Direct access without this pointer as they are not ambiguous
+        }
+
+        void setX(int x){
+            this->x = x;  // Using this pointer to refer to the current object's x
+        }
+    
+}
+```
+
+### 13.5 Destructors in C++
+A destructor is a special member function that is called when an object goes out of scope or is explicitly deleted. It is used to release resources that were allocated to the object during its lifetime. The
+destructor has the same name as the class but is preceded by a tilde (`~`).
+Example of destructor in C++:
+```cpp
+#include <iostream>
+using namespace std;
+class Person {
+public:
+
+    Person() {
+        cout << "Constructor called" << endl;
+    }
+    ~Person() {
+        cout << "Destructor called" << endl;
+    }
+};
+int main() {
+    Person p1;  // Constructor called
+    {
+        Person p2;  // Constructor called
+    }  // Destructor called for p2 as it goes out of scope
+    // Destructor called for p1 as it goes out of scope at the end of main
+}
+```
+
+
+## Summary
+
+In this tutorial, we've covered the fundamental concepts of Object-Oriented Programming in Python:
+
+1. **Classes and Objects**: The blueprint and instances that form the foundation of OOP
+2. **Methods**: Adding behavior to our classes
+3. **Constructors**: Initializing objects with specific attributes
+4. **Access Specifiers**: Controlling visibility of class members
+5. **Inheritance**: Creating class hierarchies for code reuse
+6. **Method Resolution Order (MRO)**: Understanding how Python resolves method calls in inheritance hierarchies
+7. **Properties (Getters and Setters)**: Controlled access to attributes
+8. **Special Methods**: Customizing object behavior
+9. **Operator Overloading**: Defining operator behavior for custom objects
+10. **Static and Class Methods**: Methods that operate at the class level
+11. **Introspection**: Examining objects at runtime
+12. **Nested Classes**: Classes within classes
+13. **Comparison with Other Languages**: Understanding how Python's approach differs from other OOP languages
+
+By understanding these concepts, you'll be able to design more efficient, maintainable, and powerful Python applications.
+
+
+## Revision
+You can read pdf version of kec publication oop book of BSC.CSIT second semester

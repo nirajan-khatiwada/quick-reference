@@ -288,7 +288,8 @@ Example:
 message = "Hello, World!"
 
 def display():
-    message = "Hello, Python!"
+    # if we doesnt set global keyword then it will create a local variable instead of modifying the global variable
+    message = "Hello, Python!"  
     print(message)
 
 display()

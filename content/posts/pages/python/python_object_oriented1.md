@@ -1116,177 +1116,233 @@ outer1.inner.display(outer1)
 # Age: 30
 ```
 
-## 13. Comparison with Other Languages (Not Supported in Python)
 
-### 13.1 Types of Inheritance in C++
 
-Inheritance is a mechanism in which one class acquires the properties and behavior of another class. While Python has a more straightforward inheritance model, other languages like C++ offer more granular control over inheritance:
+## 14. How python works internally
+# Python Instance Variables and Method Resolution Guide
 
-- **Public Inheritance**: In public inheritance, the public members of the base class become public members of the derived class, and the protected members of the base class become protected members of the derived class.
+## Understanding Instance Variable Storage
 
-- **Protected Inheritance**: In protected inheritance, the public members of the base class become protected members of the derived class, and the protected members of the base class become protected members of the derived class while the private members of the base class is not inherited.
+### Key Concepts:
+- **Single Object per Instance**: When you create a class instance, Python creates only ONE object
+- **`__dict__` Storage**: All instance attributes are stored in the instance's `__dict__` dictionary
+- **Dynamic Creation**: Attributes are created when first assigned, not when accessed
+- **Direct Modification**: All attribute changes modify the same `__dict__`
 
-- **Private Inheritance**: In private inheritance, the public members of the base class become private members of the derived class, and the protected members of the base class become private members of the derived class while the private members of the base class is not inherited.
+### Basic Example:
 
-Table of Inheritance in C++:
-| Inheritance Type | Public Members | Protected Members | Private Members |
-|------------------|----------------|-------------------|-----------------|
-| Public Inheritance | Public          | Protected         | Not Inherited    |
-| Protected Inheritance | Protected     | Protected         | Not Inherited    |
-| Private Inheritance | Private        | Private          | Not Inherited    |
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name  # Creates "name" key in __dict__
 
-This comparison helps understand the differences in how various languages implement OOP concepts.
+p = Person("Alice")
+print(p.__dict__)  # {'name': 'Alice'}
 
-### 13.2 Function overloading in C++
-Function overloading is a feature in C++ that allows multiple functions to have the same name but different parameters (either in type or number). This is not supported in Python, as Python does not support function overloading based on parameter types or counts. Instead, Python uses default arguments and variable-length arguments to achieve similar functionality.
+p.age = 25         # Creates "age" key in __dict__
+print(p.__dict__)  # {'name': 'Alice', 'age': 25}
 
-Example of function overloading in C++:
-```cpp
-#include <iostream>
-using namespace std;
-class Math {
-public:
-    int add(int a, int b) {
-        return a + b;
-    }
-    double add(double a, double b) {
-        return a + b;
-    }
+p.name = "Bob"     # Modifies existing "name" key
+print(p.__dict__)  # {'name': 'Bob', 'age': 25}
+```
 
-    int add(int a, int b, int c) {
-        return a + b + c;
-    }
+## How Attribute Assignment and Access Works
 
-};
-int main() {
-    Math math;
-    cout << math.add(5, 3) << endl;          // Calls add(int
-    cout << math.add(5.5, 3.3) << endl;      // Calls add(double, double)
-    cout << math.add(1, 2, 3) << endl;        //calls add(int, int, int)
-    return 0;
+### Core Rules:
+- **Assignment (`self.attr = value`)**: Always creates/modifies key in instance's `__dict__`
+- **Access (`self.attr`)**: Checks instance `__dict__` first, then class hierarchy
+- **Missing Attribute**: Accessing non-existent attribute raises `AttributeError`
+- **Creating Attribute**: Assigning to non-existent attribute creates new `__dict__` entry
+
+### Example:
+
+```python
+class Demo:
+    def __init__(self):
+        self.x = 10
+
+    def modify(self):
+        self.x = self.x * 3    # Modifies existing key
+        self.y = 100           # Creates new key
+
+d = Demo()
+print(d.__dict__)  # {'x': 10}
+
+d.modify()
+print(d.__dict__)  # {'x': 30, 'y': 100}
+
+# This would raise AttributeError:
+# print(d.z)  # AttributeError: 'Demo' object has no attribute 'z'
+
+# This creates new attribute:
+d.z = 50
+print(d.__dict__)  # {'x': 30, 'y': 100, 'z': 50}
+```
+
+## Inheritance: One Instance, One `__dict__`
+
+### Key Points:
+- **Single `__dict__`**: Child class instance has only ONE `__dict__`
+- **Shared Storage**: Parent and child methods modify the SAME `__dict__`
+- **No Separate Variables**: Unlike C++, there's no separate storage for parent/child attributes
+
+### Example:
+
+```python
+class Parent:
+    def __init__(self):
+        self.name = "parent"
+
+    def set_parent_attr(self):
+        self.parent_var = "from parent"
+
+class Child(Parent):
+    def __init__(self):
+        super().__init__()
+        self.name = "child"        # Overwrites parent's name
+
+    def set_child_attr(self):
+        self.child_var = "from child"
+
+c = Child()
+print(c.__dict__)  # {'name': 'child'}
+
+c.set_parent_attr()  # Parent method modifies child's __dict__
+print(c.__dict__)    # {'name': 'child', 'parent_var': 'from parent'}
+
+c.set_child_attr()
+print(c.__dict__)    # {'name': 'child', 'parent_var': 'from parent', 'child_var': 'from child'}
+```
+
+## Variable Access Levels: Public, Protected, Private
+
+### Concepts:
+- **Public (`self.var`)**: Accessible everywhere
+- **Protected (`self._var`)**: Convention for internal use (still accessible)
+- **Private (`self.__var`)**: Name mangling applied, creates `_ClassName__var`
+
+### Public and Protected Variables
+- **Public variables** (`name`) and **protected variables** (`_name`) are directly shareable between base and derived classes
+- They are stored in the instance dictionary with their original names
+- No name transformation occurs
+
+### Private Variables - Name Mangling Behavior
+
+#### Instance Variable Storage
+- When creating **private instance variables** (`__name`) in base and derived classes, Python applies **name mangling**
+- All variables are stored in the **same single `__dict__`** for the instance
+- However, private variables get **different keys** due to name mangling
+
+#### Name Mangling Process
+- **Base class A**: `__name` becomes `_A__name` in the dictionary
+- **Derived class B**: `__name` becomes `_B__name` in the dictionary
+- This creates unique keys for each class's private variables
+
+#### Access Mechanism
+- When accessing `self.__name` in class A → Python searches for `_A__name` in `__dict__`
+- When accessing `self.__name` in class B → Python searches for `_B__name` in `__dict__`
+- Same attribute name, different mangled keys, but accessed through the same class functions
+
+### Example:
+
+```python
+class AccessDemo:
+    def __init__(self):
+        self.public = "everyone can see"
+        self._protected = "internal use"
+        self.__private = "name mangled"
+
+obj = AccessDemo()
+print(obj.__dict__)
+# {'public': 'everyone can see', '_protected': 'internal use', '_AccessDemo__private': 'name mangled'}
+
+# Accessing:
+print(obj.public)      # Works
+print(obj._protected)  # Works (but shouldn't be used externally)
+# print(obj.__private) # AttributeError
+print(obj._AccessDemo__private)  # Works (name mangled form)
+```
+
+#### Dictionary Structure Example:
+```
+instance.__dict__ = {
+    'public_var': 'shared',           # Public - same key
+    '_protected_var': 'shared',       # Protected - same key  
+    '_A__private_var': 'base_value',  # Private in base class
+    '_B__private_var': 'derived_value' # Private in derived class
 }
 ```
 
-### 13.3 Static method in cpp
-Static variables and static methods in C++ are associated with the class rather than any particular instance of the class. They can be accessed without creating an instance of the class.Static methods are defined using the `static` keyword and can be called using the class name.
-Example of static method in C++:
-```cpp
-#include <iostream>
-using namespace std;
-class Math {
-public:
-    static int add(int a, int b) {
-        return a + b;
-    }
-};
-int main() {
-    cout << Math::add(5, 3) << endl;  // Calling static
-    return 0;
-}
+## Method Resolution Order (MRO) and Function Execution
+
+### Core Concepts:
+- **MRO**: Python uses C3 linearization to determine method lookup order
+- **Method Lookup**: When calling `self.method()`, Python searches MRO until it finds the method. It first searches function in 1st class of MRO if not found then second and so on
+- **Attribute Access in Methods**: Even when executing parent method, `self` refers to the instance
+- **Single `__dict__` Rule**: All methods modify the same instance `__dict__`
+
+### Single Inheritance Example:
+
+```python
+class A:
+    def method(self):
+        self.a_var = "from A"
+        print(f"A.method, __dict__: {self.__dict__}")
+
+class B(A):
+    def method(self):
+        self.b_var = "from B"
+        print(f"B.method, __dict__: {self.__dict__}")
+        super().method()  # Calls A.method
+
+b = B()
+print(f"MRO: {B.__mro__}")  # (<class 'B'>, <class 'A'>, <class 'object'>)
+
+b.method()
+# Output:
+# B.method, __dict__: {'b_var': 'from B'}
+# A.method, __dict__: {'b_var': 'from B', 'a_var': 'from A'}
 ```
 
-Example of static variable in C++:
-```cpp
-#include <iostream>
-using namespace std;
-class Counter {
-public:
-    static int count;  // Declaration of static variable
-    Counter() {
-        count++;  // Increment static variable in constructor
-    }
-};
-int Counter::count = 0;  // Definition and initialization of static variable
-int main() {
-    Counter c1;
-    Counter c2;
-    Counter c3;
-    cout << "Number of Counter objects: " << Counter::count << endl;  //
-    return 0;
-}
+### Multiple Inheritance Example:
+
+```python
+class Parent1:
+    def shared_method(self):
+        self.p1_var = "from Parent1"
+
+class Parent2:
+    def shared_method(self):
+        self.p2_var = "from Parent2"
+
+    def unique_method(self):
+        self.unique_var = "from Parent2 unique"
+
+class Child(Parent1, Parent2):
+    pass
+
+c = Child()
+print(f"MRO: {Child.__mro__}")
+# (<class 'Child'>, <class 'Parent1'>, <class 'Parent2'>, <class 'object'>)
+
+c.shared_method()  # Parent1.shared_method wins (MRO order)
+print(c.__dict__)  # {'p1_var': 'from Parent1'}
+
+c.unique_method()  # Parent2.unique_method (only one available)
+print(c.__dict__)  # {'p1_var': 'from Parent1', 'unique_var': 'from Parent2 unique'}
 ```
-Here count variable is shared among all instances of the Counter class and can be accessed using the class name as well as through any instance of the class.Such that change of count variable in one instance will reflect in all other instances.
-
-
-
-### 13.4 Use of `this` pointer in C++
-`this` pointer is an implicit parameter to all non-static member functions. It points to the object for which the member function is called. It is used to access the members of the current object.
-
-Use of this pointer in C++:
-
-```cpp
-#include <iostream>
-using namespace std;
-
-class Point{
-    private:
-        int x, y;
-    public:
-        Point(int x, int y){
-            this->x = x;  // Using this pointer to refer to the current object's x
-            this->y = y;  // Using this pointer to refer to the current object's 
-            
-            // here the parameter name and the member variable name are same so we use this pointer to differentiate between them
-        }
-
-        void display(){
-            cout << "X: " << x << ", Y: " << y << endl;  // Direct access without this pointer as they are not ambiguous
-        }
-
-        void setX(int x){
-            this->x = x;  // Using this pointer to refer to the current object's x
-        }
-    
-}
-```
-
-### 13.5 Destructors in C++
-A destructor is a special member function that is called when an object goes out of scope or is explicitly deleted. It is used to release resources that were allocated to the object during its lifetime. The
-destructor has the same name as the class but is preceded by a tilde (`~`).
-Example of destructor in C++:
-```cpp
-#include <iostream>
-using namespace std;
-class Person {
-public:
-
-    Person() {
-        cout << "Constructor called" << endl;
-    }
-    ~Person() {
-        cout << "Destructor called" << endl;
-    }
-};
-int main() {
-    Person p1;  // Constructor called
-    {
-        Person p2;  // Constructor called
-    }  // Destructor called for p2 as it goes out of scope
-    // Destructor called for p1 as it goes out of scope at the end of main
-}
-```
-
 
 ## Summary
 
-In this tutorial, we've covered the fundamental concepts of Object-Oriented Programming in Python:
+### Key Takeaways:
+1. **One Instance = One `__dict__`**: All attributes stored in single dictionary
+2. **Method Execution**: MRO determines which method runs, but `self` always refers to the instance
+3. **All Methods Use Same Storage**: Every method operates on the same instance `__dict__`
+4. **Name Mangling**: Private variables (`__var`) become `_ClassName__var` in `__dict__`
+5. **MRO Rules**: Left-to-right, depth-first search with C3 linearization for complex hierarchies
+6. **Variable Sharing**:
+   - **Public/Protected**: Same key names, directly shareable
+   - **Private**: Different mangled key names (`_ClassName__varname`), accessed through same class methods but stored separately
+7. **Name Mangling Ensures**: Private variable isolation while using unified storage
 
-1. **Classes and Objects**: The blueprint and instances that form the foundation of OOP
-2. **Methods**: Adding behavior to our classes
-3. **Constructors**: Initializing objects with specific attributes
-4. **Access Specifiers**: Controlling visibility of class members
-5. **Inheritance**: Creating class hierarchies for code reuse
-6. **Method Resolution Order (MRO)**: Understanding how Python resolves method calls in inheritance hierarchies
-7. **Properties (Getters and Setters)**: Controlled access to attributes
-8. **Special Methods**: Customizing object behavior
-9. **Operator Overloading**: Defining operator behavior for custom objects
-10. **Static and Class Methods**: Methods that operate at the class level
-11. **Introspection**: Examining objects at runtime
-12. **Nested Classes**: Classes within classes
-13. **Comparison with Other Languages**: Understanding how Python's approach differs from other OOP languages
-
-By understanding these concepts, you'll be able to design more efficient, maintainable, and powerful Python applications.
-
-
-## Revision
-You can read pdf version of kec publication oop book of BSC.CSIT second semester
+The fundamental difference from C++ is that Python maintains a single object with one `__dict__` throughout the inheritance hierarchy, while all methods operate on this shared storage space. Name mangling ensures private variable isolation while maintaining the single dictionary approach.
