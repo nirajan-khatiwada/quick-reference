@@ -1,11 +1,12 @@
-# Python Fundamentals: Exploring OOP (Part 12)
-
-**Date:** 2024-11-10  
-**Description:** This is the first part of series Object Oriented Programming in Python  
-**Categories:** Python  
-**Tags:** Python, Programming, OOP, Tutorial  
-**Summary:** This is the first part of series of Object Oriented Programming in Python
-
+---
+title: "Python Fundamentals: Exploring OOP (Part 12)"
+date: 2024-11-10
+description: "Master Python Object-Oriented Programming fundamentals including classes, objects, inheritance, and advanced OOP concepts in this comprehensive guide."
+showToc: true
+categories: ["Python"]
+tags: ["Python", "Programming", "OOP", "Classes", "Objects", "Inheritance", "Tutorial"]
+summary: "A comprehensive introduction to Object-Oriented Programming in Python covering classes, objects, inheritance, method resolution, access specifiers, and advanced OOP concepts."
+images: ["/images/python.png"]
 ---
 
 ## Object Oriented Programming in Python
