@@ -237,63 +237,63 @@ Output:
 
 ## 7.Local and Global Variables
 
-### 7.1. Local Variables
-Local variables are defined within a function and are only accessible within that function. They are created when the function is called and destroyed when the function exits.
-
+### 7.1 Local Variables
+- Defined inside a function.
+- Exist only while the function runs.
+- Cannot be accessed outside that function.
+- Python automatically treats any variable assigned inside a function as local, unless told otherwise.
 Example:
 ```python
 def display():
-    message = "Hello, World!"
+    message = "Hello, World!"  # local variable created
     print(message)
 
 display()
-# Trying to access the local variable outside the function will result in an error
-print(message) # NameError: name 'message' is not defined
+
+print(message)  # ❌ Error: 'message' is not defined
 ```
 
-### 7.2. Global Variables
-Global variables are defined outside any function and can be accessed from any part of the code. You can use the `global` keyword to modify a global variable inside a function.
+>> Here, message only exists inside display(). Outside, Python doesn’t know it.
+
+### 7.2 Global Variables
+
+- Defined outside all functions.
+- Accessible anywhere in the program (both inside and outside functions).
+- To modify a global variable inside a function, we must use the global keyword.
 
 Example:
 ```python
-message = "Hello, World!"
-
+message = "Hello, World!"  # global variable
 def display():
-    print(message)
+    print(message)  # reads global variable
 
 display()
 
-# Modifying a global variable inside a function
 def change_message():
-    global message
-    message = "Hello, Python!"
+    global message   # tells Python we mean the global variable
+    message = "Hello, Python!"  # modifies global, not a new local one
 
 change_message()
-print(message)
+print(message)  # ✅ "Hello, Python!"
 ```
-
-Output:
-```bash
-Hello, World!
-Hello, Python!
-```
+>>  Without global, Python would create a new local variable instead of changing the global one.
 
 
-
-### 7.3. Local vs. Global Variables
-If a local variable has the same name as a global variable, the local variable takes precedence within the function scope.
+### 7.3 Local vs Global Variables
+- If a variable inside a function has the same name as a global variable, Python assumes it’s a local variable (unless you declare it global).
+- This is why local variables take precedence within the function scope.
 
 Example:
 ```python
-message = "Hello, World!"
+message = "Hello, World!"  # global variable
 
 def display():
-    # if we doesnt set global keyword then it will create a local variable instead of modifying the global variable
-    message = "Hello, Python!"  
-    print(message)
+    # new local variable created (same name as global)
+    message = "Hello, Python!"
+    print(message)   # local variable used here
 
 display()
-print(message)
+print(message)  # global variable is still unchanged
 ```
 
 Output:
@@ -301,3 +301,9 @@ Output:
 Hello, Python!
 Hello, World!
 ```
+
+>> Inside display(), Python ignores the global message and makes a new local one.
+
+ Key rule to remember:
+- Assignment inside a function → local variable (by default).
+- If you want to change a global variable → use global varname.
