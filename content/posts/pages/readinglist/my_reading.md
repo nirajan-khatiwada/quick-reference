@@ -28,13 +28,8 @@ images: ["/images/learn.jpg"]  # For social share
 ---
 
 ## What I Plan to Learn Next
-- [ ] select_related()
-- [ ]prefetch_related()
 - [ ] Django Rest Framework (DRF) Deep Dive
 - [ ] Django ORM Deep Dive
-- [] Asyncio
-- [ ] Git Advanced
-- [ ] SQL Database 
 ---
 
 
