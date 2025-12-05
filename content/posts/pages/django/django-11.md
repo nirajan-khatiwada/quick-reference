@@ -259,3 +259,5 @@ from django.db.models import Avg
 average_scores = Student.objects.values('grade').annotate(avg_score=Avg('marks__obtained'))
 ```
 This will group the students by their grade and calculate the average score for each grade.
+
+
