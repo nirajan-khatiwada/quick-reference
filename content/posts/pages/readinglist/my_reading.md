@@ -21,10 +21,14 @@ images: ["/images/learn.jpg"]  # For social share
 - [x] Python
 - [x] Django
 - [x] JavaScript
-- [x] React Basics
+- [x] React 
 - [x] HTML
 - [x] CSS
 - [x] Tailwind Css
+- [x] Framer Motion
+- [x] Tanstack Query
+- [x] SQL
+
 ---
 
 ## What I Plan to Learn Next

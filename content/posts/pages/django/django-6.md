@@ -22,7 +22,6 @@ Setting files are the files that contain the configuration of django project.Wha
     - BACKEND : The engine to use for rendering templates.
     - DIRS : A list of directories where the template engine should look for template source files.Used To make global templates folder
     - context_processors : A list of context processors that are applied to each request.
-> Note: Template are not used in DRF
 -WSGI_APPLICATION : The full Python path of the WSGI application object that Django’s built-in servers (e.g. runserver) will use.
 - DATABASES : A dictionary containing the database configuration.
 - AUTH_PASSWORD_VALIDATORS : A list of validators that are used to check the strength of the password.
@@ -30,3 +29,4 @@ Setting files are the files that contain the configuration of django project.Wha
 - LANGUAGE_CODE : The language code for the project.'en-us' is the default language code.
 - DEFAULT_AUTO_FIELD : The default primary key field for the project.
 
+> Note: Template are not used in DRF

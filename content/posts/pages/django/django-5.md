@@ -1,578 +1,103 @@
 ---
 title: "Django: Day 5"
 date: 2025-01-06
-description: "Understand Django model relationships including OneToOne, OneToMany, and ManyToMany. Learn how to define, create, update, and query these relationships."
+description: "Explore Django's admin interface, including creating superusers, registering models, and customizing the admin interface. Learn how to enhance the admin experience with customizations."
 showToc: true
 categories: ["Django"]
-tags: ["Django", "Python", "Relationships", "Models", "Backend"]
-summary: "Detailed guide on Django model relationships, covering OneToOne, OneToMany, and ManyToMany relations. Essential for managing complex data relationships in Django."
-images: ["/images/django-relations.jpg"]
----
-# Django Relations
-
-In Django, there are three main types of relationships between models: OneToOne, OneToMany, and ManyToMany.
-
-## Some Important Terms
-
-- **`related_name`**: This attribute is used to define the reverse relation from the related model back to the model that defines the relationship.
-- **`on_delete`**: It specifies the behavior to adopt when the object referenced by a foreign key is deleted.
-
-### `on_delete` Options
-
-- **`models.CASCADE`**: When the referenced object is deleted, also delete the objects that have a foreign key to it.
-- **`models.PROTECT`**: Prevent deletion of the referenced object by raising a `ProtectedError` exception.
-- **`models.SET_NULL`**: Set the foreign key to `NULL` when the referenced object is deleted.
-- **`models.SET_DEFAULT`**: Set the foreign key to its default value when the referenced object is deleted.
-- **`models.SET()`**: Set the foreign key to the value passed to `SET()` when the referenced object is deleted.
-- **`models.DO_NOTHING`**: Do nothing when the referenced object is deleted.
-
-> Note: In most cases, `models.CASCADE` is used.
-
+tags: ["Django", "Python", "Admin Interface", "Customization", "Backend"]
+summary: "Comprehensive guide to Django's admin interface, covering superuser creation, model registration, and various customizations to improve admin functionality."
+images: ["/images/django-admin.jpg"]
 ---
 
-## OneToOne Relation 
-
-A OneToOne relationship establishes a unique connection between two models where each instance of one model corresponds to exactly one instance of another model. This relationship ensures data integrity by preventing multiple associations.
-
-**Key Characteristics:**
-- Each object can only be related to one other object
-- Attempting to create multiple relationships with the same object will raise an error
-- Commonly used for extending models or creating profile-like relationships
-
-### Defining OneToOne Relations
-
-You can define a OneToOne relation using `OneToOneField`:
-
-```python
-from django.db import models
-
-class Student(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-
-class StudentProfile(models.Model):
-    student = models.OneToOneField(
-        Student, 
-        on_delete=models.CASCADE, 
-        related_name='profile'
-    )
-    address = models.TextField()
-    phone = models.CharField(max_length=15)
-```
-
-**Important Notes:**
-- The `related_name` parameter must be unique within the model
-- It enables reverse access from the related model (Student to StudentProfile)
-- The `on_delete=models.CASCADE` ensures that when a Student is deleted, their profile is also deleted
-
-### Creating OneToOne Relations
-
-### Method 1: Create with new objects
-```python
-student = Student.objects.create(name='John', age=20)
-profile = StudentProfile.objects.create(
-    student=student, 
-    address='New York', 
-    phone='1234567890'
-)
-```
-
-### Method 2: Using existing objects
-```python
-student = Student.objects.get(name='John')
-profile = StudentProfile.objects.create(
-    student=student, 
-    address='New York', 
-    phone='1234567890'
-)
-```
-
-### Updating OneToOne Relations
-
-```python
-student = Student.objects.get(name='John')
-profile = student.profile
-profile.address = 'California'
-profile.save()
-```
-
-### Accessing Related Objects
-
-### From Profile to Student
-```python
-student_profile = StudentProfile.objects.get(address='California')
-student = student_profile.student
-```
-
-### From Student to Profile (using related_name)
-```python
-student = Student.objects.get(name='John')
-profile = student.profile
-```
-
-### Related Name Example
-
-Here's another example demonstrating `related_name` usage:
-
-```python
-class Author(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-
-class Book(models.Model):
-    author = models.OneToOneField(
-        Author, 
-        on_delete=models.CASCADE, 
-        related_name='book'
-    )
-    title = models.CharField(max_length=100)
-```
-
-Accessing the Book from Author:
-```python
-author = Author.objects.get(name='John')
-book = author.book
-```
-
-### Querying Strategies
-
-### Finding Student Profile by Student Name
-
-**Method 1: Using field lookups with double underscores**
-```python
-student_profile = StudentProfile.objects.get(student__name='John')
-```
-
-**Method 2: Two-step approach**
-```python
-student = Student.objects.get(name='John')
-student_profile = StudentProfile.objects.get(student=student)
-```
-
-**Method 3: Using related_name (most efficient)**
-```python
-student = Student.objects.get(name='John')
-student_profile = student.profile
-```
-
-### Finding Student by Profile Address
-
-**Method 1: Using reverse field lookups**
-```python
-student = Student.objects.get(profile__address='California')
-```
-
-**Method 2: Two-step query approach**
-```python
-student_profile = StudentProfile.objects.get(address='California')
-student = Student.objects.get(profile=student_profile)
-```
-
-**Method 3: Direct relationship access**
-```python
-student_profile = StudentProfile.objects.get(address='California')
-student = student_profile.student
-```
-
-### Best Practices
-
-- Use descriptive `related_name` values that clearly indicate the relationship
-- Consider the performance implications of your querying strategy
-- Method 1 (field lookups) and Method 3 (direct access) are generally more efficient than Method 2 (two separate queries)
-- Always handle potential `DoesNotExist` exceptions when querying for related objects
-- Use `select_related()` for efficient querying when you know you'll need the related object
-
-## OneToMany Relation
-
-## Understanding OneToMany Relationships
-
-A OneToMany relationship establishes a connection where one instance of a model can be related to multiple instances of another model, but each instance of the second model can only be related to one instance of the first model. This is also known as a "Foreign Key" relationship.
-
-**Key Characteristics:**
-- One record in the parent model can have multiple related records in the child model
-- Each record in the child model can only belong to one parent record
-- The relationship is defined using `ForeignKey` on the "many" side
-- Common examples: Author → Books, Category → Products, Department → Employees
-
-## Defining OneToMany Relations
-
-You define a OneToMany relation using the `ForeignKey` field on the "many" side of the relationship:
-
-```python
-from django.db import models
-
-class Subject(models.Model):
-    name = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.name
-
-class Student(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    subject = models.ForeignKey(
-        Subject, 
-        on_delete=models.CASCADE, 
-        related_name='students'
-    )
-    
-    def __str__(self):
-        return self.name
-```
-
-**Important Notes:**
-- `related_name='students'` allows reverse access from Subject to Students
-- `on_delete=models.CASCADE` defines what happens when the referenced object is deleted
-
-## Creating OneToMany Relations
-
-### Method 1: Create objects and assign relationships
-```python
-# Create subjects
-math_subject = Subject.objects.create(name='Mathematics')
-science_subject = Subject.objects.create(name='Science')
-
-# Create students and assign to subjects
-student1 = Student.objects.create(name='John', age=20, subject=math_subject)
-student2 = Student.objects.create(name='Jane', age=22, subject=math_subject)
-student3 = Student.objects.create(name='Bob', age=21, subject=science_subject)
-```
-
-### Method 2: Create separately and assign later
-```python
-subject = Subject.objects.create(name='History')
-student = Student.objects.create(name='Alice', age=19)
-
-# Assign the relationship
-student.subject = subject
-student.save()
-```
-
-### Method 3: Using existing objects
-```python
-subject = Subject.objects.get(name='Mathematics')
-student = Student.objects.create(name='Charlie', age=20, subject=subject)
-```
-
-## Updating OneToMany Relations
-
-### Changing a student's subject
-```python
-student = Student.objects.get(name='John')
-new_subject = Subject.objects.get(name='Science')
-student.subject = new_subject
-student.save()
-```
-
-### Updating the subject details
-```python
-student = Student.objects.get(name='John')
-subject = student.subject
-subject.name = 'Advanced Mathematics'
-subject.save()
-```
-
-## Accessing Related Objects
-
-### From Student to Subject (Forward Relationship)
-```python
-student = Student.objects.get(name='John')
-subject = student.subject
-print(f"{student.name} studies {subject.name}")
-```
-
-### From Subject to Students (Reverse Relationship)
-```python
-subject = Subject.objects.get(name='Mathematics')
-students = subject.students.all()
-for student in students:
-    print(f"{student.name} studies {subject.name}")
-```
-
-## Querying Strategies
-
-### Finding Students by Subject Name
-
-**Method 1: Using field lookups with double underscores**
-```python
-students = Student.objects.filter(subject__name='Mathematics')
-```
-
-**Method 2: Two-step approach**
-```python
-subject = Subject.objects.get(name='Mathematics')
-students = Student.objects.filter(subject=subject)
-```
-
-**Method 3: Using related_name (reverse relationship)**
-```python
-subject = Subject.objects.get(name='Mathematics')
-students = subject.students.all()
-# Or with filtering
-students = subject.students.filter(age__gte=20)
-```
-
-### Finding Subject by Student Name
-
-**Method 1: Direct access through relationship**
-```python
-student = Student.objects.get(name='John')
-subject = student.subject
-```
-
-**Method 2: Using field lookups**
-```python
-subject = Subject.objects.get(students__name='John')
-```
-
-**Method 3: Using select_related for efficiency**
-```python
-student = Student.objects.get(name='John')
-subject = Subject.objects.get(students=student)
-```
-
----
-# Django ManyToMany Relationship Guide
-
-A ManyToMany relationship establishes a bidirectional connection where each instance of one model can be related to multiple instances of another model, and vice versa. This relationship is implemented using an intermediate junction table behind the scenes.
-
-**Key Characteristics:**
-- Each record in Model A can relate to multiple records in Model B
-- Each record in Model B can relate to multiple records in Model A
-- Django automatically creates an intermediate table to store the relationships
-- No `on_delete` parameter is needed (relationships are simply removed, not cascaded)
-- Example: A student can have multiple subjects, and a subject can have multiple students
-
-## Defining ManyToMany Relations
-
-You define a ManyToMany relation using the `ManyToManyField`. The field can be placed on either model, but conventionally it's placed on the model that makes more semantic sense.
-
-```python
-from django.db import models
-
-class Subject(models.Model):
-    name = models.CharField(max_length=100)
-    
-    def __str__(self):
-        return self.name
-
-class Student(models.Model):
-    name = models.CharField(max_length=100)
-    age = models.IntegerField()
-    subjects = models.ManyToManyField(
-        Subject, 
-        related_name='students',
-        blank=True  # Allows students with no subjects initially
-    )
-    
-    def __str__(self):
-        return self.name
-```
-
-**Important Notes:**
-- The `ManyToManyField` creates a hidden intermediate table
-- `related_name='students'` allows reverse access from Subject to Students
-- `blank=True` allows the relationship to be empty initially
-- No `on_delete` parameter is required or allowed
-
-## Essential Methods for ManyToMany Relationships
-
-### `add()` Method
-Adds one or more related objects to the relationship.
-
-```python
-# Add single subject
-student.subjects.add(subject)
-
-# Add a student to a subject
-subject.students.add(student) # This is the reverse relationship
-
-# Add multiple subjects
-student.subjects.add(subject1, subject2, subject3)
-
-# Add multiple students to a subject
-subject.students.add(student1, student2, student3)
-
-```
-
-### `remove()` Method
-Removes one or more related objects from the relationship.
-
-```python
-# Remove single subject
-student.subjects.remove(subject)
-
-# Remove a student from a subject
-subject.students.remove(student) # This is the reverse relationship
-
-# Remove multiple subjects
-student.subjects.remove(subject1, subject2)
-
-# Remove multiple students from a subject
-subject.students.remove(student1, student2)
-
-```
-
-### `clear()` Method
-Removes all related objects from the relationship.
-
-```python
-# Remove all subjects from a student
-student.subjects.clear()
-
-# Remove all students from a subject
-subject.students.clear()
-```
-
-### `set()` Method
-Replaces the current set of related objects with a new set.
-
-```python
-# Set specific subjects for a student
-student.subjects.set([subject1, subject2])
-
-# Set specific students for a subject
-subject.students.set([student1, student2])
-
-
-# Clear all relationships
-student.subjects.set([])
-```
-
-## Creating ManyToMany Relations
-
-### Step 1: Create the objects
-```python
-# Create subjects
-math = Subject.objects.create(name='Mathematics')
-science = Subject.objects.create(name='Science')
-history = Subject.objects.create(name='History')
-
-# Create students
-john = Student.objects.create(name='John', age=20)
-jane = Student.objects.create(name='Jane', age=22)
-bob = Student.objects.create(name='Bob', age=21)
-```
-
-### Step 2: Establish relationships
-```python
-# John studies Math and Science
-john.subjects.add(math, science)
-
-# Jane studies Math and History
-jane.subjects.add(math, history)
-
-# Bob studies all three subjects
-bob.subjects.add(math, science, history)
-```
-
-### Relationship Structure
-After the above operations, the relationships look like this:
+# Django Admin Interface
+Django provided a buildin admin interface that can be used to manage the data in the database.
+
+## 21.1 Creating a superuser
+To access the admin interface, we need to create a superuser. We can create a superuser using the `createsuperuser` command.
 ```bash
-John → Mathematics, Science
-Jane → Mathematics, History
-Bob → Mathematics, Science, History
-
-Mathematics → John, Jane, Bob
-Science → John, Bob
-History → Jane, Bob
+python manage.py createsuperuser
 ```
 
-## Accessing Related Objects
-
-### From Student to Subjects (Forward Relationship)
+## 21.2 Registering models with the admin interface
+To make the model available in the admin interface we need to register the model with the admin interface.
 ```python
-student = Student.objects.get(name='John')
-
-# Get all subjects for John
-subjects = student.subjects.all()
+from django.contrib import admin
+from myapp.models import Person
+admin.site.register(Person)
 ```
 
-### From Subject to Students (Reverse Relationship)
+## 21.3 Customizing the admin interface
+We can change the site header, title, and index title of the admin interface by overriding the `admin.site.site_header`, `admin.site.site_title`, and `admin.site.index_title` respectively.
 ```python
-subject = Subject.objects.get(name='Mathematics')
-
-# Get all students studying Mathematics
-students = subject.students.all()
-
+admin.site.site_header = 'My Site Admin'
+admin.site.site_title = 'My Site Admin'
 ```
 
-## Updating ManyToMany Relations
 
-### Adding new relationships
+## 21.4 Customizing the model admin
+We can customize the model admin by creating a class that inherits from `admin.ModelAdmin` and then registering it with the model.
+
+-  Customizing Admin List Display
+By default, the admin list view only displays the `__str__()` method of the model. You can customize it using the list_display attribute.This makes it easier to view important information at a glance.
 ```python
-student = Student.objects.get(name='John')
-history_subject = Subject.objects.get(name='History')
-
-# Add History to John's subjects
-student.subjects.add(history_subject)
-print(f"{student.name} now studies: {[s.name for s in student.subjects.all()]}")
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'age', 'grade')  # Fields to display in the list view
 ```
 
-### Removing relationships
+
+- Adding Search Functionality
+Purpose: Enable a search bar to search through specific fields in the model.
+Use the search_fields attribute to specify which fields should be searchable
 ```python
-student = Student.objects.get(name='John')
-science_subject = Subject.objects.get(name='Science')
-
-# Remove Science from John's subjects
-student.subjects.remove(science_subject)
-print(f"{student.name} now studies: {[s.name for s in student.subjects.all()]}")
+class StudentAdmin(admin.ModelAdmin):
+    search_fields = ('name', 'grade')  # Enable search for name and grade fields
 ```
 
-### Replacing all relationships
+- Ordering the List
+Purpose: Sort the list view by a specific field.
+Use the ordering attribute to specify the default ordering of the list view.
 ```python
-student = Student.objects.get(name='Bob')
-new_subjects = Subject.objects.filter(name__in=['Mathematics', 'History'])
-
-# Replace all of Bob's subjects with just Math and History
-student.subjects.set(new_subjects)
-print(f"{student.name} now studies: {[s.name for s in student.subjects.all()]}")
+class StudentAdmin(admin.ModelAdmin):
+    ordering = ('name',)  # Order the list view by name
 ```
 
-## Querying Strategies
-
-### Finding Students by Subject Name
-
-**Method 1: Using field lookups with double underscores**
+- Fieldsets
+Purpose: Group related fields together in the admin interface.
+Use the fieldsets attribute to group fields together.
 ```python
-students = Student.objects.filter(subjects__name='Mathematics')
-print(f"Students studying Mathematics: {[s.name for s in students]}")
+class StudentAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ('Personal Information', {
+            'fields': ('name', 'age')
+        }),
+        ('Academic Information', {
+            'fields': ('grade', 'subject')
+        }),
+    )
 ```
 
-**Method 2: Using reverse relationship**
+# 21.5 Combining all customizations
+admin.py
 ```python
-subject = Subject.objects.get(name='Mathematics')
-students = subject.students.all()
-print(f"Students studying {subject.name}: {[s.name for s in students]}")
+from django.contrib import admin
+from myapp.models import Student
+class StudentAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'age', 'grade')
+    search_fields = ('name', 'grade')
+    ordering = ('name',)
+    fieldsets = (
+        ('Personal Information', {
+            'fields': ('name', 'age')
+        }),
+        ('Academic Information', {
+            'fields': ('grade', 'subject')
+        }),
+    )
+
+admin.site.register(Student, StudentAdmin)
 ```
 
-**Method 3: With additional filtering**
-```python
-subject = Subject.objects.get(name='Mathematics')
-young_students = Student.objects.filter(subjects=subject)
-print(f"Young students studying {subject.name}: {[s.name for s in young_students if s.age < 21]}")
-```
 
-### Finding Subjects by Student Name
 
-**Method 1: Direct access**
-```python
-student = Student.objects.get(name='John')
-subjects = student.subjects.all()
-print(f"{student.name} studies: {[s.name for s in subjects]}")
-```
 
-**Method 2: Using field lookups**
-```python
-subjects = Subject.objects.filter(students__name='John')
-print(f"John's subjects: {[s.name for s in subjects]}")
-```
 
-**Method 3: Using filter ***
-```python
-student = Student.objects.get(name='John')
-subjects = Subject.objects.filter(students=student)
-print(f"{student.name} studies: {[s.name for s in subjects]}")
-```
-
----

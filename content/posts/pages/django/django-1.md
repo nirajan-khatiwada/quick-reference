@@ -158,6 +158,16 @@ def about(request):
     return HttpResponse('About Page')
 ```
 
+
+for class based view:
+```python
+from django.http import HttpResponse
+from django.views import View
+class HomeView(View):
+    def get(self, request):
+        return HttpResponse('Home Page')
+```
+
 # 13. Registering the View in the urls
 To register the view in the urls we need to import the view in the `urls.py` file of the app and define the path.
 
@@ -169,6 +179,15 @@ from . import views
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+]
+```
+
+for class based view:
+```python
+from django.urls import path
+from .views import HomeView
+urlpatterns = [
+    path('', HomeView.as_view(), name='home'),
 ]
 ```
 
@@ -226,6 +245,11 @@ def about(request):
     return HttpResponse(reverse('about'))
 ```
 The `reverse('home')` will return the url of the home view as `/` and `reverse('about')` will return the url of the about view as `/about/`.
+
+> For dynamic url we can pass the arguments as:
+```python
+reverse('post', args=[1])
+```
 
 
 # 16.Redirecting the URL
