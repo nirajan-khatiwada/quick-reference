@@ -231,3 +231,31 @@ b = Book.objects.get(id=4)  # Hits the database.
 p = b.author                # Hits the database.
 
 ```
+
+
+
+## 35. GROUP BY
+
+We can perform GROUP BY operation using the `values()` along with `annotate()` method.
+
+
+```python
+Models.objects.values('field1', 'field2').annotate(aggregation_function('field3'))
+```
+This means we are grouping by `field1` and `field2` and applying the aggregation function on `field3`.
+
+
+
+```python
+from django.db.models import Sum
+sales_data = Sales.objects.values('name').annotate(total_sales=Sum('amount'))
+```
+
+This will group the sales data by the 'name' field and calculate the total sales for each name.
+
+
+```python
+from django.db.models import Avg
+average_scores = Student.objects.values('grade').annotate(avg_score=Avg('marks__obtained'))
+```
+This will group the students by their grade and calculate the average score for each grade.
