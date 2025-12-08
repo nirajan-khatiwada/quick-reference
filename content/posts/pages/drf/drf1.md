@@ -168,7 +168,7 @@ class CommentApiView(APIView):
 ```python
 commentSer=CommentSerializer(data=request.data)
 if commentSer.is_valid(): # Returns True if the data is valid
-    print(commentSer.cleaned_data) # Returns the validated data
+    print(commentSer.validated_data) # Returns the validated data
     #code
 else:
     return Response(commentSer.errors)
@@ -626,7 +626,45 @@ Note that setting a default value implies that the field is not required. Includ
 
 - `validators`: A list of validator functions which should be applied to the incoming field input when validating the field.
 
+- `source`: A string representing the attribute or dictionary key that should be used to populate the field. This is useful if you want to use a different name for the field in the serializer than the name of the attribute on the model.
 
+Consider the following model:
+```python
+class Author(models.Model):
+    full_name = models.CharField(max_length=100)
+
+class Comment(models.Model):
+    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    content = models.TextField()
+```
+
+To represent the author's full name in the CommentSerializer, we can use the source argument:
+```python
+class CommentSerializer(serializers.ModelSerializer):
+    author_name = serializers.CharField(source='author.full_name',
+    read_only=True
+    )
+    class Meta:
+        model = Comment
+        fields = ['author_name', 'content']
+```
+
+In this example, the author_name field in the serializer will be populated with the full_name attribute of the related Author model.
+
+```python
+from .models import Comment
+from .serializers import CommentSerializer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+class CommentApiView(APIView):
+    def get(self, request):
+        comments = Comment.objects.select_related('author').all()
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
+```
+
+> Note: Use Source for get method to show the related field in the response not for post method.
+> Always know consequences of n+1 query while using source for related fields.
 
 
 
