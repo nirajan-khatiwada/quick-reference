@@ -1,6 +1,6 @@
 ---
-title: "DRF - DAY 6: Generic Views"
-date: 2025-01-29
+title: "DRF - DAY 6"
+date: 2025-03-29
 description: "Complete guide to Django REST Framework Generic Views, mixins, and concrete view classes."
 showToc: true
 categories: ["Django Rest Framework"]
