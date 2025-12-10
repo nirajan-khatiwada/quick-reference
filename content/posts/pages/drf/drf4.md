@@ -364,17 +364,54 @@ class ExampleView(APIView):
         return Response(content)
 ```
 
-# Pagination
-YOu can implement your own pagination using `request.query_params` like this
-```python
-from rest_framework.api import APIView
-from rest_framework.response import Response
 
+
+# Exceptions in DRF
+Django REST framework provides a set of built-in exceptions that can be used to handle errors in your API views. These exceptions are subclasses of the `APIException` class and can be raised to indicate different types of errors.
+Some commonly used exceptions in DRF include:
+- `NotFound`: Raised when a requested resource is not found (HTTP 404).
+- `PermissionDenied`: Raised when a user does not have permission to access a resource (HTTP 403).
+- `ValidationError`: Raised when data validation fails (HTTP 400).
+- `AuthenticationFailed`: Raised when authentication fails (HTTP 401).
+- `Throttled`: Raised when a request is throttled due to exceeding rate limits (HTTP 429).
+- `MethodNotAllowed`: Raised when an HTTP method is not allowed for a particular endpoint (HTTP 405).
+- `AuthenticationFailed`: Raised when authentication credentials are invalid or missing (HTTP 401).
+- `NotAuthenticated`: Raised when authentication is required but not provided (HTTP 401).
+- `ParseError`: Raised when there is an error parsing the request data (HTTP 400).
+- `UnsupportedMediaType`: Raised when the request's media type is not supported (HTTP 415).
+- `APIException`: The base class for all DRF exceptions. You can also create custom exceptions by subclassing this class.
+
+These exceptions can be raised in your views or serializers to indicate specific error conditions. When an exception is raised, DRF will automatically generate an appropriate HTTP response with the corresponding status code and error message.
+
+Example of using exceptions in DRF:
+```python
+from rest_framework.exceptions import NotFound, PermissionDenied
+from rest_framework.response import Response
+from rest_framework.views import APIView
 class ExampleView(APIView):
-    def get(self, request, format=None):
-        page = int(request.query_params.get('page', 1))
-        limit = int(request.query_params.get('limit', 10))
-        offset = (page - 1) * limit
-        data = ExampleModel.objects.all()[offset:offset+limit]
-        return Response(data)
+    def get(self, request, pk, format=None):
+        try:
+            example = ExampleModel.objects.get(pk=pk)
+        except ExampleModel.DoesNotExist:
+            raise NotFound("Example not found")
+
+        if not request.user.has_permission('view_example', example):
+            raise PermissionDenied("You do not have permission to view this example")
+
+        content = {
+            'status': 'request was permitted'
+        }
+        return Response(content)
 ```
+
+
+## Creating Custom Exceptions
+You can create custom exceptions in DRF by subclassing the `APIException` class. Here's an example of how to create a custom exception:
+```python
+from rest_framework.exceptions import APIException
+class CustomException(APIException):
+    status_code = 418  # HTTP status code for "I'm a teapot"
+    default_detail = 'This is a custom exception message.'
+    default_code = 'custom_exception'
+```
+You can then raise this custom exception in your views or serializers just like any other DRF exception

@@ -164,6 +164,9 @@ class ExampleView(APIView):
 ## Paginator in Django
 To implement pagination in Django REST Framework (DRF), you can use the built-in pagination classes provided by DRF. Pagination is useful when you have a large dataset and want to limit the number of items returned in a single response. DRF provides several pagination classes that you can use or customize according to your needs.Types of Pagination:
 
+> Note : Pagination is only performed automatically if you're using the generic views or viewset.Pagination can be turned off by setting the pagination class to None.
+
+
 
 There are two main types of pagination in DRF:
 

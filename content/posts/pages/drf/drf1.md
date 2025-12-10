@@ -325,6 +325,41 @@ class CommentSerializer(serializers.Serializer):
     email = serializers.EmailField()
     content = serializers.CharField()
 ```
+### Some Useful Built-in Validators
+- `UniqueValidator`: This validator checks that a field is unique across the entire queryset.
+- `UniqueTogetherValidator`: This validator checks that a set of fields is unique together across the
+entire queryset.
+
+Example:
+```python
+from rest_framework import serializers
+from rest_framework.validators import UniqueValidator
+from .models import Comment
+class CommentSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(
+        validators=[UniqueValidator(queryset=Comment.objects.all())]
+    )
+    class Meta:
+        model = Comment
+        fields = ['name', 'email', 'content']
+```
+
+```python
+from rest_framework import serializers
+from rest_framework.validators import UniqueTogetherValidator
+from .models import Comment
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['name', 'email', 'content']
+        validators = [
+            UniqueTogetherValidator(
+                queryset=Comment.objects.all(),
+                fields=['name', 'email']
+            )
+        ]
+```
+
 
 # 12. Partial update
 To validate data using a serializer, we typically need to provide all the required fields. However, if we want to update only specific fields, we can use the partial argument in the serializer. This allows us to validate only the fields that are included in the request.

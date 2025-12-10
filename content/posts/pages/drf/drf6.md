@@ -1,6 +1,6 @@
 ---
 title: "DRF - DAY 6: Generic Views"
-date: 2025-01-18
+date: 2025-01-29
 description: "Complete guide to Django REST Framework Generic Views, mixins, and concrete view classes."
 showToc: true
 categories: ["Django Rest Framework"]
@@ -11,7 +11,7 @@ images: ["/images/drf.png"]
 
 # Django REST Framework Generic Views - Complete Guide
 
-## 📚 Quick Reference
+##  Quick Reference
 
 | View Type | HTTP Methods | Purpose |
 |-----------|--------------|---------|
@@ -27,7 +27,7 @@ images: ["/images/drf.png"]
 
 ---
 
-## 🎯 What Are Generic Views?
+##  What Are Generic Views?
 
 Generic views are **pre-built view classes** in Django REST Framework that handle common patterns in web development and eliminate boilerplate code. They provide a consistent interface for:
 
@@ -308,7 +308,7 @@ class AuthorViewSet(ListModelMixin, CreateModelMixin, RetrieveModelMixin,
 
 ---
 
-## 🏗️ Concrete View Classes
+##  Concrete View Classes
 
 The following classes are the concrete generic views. If you're using generic views, this is normally the level you'll be working at unless you need heavily customized behavior.
 
@@ -589,7 +589,7 @@ class AuthorRetrieveUpdateDestroyView(RetrieveUpdateDestroyAPIView):
 
 ---
 
-## 💡 Pro Tips
+##  Pro Tips
 
 ### 1. **Dynamic Queryset Filtering**
 ```python

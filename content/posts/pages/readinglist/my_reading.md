@@ -33,7 +33,8 @@ images: ["/images/learn.jpg"]  # For social share
 
 ## What I Plan to Learn Next
 - [ ] Django Rest Framework (DRF) Deep Dive
-- [ ] Django ORM Deep Dive
+- [ ] React 19 new features
+- [ ] React and framermotion proper combination
 ---
 
 
