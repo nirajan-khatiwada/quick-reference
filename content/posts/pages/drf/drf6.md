@@ -11,21 +11,7 @@ images: ["/images/drf.png"]
 
 # Django REST Framework Generic Views - Complete Guide
 
-##  Quick Reference
 
-| View Type | HTTP Methods | Purpose |
-|-----------|--------------|---------|
-| `ListAPIView` | GET | List collection of objects |
-| `CreateAPIView` | POST | Create new object |
-| `RetrieveAPIView` | GET | Get single object by ID |
-| `UpdateAPIView` | PUT/PATCH | Update existing object |
-| `DestroyAPIView` | DELETE | Delete object |
-| `ListCreateAPIView` | GET, POST | List + Create |
-| `RetrieveUpdateAPIView` | GET, PUT, PATCH | Get + Update |
-| `RetrieveDestroyAPIView` | GET, DELETE | Get + Delete |
-| `RetrieveUpdateDestroyAPIView` | GET, PUT, PATCH, DELETE | Full CRUD |
-
----
 
 ##  What Are Generic Views?
 
@@ -63,11 +49,11 @@ graph TD
 
 ---
 
-## 🔧 Core Attributes of Generic Views
+##  Core Attributes of Generic Views
 
 ### Essential Attributes
-- **`queryset`** - The queryset that the view will operate on
-- **`serializer_class`** - The serializer class used to serialize and deserialize data
+- **`queryset`** - The queryset that should be used for returning objects from this view. Typically, you must either set this attribute, or override the `get_queryset()` method.
+- **`serializer_class`** - The serializer class that should be used for validating and deserializing input, and for serializing output. Typically, you must either set this attribute, or override the `get_serializer_class()` method.
 - **`lookup_field`** - The field used to look up objects in the database (default: `pk`)
 
 ### Example Setup
@@ -80,12 +66,12 @@ class AuthorListView(ListAPIView):
 
 ---
 
-## 🛠️ Base Methods of Generic Views (Most Used)
+##  Base Methods of Generic Views 
 
 ### `get_queryset()`
-**Returns the queryset that the view will operate on**
+Returns the queryset that should be used for list views, and that should be used as the base for lookups in detail views. Defaults to returning the queryset specified by the queryset attribute.
 
-Defaults to returning the queryset specified by the `queryset` attribute. This method should **always** be used rather than accessing `self.queryset` directly, as `self.queryset` gets evaluated only once, and those results are cached for all subsequent requests.
+This method should always be used rather than accessing self.queryset directly, as self.queryset gets evaluated only once, and those results are cached for all subsequent requests.
 
 ```python
 def get_queryset(self):
@@ -93,7 +79,7 @@ def get_queryset(self):
     return user.accounts.all()
 ```
 
-**⚠️ Important:** Always use `get_queryset()` instead of accessing `self.queryset` directly to avoid caching issues.
+** Important:** Always use `get_queryset()` instead of accessing `self.queryset` directly to avoid caching issues.
 
 ### `get_serializer_class()`
 **Returns the serializer class dynamically**
@@ -124,7 +110,7 @@ def get_object(self):
 ```
 
 
-## 🧩 Mixins in Django REST Framework (GenericAPIView)
+##  Mixins in Django REST Framework (GenericAPIView)
 
 Mixins are **reusable components** that can be used to add specific functionality to views. They allow you to combine different behaviors without having to create a new class for each combination.
 
@@ -651,7 +637,7 @@ class AuthorDetailView(RetrieveAPIView):
 ---
 
 
-## 🚨 Best Practices
+##  Best Practices
 
 ```mermaid
 graph LR
@@ -677,7 +663,7 @@ graph LR
 ```
 
 
-## 🔄 Real-World Use Cases
+##  Real-World Use Cases
 
 ```mermaid
 graph TD
@@ -761,7 +747,7 @@ class CartItemView(RetrieveUpdateDestroyAPIView):
 
 ---
 
-## ❓ FAQ
+##  FAQ
 
 **Q: When should I use mixins vs concrete views?**
 A: Use concrete views for standard operations. Use mixins when you need custom combinations or complex logic.
