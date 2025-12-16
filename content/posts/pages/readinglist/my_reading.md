@@ -29,10 +29,11 @@ images: ["/images/learn.jpg"]  # For social share
 - [x] Tanstack Query
 - [x] SQL
 
+
 ---
 
 ## What I Plan to Learn Next
-- [ ] Django Rest Framework (DRF) Deep Dive
+- [ ] Django Celery
 - [ ] React 19 new features
 - [ ] React and framermotion proper combination
 ---
