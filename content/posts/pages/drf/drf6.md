@@ -25,29 +25,6 @@ Generic views are **pre-built view classes** in Django REST Framework that handl
 
 These views help reduce repetitive code and provide standardized responses for common CRUD operations.
 
-```mermaid
-graph TD
-    A[Client Request] --> B{HTTP Method?}
-    B -->|GET /items/| C[ListAPIView]
-    B -->|POST /items/| D[CreateAPIView]
-    B -->|GET /items/1/| E[RetrieveAPIView]
-    B -->|PUT/PATCH /items/1/| F[UpdateAPIView]
-    B -->|DELETE /items/1/| G[DestroyAPIView]
-    
-    C --> H[Return List of Objects<br/>Status: 200 OK]
-    D --> I[Create & Return New Object<br/>Status: 201 Created]
-    E --> J[Return Single Object<br/>Status: 200 OK]
-    F --> K[Update & Return Object<br/>Status: 200 OK]
-    G --> L[Delete Object<br/>Status: 204 No Content]
-    
-    style C fill:#e1f5fe
-    style D fill:#e8f5e8
-    style E fill:#fff3e0
-    style F fill:#f3e5f5
-    style G fill:#ffebee
-```
-
----
 
 ##  Core Attributes of Generic Views
 
@@ -787,6 +764,7 @@ class AuthorListView(ListAPIView):
 ```
 
 Like this you can override any method in generic views to customize the behavior as per your requirements.
+
 
 
 
