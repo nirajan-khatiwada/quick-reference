@@ -1,0 +1,54 @@
+---
+title: "Sticky Scroll Animations with Framer Motion"
+slug: "sticky-scroll-animations"
+date: 2025-10-27
+description: "Combine CSS `position: sticky` with Framer Motion for advanced, pinned scroll effects and layout transitions."
+showToc: true
+weight: 16
+series: ["Framer Motion"]
+categories: ["Framer Motion", "React"]
+tags: ["Framer Motion", "React", "Animation", "Sticky", "CSS", "Frontend"]
+summary: "Learn how to effectively mix CSS sticky positioning with Framer Motion for powerful scrolling UIs."
+images: ["/images/framer-motion.png"]
+---
+
+## Scroll animation with position sticky
+
+Position sticky is combination of relative and fixed position . The position will be relative until it touched a root boundary, then it will be fixed until it reaches the boundary of its parent. This is used with framer motion to make more cooler animation instead of just using fixed position.
+
+What make sticky position interesting:
+
+- Fixed will be always out of document flow irrespective of its parent 
+
+But 
+
+- A sticky element behaves as relative until the scroll position reaches its defined threshold (its boundary). Once the scroll passes that point, it becomes fixed (appearing “stuck”) relative to its parent container. When the parent itself scrolls out of view, the sticky element reverts back to being relative again.
+
+```jsx
+import { Fragment } from "react";
+const App = () => {
+  return (
+    <Fragment>
+      <div className="h-screen"></div>
+
+      <div className="bg-red-500 h-screen relative">
+        <div className="h-20 bg-blue-500  fixed top-10 z-99">
+          I am a fixed Box
+        </div>
+
+    
+        <div className="h-20 bg-green-500  sticky">
+          I am a sticky Box
+        </div>
+      </div>
+
+      <div className="h-screen"></div>
+    </Fragment>
+  );
+};
+
+export default App;
+```
+
+
+> Note; See the link below for more understanding of position sticky `https://www.bilibili.com/video/BV1eLmRYMExD?spm_id_from=333.788.videopod.episodes&p=58`

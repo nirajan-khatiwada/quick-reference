@@ -1,0 +1,212 @@
+---
+title: "Mastering Motion Values, Spring & useTransform in Framer Motion"
+slug: "motion-values-spring-transform"
+date: 2025-10-14
+description: "Deep dive into Framer Motion values: useMotionValue, useSpring, and useTransform for performant, dynamic animations based on user input."
+showToc: true
+weight: 3
+series: ["Framer Motion"]
+categories: ["Framer Motion", "React"]
+tags: ["Framer Motion", "React", "Animation", "Motion Values", "Hooks", "Spring Animation"]
+summary: "Learn to use `useMotionValue`, `useSpring`, and `useTransform` to create high-performance interactive animations without re-renders."
+images: ["/images/framer-motion.png"]
+---
+
+## Motion Value
+Instead on only using animation that load its initial state and then animate to its final state based on timing defined in transition property we can also use motion value to animate based on user interaction like scroll, mouse move or input value .
+
+Some of the key knowledge about motion value are:
+- When motion value changes it only re-renders the parts of the component that use that motion value not the entire component.
+- motion value can be used only winthin motion component inside style prop.
+- motion value have two important methods to update its value.
+  - set() : to set the value of motion value
+  -get() : to get the current value of motion value
+- No transition is applied when motion value is updated using set method.
+
+For example given below while the scale motion value is updated using set method no transition is applied even if we define transition property.
+
+
+Example of using motion value to scale object based on user input range value.
+```jsx
+import React, { useState } from "react";
+import { motion, useMotionValue } from "framer-motion";
+const App = () => {
+  const scale = useMotionValue(1);
+  const onChange = (e) => {
+    scale.set(Number(e.target.value));
+  };
+
+    return (
+        <div className="bg-black text-white h-screen w-screen items-center justify-center flex flex-col gap-10">
+        <motion.div
+            style={{ scale: scale }}
+            className="bg-amber-950 w-36 h-36 rounded-xl font-sans overflow-hidden"
+        >Hi from Nepal</motion.div>
+        <input
+            type="range"
+            min={1}
+            max={5}
+            step={0.1}
+            defaultValue={1}
+            onChange={onChange}
+            className="w-1/3"
+        />
+        </div>
+    );
+};
+```
+
+## Spring Motion Value
+Since motion value does not apply any transition when its value is updated using set method we can use spring motion value to apply spring transition when motion value is updated using set method.
+```jsx
+import React, { useState } from "react";
+import { motion, useSpring, useMotionValue } from "framer-motion";
+const App =()=>{
+    const scale = useSpring(1,{
+        //can define spring properties here
+        stiffness: 200,
+        damping: 20,
+        mass: 1,
+    })
+    const onChange = (e) => {
+        scale.set(Number(e.target.value));
+    };
+    return (
+        <div className="bg-black text-white h-screen w-screen items-center justify-center flex flex-col gap-10">
+        <motion.div
+            style={{ scale: scale }}
+            className="bg-amber-950 w-36 h-36 rounded-xl font-sans overflow-hidden"
+        >Hi from Nepal</motion.div>
+        <input
+            type="range"
+            min={1}
+            max={5}
+            step={0.1}
+            defaultValue={1}
+            onChange={onChange}
+            className="w-1/3"
+        />
+        </div>
+    );
+}
+```
+
+> Note transition property defined in motion coponent is only limited to animation defined in animate prop and interactions like hover, tap etc. It does not apply to motion value updated using set method.
+
+
+## useTransform Hook
+useTransform hook is used to create a new motion value by transforming an existing motion value. It takes three arguments: the source motion value, an input range, and an output range. The input range defines the range of values for the source motion value, and the output range defines the corresponding range of values for the new motion value.
+
+for example
+```useTransform(source,[1,5,10],[10,50,100])```
+This will create a new motion value that maps the source motion value from the range 1 to 10 to the range 10 to 100. So when the source motion value is 1, the new motion value will be 10, when the source motion value is 5, the new motion value will be 50, and when the source motion value is 10, the new motion value will be 100. Values in between will be interpolated linearly.
+
+
+Example of using transform hook to rotate and scale an object based on user input range value.
+```jsx
+import React, { useState } from "react";
+import { motion, useMotionValue, useTransform } from "framer-motion";
+const App = () => {
+  const scale = useMotionValue(1);
+  const rotate = useTransform(scale, [1, 5], [0, 360]);
+  const onChange = (e) => {
+    scale.set(Number(e.target.value));
+  };
+
+  return (
+    <div className="bg-black text-white h-screen w-screen items-center justify-center flex flex-col gap-10">
+      <motion.div
+        style={{ scale: scale, rotate: rotate }}
+        className="bg-amber-950 w-36 h-36 rounded-xl font-sans overflow-hidden"
+      >
+        Hi from Nepal
+      </motion.div>
+      <input
+        type="range"
+        min={1}
+        max={5}
+        step={0.1}
+        defaultValue={1}
+        onChange={onChange}
+        className="w-1/3"
+      />
+    </div>
+  );
+};
+```
+
+## Dragging
+Framermotion support dragging of motion component using **drag** prop. By default the component can be dragged in both x and y axis but we can also restrict the dragging to only one axis using **drag="x"** or **drag="y"**.
+
+**How it behave in default**
+When the component is dragged it stays in the position where it is released.
+
+**dragConstraints** prop is used to define the area in which the component can be dragged. It takes an object with top, bottom, left, and right properties that define the distance the component can be dragged in each direction.
+
+
+
+
+Example of dragging component with dragConstraints prop.
+```jsx
+import React from "react";
+import { motion } from "framer-motion";
+const App = () => {
+  return (
+    <div className="bg-black text-white h-screen w-screen items-center justify-center flex">
+      <motion.div
+        drag
+        dragConstraints={{
+          left: -100,
+          right: 100,
+          top: -100,
+          bottom: 100,
+        }}
+        className="bg-amber-950 w-36 h-36 rounded-xl font-sans overflow-hidden flex items-center justify-center"
+      >
+        Drag Me
+      </motion.div>
+    </div>
+  );
+};
+export default App;
+```
+This will allow the component to be dragged within a 100px radius from its original position.
+
+
+## Motion value used in dragging 
+When a component is dragged, Framer Motion automatically creates motion values to track its position. Alternatively, we can define our own motion values like x and y using the useMotionValue hook and pass them to the component’s style. Framer Motion will then recognize and update these values as the component is dragged instead of creating new ones.
+
+Example of using motion value to get the current position of the component while dragging.
+```jsx
+import React from "react";
+import { motion, useMotionValue } from "framer-motion";
+const App = () => {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  return (
+    <div className="bg-black text-white h-screen w-screen items-center justify-center flex flex-col gap-10">
+      <motion.div
+        drag
+        style={{ x: x, y: y }}
+        className="bg-amber-950 w-36 h-36 rounded-xl font-sans overflow-hidden flex items-center justify-center"
+      >
+        Drag Me
+      </motion.div>
+    
+    </div>
+  );
+};
+export default App;
+```
+
+
+### Conclusion
+In this section we have discussed about motionvalue using useMotionValue and useSpring hook where use motion value is used to create a motion value and useSpring is used to add spring animation to motion value.
+
+ we also discuss about useTransform hook which is used to create a new motion by mapping an existing motion value to a new range of values. we also discuss about drag and dragConstraints prop which is used to make a component draggable and dragConstraints is used to define the area in which the component can be dragged.
+
+ We also understand the transition property defined in motion component is only limited to animation defined in animate prop and interactions like hover, tap etc. It does not apply to motion value updated using set method.although we cant define transition for motion value updated using set method but we can add spring animation to motion value using useSpring hook.
+
+ we also understand we should use motion value only in style prop not in other prop like animation
+
+This section describe based on user input how can we animate an object.

@@ -1,0 +1,223 @@
+---
+title: "Scroll Driven Animations with useScroll & useTransform"
+slug: "scroll-driven-animations-usescroll"
+date: 2025-10-23
+description: "Master scroll-driven animations in React. Learn `useScroll`, `useTransform`, and `useMotionValueEvent` to link animation progress to scroll position."
+showToc: true
+weight: 12
+series: ["Framer Motion"]
+categories: ["Framer Motion", "React"]
+tags: ["Framer Motion", "React", "Animation", "Scroll Animation", "Hooks", "Parallax"]
+summary: "Create immersive scroll-driven experiences by transforming motion values based on scroll position."
+images: ["/images/framer-motion.png"]
+---
+
+## Scroll Driven Animations With Framer Motion
+Scroll-driven animations that with animate based on the scroll position . 
+
+Whats the difference between scroll-driven animations and scroll-triggered animations? Scroll-triggered animations are animations that are triggered when a specific element comes into view, while scroll-driven animations are animations that are animate based on the scroll
+
+
+## `useScroll` Hook
+useScroll is a hook that provides information about the scroll position of a page or a specific element. It returns an object containing four motion values:
+scrollX : A motion value representing the horizontal scroll position in pixels.
+scrollY : A motion value representing the vertical scroll position in pixels.
+scrollXProgress : A motion value representing the horizontal scroll progress as a value between 0 and 1.
+scrollYProgress : A motion value representing the vertical scroll progress as a value between 0 and
+
+## `useMotionValueEvent` Hook
+Motion values can only be used in the style prop of motion components. When a motion value changes, the change is applied directly to the element's style, but we cannot see what the actual value is during the change process. This is because:
+- To see changes in React, the page must re-render
+- Motion values do not cause component re-renders
+- Instead, they only update their internal value and update the style of the element directly
+This design choice allows for smooth, performant animations without triggering React's reconciliation process.
+
+
+To observe changes in motion values, we can use the useMotionValueEvent hook. This hook allows us to listen to changes in a motion value and execute a callback function whenever the motion value changes.
+
+It takes two arguments:
+- The motion value we want to listen to.
+- The callback function that will be executed whenever the motion value changes. The callback function receives the new value of the motion value as its argument.
+
+
+Example of using useMotionValueEvent and useScroll to log the scroll position and scroll progress to the console.
+```jsx
+import React from "react";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+const App = () => {
+  const { scrollY, scrollYProgress } = useScroll();
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    console.log("Page scroll Y:", latest); // THis will log the scroll position in pixels
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    console.log("Page scroll Y progress:", latest); // This will log the scroll progress as a value between 0 and 1
+  });
+
+  return (
+    <div className="h-[200vh]">
+      <motion.div className="fixed top-0 left-0 w-full p-4 bg-blue-500 text-white">
+        Scroll down to see the effect
+      </motion.div>
+    </div>
+  );
+};
+export default App;
+```
+
+
+
+
+
+
+## Tracking Position of specific Element
+By default `useScroll` tracks the scroll position of the entire page. However, we can also track the scroll position of a specific element by passing a ref to that element as an argument to the `useScroll` hook.Such as consider we have a overflowing div and we want to track the scroll position of that div as:
+- create a ref using `useRef` hook and assign it to the div
+```jsx
+const ref = useRef(null);
+```
+
+- Pass the ref to the `useScroll` hook as:
+```jsx
+const { scrollYProgress } = useScroll({ container: ref });
+```
+
+- Finally, assign the ref to the div as:
+```jsx
+<div ref={ref} className="h-96 overflow-y-scroll">
+<div className="h-[200vh]"> ... </div>
+
+</div>
+```
+
+Here the scrollYProgress motion value will now represent the scroll progress of the specific div instead of the entire page.
+
+
+
+
+Simple example:
+```jsx
+import { useScroll, useTransform, motion, useSpring } from "framer-motion";
+import React from "react";
+
+const App = () => {
+  const { scrollYProgress } = useScroll();
+
+  const ref = React.useRef(null);
+  const { scrollXProgress: containerProgress } = useScroll({
+    container: ref,
+  });
+  const widthValue = useSpring(
+    useTransform(scrollYProgress, [0, 1], ["0%", "100%"])
+  );
+  const containerWidthValue = useTransform(
+    containerProgress,
+    [0, 1],
+    ["0%", "100%"]
+  );
+
+  return (
+    <div className="h-[200vh]">
+      <motion.div
+        className="fixed top-0 left-0 w-full h-2 bg-red-700"
+        style={{
+          width: widthValue,
+        }}
+      ></motion.div>
+
+      <motion.div
+        className="fixed top-10 left-0 w-full h-2 bg-blue-700"
+        style={{
+          width: containerWidthValue,
+        }}
+      ></motion.div>
+
+      <div
+        className="overflow-x-scroll w-full h-32 flex bg-red-200 mt-20 gap-x-1.5"
+        ref={ref}
+      >
+        {[0, 1, 2, 3, 4].map((item) => {
+          return (
+            <div
+              key={item}
+              className="h-full  w-[40vw] flex-shrink-0 bg-amber-400"
+            >
+              Item {item + 1}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default App;
+```
+
+> Note: If we dont define container then it will track the scroll position of window by default.
+
+
+
+
+## `target` option in `useScroll`
+The target option in useScroll takes the ref of the element we want to track. It returns the scroll position of that element, where the position is calculated using the offset option.
+
+*** Offset Option in useScroll Hook ***
+ The offset option allows us to define how the scroll progress is calculated based on the position of the target element and the container . It takes an array of two strings as:
+ - `offset: ["{target} {container}" , "{target} {container}"]`
+
+The pictorial representation of offset values is as:
+![offset values](/images/framer/image.png)
+
+Here
+
+- container : The visible portion of the document
+- target    : The element whose scroll position we want to track.
+- full document: The entire document, including content outside the viewport. 
+
+Then 
+
+- `offset:["end end", "start start"]` means 
+when the end of the target element align with the end of the container then scroll progress is 0 
+when the start of the target element align with the start of the container then scroll progress is 1
+- `offset:["start end", "end start"]` means 
+when the start of the target element align with the end of the container then scroll progress is 0 
+when the end of the target element align with the start of the container then scroll progress is 1
+
+
+Example:
+```jsx
+import { useScroll, useTransform, motion } from "framer-motion";
+import React from "react";
+const App = () => {
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
+
+  const widthValue = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  return (
+    <div className="h-[200vh]">
+      <motion.div
+        className="fixed top-0 left-0 w-full h-2 bg-red-700"
+        style={{
+          width: widthValue,
+        }}
+      ></motion.div>
+
+      <div className="h-[150vh]"></div>
+
+      <div
+        ref={ref}
+        className="w-[300px] h-[300px] bg-blue-500 mx-auto"
+      ></div>
+    </div>
+  );
+};
+export default App;
+```
+
+

@@ -1,0 +1,27 @@
+---
+title: "Framer Motion Hooks Cheat Sheet"
+slug: "framer-motion-hooks-recap"
+date: 2025-10-24
+description: "A quick reference guide to essential Framer Motion hooks: usage, return values, and common use cases."
+showToc: true
+weight: 13
+series: ["Framer Motion"]
+categories: ["Framer Motion", "React"]
+tags: ["Framer Motion", "React", "Animation", "Hooks", "Cheat Sheet", "Reference"]
+summary: "The ultimate cheat sheet for Framer Motion hooks. Quickly find the right hook for your animation needs."
+images: ["/images/framer-motion.png"]
+---
+
+## Quick Recap
+
+| Hook               |  Returns                     | Usage With                |  Usage                                                                    |  
+|--------------------|------------------------------|---------------------------|---------------------------------------------------------------------------|
+| useMotionValue     | Motion Value                 | style prop                | To Dynamically apply animation based on user interaction like userInput   |
+| useSpring          |  Motion Value                | style prop                | To create a motion value with spring transition                          |
+| useTransform       | Transformed Motion Value     | style prop                | To create a new motion value by transforming an existing motion value     |
+| useState           | React State                  | animate prop              | To create a state variable to toggle between different animation states   |
+| useInView          | Boolean Value                | animate prop/js logic     | To trigger animation or load content when an element comes into view      |
+| useMotionValueEvent| N/A                          | Motion Value              | To listen to changes in a motion value and execute a callback function    |
+| useScroll          | Motion values of scroll pos  | useMotionValueEvent,style,useTransform  | To create scroll-driven animations based on the scroll position           |
+
+

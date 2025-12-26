@@ -11,6 +11,11 @@ buildFuture = false
 buildExpired = false
 ignoreLogs = ['warning-goldmark-raw-html']
 
+[taxonomies]
+    category = "categories"
+    tag = "tags"
+    series = "series"
+
 
 
 [outputs]
@@ -112,25 +117,20 @@ ignoreLogs = ['warning-goldmark-raw-html']
   """
 
 [sitemap]
-  changefreq = "monthly"
+  changefreq = "daily"
   priority = 0.5
-
-[[menu.main]]
-  identifier = "categories"
-  name = "Categories"
-  url = "/categories/"
-  weight = 1
-
-[[menu.main]]
-  identifier = "tags"
-  name = "Tags"
-  url = "/tags/"
-  weight = 2
 
 [[menu.main]]
   name = "Search"
   url = "/search"
-  weight = 10
+  weight = 2
+
+[[menu.main]]
+  name = "Series"
+  url = "/series"
+  weight = 1
+
+
 
 [markup.goldmark.renderer]
   unsafe = true

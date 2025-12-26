@@ -1,0 +1,146 @@
+---
+title: "SQL DML Commands: Insert, Update & Delete"
+slug: "sql-dml-commands-guide"
+date: 2025-01-20
+description: "Comprehensive guide to SQL Data Manipulation Language (DML). Master INSERT, UPDATE, and DELETE operations for efficient data handling."
+showToc: true
+weight: 3
+series: ["DBMS"]
+categories: ["DBMS", "SQL"]
+tags: ["DML", "INSERT", "UPDATE", "DELETE", "SQL"]
+summary: "A complete reference for DML commands. Learn how to safely Insert, Update, and Delete records in your relational database."
+images: ["/images/dbms1.jpg"]
+---
+
+# DML Commands Reference Guide
+
+## What are DML Commands?
+
+**DML (Data Manipulation Language)** commands are SQL statements used to manipulate data within database tables. The three primary DML commands are INSERT, UPDATE, and DELETE.
+
+---
+
+## 1. INSERT Command
+
+The INSERT command is used to add new records (rows) to a table.
+
+### Syntax Variations:
+
+#### Basic INSERT (All Columns)
+```sql
+INSERT INTO table_name VALUES (value1, value2, value3, ...);
+```
+
+#### INSERT with Specific Columns
+```sql
+INSERT INTO table_name (column1, column2, ...) VALUES (value1, value2, ...);
+```
+
+#### Multiple Row INSERT
+```sql
+INSERT INTO table_name VALUES 
+    (value1, value2, value3),
+    (value4, value5, value6),
+    (value7, value8, value9);
+```
+
+#### Multiple Row INSERT with Specific Columns
+```sql
+INSERT INTO table_name (column1, column2) VALUES 
+    (value1, value2),
+    (value3, value4),
+    (value5, value6);
+```
+
+### Examples:
+
+```sql
+-- Example 1: Insert into Students table (all columns)
+INSERT INTO Students VALUES (1, 'John Doe', 'Computer Science', 3.5);
+
+-- Example 2: Insert with specific columns
+INSERT INTO Students (student_id, name, major) VALUES (2, 'Jane Smith', 'Mathematics');
+
+-- Example 3: Multiple row insert
+INSERT INTO Students VALUES 
+    (3, 'Mike Johnson', 'Physics', 3.2),
+    (4, 'Sarah Wilson', 'Chemistry', 3.8),
+    (5, 'David Brown', 'Biology', 3.6);
+
+-- Example 4: Multiple rows with specific columns
+INSERT INTO Students (student_id, name, major) VALUES 
+    (6, 'Emily Davis', 'History'),
+    (7, 'Robert Taylor', 'English'),
+    (8, 'Lisa Anderson', 'Art');
+```
+
+---
+
+## 2. UPDATE Command
+
+The UPDATE command is used to modify existing records in a table.
+
+### Syntax:
+
+#### Update All Rows
+```sql
+UPDATE table_name SET column1 = value1, column2 = value2, ...;
+```
+
+#### Update with Condition (Recommended)
+```sql
+UPDATE table_name SET column1 = value1, column2 = value2, ... WHERE condition;
+```
+
+### Examples:
+
+```sql
+-- Example 1: Update all students' GPA (dangerous - affects all rows)
+UPDATE Students SET gpa = 3.0;
+
+-- Example 2: Update specific student's information
+UPDATE Students SET major = 'Computer Engineering', gpa = 3.7 WHERE student_id = 1;
+
+-- Example 3: Update multiple students with condition
+UPDATE Students SET gpa = gpa + 0.1 WHERE major = 'Computer Science';
+
+-- Example 4: Update based on multiple conditions
+UPDATE Students SET gpa = 4.0 WHERE name = 'Jane Smith' AND major = 'Mathematics';
+```
+
+---
+
+## 3. DELETE Command
+
+The DELETE command is used to remove records from a table.
+
+### Syntax:
+
+#### Delete All Rows (Dangerous)
+```sql
+DELETE FROM table_name;
+```
+
+#### Delete with Condition (Recommended)
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+### Examples:
+
+```sql
+-- Example 1: Delete all records (dangerous - removes all data)
+DELETE FROM Students;
+
+-- Example 2: Delete specific student
+DELETE FROM Students WHERE student_id = 5;
+
+-- Example 3: Delete students with condition
+DELETE FROM Students WHERE gpa < 2.0;
+
+-- Example 4: Delete with multiple conditions
+DELETE FROM Students WHERE major = 'Physics' AND gpa < 3.0;
+```
+
+---
+

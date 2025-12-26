@@ -1,0 +1,377 @@
+---
+title: "Framer Motion Variants & Staggering Children"
+slug: "variants-and-staggering-children"
+date: 2025-10-17
+description: "Master variants in Framer Motion for clean, reusable animation code and orchestrating complex staggered child animations."
+showToc: true
+weight: 6
+series: ["Framer Motion"]
+categories: ["Framer Motion", "React"]
+tags: ["Framer Motion", "React", "Animation", "Variants", "Stagger", "Orchestration"]
+summary: "Use Variants to organize animation states and effortlessly orchestrate complex staggered animations across component trees."
+images: ["/images/framer-motion.png"]
+---
+
+## Variants
+Usage of variants are:
+### Variants for managing multiple animation states
+ Instead of defining the animation properties directly on the motion component, we can define them in a variants object and then reference them using the `variants` prop.
+
+consider the following example where we have a button which when clicked will toggle the state of a card between open and closed states.
+
+```jsx
+import React from "react";
+import { motion } from "framer-motion";
+const cardVariants = {
+  open: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  
+  },
+  closed: {
+    opacity: 0,
+    scale: 0.5,
+    y: 100,
+   
+  },
+};
+
+const App = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div>
+      <motion.div
+        className="w-2/5 mx-auto mt-20 p-10 border border-gray-300 rounded-lg shadow-lg"
+        variants={cardVariants}
+        initial="closed"
+        animate="open"
+        exit="closed"
+      >
+        <p>THis is a card</p>
+      </motion.div>
+
+      <button
+        className="bg-blue-500 text-white px-4 w-2/5 py-2 rounded-lg mt-10 mx-auto block"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        Toggle Card
+      </button>
+    </div>
+  );
+};
+```
+
+This is equivalent to
+```jsx
+import React from "react";
+import { motion } from "framer-motion";
+const App = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div>
+      <motion.div
+        className="w-2/5 mx-auto mt-20 p-10 border border-gray-300 rounded-lg shadow-lg"
+        initial={{
+          opacity: 0,
+          scale: 0.5,
+          y: 100,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          y: 0,
+        }}
+        exit={{
+          opacity: 0,
+          scale: 0.5,
+          y: 100,
+        }}
+      >
+        <p>THis is a card</p>
+      </motion.div>
+
+      <button
+        className="bg-blue-500 text-white px-4 w-2/5 py-2 rounded-lg mt-10 mx-auto block"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        Toggle Card
+      </button>
+    </div>
+  );
+};
+```
+
+## Inheritance property of variants
+The variants defined on a parent motion component are automatically inherited by all its child motion components. This allows us to orchestrate complex animations by defining the animation states on the parent component and then referencing them in the child components.
+
+for example:We will create a card component which will have a title and a description and we will animate the card component when it is mounted and unmounted.
+
+```jsx
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+const cardVariants = {
+  open: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+  },
+  closed: {
+    opacity: 0,
+    scale: 0.5,
+    y: 100,
+  },
+};
+
+const titleVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.2 },
+  },
+  closed: {
+    opacity: 0,
+    y: -20,
+  },
+};
+
+const descriptionVariants = {
+  open: {
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.4 },
+  },
+  closed: {
+    opacity: 0,
+    y: -20,
+  },
+};
+
+const App = () => {
+  const [isOpen, setIsOpen] = React.useState(true);
+  return (
+    <div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="w-2/5 mx-auto mt-20 p-10 border border-gray-300 rounded-lg shadow-lg"
+            variants={cardVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+          >
+            <motion.h2
+              className="text-2xl font-bold mb-4"
+              variants={titleVariants}
+            >
+              Card Title
+            </motion.h2>
+            <motion.p className="text-gray-600" variants={descriptionVariants}>
+              This is a description of the card.
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <button
+        className="bg-blue-500 text-white px-4 w-2/5 py-2 rounded-lg mt-10 mx-auto block"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        Toggle Card
+      </button>
+    </div>
+  );
+};
+```
+Although we have not explicitly defined initial, animate, or exit props for the title and description components, they still animate. This happens because they inherit these animation states from the parent motion component, and the variants applied to them determine how they respond to those states.
+
+
+and this code is equivalent to
+
+```jsx
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+
+const App = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  return (
+    <div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="w-2/5 mx-auto mt-20 p-10 border border-gray-300 rounded-lg shadow-lg"
+            initial={{
+              opacity: 0,
+              scale: 0.5,
+              y: 100,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+              y: 0,
+            }}
+            exit={{
+              opacity: 0,
+              scale: 0.5,
+              y: 100,
+            }}
+          >
+            <motion.h2
+              className="text-2xl font-bold mb-4"
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.2 },
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
+            >
+              Card Title
+            </motion.h2>
+            <motion.p
+              className="text-gray-600"
+              initial={{
+                opacity: 0,
+                y: -20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: { delay: 0.4 },
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
+            >
+              This is a description of the card.
+            </motion.p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <button
+        className="bg-blue-500 text-white px-4 w-2/5 py-2 rounded-lg mt-10 mx-auto block"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        Toggle Card
+      </button>
+    </div>
+  );
+};
+```
+### Hearts of variants - Staggering children animations
+WHen we normally define a animation on a parent and child component, both the animations will start at the same time. But if we want to stagger the animations of the child components, we can use the `staggerChildren` property of the `transition` object in the parent component's variants.for example:`every child component will start its animation 0.2 seconds after the previous one`. This can be done by delay property of transition object in the child component variants or by using staggerChildren property of transition object in the parent component .
+
+property of transition object in the parent component .
+- `staggerChildren`: This property defines the time delay between the start of each child's animation. For example, if you set `staggerChildren: 0.2`, each child will start its animation 0.2 seconds after the previous one.
+- `staggerDirection`: This property controls the order in which the children's animations are staggered. A value of `1` means the animations will start from the first child to the last, while a value of `-1` means they will start from the last child to the first.
+
+- `when`: This property determines when the parent's animation should occur in relation to its children's animations. It can take two values:
+  - `"beforeChildren"`: The parent's animation will complete before the children's animations begin.
+  - `"afterChildren"`: The parent's animation will start after all the children's animations have completed.
+
+  > key : The main thing is finding a parent that is also a motion component so that it can control the animation flow of its children . we can define the transition property in parent component to control the animation of its children as :
+```jsx
+variants = {
+  open: {
+    opacity: 1,
+    scale: 1,
+    y: 0,
+    transition: {
+      when: "beforeChildren", // Parent animation happens before children
+      staggerChildren: 0.2, // Stagger children animations by 0.2 seconds
+      staggerDirection: 1, // Animate children from first to last
+    },
+  },
+
+  closed: {
+    opacity: 0,
+    scale: 0.5,
+    y: 100,
+    transition: {
+      when: "afterChildren", // Parent animation happens after children
+      staggerChildren: 0.2, // Stagger children animations by 0.2 seconds
+      staggerDirection: -1, // Animate children from last to first
+    },
+  },
+};
+```
+
+for open variant the parent component will animate first and then the child components will animate one by one with a delay of 0.2 seconds between each animation from first to last child component from last to first child component.
+
+but for closed variant the child components will animate first and then the parent component will animate after all the child components have animated with a delay of 0.2 seconds between each animation from last to first child component.
+
+
+> See ChatGPT to how to hover a child component when parent component is hovered using variants.
+
+
+## Animation Based on state variable
+  Normally we use the `animate` prop to define the final state of the component when it is mounted. But we can also use a state variable to control the animation state of the component. For example, we can use a boolean state variable to toggle between two animation states.
+```jsx
+import React from "react";
+import { motion } from "framer-motion";
+const App = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  return (
+    <div>
+      <motion.div
+        className="w-2/5 mx-auto mt-20 p-10 border border-gray-300 rounded-lg shadow-lg"
+        initial="closed"
+        variants={{
+          open: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          },
+          closed: {
+            opacity: 0,
+            scale: 0.5,
+            y: 100,
+          },
+        }}
+        animate={isOpen ? "open" : "closed"}
+        variants={{
+          open: {
+            opacity: 1,
+            scale: 1,
+            y: 0,
+          },
+          closed: {
+            opacity: 0,
+            scale: 0.5,
+            y: 100,
+          },
+        }}
+      >
+        <p>THis is a card</p>
+      </motion.div>
+
+      <button
+        className="bg-blue-500 text-white px-4 w-2/5 py-2 rounded-lg mt-10 mx-auto block"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        Toggle Card
+      </button>
+    </div>
+  );
+};
+```
+How it work?
+When a value of animation change it animate from current state to new state.In here when we click on toggle button the value of isOpen state variable change from false to true and vice versa and when the value of isOpen change the animate prop will change from "closed" to "open" and vice versa and when the value of animate prop change the component will animate from current state to new state.
+
+
+
+
+
+> Note: Motion variable only work inside the style prop of motion component.But state variable can be used anywhere in the motion component.
+
+
+

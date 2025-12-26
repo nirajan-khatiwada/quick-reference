@@ -1,13 +1,15 @@
-
 ---
-title: "How to Create Content for Hugo"
+title: "How to Create Content for Hugo: The Complete Markdown Guide"
+slug: "hugo-markdown-content-guide"
 date: 2024-10-18
-description: "A simple guide on how to create content for Hugo using Markdown."
-ShowToc: true
-categories: ["Hugo"]
-tags: ["Hugo", "Markdown", "Guide"]
-summary: "A tutorial on creating content with Markdown in Hugo."
-images: ["/images/hugo.webp"]  # For social share
+description: "A comprehensive guide on creating and formatting content for Hugo sites using Markdown, covering front matter, syntax, and shortcodes."
+showToc: true
+weight: 1
+series: ["Hugo"]
+categories: ["Hugo", "Web Development"]
+tags: ["Hugo", "Markdown", "Content Creation", "Static Site Generator", "Guide"]
+summary: "Master content creation in Hugo. Learn how to use Markdown to structure, format, and enhance your static site pages."
+images: ["/images/hugo.webp"]
 ---
 
 # How to Create Content for Hugo Using Markdown
