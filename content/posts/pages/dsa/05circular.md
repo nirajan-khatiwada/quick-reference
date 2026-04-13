@@ -1,15 +1,15 @@
 ---
-title: "Circular Linked Lists in Python: Implementation Guide"
-slug: "circular-linked-lists-python"
-date: 2024-10-23
-description: "Master Circular Linked Lists in Python. Learn the ring topology, circular traversal, and edge cases for insertion/deletion."
+title: "Circular Linked List (CLL) | DSA Series Day 5"
+slug: "circular-linked-list-python-dsa"
+date: 2026-04-13
+description: "Learn circular linked lists in Python, including structure, traversal, and insertion and deletion operations."
 showToc: true
-weight: 4
+weight: 5
 series: ["DSA"]
-categories: ["DSA", "Python"]
-tags: ["Linked List", "Circular Linked List", "Data Structures", "Python"]
-summary: "Implementing Circular Linked Lists in Python: handling the circular reference and avoiding infinite loops."
-images: ["/images/cll.png"]
+categories: ["DSA"]
+tags: ["DSA", "Python", "Circular Linked List", "Linked List", "Data Structures"]
+summary: "A complete guide to circular linked lists covering circular traversal, structure, and core operations."
+images: ["/images/dsa-python.png"]
 ---
 
 A **Circular Linked List (CLL)** is a linked list where the **last node points back to the first node (head)** instead of pointing to `NULL`.  

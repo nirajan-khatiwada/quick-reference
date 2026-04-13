@@ -1,15 +1,4 @@
----
-title: "Recursion in Programming: Concepts & Examples"
-slug: "recursion-programming"
-date: 2025-12-29
-description: "Learn the fundamental concepts of recursion in programming, with examples, use cases, and common pitfalls."
-showToc: true
-weight: 7
-series: ["DSA",]
-categories: ["DSA", "Programming"]
-tags: ["Recursion", "Programming", "Algorithm", "Data Structures"]
-summary: "Comprehensive guide to recursion including basic concept, base cases, recursive calls, example implementations, and tips."
----
+
 
 ## 1. Introduction to Recursion
 
@@ -253,5 +242,51 @@ fib(2) fib(1) fib(1) fib(0)
 ## 16. Conclusion
 
 Recursion is a powerful technique for solving problems that can be divided into smaller subproblems. Proper base cases, optimized recursion, and understanding stack behavior are essential for efficient recursive solutions.
+
+---
+
+
+## 2. Binary Search
+
+### Concept
+
+* Binary search works on **sorted lists**.
+* Divides the list into halves repeatedly to find the key.
+* More efficient than linear search for large lists.
+
+### Code
+
+```python
+def binary_search(lists, first, last, key):
+    # Step 1: Base case - if start index is greater than end
+    if first > last:
+        return False
+
+    # Step 2: Find middle element
+    m = (first + last) // 2
+
+    # Step 3: Check if middle element is the key
+    if lists[m] == key:
+        return True
+    else:
+        # Step 4: If middle element is less than key, search right half
+        if lists[m] < key:
+            return binary_search(lists, m+1, last, key)
+        # Step 5: If middle element is greater than key, search left half
+        elif lists[m] > key:
+            return binary_search(lists, first, m-1, key)
+```
+
+### Explanation
+
+1. Calculate the middle index `m`.
+2. Compare `lists[m]` with `key`.
+3. If equal, return `True`.
+4. If `lists[m] < key`, search the right half.
+5. If `lists[m] > key`, search the left half.
+6. Repeat until the key is found or the sublist is empty.
+
+**Time Complexity:** O(log n)
+**Space Complexity:** O(log n) due to recursion
 
 ---

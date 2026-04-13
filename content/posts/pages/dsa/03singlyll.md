@@ -1,15 +1,15 @@
 ---
-title: "Singly Linked Lists in Python: Implementation & Operations"
-slug: "singly-linked-lists-python"
-date: 2024-10-21
-description: "Learn how to implement Singly Linked Lists in Python. Covers insertion, deletion, reversal, and traversal with code."
+title: "Singly Linked List (SLL) | DSA Series Day 3"
+slug: "singly-linked-list-python-dsa"
+date: 2026-04-13
+description: "Learn the fundamentals of singly linked lists including structure, operations, and implementation in Python for DSA."
 showToc: true
-weight: 2
+weight: 3
 series: ["DSA"]
-categories: ["DSA", "Python"]
-tags: ["Linked List", "Singly Linked List", "Data Structures", "Python"]
-summary: "Step-by-step implementation of Singly Linked Lists in Python, including standard operations and interview questions."
-images: ["/images/linked-list.png"]
+categories: ["DSA"]
+tags: ["DSA", "Python", "Linked List", "Singly Linked List", "Data Structures"]
+summary: "A complete guide to singly linked lists covering nodes, insertion, deletion, traversal, and searching operations."
+images: ["/images/dsa-python.png"]
 ---
 
 A **Singly Linked List (SLL)** is a fundamental linear data structure where elements are stored in **nodes**, and each node points to the **next node** in the sequence. Unlike Python lists (dynamic arrays), Python does **not** provide a built-in linked list because lists already cover most use cases efficiently.
@@ -102,18 +102,17 @@ class LinkedList:
 ## Basic Linked List Operations
 
 ### Common Operations
-
-| Operation         | Description             | Time Complexity |
-| ----------------- | ----------------------- | --------------- |
-| get_head()        | Returns head node       | O(1)            |
-| is_empty()        | Checks if list is empty | O(1)            |
-| insert_at_head()  | Insert at beginning     | O(1)            |
-| insert_at_tail()  | Insert at end           | O(n)            |
-| insert_at_k()     | Insert at position k    | O(n)            |
-| delete_at_head()  | Remove first node       | O(1)            |
-| delete_by_value() | Remove a node by value  | O(n)            |
-| delete_at_tail()  | Remove last node        | O(n)            |
-| search()          | Find value in list      | O(n)            |
+| Operation         | Description             |
+| ----------------- | ----------------------- |
+| get_head()        | Returns head node       |
+| is_empty()        | Checks if list is empty |
+| insert_at_head()  | Insert at beginning     |
+| insert_at_tail()  | Insert at end           |
+| insert_at_k()     | Insert at position k    |
+| delete_at_head()  | Remove first node       |
+| delete_by_value() | Remove a node by value  |
+| delete_at_tail()  | Remove last node        |
+| search()          | Find value in list      |
 
 ---
 

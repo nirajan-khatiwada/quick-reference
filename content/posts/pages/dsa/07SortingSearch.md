@@ -1,21 +1,23 @@
 ---
-title: "Searching & Sorting in Python: Linear, Binary & Bubble Sort"
-slug: "searching-sorting-algorithms-python"
-date: 2024-10-24
-description: "Fundamental searching and sorting algorithms in Python. Linear Search, Binary Search, and Bubble Sort explained with code."
+title: "Searching & Sorting Algorithms | DSA Series Day 6"
+slug: "searching-sorting-algorithms-python-dsa"
+date: 2026-04-13
+description: "Learn fundamental searching and sorting algorithms in Python including linear search, binary search, bubble sort, and more."
 showToc: true
-weight: 5
+weight: 6
 series: ["DSA"]
-categories: ["DSA", "Python"]
-tags: ["Algorithms", "Searching", "Sorting", "Python", "Binary Search"]
-summary: "A beginner's guide to essential searching and sorting algorithms in Python, complete with time complexity analysis."
-images: ["/images/sorting.png"]
+categories: ["DSA"]
+tags: ["DSA", "Python", "Searching", "Sorting", "Algorithms", "Binary Search"]
+summary: "A complete guide to essential searching and sorting algorithms with explanations and Python implementations."
+images: ["/images/dsa-python.png"]
 ---
 
 Searching and sorting are fundamental concepts in computer science. Searching is the process of finding a specific element in a data structure, while sorting is the process of arranging elements in a specific order (ascending or descending).
 
-This note covers **linear search**, **binary search**, and **bubble sort** with code explanations and step-by-step details.
+This note covers sorting algorithms like Bubble Sort, Selection Sort, Insertion Sort and Linear Search .
 
+
+# Searching Algorithms
 ---
 
 ## 1. Linear Search
@@ -52,51 +54,13 @@ def linear_search(lists, key):
 ---
 
 ## 2. Binary Search
-
-### Concept
-
-* Binary search works on **sorted lists**.
-* Divides the list into halves repeatedly to find the key.
-* More efficient than linear search for large lists.
-
-### Code
-
-```python
-def binary_search(lists, first, last, key):
-    # Step 1: Base case - if start index is greater than end
-    if first > last:
-        return False
-
-    # Step 2: Find middle element
-    m = (first + last) // 2
-
-    # Step 3: Check if middle element is the key
-    if lists[m] == key:
-        return True
-    else:
-        # Step 4: If middle element is less than key, search right half
-        if lists[m] < key:
-            return binary_search(lists, m+1, last, key)
-        # Step 5: If middle element is greater than key, search left half
-        elif lists[m] > key:
-            return binary_search(lists, first, m-1, key)
-```
-
-### Explanation
-
-1. Calculate the middle index `m`.
-2. Compare `lists[m]` with `key`.
-3. If equal, return `True`.
-4. If `lists[m] < key`, search the right half.
-5. If `lists[m] > key`, search the left half.
-6. Repeat until the key is found or the sublist is empty.
-
-**Time Complexity:** O(log n)
-**Space Complexity:** O(log n) due to recursion
+We will cover this in recursion and backtracking section.
 
 ---
 
-## 3. Bubble Sort
+# Sorting Algorithms
+
+## 1. Bubble Sort
 
 ### Concept
 
@@ -131,7 +95,7 @@ def bubble_sort(lists):
 
 ---
 
-## Selection Sort
+## 2. Selection Sort
 ### Concept
 * In each iteration, find the minimum element from the unsorted part and swap it with the first unsorted element.
 
@@ -152,7 +116,7 @@ def selection_sort(lists):
         lists[min_index] = temp
 ```
 
-## Insertion Sort
+## 3. Insertion Sort
 ### Concept
 * Initially take the first element as sorted and other elements as unsorted.
 * Pick elements from unsorted part and insert them into the correct position in the sorted part.
@@ -172,8 +136,9 @@ def insertion_sort(lists):
         lists[j + 1] = key
 ```
 
-## Merge Sort
-### Concept
+## 4.Merge Sort
+We will cover this in recursion and backtracking section.
+<!-- ### Concept
 * Divide the list into halves recursively until each sublist contains a single element.
 * Merge the sublists back together in sorted order.
 * Efficient for large datasets.
@@ -213,10 +178,11 @@ def merge(lists, low, mid, high):
 
 lists = [38, 27, 43, 3, 9, 82, 10]
 merge_sort(lists, 0, len(lists) - 1)
-```
+``` -->
 
-## Quick Sort
-### Concept
+## 5.Quick Sort
+We will cover this in recursion and backtracking section.
+<!-- ### Concept
 * Select a 'pivot' element from the list.
 * Partition the other elements into two sub-arrays according to whether they are less than or greater than the pivot ie put pivot in its correct position.
 
@@ -244,7 +210,7 @@ lists = [10, 7, 8, 9, 1, 5]
 quick_sort(lists, 0, len(lists) - 1)
 ```
 
-
+ -->
 
 
 ## Summary

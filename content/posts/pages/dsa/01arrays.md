@@ -1,15 +1,27 @@
+---
+title: "Arrays | DSA Series Day 1"
+slug: "introduction-to-arrays-python-dsa"
+date: 2026-04-13
+description: "Learn the basics of arrays in Python, including creation, insertion, and traversal using lists as part of your DSA journey."
+showToc: true
+weight: 1
+series: ["DSA"]
+categories: ["DSA"]
+tags: ["DSA", "Python", "Arrays", "Data Structures", "Basics"]
+summary: "A beginner-friendly introduction to arrays in Python, covering creation, initialization, and basic operations."
+images: ["/images/dsa-python.png"]
+---
   In Python, an **array** is commonly implemented using a **list**. A list is an **ordered, mutable collection** that can store elements of any data type.
 
 ---
 
 ## Creating an Array with a Fixed Size
-
 Python does not have fixed-size arrays like C/C++. However, we can **pre-allocate** space using `None`.
-
 ```python
 size = 10
 a = [None] * size
 ```
+
 
 ---
 
@@ -22,7 +34,6 @@ for i in range(0, len(a)):
     inp = input("Enter the number: ")
     a[i] = inp
 ```
-
 ---
 
 ## Initializing an Array at Declaration Time
@@ -59,3 +70,4 @@ print(a)
 This is the easiest way to view all elements at once.
 
 ---
+

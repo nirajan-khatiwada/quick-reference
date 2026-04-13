@@ -403,4 +403,87 @@ class PriorityQueue:
                 self.rear = node
 ```
 
-> Note: Learn Circular Queue for efficient memory usage in fixed-size queues.We won't cover it here.
+
+### 4. Circular Queue
+The special case of a queue where the last position is connected back to the first position to make a circle. This allows for efficient use of space.
+
+### Circular Queue Using Core C Concepts
+
+```python
+class CircularQueue:
+    def __init__(self, size):
+        self.size = size
+        self.queue = [None] * size
+        self.front =self.size-1
+        self.rear =self.size -1
+
+    def is_full(self):
+        return  (self.rear + 1) % self.size == self.front
+
+    def is_empty(self):
+        return  self.front == self.rear
+            
+        
+    def enqueue(self, value):
+        if self.is_full():
+            raise Exception("Circular Queue Overflow")
+        else:
+            self.rear = (self.rear + 1) % self.size
+            self.queue[self.rear] = value
+
+    def dequeue(self):
+        if self.is_empty():
+             raise Exception("Circular Queue Underflow")
+        else:
+            self.front = (self.front + 1) % self.size
+            value = self.queue[self.front]
+            return value
+
+
+```
+### Circular Queue Using Linked List
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class CircularQueue:
+    def __init__(self):
+        self.front = None
+        self.rear = None
+    def is_empty(self):
+        return self.front is None
+    def enqueue(self, data):
+        node = Node(data)
+        if self.is_empty():
+            self.front = node
+            self.rear = node
+            node.next = node  # point to itself
+        else:
+            self.rear.next = node
+            self.rear = node
+            self.rear.next = self.front  # maintain circular link
+
+    def dequeue(self):
+        if self.is_empty():
+            return None
+        if self.front == self.rear:  # only one element
+            dequeued_data = self.front.data
+            self.front = None
+            self.rear = None
+            return dequeued_data
+        dequeued_data = self.front.data
+        self.front = self.front.next
+        self.rear.next = self.front  # maintain circular link
+
+cqueue = CircularQueue()
+cqueue.enqueue(10)
+cqueue.enqueue(20)
+print(cqueue.dequeue())  # Output: 10
+print(cqueue.dequeue())  # Output: 20
+```
+        
+
+        

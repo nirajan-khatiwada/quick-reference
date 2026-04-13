@@ -1,3 +1,18 @@
+---
+title: "List Implementation | DSA Series Day 2"
+slug: "list-implementation-python-dsa"
+date: 2026-04-13
+description: "Understand list data structure and its implementation in Python using array-based methods, built-in lists, and an introduction to linked lists."
+showToc: true
+weight: 2
+series: ["DSA"]
+categories: ["DSA"]
+tags: ["DSA", "Python", "List", "Array", "Linked List", "Data Structures"]
+summary: "Learn how lists work in Python and explore different implementation techniques with practical operations."
+images: ["/images/dsa-python.png"]
+---
+
+
 List is a linear data structure that stores elements in a sequential manner .
 
 # Implementation Lists in Python
@@ -87,6 +102,9 @@ class List:
 
         return new_array
 ```
+
+
+
 
 
 ## Using Python Inbuilt List
