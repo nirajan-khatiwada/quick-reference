@@ -173,6 +173,8 @@ export default App;
 This will allow the component to be dragged within a 100px radius from its original position.
 
 
+
+
 ## Motion value used in dragging 
 When a component is dragged, Framer Motion automatically creates motion values to track its position. Alternatively, we can define our own motion values like x and y using the useMotionValue hook and pass them to the component’s style. Framer Motion will then recognize and update these values as the component is dragged instead of creating new ones.
 
