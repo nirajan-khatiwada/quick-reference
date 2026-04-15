@@ -262,3 +262,6 @@ For mapping composite attribute we flatten the composite attribute into simple a
 
 
 ![Multi Valued Attribute Example](/images/dbms4.svg)
+
+
+> Note: Instead of using join you can also use subqueries to retrieve data from related tables, but using JOINs is generally more efficient and easier to read for complex queries involving multiple tables.
