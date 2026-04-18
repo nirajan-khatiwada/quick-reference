@@ -1,3 +1,16 @@
+title: "DBMS Transactions, Indexing & SQL Query Control (LIMIT & OFFSET)"
+slug: "dbms-transactions-indexing-limit-offset"
+date: 2026-04-18
+description: "Comprehensive guide to DBMS Transactions (ACID, states, operations), Indexing for performance optimization, and SQL LIMIT & OFFSET for query control and pagination."
+showToc: true
+weight: 1
+series: ["DBMS"]
+categories: ["DBMS", "SQL", "Database Management"]
+tags: ["Transactions", "ACID", "Indexing", "SQL", "LIMIT", "OFFSET", "Concurrency", "DBMS Basics"]
+summary: "Covers core DBMS concepts including Transactions (ACID properties and states), Indexing for faster data retrieval, and SQL LIMIT & OFFSET for efficient result pagination."
+images: ["/images/dbms_transactions.jpg"]
+---
+
 
 # Transaction
 A transaction is a sequence of one or more SQL statements that are executed as a single unit of work. Transactions are used to ensure data integrity and consistency in a database. They allow you to group multiple operations together, so that either all of the operations succeed or none of them do.
@@ -101,4 +114,38 @@ ROLLBACK;
 ```
 
 
-# Schedule and Serializability
+
+# Indexing and its Use
+Indexing is a technique used in databases to improve the speed of data retrieval operations. An index is a data structure that allows the database to quickly locate and access the data without having to scan the entire table. Indexes are created on one or more columns of a table, and they work by maintaining a sorted order of the indexed columns.
+
+When a query is executed that involves the indexed columns, the database can use the index to quickly find the relevant rows, rather than scanning the entire table. This can significantly improve the performance of queries, especially for large tables.
+
+For example, if we have a table called "employees" with columns "id", "name", and "department", and we frequently query the table based on the "department" column, we can create an index on the "department" column. This will allow the database to quickly find all employees in a specific department without having to scan the entire table.
+
+for example:
+```sql
+CREATE INDEX idx_department ON employees(department);
+```
+
+selecting employees from a specific department will be faster with the index:
+```sql
+SELECT * FROM employees WHERE department = 'Sales';
+```
+
+
+
+# Limit and Offset
+The LIMIT and OFFSET clauses are used in SQL to control the number of rows returned by a query and to specify the starting point for the result set.
+- ***LIMIT***: This clause is used to specify the maximum number of rows that should be returned by a query. It is often used in conjunction with the OFFSET clause to paginate results.
+Example:
+```sql
+SELECT * FROM employees LIMIT 10;
+```
+This query will return the first 10 rows from the "employees" table.
+
+- ***OFFSET***: This clause is used to specify the number of rows to skip before starting to return rows from the query. It is often used in conjunction with the LIMIT clause to paginate results.
+Example:
+```sql
+SELECT * FROM employees LIMIT 10 OFFSET 20;
+```
+This query will skip the first 20 rows and return the next 10 rows from the "employees" table, effectively returning rows 21 to 30.
