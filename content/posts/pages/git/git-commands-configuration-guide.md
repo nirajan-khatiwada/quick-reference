@@ -534,3 +534,4 @@ git config --global user.name "Your Name"    # Set your name
 git config --global user.email "email"       # Set your email
 git config --list                            # Display the current Git configuration
 ```
+

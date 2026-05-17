@@ -388,5 +388,200 @@ Advantahe of referential integrity:
 
 
 
+---
+## 8. Views in SQL
 
+### What is a View?
 
+A View is a virtual table in SQL.
+It does not store data physically.
+It displays data from one or more existing tables using a stored SELECT query.
+
+A view is essentially a saved query.
+
+---
+
+### Why Use Views?
+
+* Simplify complex SQL queries
+* Improve security by hiding columns or rows
+* Reuse queries
+* Provide abstraction over tables
+
+---
+
+### Advantages of Views
+
+* Integrity constraints of base tables still apply
+* Always shows updated data from base tables
+* Helps in restricting access to sensitive data
+* Improves query readability and reuse
+
+---
+
+### Limitation of Views
+
+* Views do not store data physically
+* Some views are not updatable depending on complexity
+
+---
+
+### Create View Syntax
+
+```sql
+CREATE VIEW view_name AS
+SELECT column1, column2, ...
+FROM table_name
+WHERE condition;
+```
+
+---
+
+### Example
+
+```sql
+CREATE VIEW student_view AS
+SELECT student_id, student_name, gpa
+FROM Students
+WHERE gpa > 3.0;
+```
+
+---
+
+### Using Views
+
+#### Query a View
+
+```sql
+SELECT * FROM student_view WHERE gpa > 3.2;
+```
+
+#### Update through View
+
+```sql
+UPDATE student_view
+SET gpa = 3.8
+WHERE student_name = 'Alice';
+```
+
+Changes will reflect in the base table if the view is updatable.
+
+---
+
+#### Drop a View
+
+```sql
+DROP VIEW student_view;
+```
+
+---
+
+## 9. Triggers in SQL
+
+### What is a Trigger?
+
+A Trigger is a stored procedure that executes automatically when a specific event occurs in the database.
+It does not require manual execution.
+
+---
+
+### Event-Condition-Action Model
+
+Triggers follow the Event-Condition-Action model:
+
+Event: INSERT, UPDATE, DELETE
+Condition: Optional condition using WHEN
+Action: SQL statements executed if condition is satisfied
+
+---
+
+### Types of Events
+
+* INSERT: triggered when a new row is inserted
+* UPDATE: triggered when a row is updated
+* DELETE: triggered when a row is deleted
+
+---
+
+### Timing of Triggers
+
+* BEFORE: executed before the event
+* AFTER: executed after the event
+
+---
+
+### General Syntax
+
+```sql
+CREATE TRIGGER trigger_name
+{BEFORE | AFTER} {INSERT | UPDATE | DELETE}
+ON table_name
+FOR EACH ROW
+WHEN condition
+BEGIN
+    SQL statements
+END;
+```
+
+---
+
+### Example 1: Overdraft Trigger
+
+```sql
+CREATE TRIGGER overdraft
+AFTER UPDATE ON pre_paid
+FOR EACH ROW
+WHEN NEW.balance < 0
+UPDATE pre_paid
+SET blocked = 'T';
+```
+
+If balance becomes negative after update, the account is blocked.
+
+---
+
+### Example 2: Backup Trigger
+
+```sql
+CREATE TRIGGER backup
+AFTER DELETE ON pre_paid
+FOR EACH ROW
+INSERT INTO pre_paid_backup (id, balance, blocked)
+VALUES (OLD.id, OLD.balance, OLD.blocked);
+```
+
+When a row is deleted, it is copied into a backup table.
+
+---
+
+### NEW and OLD Values
+
+* NEW refers to the new row after INSERT or UPDATE
+* OLD refers to the old row before DELETE or UPDATE
+
+---
+
+### Use Cases of Triggers
+
+* Audit logging
+* Data backup
+* Enforcing complex rules
+* Automatically updating related tables
+
+---
+
+### Advantages
+
+* Automatic execution
+* Maintains data integrity
+* Useful for logging and auditing
+
+---
+
+### Disadvantages
+
+* Hard to debug
+* Can reduce performance
+* Hidden logic inside database
+
+---
