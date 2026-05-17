@@ -152,3 +152,7 @@ services:
 * Memory overflow leads to OOM kill
 * CPU overflow leads to throttling
 * Resource management is critical for production systems
+
+
+## Docker Image Optimization
+See this video [here](https://www.youtube.com/watch?v=hX2UAHhX8E8) for tips on optimizing Docker images for better performance and smaller size.
