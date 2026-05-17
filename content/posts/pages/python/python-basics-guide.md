@@ -295,26 +295,78 @@ print(a >> 2) # 2
 ```
 
 
-> **Note:** `is` vs `==`
-> - `is` is used to compare the memory location of two objects.
-> - `==` is used to compare the values of two objects.
-> ```python
-> # For Mutable objects (list, dict, set):
-> a = [1,2,3]
-> b = [1,2,3]
-> print(a == b) # True
-> print(a is b) # False
->
-> # For immutable objects (int, float, string, tuple, None):
-> a = 10
-> b = 10
-> print(a == b) # True
-> print(a is b) # True
-> c = None
-> d = None
-> print(c == d) # True
-> print(c is d) # True
-> ```
+
+## == (Equality Operator)
+
+* == checks value equality
+* It asks: "Do these two variables have the same value?"
+
+### Example
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a == b)  # True
+```
+
+Even though a and b are different objects in memory, their values are the same, so the result is True.
+
+---
+
+## is (Identity Operator)
+
+* is checks object identity (memory location)
+* It asks: "Are these two variables pointing to the same object?"
+
+### Example
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a is b)  # False
+```
+
+Because a and b are two different objects in memory.
+
+---
+
+## Important Example (None Check)
+
+```python
+x = None
+
+print(x is None)  # True
+print(x == None)  # True, but not recommended
+```
+
+### Best Practice
+
+```python
+x is None
+```
+
+---
+
+## Simple Way to Remember
+
+* == checks value
+* is checks identity (same memory object)
+
+---
+
+## Common Mistake
+
+```python
+a = 1000
+b = 1000
+
+print(a == b)  # True
+print(a is b)  # may be False
+```
+
+Python may or may not reuse memory for large integers, so identity can differ.
 
 
 ## 5.Taking User Input

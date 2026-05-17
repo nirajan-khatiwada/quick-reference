@@ -1,4 +1,5 @@
 ---
+
 title: "Docker Compose Guide: Multi-Container Applications"
 slug: "docker-compose-multi-container-apps"
 date: 2024-10-18
@@ -10,39 +11,55 @@ categories: ["Docker"]
 tags: ["Docker", "Compose", "DevOps", "Orchestration", "YAML"]
 summary: "Learn how to define and manage multi-container applications using Docker Compose. Includes real-world examples for Django, PostgreSQL, and Redis."
 images: ["/images/docker-compose.png"]
----
+--------------------------------------
 
 # Docker Compose Documentation
 
 ## Introduction
-Docker Compose is a tool for defining and running multi-container Docker applications. With Docker Compose, you can use a YAML file to configure your application's services and create and start all the services from your configuration with a single command.
+
+Docker Compose is a tool for defining and running multi-container Docker applications. It uses a YAML file to configure services and starts the entire stack with a single command.
+
+---
+
+## What Docker Compose Does
+
+1. Creates a default bridge network automatically for all services.
+2. Adds all services to the same network, allowing communication using service names as hostnames.
+
+Example:
+
+* web service can access db using hostname db
+
+3. Built-in DNS resolution allows containers to communicate without IP addresses.
+
+---
 
 ## Basic docker-compose.yml Structure
-The `docker-compose.yml` file is where you define the services that make up your app. A typical file might look like this:
 
 ```yaml
 version: '3.8'
 services:
   service_name:
-    image: image_name:tag
+    image: image_name:tag  # Replace with your actual image name/tag
     ports:
-      - "host_port:container_port"
+      - "host_port:container_port"  # Map host port to container port
     environment:
-      - ENV_VAR=value
+      - ENV_VAR=value  # Environment variable
     volumes:
-      - "host_path:container_path"
+      - "host_path:container_path"  # Volume mapping
     depends_on:
-      - dependency_service
+      - dependency_service  # Service dependency
 ```
 
-## Example Configurations
+---
 
-### Example 1: Basic Setup with PostgreSQL and Redis
+## Example 1: PostgreSQL and Redis
+
 ```yaml
 version: '3.8'
 services:
   postgres:
-    image: postgres
+    image: postgres:15
     ports:
       - "5432:5432"
     environment:
@@ -51,70 +68,18 @@ services:
       POSTGRES_PASSWORD: password
 
   redis:
-    image: redis
+    image: redis:7
     ports:
-      - "80:80"
+      - "6379:6379"
 ```
 
-### Example 2: Real-World Application
-```yaml
-version: '3'
-services:
-  pythonapp:
-    image: your-python-image:tag
-    ports:
-      - "8000:8000"
-    volumes:
-      - /Users/data:/src/bin/data
-    depends_on:
-      - db
-      - redis
+---
 
-  db:
-    image: postgres
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
+## Example 2: Django Application with Comments
 
-  redis:
-    image: redis
-    volumes:
-      - /path/to/local/directory:/data
-```
-
-### Example 3: Building from Dockerfile
-```yaml
-version: '3'
-services:
-  pythonapp:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    volumes:
-      - /Users/desktop:/src/bin/desktop
-    depends_on:
-      - db
-      - redis
-
-  db:
-    image: postgres
-    environment:
-      POSTGRES_DB: mydatabase
-      POSTGRES_USER: myuser
-      POSTGRES_PASSWORD: mypassword
-
-  redis:
-    image: redis
-    volumes:
-      - /path/to/local/directory:/data
-```
-
-### Example 4: Django Application with PostgreSQL and Redis
 ```yaml
 version: '3.8'
+
 services:
   django-app:
     container_name: django-app
@@ -122,73 +87,178 @@ services:
     ports:
       - "8000:8000"  # Expose Django app on port 8000
     environment:
-      - DEBUG=1  # Set Django debug mode to 1 for development
-      - POSTGRES_HOST=postgres  # PostgreSQL host
-      - POSTGRES_DB_NAME=nirajan  # PostgreSQL database name
-      - POSTGRES_DB_PASSWORD=nirajan@9845  # PostgreSQL database password
-      - REDIS_URL=redis://redis:6379/0  # Redis URL
+      DEBUG: "1"  # Enable debug mode for development
+      POSTGRES_HOST: postgres  # PostgreSQL service name as hostname
+      POSTGRES_DB_NAME: nirajan  # Database name
+      POSTGRES_DB_PASSWORD: nirajan@9845  # Database password
+      REDIS_URL: redis://redis:6379/0  # Redis connection URL
     depends_on:
-      - postgres
-      - redis
+      - postgres  # Start postgres first
+      - redis  # Start redis first
     volumes:
-      - static_volume:/code/static  # Volume for Django static files
-      - media_volume:/code/media  # Volume for Django media files
+      - static_volume:/code/static  # Store static files
+      - media_volume:/code/media  # Store media files
 
   postgres:
     container_name: postgres
-    image: postgres:latest
+    image: postgres:15
     environment:
-      POSTGRES_DB: nirajan  # Database name
-      POSTGRES_USER: nirajan  # Database username
-      POSTGRES_PASSWORD: nirajan@9845  # Database password
+      POSTGRES_DB: nirajan
+      POSTGRES_USER: nirajan
+      POSTGRES_PASSWORD: nirajan@9845
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data  # Persist database data
 
   redis:
     container_name: redis
-    image: redis:latest
-    ports:
-      - "6379:6379"
+    image: redis:7
+
+
+volumes:
+  static_volume:
+  media_volume:
+  postgres_data:
 ```
 
-## Service Names as Hostnames
-In Docker Compose, the names of the services defined in the `docker-compose.yml` file are used as hostnames for inter-service communication.
 
-### Service Names as Hostnames
-Each service name in the `docker-compose.yml` file acts as a hostname for that service. For example, in the configuration above:
-- The `django-app` service can connect to the `postgres` service using `POSTGRES_HOST=postgres`.
-- The `django-app` service can connect to the `redis` service using `REDIS_URL=redis://redis:6379/0`.
 
-### Example
-In the `django-app` service:
-- PostgreSQL Host: `POSTGRES_HOST=postgres` — The Django app connects to the PostgreSQL service using the hostname `postgres`, which matches the name of the PostgreSQL service defined in Docker Compose.
-- Redis Host: `REDIS_URL=redis://redis:6379/0` — The Django app connects to the Redis service using the hostname `redis`, which matches the name of the Redis service defined in Docker Compose.
+---
 
-> **Note:** In Docker, services within a Docker Compose setup are typically connected to the same network by default. This allows containers to communicate with each other using service names as hostnames.
+## Where Volumes Are Stored
+
+Docker stores volumes on the host machine:
+
+```
+/var/lib/docker/volumes/
+```
+
+Example:
+
+```
+/var/lib/docker/volumes/static_volume/_data
+```
+
+Do not modify this manually.
+
+---
+
+## Types of Volumes
+
+### Named Volume
+
+```yaml
+volumes:
+  - static_volume:/code/static
+```
+
+Docker manages storage automatically. Best for production.
+
+### Bind Mount
+
+```yaml
+volumes:
+  - ./static:/code/static
+```
+
+Stored inside project directory. Best for development.
+
+---
+
+
+## Named Volumes Declaration
+
+Named volumes must be declared at the bottom of the file.
+
+```yaml
+volumes:
+  static_volume:
+  media_volume:
+  postgres_data:
+```
+
+This tells Docker to create persistent storage managed by Docker.
+
+---
+
+
+
+## Docker Networking
+
+Docker Compose creates a default private network for all services.
+
+All services can communicate using service names.
+
+Example:
+
+* django-app connects to postgres using "postgres"
+* django-app connects to redis using "redis"
+* redis connects to postgres using "postgres"
+
+> This is possible because all services are on the same network.
+
+---
+
+## Default Network Behavior
+
+All containers are on the same network by default, meaning they can communicate freely with each other.
+
+---
+
+## Custom Networks
+
+You can isolate services using custom networks.
+
+```yaml
+networks:
+  backend:
+  cache:
+```
+
+Assign services:
+
+```yaml
+services:
+  django-app:
+    networks:
+      - backend
+      - cache
+
+  postgres:
+    networks:
+      - backend
+
+  redis:
+    networks:
+      - cache
+```
+
+
+---
 
 ## Docker Compose Commands
-To start the containers defined in `docker-compose.yml`:
 
 ```bash
-sudo docker compose up
+docker compose up
 ```
 
-To stop and remove all containers, networks, and volumes created by `docker-compose up`:
+Start services
 
 ```bash
-sudo docker compose down
+docker compose up -d
 ```
 
-To run the containers in the background (detached mode):
+Start in background
 
 ```bash
-sudo docker compose up -d
+docker compose down
 ```
 
-## Tips
-- Use `depends_on` to specify dependencies between services. This ensures that the dependent services start in the correct order.
-- Use `volumes` to persist data outside of your containers, which is especially useful for databases.
-- Use environment variables to configure your services and avoid hardcoding sensitive information.
+Stop and remove services
+
+---
+
+
 
 ## Conclusion
-Docker Compose simplifies the process of managing multi-container Docker applications. By defining your services in a `docker-compose.yml` file, you can easily spin up your entire application stack with a single command. This guide provides a solid starting point for using Docker Compose to manage multi-container applications effectively.
+
+Docker Compose simplifies multi-container applications by combining services, networks, volumes, and environment configuration into a single YAML file.
