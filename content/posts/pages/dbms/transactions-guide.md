@@ -1,3 +1,4 @@
+---
 title: "DBMS Transactions, Indexing & SQL Query Control (LIMIT & OFFSET)"
 slug: "dbms-transactions-indexing-limit-offset"
 date: 2026-04-18
