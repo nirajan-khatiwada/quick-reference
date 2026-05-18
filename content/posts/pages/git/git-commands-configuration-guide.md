@@ -535,3 +535,36 @@ git config --global user.email "email"       # Set your email
 git config --list                            # Display the current Git configuration
 ```
 
+
+
+## 22.Git Stash
+Git stash is used to temporarily save changes that are not ready to be committed. This allows you to :
+- switch branches
+- fix urgent issues
+- pull changes from the remote repository
+without commiting your current changes.
+
+> Note: Think it as “Save my current work in a hidden temporary shelf.”
+
+### What get shashed?
+By default, git stash will save:
+- Changes in tracked files (files that are already being tracked by Git)
+- Changes in the staging area (files that have been added but not yet committed)
+
+Not include:
+- Untracked files (new files that have not been added to Git)
+- Ignored files (files that are listed in .gitignore)
+
+### Stash Untracked Files
+To include untracked files in the stash, you can use the `-u` or `--include-untracked` option:
+
+```bash
+git stash -u
+```
+
+
+### Basic Stash Commands
+
+- `git stash -m "message"`: Stash changes with a custom message for easier identification.
+- `git stash list`: View all stashed changes.
+- `git stash pop`: Apply the most recent stash and remove it from the stash list.

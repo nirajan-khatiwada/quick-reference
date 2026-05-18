@@ -4,7 +4,7 @@ slug: "dbms-transactions-indexing-limit-offset"
 date: 2026-04-18
 description: "Comprehensive guide to DBMS Transactions (ACID, states, operations), Indexing for performance optimization, and SQL LIMIT & OFFSET for query control and pagination."
 showToc: true
-weight: 1
+weight: 7
 series: ["DBMS"]
 categories: ["DBMS", "SQL", "Database Management"]
 tags: ["Transactions", "ACID", "Indexing", "SQL", "LIMIT", "OFFSET", "Concurrency", "DBMS Basics"]
