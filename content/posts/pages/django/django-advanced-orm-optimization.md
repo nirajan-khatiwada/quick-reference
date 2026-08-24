@@ -388,3 +388,8 @@ Django's `bulk_update()` method allows you to efficiently update multiple record
 ```python
 # Example of bulk_update
 books_to_update = Book.objects.filter(author=author1)
+for book in books_to_update:
+    book.price += 10
+Book.objects.bulk_update(books_to_update, ['price'])
+```
+This will generate a single SQL `UPDATE` statement that updates all three books at once, significantly improving performance compared to multiple individual updates.
