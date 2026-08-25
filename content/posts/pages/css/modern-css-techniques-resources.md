@@ -14,7 +14,7 @@ summary: "Essential resources for mastering CSS, featuring complete notes on Van
 # Css:Note from starting to end
 
 ## 1. Vanilla CSS
- [Vanilla CSS](https://github.com/nirajan-khatiwada/css/blob/main/CSS_Complete_Notes_compressed.pdf)
+ [Vanilla CSS](https://github.com/nirajan-khatiwada/CSS---Learn-CSS)
 
  ## 2. Tailwind CSS
-[Tailwind CSS](https://github.com/nirajan-khatiwada/tailwindcss)
+[Tailwind CSS](https://github.com/nirajan-khatiwada/CSS---Learn-CSS)
